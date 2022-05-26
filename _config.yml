@@ -18,11 +18,11 @@ tagline:             "죽지못해공부함"
 # A short description of the page, used in the sidebar and as fallback for the meta description tag.
 # Markdown enabled, but don't use more than one paragraph (enforced by `>`)
 description:         >
-  은성이의 공부기록.
+  나의 공부기록
 # This should be the same author as first entry in `_data/authors.yml`
 author:
-  name:              xxxx
-  email:             xxxx@xxxx.com
+  name:              JaeYoung Heo
+  email:             heoj10272@skuniv.ac.kr
 
 # Fallback image and color
 image:               /assets/img/main_left.JPG
@@ -50,7 +50,7 @@ disqus: True
 disqus_shortname:    xxxx
 
 # This text will appear in the footer of every page. Markdown enabled.
-copyright:           '&copy; 2021.07. by 전은성'
+copyright:           '&copy; 2022.05. by 허재영'
 
 # Format of the permalinks
 permalink:           
