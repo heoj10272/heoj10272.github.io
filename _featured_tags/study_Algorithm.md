@@ -1,8 +1,8 @@
 ---
 layout: tag-blog
-title: CSS
-slug: css
+title: Algorithm
+slug: algorithm
 category: study
 menu: false
-order: 2
+order: 4
 ---

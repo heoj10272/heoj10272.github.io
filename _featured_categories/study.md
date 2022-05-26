@@ -6,5 +6,5 @@ menu: true
 submenu: true
 order: 5
 description: >
-  AI, HTML, CSS, JSP, Python
+  스터디란.
 ---

@@ -6,5 +6,5 @@ menu: true
 submenu: false
 order: 3
 description: >
-  동국대학교 PLASS-NIA 인공지능학습데이터구축사업 (2021)
+  프로젝트 카테고리입니다. 추가예정.
 ---
