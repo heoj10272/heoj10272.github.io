@@ -22,8 +22,8 @@ description:         >
 
 # This should be the same author as first entry in `_data/authors.yml`
 author:
-  name:              xxxx
-  email:             xxxx@xxxx.com
+  name:              JaeYoung Heo
+  email:             heoj10272@skuniv.ac.kr
 
 # Fallback image and color
 image:               /assets/img/main_left.JPG
