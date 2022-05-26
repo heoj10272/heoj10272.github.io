@@ -10,8 +10,7 @@ vvs:
   # 자기 소개
   about:             |
    서경대학교 컴퓨터공학과<br>
-
-
+   서경대학교 이양선교수님 연구실 학부연구생
   # This photo will be used in the about section
   picture:
     src:             /assets/img/me2.png
@@ -24,7 +23,7 @@ vvs:
   # Comment/uncommet to show/hide
   # Icons appear in order, can be rearranged:
   social:
-    #facebook:         heoj10272
+    facebook:         jjjes758
     # twitter:         <username>
     # google:          <number>
     # vk:              <username>
@@ -34,7 +33,7 @@ vvs:
     # spotify:         <user>/<number>
     # soundcloud:      <username>
     # lastfm:          <username>
-     instagram:        huh._.zz
+    # instagram:        <username>
     # flickr:          <string@string>
     # 500px:           <username>
     # dribbble:        <username>
@@ -48,7 +47,7 @@ vvs:
     # pinterest:       <username>
     # foursquare:      <number>
     # yelp:            <string>
-    github:          heoj10272
+    github:          jjjes758
     # stackoverflow:   <number/username>
     # npm:             <username>
     # hackernews:      <username>
@@ -59,8 +58,8 @@ vvs:
     # delicious:       <username>
     # stumbleupon:     <username>
     # paypal:          <username>
-    email:           heoj10272@skuniv.ac.kr
-    #rss:             https://jeoneunseoung.github.io/feed.xml
+    email:           jjjes758@skuniv.ac.kr
+    rss:             https://jeoneunseoung.github.io/feed.xml
 
 # Another author
 author2:
@@ -70,7 +69,6 @@ author2:
     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
     Open `_data/authors.yml` to edit this text.
   picture:           https://placehold.it/128x128
   social:
@@ -87,7 +85,6 @@ author2:
     Lorem ipsum dolor sit amet, consectetur adipiscing elit,
     sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
     Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.
-
     Open `_data/authors.yml` to edit this text.
   picture:           https://placehold.it/128x128
   social:
