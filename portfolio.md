@@ -10,7 +10,7 @@ order: 1
 <span style=
 "font-size:170%;
 font-weight:bold">
-전은성
+허재영
 </span>
 </center>
 
@@ -22,17 +22,16 @@ font-weight:bold">
 
 ## Personal Data
 ---
-> 1998.12.21 대한민국,인천광역시,서구 출생
+> 1998.12.15 출생
 
-> 연락처: jjjes758@naver.com
+> 연락처: heoj10272@skuniv.ac.kr
 
-> Github : <a href="https://github.com/JeonEunseoung">https://github.com/JeonEunseoung</a>
+> Github : <a href="https://github.com/heoj10272">https://github.com/heoj10272</a>
 
 
 ## Education
 ---
 > Mar.2017 ~ 현재 : 서경대학교 컴퓨터공학과
-> 서경대학교 컴퓨터공학과 학부 연구생 (이양선 교수님 연구실)
 
 
 ## Research Interest
@@ -49,26 +48,15 @@ font-weight:bold">
 ## Project
 ---
 
-* **동국대학교 PLASS-NIA 인공지능학습데이터구축사업(2021)**
-JSP와 MYSQL을 활용한 운동 서비스 커뮤니티에 대한 웹사이트 제작 프로젝트(2021)<br>
-* **My Health Partner(2021)**
-JSP, MYSQL을 활용한 운동 서비스 웹사이트 제작 프로젝트(2021)<br>
-* **Weather Calendar(2021)**
-Flutter, Firebase, 기상 날씨 API를 이용한 실시간 날씨및 달력 정보 확인 어플리케이션 제작한 프로젝트(2021)<br>
-* **Corona 19 MAP(2022)**
-SPRING, MYSQL, 공공 API를 활용한 코로나 감염 현황 및 선별 진료소 검색 기능을 제공 웹사이트 제작하는 프로젝트(2022)<br>
 
-## Awards
----
-- 2021년 모바일 앱 개발 공모전 참가상
-- 2021년 스마트 치안 데이터 활용 및 응용 서비스 공모전
 ## Work Experiences
 ---
--Seokyeong Univ
+- "종이와 연필" - LG 유플러스
+- "종이와 연필" - LX Pantos
 
 ## Skills and Certification
 ---
--Language : JAVA, SPRING, Python, C/C++, C#, Android 
+-Language : 
 
 
 
