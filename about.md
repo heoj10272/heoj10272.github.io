@@ -1,6 +1,6 @@
 ---
 layout: about
-title: About
+title: 🔎 About
 menu: true
 order: 2
 ---

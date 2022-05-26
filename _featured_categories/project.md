@@ -1,6 +1,6 @@
 ---
 layout: list
-title: Project
+title: 💻 Project
 slug: project
 menu: true
 submenu: false
