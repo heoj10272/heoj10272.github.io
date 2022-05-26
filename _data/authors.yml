@@ -10,7 +10,6 @@ vvs:
   # 자기 소개
   about:             |
    서경대학교 컴퓨터공학과<br>
-   서경대학교 이양선교수님 연구실 학부연구생
   # This photo will be used in the about section
   picture:
     src:             /assets/img/me2.png
