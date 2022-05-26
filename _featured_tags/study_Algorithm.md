@@ -4,5 +4,5 @@ title: Algorithm
 slug: algorithm
 category: study
 menu: false
-order: 4
+order: 1
 ---
