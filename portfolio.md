@@ -1,6 +1,6 @@
 ---
 layout: about
-title: 📃Portfolio
+title: PPortfolio 
 menu: true
 order: 1
 ---
