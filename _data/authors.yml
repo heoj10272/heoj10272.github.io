@@ -2,15 +2,14 @@
 # Must be the same as `author` in `_config.yml`.
 # Change `qwtel` to your shortname (used in the front matter to set a page's author, e.g. `author: qwtel`).
 vvs:
-  name:              EunSeoung Jeon
-  email:             jjjes758@skuniv.ac.kr
+  name:              JaeYoung Heo
+  email:             heoj10272@skuniv.ac.kr
 
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   # 자기 소개
   about:             |
    서경대학교 컴퓨터공학과<br>
-   서경대학교 이양선교수님 연구실 학부연구생
 
 
   # This photo will be used in the about section
@@ -25,7 +24,7 @@ vvs:
   # Comment/uncommet to show/hide
   # Icons appear in order, can be rearranged:
   social:
-    facebook:         jjjes758
+    #facebook:         jjjes758
     # twitter:         <username>
     # google:          <number>
     # vk:              <username>
@@ -35,7 +34,7 @@ vvs:
     # spotify:         <user>/<number>
     # soundcloud:      <username>
     # lastfm:          <username>
-    # instagram:        <username>
+     instagram:        huh._.zz
     # flickr:          <string@string>
     # 500px:           <username>
     # dribbble:        <username>
@@ -49,7 +48,7 @@ vvs:
     # pinterest:       <username>
     # foursquare:      <number>
     # yelp:            <string>
-    github:          jjjes758
+    github:          heoj10272
     # stackoverflow:   <number/username>
     # npm:             <username>
     # hackernews:      <username>
@@ -60,8 +59,8 @@ vvs:
     # delicious:       <username>
     # stumbleupon:     <username>
     # paypal:          <username>
-    email:           jjjes758@skuniv.ac.kr
-    rss:             https://jeoneunseoung.github.io/feed.xml
+    email:           heoj10272@skuniv.ac.kr
+    #rss:             https://jeoneunseoung.github.io/feed.xml
 
 # Another author
 author2:
