@@ -1,6 +1,6 @@
 ---
 layout: list
-title:  ✏  Study
+title: 📒 Study
 slug: study
 menu: true
 submenu: true
