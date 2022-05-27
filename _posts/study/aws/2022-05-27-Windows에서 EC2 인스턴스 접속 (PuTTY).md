@@ -96,3 +96,7 @@ PuTTYgen 기본 초기화면이다.
 ![9](/assets/img/study_AWS/[AWS]_Windows에서_EC2_인스턴스_접속_(PuTTY)/9.png)
 
 이렇게 뜨면 성공이다.
+
+<hr/>
+
+다음은 RDS 인스턴스를 생성하는 방법을 소개한다.
