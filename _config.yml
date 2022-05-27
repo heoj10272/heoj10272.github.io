@@ -32,7 +32,7 @@ description:           >
 
 # A shorter description for the sidebar.
 tagline:               >
-  Work Hard to be Lazy.
+  JaeYoung's Tech blog.
 
 # A list of keywords for your blog
 keywords:              ["Development", "C++", "Rust", "Jekyll"]
@@ -40,14 +40,14 @@ keywords:              ["Development", "C++", "Rust", "Jekyll"]
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
 # It also used by the `jekyll-seo-tag` plugin.
-logo:                  /assets/img/seattle.png
+logo:                  /assets/img/me.png
 
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   # Used by `jekyll-feed`:
-  name:                DaeIn Lee
-  email:               daein0lee@gmail.com
-  picture:             /assets/img/seattle.png
+  name:                JaeYoung Heo
+  email:               heoj10272@skuniv.ac.kr
+  picture:             /assets/img/me.png
   social:
     linkedin:          daein-lee-3b6ba9139
     github:            lazyren
