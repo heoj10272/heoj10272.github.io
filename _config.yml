@@ -35,24 +35,24 @@ tagline:               >
   Jaeyoung's Tech blog.
 
 # A list of keywords for your blog
-keywords:              ["Development", "Database", "Oracle", "C++"]
+keywords:              ["Development", "Database", "Rust", "Jekyll"]
 
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
 # It also used by the `jekyll-seo-tag` plugin.
-logo:                  /assets/img/me.png
+logo:                  /assets/img/seattle.png
 
 # This should be the same author as first entry in `_data/authors.yml`.
 author:
   # Used by `jekyll-feed`:
-  name:                JaeYoung Heo
-  email:               heoj10272@skuniv.ac.kr
-  picture:             /assets/img/me.png
+  name:                DaeIn Lee
+  email:               daein0lee@gmail.com
+  picture:             /assets/img/seattle.png
   social:
-    #linkedin:          daein-lee-3b6ba9139
-    github:            heoj10272
-    #stackoverflow:     4294737
-    email:             heoj10272@skuniv.ac.kr
+    linkedin:          daein-lee-3b6ba9139
+    github:            lazyren
+    stackoverflow:     4294737
+    email:             daein0lee@gmail.com
 
 # Add links to the footer.
 # Typically you'll want to link to your cookie- or privacy policy (if appliable), etc..
