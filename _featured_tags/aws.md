@@ -1,10 +1,10 @@
 ---
 layout: tag-list
 type: tag
-title: Algorithm
-slug: algorithm
+title: AWS
+slug: aws
 category: study
 sidebar: true
 description: >
-   Algorithm study / Problem solutions
+   AWS study
 ---
