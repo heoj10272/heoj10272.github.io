@@ -58,8 +58,8 @@ font-weight:bold">
 
 ## Work Experiences
 ---
-- 종이와 연필 - LG 유플러스 **경영관리 구축**
-- 종이와 연필 - LX Pantos **차세대 포워딩**
+> **종이와 연필 - LG 유플러스**
+> **종이와 연필 - LX Pantos**
 
 ## Skills and Certification
 ---
