@@ -1,10 +1,10 @@
 ---
 layout: tag-list
 type: tag
-title: Rust
-slug: rust
-category: studylog
+title: Oracle
+slug: oracle
+category: study
 sidebar: true
 description: >
-   Rust related posts
+   Oracle study
 ---
