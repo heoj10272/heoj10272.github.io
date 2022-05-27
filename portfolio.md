@@ -1,8 +1,10 @@
 ---
-layout: about
-title: 📃 Portfolio 
-menu: true
-order: 1
+layout: welcome
+title: Portfolio
+permalink: /portfolio/
+more_posts: posts.md
+sidebar: true
+order: 2
 ---
 
 * * *

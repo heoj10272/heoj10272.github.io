@@ -4,7 +4,7 @@ type: category
 title: Project
 slug: project
 sidebar: true
-order: 2
+order: 3
 description: >
-  Log study results
+  My Project.
 ---

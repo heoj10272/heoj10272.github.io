@@ -4,7 +4,7 @@ type: category
 title: Study
 slug: study
 sidebar: true
-order: 3
+order: 4
 description: >
   My Study
 ---
