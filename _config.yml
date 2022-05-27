@@ -20,22 +20,22 @@
 lang:                  ko-KR, en-US
 
 # The title of your blog. Used in the sidebar and the browser tab.
-title:                 Lazy Ren
+title:                 JaeYoung Heo
 
 timezone:              Asia/Seoul
 
 # A short description (~150 chars) of the page used for the meta description tag.
 # Can use markdown, but no more than one paragraph (enforced by `>`)
 description:           >
-  Work Hard to be Lazy.
-  SW Engineer at Samsung Research.
+  JaeYoung's Tech blog.
+  Studying for DBA.
 
 # A shorter description for the sidebar.
 tagline:               >
   JaeYoung's Tech blog.
 
 # A list of keywords for your blog
-keywords:              ["Development", "C++", "Rust", "Jekyll"]
+keywords:              ["DBA", "C++", "Algorythm", "Cloud"]
 
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
