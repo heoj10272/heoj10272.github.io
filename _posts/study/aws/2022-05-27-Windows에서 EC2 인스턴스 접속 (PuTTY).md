@@ -1,8 +1,8 @@
 ---
 layout: post
-title: EC2 인스턴스 생성하기
+title: Windows에서 EC2 인스턴스 접속 (PuTTY)
 subtitle: AWS
-date: '2022-05-27 01:20:51 +0900'
+date: '2022-05-27 21:00:00 +0900'
 category: study
 tags: aws
 image:
@@ -18,6 +18,8 @@ Linux는 SSH를 가지고 있지만 Windows는 SSH를 가지고 있지 않기 �
 
 * this unordered seed list will be replaced by the toc
 {:toc}
+
+<hr/>
 
 ## ppk 파일 만들기
 
@@ -64,15 +66,15 @@ PuTTYgen 기본 초기화면이다.
 다음으로 같은 `Connection`의 `Data`를 누르고 `Login details` — `Auto-login username`에 자신이 선택한 인스턴스의 AMI에 맞는 username을 기입한다.
 
 > 각 AMI별 default user name
-> * For Amazon Linux 2 or the Amazon Linux AMI, the user name is ec2-user.
-> * For a CentOS AMI, the user name is centos or ec2-user.
-> * For a Debian AMI, the user name is admin.
-> * For a Fedora AMI, the user name is fedora or ec2-user.
-> * For a RHEL AMI, the user name is ec2-user or root.
-> * For a SUSE AMI, the user name is ec2-user or root.
-> * For an Ubuntu AMI, the user name is ubuntu.
-> * For an Oracle AMI, the user name is ec2-user.
-> * For a Bitnami AMI, the user name is bitnami.
+> * For Amazon Linux 2 or the Amazon Linux AMI, the user name is `ec2-user`.
+> * For a CentOS AMI, the user name is `centos` or `ec2-user`.
+> * For a Debian AMI, the user name is `admin`.
+> * For a Fedora AMI, the user name is `fedora` or `ec2-user`.
+> * For a RHEL AMI, the user name is `ec2-user` or `root`.
+> * For a SUSE AMI, the user name is `ec2-user` or `root`.
+> * For an Ubuntu AMI, the user name is `ubuntu`.
+> * For an Oracle AMI, the user name is `ec2-user`.
+> * For a Bitnami AMI, the user name is `bitnami`.
 > * Otherwise, check with the AMI provider.
 
 위는 AWS에서 안내하는 AMI별 default username이다.
