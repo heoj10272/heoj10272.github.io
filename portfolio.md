@@ -16,7 +16,7 @@ font-weight:bold">
 </span>
 </center>
 
-<center>MAJOR : COMPUTER EENGINEERING</center>
+<center>MAJOR : COMPUTER ENGINEERING</center>
 
 <center>Seokyeong University</center>
 
