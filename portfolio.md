@@ -41,15 +41,20 @@ font-weight:bold">
 
 * WEB
     + HTML
-    + CSS
     + JSP
     + SPRING
+
+* DATABASE
+    + ORACLE
     + MYSQL
 
+* CLOUD
+    + AWS
+    + GCP
 
 ## Project
 ---
-
+시각장애인을 위한 장애물 탐지, 위치 공유 어플리케이션 개발
 
 ## Work Experiences
 ---
@@ -58,7 +63,7 @@ font-weight:bold">
 
 ## Skills and Certification
 ---
--Language : 
+-Language : C++
 
 
 

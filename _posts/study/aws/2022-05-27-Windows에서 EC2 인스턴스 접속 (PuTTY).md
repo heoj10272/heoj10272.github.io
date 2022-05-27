@@ -11,8 +11,8 @@ image:
 
 Linux는 SSH를 가지고 있지만 Windows는 SSH를 가지고 있지 않기 때문에, SSH의 역할을 해주는 프로그램이 필요하다.
 
-즉, Windows에서 Linux로 원격 접속을 하기 위해서는 별도의 프로그램이 필요하다.
-이번에는 PuTTY를 사용해서 EC2 인스턴스에 접속한다.
+즉, Windows에서 Linux로 원격 접속을 하기 위해서는 별도의 프로그램이 필요하다.<br>
+이번에는 PuTTY를 사용해서 `EC2` 인스턴스에 접속한다.
 
 <!--more-->
 
@@ -23,23 +23,23 @@ Linux는 SSH를 가지고 있지만 Windows는 SSH를 가지고 있지 않기 �
 
 ## ppk 파일 만들기
 
-PuTTY를 실행하기 전에, PuTTYgen을 실행한다.
+PuTTY를 실행하기 전에, PuTTYgen을 실행한다.<br>
 이전에 키 페어를 생성할 때 pem파일이 아닌 pkk파일을 생성했다면 이 과정은 건너뛰어도 된다.
 
 ![1](/assets/img/study_AWS/[AWS]_Windows에서_EC2_인스턴스_접속_(PuTTY)/1.png)
 
-PuTTYgen 기본 초기화면이다.
+PuTTYgen 기본 초기화면이다.<br>
 `Load` 버튼을 눌러 이전 EC2 인스턴스를 생성할 때 만들었던 키 페어 파일(pem)을 가져오자.
 
 ![2](/assets/img/study_AWS/[AWS]_Windows에서_EC2_인스턴스_접속_(PuTTY)/2.png)
 
-`Load`버튼을 눌러 pem 파일이 있는 경로를 들어가면 처음에는 파일이 보이지 않는다.
+`Load`버튼을 눌러 pem 파일이 있는 경로를 들어가면 처음에는 파일이 보이지 않는다.<br>
 오른쪽 하단에서 파일 유형을 [All Files(*.*)]로 바꾸면 보인다.
 
 ![3](/assets/img/study_AWS/[AWS]_Windows에서_EC2_인스턴스_접속_(PuTTY)/3.png)
 
-알림창이 뜨면 성공이다.
-`확인` 버튼을 누르고 `Save private key` 버튼을 누르고 `예` 버튼을 눌러 생성되는 pkk파일을 저장한다.
+알림창이 뜨면 성공이다.<br>
+`확인` 버튼을 누르고 `Save private key` 버튼을 누르고 `예` 버튼을 눌러 생성되는 pkk파일을 저장한다.<br>
 저장 장소는 pem파일과 마찬가지로 안전한 곳에 보관하자.
 
 <hr/>
@@ -55,7 +55,7 @@ PuTTYgen 기본 초기화면이다.
 인스턴스-인스턴스 ID를 클릭하면 요약 정보를 볼 수 있다.
 {:.figcaption}
 
-[Host Name(or IP address)] 항목에는 AWS 인스턴스의 [퍼블릭 IPv4 주소] 또는 [퍼블릭 IPv4 DNS]를 붙여넣기 하면 된다.
+`Host Name(or IP address)` 항목에는 AWS 인스턴스의 `퍼블릭 IPv4 주소` 또는 `퍼블릭 IPv4 DNS`를 붙여넣기 하면 된다.
 
 ![6](/assets/img/study_AWS/[AWS]_Windows에서_EC2_인스턴스_접속_(PuTTY)/6.png)
 
@@ -77,16 +77,16 @@ PuTTYgen 기본 초기화면이다.
 > * For a Bitnami AMI, the user name is `bitnami`.
 > * Otherwise, check with the AMI provider.
 
-위는 AWS에서 안내하는 AMI별 default username이다.
-나는 Amazon Linux를 사용하고 있으므로 ec2-user를 입력한다.
+위는 AWS에서 안내하는 AMI별 default username이다.<br>
+나는 Amazon Linux를 사용하고 있으므로 ec2-user를 입력한다.<br>
 이렇게 username을 등록해 놓으면 일일이 username을 입력해 로그인을 하지 않아도 되므로 편하다.
 
 ![8](/assets/img/study_AWS/[AWS]_Windows에서_EC2_인스턴스_접속_(PuTTY)/8.png)
 
-이제 다시 `Session` Category로 돌아와 원하는 이름으로 `Save`를 눌러 Session을 저장해놓자.
+이제 다시 `Session` Category로 돌아와 원하는 이름으로 `Save`를 눌러 Session을 저장해놓자.<br>
 이러면 다시 PuTTY를 켜도 `Load`를 누르면 설정사항이 불러와진다.
 
-이제 `Open` 버튼을 눌러 접속해보자.
+이제 `Open` 버튼을 눌러 접속해보자.<br>
 경고창이 뜨면 `Accept` 버튼을 누르면 된다.
 
 <hr/>
