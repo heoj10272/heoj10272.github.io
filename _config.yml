@@ -32,10 +32,10 @@ description:           >
 
 # A shorter description for the sidebar.
 tagline:               >
-  Jaeyoung's Tech blog.
+  Work Hard to be Lazy.
 
 # A list of keywords for your blog
-keywords:              ["Development", "Database", "Rust", "Jekyll"]
+keywords:              ["Development", "C++", "Rust", "Jekyll"]
 
 # A (square) logo for your site.
 # If provided, it will be shown at the top of the sidebar.
