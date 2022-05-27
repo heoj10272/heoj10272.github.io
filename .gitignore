@@ -12,9 +12,9 @@ _drafts
 *.rej
 *.swo
 *.swp
-*.zip
 *.vi
 *~
+*Zone.Identifier
 
 # OS or Editor folders
 .DS_Store
@@ -29,6 +29,7 @@ nbproject
 *.sublime-project
 *.sublime-workspace
 .idea
+*.Zone.Identifier
 
 # Komodo
 *.komodoproject
@@ -39,9 +40,13 @@ validation-status.json
 validation-report.json
 
 # Folders to ignore
-_posts_ing
-theorydb.github.io
+.vscode
 node_modules
+.bundle
+.jekyll-cache
 .sass-cache
 .jekyll-metadata
+vendor
 *.gem
+_zip
+/stats.json
