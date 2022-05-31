@@ -22,10 +22,10 @@ $font-family-heading: {{ vars.font_heading | default:site.font_heading | default
 $code-font-family:    {{ vars.font_code    | default:site.font_code    | default:ui_font_code   }};
 $theme-color:         {{ vars.theme_color  | default:site.theme_color  | default:'rgb(8,46,57)' }};
 
-$root-font-size:        {{ vars.root_font_size        | default:25 }}px;
-$root-font-size-medium: {{ vars.root_font_size_medium | default:26 }}px;
-$root-font-size-large:  {{ vars.root_font_size_large  | default:27 }}px;
-$root-font-size-print:  {{ vars.root_font_size_print  | default:9  }}pt;
+$root-font-size:        {{ vars.root_font_size        | default:15 }}px;
+$root-font-size-medium: {{ vars.root_font_size_medium | default:16 }}px;
+$root-font-size-large:  {{ vars.root_font_size_large  | default:17 }}px;
+$root-font-size-print:  {{ vars.root_font_size_print  | default:8  }}pt;
 $root-line-height:      {{ vars.root_line_height      | default:1.75 }};
 
 $font-weight:         {{ vars.font_weight         | default:400 }};
@@ -38,7 +38,7 @@ $content-width-5: {{ vars.content_width_5 | default:54 }}rem;
 
 $content-padding: {{ vars.content_padding | default:1 }}rem;
 
-$sidebar-width: {{ vars.sidebar_width | default:21 }}rem;
+$sidebar-width: {{ vars.sidebar_width | default:40 }}rem;
 
 $break-point-1: {{ vars.break_point_1 | default:42 }}em;
 $break-point-2: {{ vars.break_point_2 | default:54 }}em;
