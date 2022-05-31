@@ -1,5 +1,5 @@
 ---
-layout: project
+layout: plain
 type: tag
 title: AWS
 slug: aws
