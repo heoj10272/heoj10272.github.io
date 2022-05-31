@@ -1,6 +1,6 @@
 ---
-layout: projects
-type: tags
+layout: redirect
+type: tag
 title: AWS
 slug: aws
 category: study
