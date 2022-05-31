@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: about
 type: tag
 title: AWS
 slug: aws
