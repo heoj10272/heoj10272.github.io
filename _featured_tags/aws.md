@@ -1,5 +1,5 @@
 ---
-layout: home
+layout: default
 type: tag
 title: AWS
 slug: aws
