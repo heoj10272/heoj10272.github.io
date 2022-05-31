@@ -1,5 +1,5 @@
 ---
-layout: list
+layout: in-category-tag
 type: tag
 title: AWS
 slug: aws
