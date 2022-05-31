@@ -1,5 +1,5 @@
 ---
-layout: plain
+layout: page
 type: tag
 title: AWS
 slug: aws
