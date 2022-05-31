@@ -1,6 +1,6 @@
 ---
 layout: welcome
-type: tag
+type: redirect
 title: AWS
 slug: aws
 category: study
