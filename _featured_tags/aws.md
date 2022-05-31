@@ -1,5 +1,5 @@
 ---
-layout: default
+layout: compress
 type: tag
 title: AWS
 slug: aws
