@@ -1,5 +1,5 @@
 ---
-layout: redirect
+layout: projects
 type: tags
 title: AWS
 slug: aws
