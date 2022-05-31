@@ -189,16 +189,16 @@ kramdown:
 
 # Set your Google Analytics id to receive `pageview` events.
 # To remove Google Analytics from your page, remove the line below.
-google_analytics:      UA-68290006-3
+#google_analytics:      UA-68290006-3
 
 # Set which comment system to use
 comments:
   # 'disqus' / 'giscus' / 'utterances' are available
-  provider:            giscus
+  provider:            disqus
 
 # Setting a disqus shortname will enable the comment section on
 # pages with `comments: true` in the front matter.
- #disqus:                lazyrengithub
+ disqus:                heoj10272
 
 # You must install utterances github app before use.(https://github.com/apps/utterances)
 # Make sure all variables are set properly. Check below link for detail.
