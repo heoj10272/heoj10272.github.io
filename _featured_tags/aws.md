@@ -1,5 +1,5 @@
 ---
-layout: compress
+layout: category-tag-list
 type: tag
 title: AWS
 slug: aws
