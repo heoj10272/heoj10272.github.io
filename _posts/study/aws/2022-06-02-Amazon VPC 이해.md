@@ -92,3 +92,4 @@ Amazon EC2 인스턴스와 같은 AWS 리소스를 사용자 VPC의 서브넷에
   - [AWS UserGuide using vpc](https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/using-vpc.html)
   - [Developers](https://dev.classmethod.jp/articles/vpc-3/)
   - [Medium](https://medium.com/harrythegreat/aws-%EA%B0%80%EC%9E%A5%EC%89%BD%EA%B2%8C-vpc-%EA%B0%9C%EB%85%90%EC%9E%A1%EA%B8%B0-71eef95a7098)
+  - [Tistory](https://arisu1000.tistory.com/27744)
