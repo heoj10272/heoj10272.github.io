@@ -2,7 +2,7 @@
 layout: post
 title: Amazon VPC 이해
 subtitle: AWS
-date: '2022-06-02 4:00:00 +0900'
+date: '2022-06-02 5:45:00 +0900'
 category: study
 tags: aws
 image:
@@ -84,7 +84,7 @@ Amazon EC2 인스턴스와 같은 AWS 리소스를 사용자 VPC의 서브넷에
 * **Query API**
   + HTTPS 요청을 사용하여 호출하는 하위 수준의 API 작업을 제공
   + Query API 사용이 Amazon VPC에 액세스하는 가장 직접적인 방법이지만, 어플리케이션에서 요청에 서명할 해시 생성 및 오류 처리와 같은 하위 수준의 세부 정보를 처리해야 함
-  
+
 <hr/>
 
 * Ref
