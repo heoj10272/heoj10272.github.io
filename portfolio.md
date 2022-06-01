@@ -34,6 +34,8 @@ font-weight:bold">
 ## Education
 ---
 > Mar.2017 ~ 현재 : 서경대학교 컴퓨터공학과
+> Feb.2022 ~ 현재 : SKU Algoritm Study
+> Jun.2022 ~ 현재 : AWSKRUG AWS Study
 
 
 ## Research Interest
