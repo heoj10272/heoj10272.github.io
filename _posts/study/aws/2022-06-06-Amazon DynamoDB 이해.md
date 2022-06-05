@@ -95,10 +95,10 @@ NoSQL 데이터베이스 **DynamoDB**를 이해해보자.
   Attribute가 지원하는 값 데이터 형식은 **스칼라 데이터 형식(Scalar Data types)**, **다중 값 형식(Multi-valued types)**가 있다.
   공통 사항으로 **NULL이나 빈 문자열은 저장이 불가하다**.
 
-  * 스칼라 데이터 형식(Scalar Data types)
+  * **스칼라 데이터 형식(Scalar Data types)**
     - 숫자(Number), 문자열(String), 바이너리(Binary)를 사용
 
-  * 다중 값 형식(Multi-valued types)
+  * **다중 값 형식(Multi-valued types)**
     - **스칼라 데이터 형식의 배열 형태**
     - 숫자 세트(Number Set), 문자열 세트(String Set), 바이너리 세트(Binary Set)를 사용
     - 다중 값 형식은 **들어가는 값이 중복될 수 없으며**, **값이 하나라도 들어가 있어야 함**
@@ -116,13 +116,13 @@ NoSQL 데이터베이스 **DynamoDB**를 이해해보자.
 
   기본 키 형식은 **Hash 형식 기본 키**, **Hash와 Range 형식 기본 키**가 있다.
 
-  * Hash 형식 기본 키
+  * **Hash 형식 기본 키**
     - **Attribute 1개를 기본 키로 사용**
     - 기본 키의 값은 **스칼라 데이터 형식만 가능**
     - **일치(Equal) 방식의 검색만 지원**
     - 고유한 값을 가져야 함
   
-  * Hash와 Range 형식 기본 키
+  * **Hash와 Range 형식 기본 키**
     - **Attribute 2개를 기본 키로 사용(복합 키)**
     - **첫 Attribute는 해시 형식 기본 키로 사용**, **두 번째 Attribute는 범위 기본 키로 사용**
     - 범위 기본 키는 **일치(Equal), 부등호, 포함, ~로 시작하는 범위를 지정할 수 있는 검색을 지원**
@@ -136,13 +136,13 @@ NoSQL 데이터베이스 **DynamoDB**를 이해해보자.
 
   보조 인덱스는 **로컬 보조 인덱스(Local Secondary Index)**, **글로벌 보조 인덱스(Global Secondary Index)**로 나뉜다.
 
-  * 로컬 보조 인덱스(Local Secondary Index)
+  * **로컬 보조 인덱스(Local Secondary Index)**
     - **해시 키** : **해시 기본 키(테이블 인덱스와 같음)**
     - **범위 키** : **목적에 따라 다르게 설정**
     - 로컬 보조 인덱스는 **테이블당 5개까지 생성 가능**
     - 테이블에서 **해시 기본 키와 범위 기본 키를 사용하고 있을 때만 생성 가능**
 
-  * 글로벌 보조 인덱스(Global Secondary Index)
+  * **글로벌 보조 인덱스(Global Secondary Index)**
     - **해시 키** : **테이블 인덱스와 다르게 설정**
     - **범위 키** : **테이블 인덱스와 다르게 설정**, **생략 가능**
     - 글로벌 보조 인덱스는 **테이블당 5개까지 생성 가능**
@@ -153,11 +153,11 @@ NoSQL 데이터베이스 **DynamoDB**를 이해해보자.
 
   DynamoDB는 데이터를 읽을 때 **Eventually Consistent Read**, **Strongly Consistent Read**를 사용할 수 있다.
 
-  * Eventually Consistent Read
+  * **Eventually Consistent Read**
     - 읽기 처리량(Read Throughput)을 최대화하지만 읽은 데이터가 최근 완료된 쓰기 결과를 반영하지 못했을 수 있음
     - 쓰기가 데이터의 모든 복사본에 반영되는 것은 1초내에 이루어지므로, 최신 데이터를 얻으려면 짧은 시간 내에 읽기를 반복해야 함
 
-  * Strongly Consistent Read
+  * **Strongly Consistent Read**
     - 최근 완료된 쓰기 결과가 모두 반영된 데이터를 가져옴(Eventually Consistent Read의 쓰기 결과가 반영되지 않은 경우가 일어나지 않음)
 
 <hr/>
@@ -170,11 +170,11 @@ NoSQL 데이터베이스 **DynamoDB**를 이해해보자.
   
   **필요한 읽기 용량 유닛(Read Capacity Units)**과 **필요한 쓰기 용량 유닛(Write Capacity Units)**으로 **필요한 Read/Write Capacity Units을 설정**한다.
 
-  * 필요한 읽기 용량 유닛(Read Capacity Units)
+  * **필요한 읽기 용량 유닛(Read Capacity Units)**
     - 초당 읽은 아이템 수 X KB 단위 아이템 크기(근사치 반올림) 
     - Eventually Consistent Read를 사용하는 경우 초당 읽은 아이템 용량은 **두 배**가 됨
 
-  * 필요한 쓰기 용량 유닛(Write Capacity Units)
+  * **필요한 쓰기 용량 유닛(Write Capacity Units)**
     - 초당 쓴 아이템 수 X KB 단위 아이템 크기(근사치 반올림)
 
   > 예를 들어,<br>
