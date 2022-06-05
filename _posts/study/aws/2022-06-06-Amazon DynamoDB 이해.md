@@ -61,7 +61,7 @@ NoSQL 데이터베이스 **DynamoDB**를 이해해보자.
 
   * 대규모 RDBMS 기반 데이터베이스는 서버 한 대에 대용량의 데이터베이스를 저장하기가 어려우므로 샤딩(Shading)을 통해 데이터베이스를 분산 저장시키는데, DynamoDB는 자동으로 처리해주므로 비용과 시간을 아낄 수 있다.
 
-  * 읽기와 쓰기가 매우 빈번하고 처리 속도가 빨라야하며(마이크로초 단위), 작은 용량의 데이터가 많을 때 적합하다.
+  * 읽기와 쓰기가 매우 빈번하고 처리 속도가 빨라야하며(밀리초 단위, **DAX**의 경우 마이크로초 단위), 작은 용량의 데이터가 많을 때 적합하다.
     - 예 : 모바일 게임, SNS, 채팅 앱 등
 
   * 일반적인 RDBMS(Oracle, MySQL 등)가 아닌 Amazon에서 개발한 **NoSQL 데이터베이스**로서 관계형 스키마를 가지지 않는다.<br>
@@ -188,7 +188,14 @@ NoSQL 데이터베이스 **DynamoDB**를 이해해보자.
   **BatchGetItem(아이템을 군집하여 읽는 메소드)**을 호출하여 아이템을 **10개**씩 **50번** 호출하는 것은 같다.
 
 <hr/>
-  
+
+## 8. DAX(DynamoDB Accelerator)
+
+  DynamoDB를 위한 가용성이 뛰어난 **완전관리형인 메모리 cache**로서, 초당 요청 수가 몇 백만 개인 경우에도 몇 밀리초에서 몇 **마이크로초**까지 **최대 10배의 성능을 제공**한다.
+
+<hr/>
+
 * Ref
   - [AWS Amazon DynamoDB Userguide](https://docs.aws.amazon.com/ko_kr/amazondynamodb/latest/developerguide/Introduction.html)
+  - [AWS Amazon DAX Userguide](https://docs.aws.amazon.com/ko_kr/amazondynamodb/latest/developerguide/DAX.html)
   - [Tistory](https://interconnection.tistory.com/60)
