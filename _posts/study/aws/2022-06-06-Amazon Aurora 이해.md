@@ -2,7 +2,7 @@
 layout: post
 title: Amazon Aurora 이해
 subtitle: AWS
-date: '2022-06-06 8:30:00 +0900'
+date: '2022-06-06 8:00:00 +0900'
 category: study
 tags: aws
 image:
