@@ -6,7 +6,7 @@ date: '2022-06-06 8:30:00 +0900'
 category: study
 tags: aws
 image:
-  path: /assets/img/study_AWS/aws_logo.png
+  path: /assets/img/study_AWS/Amazon Aurora 이해/logo.png
 ---
 
 AWS에서 제공하는 **Amazon Aurora**를 이해해보자.

@@ -6,7 +6,7 @@ date: '2022-06-06 6:30:00 +0900'
 category: study
 tags: aws
 image:
-  path: /assets/img/study_AWS/aws_logo.png
+  path: /assets/img/study_AWS/Amazon DynamoDB 이해/logo.png
 ---
 
 NoSQL 데이터베이스 **Amazon DynamoDB**를 이해해보자.

@@ -1,12 +1,12 @@
 ---
 layout: post
-title: 인스턴스 구입 옵션(요금제)
+title: Instance Purchasing 이해
 subtitle: AWS
 date: '2022-06-04 6:30:00 +0900'
 category: study
 tags: aws
 image:
-  path: /assets/img/study_AWS/aws_logo.png
+  path: /assets/img/study_AWS/Instance Purchasing 이해/logo.png
 ---
 
 AWS 인스턴스 요금제를 알아보자.
