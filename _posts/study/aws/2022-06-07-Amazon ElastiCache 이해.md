@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Amazon Aurora ElastiCache 이해
+title: Amazon ElastiCache 이해
 subtitle: AWS
 date: '2022-06-07 6:30:00 +0900'
 category: study
@@ -31,6 +31,7 @@ AWS에서 제공하는 **Amazon ElastiCache**를 이해해보자.
 
 하지만 **응답 시간은 마이크로초 대기 시간을 일관되게 유지할 수 없다**.
 
+<hr/>
 
 ## 2. Amazon ElastiCache 엔진
 
@@ -53,3 +54,10 @@ AWS에서 제공하는 **Amazon ElastiCache**를 이해해보자.
     + 캐시 노드의 메모리 용량을 넘어서는 데이터를 저장하기 위해서는 **애플리케이션 레벨에서의 샤딩 구현 필요**
     + **한 리전 안의 여러 가용 영역에 생성 가능**
     + Redis용 ElastiCache는 확장 가능하고 안전한 완전관리형 서비스로서, 웹, 모바일 앱, 게임, 광고 기술 및 IoT와 같은 고성능 사용 사례에 지원하는 데 매우 적합한 서비스
+
+
+<hr/>
+
+* Ref
+  - [AWS Amazon ElastiCache Userguide](https://docs.aws.amazon.com/ko_kr/AmazonElastiCache/latest/mem-ug/WhatIs.html)
+  - [blog](https://sarc.io/index.php/aws/656-aws-amazon-elasticache)
