@@ -113,6 +113,8 @@ AWS에서 제공하는 **Amazon Aurora**를 이해해보자.
 
 ## 6. Aurora 백업
 
+  ![Logical_Replication](/assets/img/study_AWS/Amazon Aurora 이해/Logical_Replication.png)
+
   **읽기 전용 인스턴스(Read Replica)**를 지원한다.<br>
   **MySQL DB의 Binary log 복제(Binlog)**이다.<br>
   **다른 리전에만 생성이 가능**하다(메인 리전에서는 백업할 필요가 없음).
