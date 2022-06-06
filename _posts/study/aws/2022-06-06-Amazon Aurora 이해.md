@@ -163,7 +163,7 @@ AWS에서 제공하는 **Amazon Aurora**를 이해해보자.
 
   앞 뒤로 시점을 이동할 수 있기 때문에 원하는 지점을 빠르게 찾을 수 있다.
 
-  ### Backtrack Window
+### Backtrack Window
 
   BackTrack 윈도우에는 **Target Backtrack Window**와 **Actual Backtrack Window**가 있다.
 
