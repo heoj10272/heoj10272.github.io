@@ -34,7 +34,7 @@ AWS에서 제공하는 **Amazon Aurora**를 이해해보자.
 
   Aurora의 아키텍쳐는 **Single-Master**와 **Multi-Master**로 나뉜다.
 
-  ### I. Single-Master
+### I. Single-Master
 
   ![Single_Master](/assets/img/study_AWS/Amazon Aurora 이해/Single_Master.png)
 
@@ -51,7 +51,7 @@ AWS에서 제공하는 **Amazon Aurora**를 이해해보자.
   이렇게 읽기/쓰기와 저장을 분리했기 때문에 **인스턴스 생성과 전환을 매우 빠르게 할 수 있다**.<br>
   이 뿐만 아니라 고가용성을 확보하기 위해 스토리지 노드끼리 백업이나 싱크를 맞추는 등 Replication 작업 없이도 **설계단에서  스토리지를 공유하기 때문에 이미 고가용성을 확보한 상태이다**.
 
-  ### II. Multi-Master
+### II. Multi-Master
 
   ![Multi_Master](/assets/img/study_AWS/Amazon Aurora 이해/Multi_Master.png)
 
