@@ -2,7 +2,7 @@
 layout: post
 title: Amazon Aurora 이해
 subtitle: AWS
-date: '2022-06-06 8:00:00 +0900'
+date: '2022-06-07 4:00:00 +0900'
 category: study
 tags: aws
 image:
@@ -38,7 +38,7 @@ AWS에서 제공하는 **Amazon Aurora**를 이해해보자.
 
   ![Single_Master](/assets/img/study_AWS/Amazon Aurora 이해/Single_Master.png)
 
-  **Single-Master**는 여러 가용 영역에 걸쳐서 **Storage Cluster(=Cluster Volume, 저장 공간)**이 분리되어있으며, 그 위에 **Master 인스턴스(쓰기, 읽기를 담당)**와 **Replica 인스턴스(읽기만 가능)**이 올려져 있는 형태이다.
+  **Single-Master**는 여러 가용 영역에 걸쳐서 **Storage Cluster(=Cluster Volume, 저장 공간)**이 분리되어있으며, 그 위에 **Master 인스턴스(=Writer 인스턴스, 쓰기, 읽기를 담당)**와 **Replica 인스턴스(= Reader 인스턴스, 읽기만 가능)**이 올려져 있는 형태이다.
 
   **쓰기**의 경우 **Master 인스턴스**만이 사용자로부터 요청을 받아 **Storage Cluster**에 데이터를 저장할 수 있다.<br>
   **읽기**의 경우 **Master 인스턴스**와 **Replica 인스턴스**들이 **Storage CLuster**로부터 값을 받아와 사용자에게 전달한다.
@@ -57,8 +57,8 @@ AWS에서 제공하는 **Amazon Aurora**를 이해해보자.
 
   **Multi-Master**는 Single Master와 다르게 읽기/쓰기를 담당하는 **Master 인스턴스가 여러개이다**.<br>
   이러한 Master 인스턴스는 **최대 4개**까지 생성할 수 있다.<br>
-  이 경우 **고가용성**, **부하 분산**, **샤딩(Sharding)**에서의 유리함이 있다.
-
+  각 인스턴스는 서로의 정지/재부팅/삭제 등에 영향을 받지 않으며 독립적이다.
+  이 경우 **지속적인 가용성**, **부하 분산**, **샤딩(Sharding)**, **멀티테넌트(Multitenant)**에서의 유리함이 있다.
 
   대부분의 경우 **Single-Master**를 사용한다.<br>
   왜냐하면 Multi-Master도 나름의 장점이 있지만, Multi-Master를 사용할 경우 **Aurora의 몇 가지 기능을 사용하지 못하게 되기 때문이다**.
@@ -134,8 +134,6 @@ AWS에서 제공하는 **Amazon Aurora**를 이해해보자.
 
   **Copy-On-Write 프로토콜**을 사용한다.
 
-<hr/>
-
 ### Copy-On-Write 프로토콜
 
   Aurora에서는 모든 데이터를 **page**단위로 저장한다.<br>
@@ -153,7 +151,7 @@ AWS에서 제공하는 **Amazon Aurora**를 이해해보자.
 
 <hr/>
 
-## 8. Backtrack
+## 8. 역추적(Backtrack)
 
   데이터베이스 클로닝처럼 새로운 DB를 만드는 것이 아닌, **기존의 DB를 특정 시점으로 되돌리는 것**이다.<br>
   따라서 **DB 관리의 실수를 쉽게 만회할 수 있다**(예 : WHERE 없이 사용한 DELETE).
@@ -161,7 +159,12 @@ AWS에서 제공하는 **Amazon Aurora**를 이해해보자.
   새로운 DB를 생성하는 것보다 훨씬 빠르다.<br>
   변경된 부분만 반영하면 되기 때문이다.
 
-  앞 뒤로 시점을 이동할 수 있기 때문에 원하는 지점을 빠르게 찾을 수 있다.
+  **앞 뒤로 시점을 이동할 수 있기 때문에** 원하는 지점을 빠르게 찾을 수 있다.
+
+  **MySQL** 환경에서만 가능하다.<br>
+  또한 Aurora 생성시 **Backtrack을 설정한 DB만** Backtrack이 가능하다.
+  처음에 설정하지 못했을 경우, **스냅샷을 복구**하거나 **Clone**을 통해 **새로운 DB를 만들어 기능을 활성화** 할 수 있다.
+  **Multi-Master** 상태에서는 **Backtrack이 불가능**하다.
 
 ### Backtrack Window
 
@@ -181,9 +184,10 @@ AWS에서 제공하는 **Amazon Aurora**를 이해해보자.
   이 때 AWS에서 알림이 온다.<br>
   즉 **DB의 변화가 너무 많아 로그 용량이 너무 커질 경우, 내가 설정한 Target Backtrack Window 설정값이 보장하는 시간을 만족시키지 못하게 되므로 알림이 오게 된다**.
 
-  **MySQL** 환경에서만 가능하다.<br>
-  또한 Aurora 생성시 **Backtrack을 설정한 DB만** Backtrack이 가능하다.
-  처음에 설정하지 못했을 경우, **스냅샷을 복구**하거나 **Clone**을 통해 **새로운 DB를 만들어 기능을 활성화** 할 수 있다.
-  **Multi-Master** 상태에서는 **Backtrack이 불가능**하다.
 
+<hr/>
 
+* Ref
+  - [AWS Amazon Aurora User Guide](https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/AuroraUserGuide/CHAP_AuroraOverview.html)
+  - [AWS Amazon Aurora DB Cluster User Guide](https://docs.aws.amazon.com/ko_kr/AmazonRDS/latest/AuroraUserGuide/Aurora.Overview.html)
+  - [Youtube](https://youtu.be/RImUPhD8X-o)
