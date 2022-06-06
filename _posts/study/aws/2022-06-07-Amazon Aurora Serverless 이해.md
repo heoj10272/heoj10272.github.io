@@ -2,7 +2,7 @@
 layout: post
 title: Amazon Aurora Serverless 이해
 subtitle: AWS
-date: '2022-06-07 5:30:00 +0900'
+date: '2022-06-07 5:00:00 +0900'
 category: study
 tags: aws
 image:
@@ -55,7 +55,7 @@ T2.micro/T2.midium 등의 **인스턴스 타입도 선택할 필요가 없다**.
   + **1ACU** = 2GB RAM, 그에 상응하는 CPU, 네트워크
   + 사용자가 **최대/최소 ACU 설정 가능**
   + AWS의 **Warm Pool**에서 인스턴스를 준비하고 스케일링에 따라 인스턴스를 할당/회수
-  + **최소 0ACU까지 스케일 다운 가능(기존 Amazon Aurora에서는 불가능)**
+  + **최소 0ACU까지 스케일 다운 가능(기존 Amazon Aurora에서는 불가능, 선택사항기능)**
     - **스토리지 비용만 지불**한다는 뜻
     - 단 **0ACU**에서 **1이상의 ACU**로 전환하는데에는 **시간이 소요됨**(25초~40초)
     - **디폴트로 5분**간 사용이 없을시 **자동으로 0ACU 전환**, **최대 24시간**까지 확장 가능
