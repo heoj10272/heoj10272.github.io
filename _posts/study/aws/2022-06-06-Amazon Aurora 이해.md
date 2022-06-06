@@ -132,6 +132,8 @@ AWS에서 제공하는 **Amazon Aurora**를 이해해보자.
 
   **Copy-On-Write 프로토콜**을 사용한다.
 
+<hr/>
+
 ### Copy-On-Write 프로토콜
 
   Aurora에서는 모든 데이터를 **page**단위로 저장한다.<br>
@@ -146,6 +148,8 @@ AWS에서 제공하는 **Amazon Aurora**를 이해해보자.
   **Copy-On-Write 프로토콜**의 장점은 클로닝 즉시 새로 데이터들을 복제해서 만드는 것이 아니라, 변화가 생겼을 때만 새로 만들기 때문에 **스냅샷을 통해 데이터베이스를 새로 만드는 것 보다 훨씬 빠르다**.
 
   또한 클러스터가 삭제되더라도(원본 데이터베이스와 페이지가 삭제되더라도) 내부적으로 클론 클러스터가 제대로 작동할 수 있도록 한다.
+
+<hr/>
 
 ## 8. Backtrack
 
@@ -169,12 +173,15 @@ AWS에서 제공하는 **Amazon Aurora**를 이해해보자.
     + **실제로 시간을 어느만큼 되돌릴지 정함**
     + **Target Backtrack Window 시점보다 이전으로 되돌릴 수는 없음**
 
-  Backtrack을 활성화하면 시간당 DB의 변화를 저장한다.<br>
-  저장된 용량만큼 비용을 지불해야 하고, DB의 변화가 많을수록 많은 로그가 쌓이게 되므로 비용이 올라간다.<br>
-  DB 로그가 너무 많아서 Target Backtrack Window(설정값)만큼의 시간을 다 저장하지 못 할 경우(요금 제한 등의 이유로 인해), Target Backtrack Window(설정값)보다 Actual Backtrack Window 가능 시간이 적어지게 된다.<br>
+  **Backtrack**을 활성화하면 **시간당 DB의 변화를 저장**한다.<br>
+  **저장된 용량만큼 비용을 지불**해야 하고, **DB의 변화가 많을수록 많은 로그가 쌓이게 되므로 비용이 올라간다**.<br>
+  DB 로그가 너무 많아서 **Target Backtrack Window(설정값)만큼의 시간을 다 저장하지 못 할 경우(요금 제한 등의 이유로 인해)**, Target Backtrack Window(설정값)보다 **Actual Backtrack Window 가능 시간이 적어지게 된다**.<br>
   이 때 AWS에서 알림이 온다.<br>
-  즉 DB의 변화가 너무 많아 로그 용량이 너무 커질 경우, 내가 설정한 Target Backtrack Window 설정값이 보장하는 시간을 만족시키지 못하게 되므로 알림이 오게 된다.
+  즉 **DB의 변화가 너무 많아 로그 용량이 너무 커질 경우, 내가 설정한 Target Backtrack Window 설정값이 보장하는 시간을 만족시키지 못하게 되므로 알림이 오게 된다**.
 
-  
+  **MySQL** 환경에서만 가능하다.<br>
+  또한 Aurora 생성시 **Backtrack을 설정한 DB만** Backtrack이 가능하다.
+  처음에 설정하지 못했을 경우, **스냅샷을 복구**하거나 **Clone**을 통해 **새로운 DB를 만들어 기능을 활성화** 할 수 있다.
+  **Multi-Master** 상태에서는 **Backtrack이 불가능**하다.
 
 
