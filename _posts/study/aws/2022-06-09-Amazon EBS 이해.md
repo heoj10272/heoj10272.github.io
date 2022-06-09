@@ -41,11 +41,11 @@ AWS의 **Amazon EBS**를 이해해보자.
 
 3. EBS는 인스턴스와 네트워크로 연결되어있음
 
-![EBS_connect1](/assets/img/study_AWS/Amazon EBS 이해/EBS_connect1.png){: width="50%" height="50%"}{:.centered}
+![EBS_connect1](/assets/img/study_AWS/Amazon EBS 이해/EBS_connect1.png){: width="60%" height="60%"}{:.centered}
 
 EBS는 EC2 인스턴스와 네트워크로 연결되어 있기 때문에, 네트워크만 바꿔주면 다른 EC2와 연결할 수 있다.
 
-![EBS_connect2](/assets/img/study_AWS/Amazon EBS 이해/EBS_connect2.png){:.centered}
+![EBS_connect2](/assets/img/study_AWS/Amazon EBS 이해/EBS_connect2.png){: width="60%" height="60%"}{:.centered}
 
 또한 위 그림처럼 하나의 EC2 인스턴스에 여러 EBS를 연결하는 것도 가능하다.
 
