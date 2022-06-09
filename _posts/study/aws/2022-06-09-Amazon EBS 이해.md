@@ -41,14 +41,6 @@ AWS의 **Amazon EBS**를 이해해보자.
 
 3. EBS는 인스턴스와 네트워크로 연결되어있음
 
-![EBS_connect1](/assets/img/study_AWS/Amazon EBS 이해/EBS_connect1.png){: width="60%" height="60%"}{:.centered}
-
-EBS는 EC2 인스턴스와 네트워크로 연결되어 있기 때문에, 네트워크만 바꿔주면 다른 EC2와 연결할 수 있다.
-
-![EBS_connect2](/assets/img/study_AWS/Amazon EBS 이해/EBS_connect2.png){: width="60%" height="60%"}{:.centered}
-
-또한 위 그림처럼 하나의 EC2 인스턴스에 여러 EBS를 연결하는 것도 가능하다.
-
 4. 인스턴스 정지 후 재기동 가능(인스턴스 정지중엔 EBS 스토리지 요금만 부과)
 
 5. 하나의 EBS를 여러 EC2에 장착 가능(EBS Multi Attach)
@@ -65,6 +57,14 @@ EBS는 EC2 인스턴스와 네트워크로 연결되어 있기 때문에, 네트
     + 쓰루풋 최적화 (Throughput Optimized HDD or st1)
     + 콜드 HDD (SC1)
     + 마그네틱 (Standard)
+
+![EBS_connect1](/assets/img/study_AWS/Amazon EBS 이해/EBS_connect1.png){: width="60%" height="60%"}{:.centered}
+
+EBS는 EC2 인스턴스와 네트워크로 연결되어 있기 때문에, 네트워크만 바꿔주면 다른 EC2와 연결할 수 있다.
+
+![EBS_connect2](/assets/img/study_AWS/Amazon EBS 이해/EBS_connect2.png){: width="50%" height="50%"}{:.centered}
+
+또한 위 그림처럼 하나의 EC2 인스턴스에 여러 EBS를 연결하는 것도 가능하다.
 
 <br>
 <hr/>
