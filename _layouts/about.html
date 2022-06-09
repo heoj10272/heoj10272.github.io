@@ -16,7 +16,8 @@
 
 layout: base
 ---
-<canvas id="canvas" width="300" height="300"></canvas>
+
+<!-- <canvas id="canvas" width="300" height="300"></canvas>
 
 <script type="importmap">
 {
@@ -40,11 +41,11 @@ layout: base
     camera.position.set(0,0,5);
 
     scene.background = new THREE.Color('white');
-    let light = new THREE.DirectionalLight(0xffffff, 10);
+    let light = new THREE.DirectionalLight(0xffff00, 10);
     scene.add(light);
 
     let loader = new GLTFLoader();
-    loader.load('shiba/scene.gltf', function(gltf){
+    loader.load('/assets/img/shiba/scene.gltf', function(gltf){
         scene.add(gltf.scene);
         renderer.render(scene, camera);
         function animate(){
@@ -53,7 +54,8 @@ layout: base
         }
         animate();
     });
-</script>
+</script> -->
+
 <article class="page mb6" role="article">
   {% if content contains "<!--author-->" %}
     {% assign plugins = site.plugins | default:site.gems %}
@@ -72,7 +74,6 @@ layout: base
   {% endif %}
 
   <header>
-    
     <h1 class="page-title">{{ page.title }}</h1>
     {% include components/message.html text=page.description hide=page.hide_description %}
   </header>
