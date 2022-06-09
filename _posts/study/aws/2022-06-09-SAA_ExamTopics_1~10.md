@@ -1,15 +1,15 @@
 ---
 layout: post
-title: IAM 이해
+title: SAA Examtopics 1~10
 subtitle: AWS
 date: '2022-06-09 15:00:00 +0900'
 category: study
 tags: aws
 image:
-  path: /assets/img/study_AWS/IAM 이해/logo.png
+  path: /assets/img/study_AWS/SAA_ExamTopics_1~10/logo.png
 ---
 
-AWS의 **IAM**을 이해해보자.
+SAA Examtopics 1~10번 문제를 풀어보자.
 
 <!--more-->
 
@@ -20,4 +20,3 @@ AWS의 **IAM**을 이해해보자.
 <hr/>
 <hr/>
 
-## 1. IAM 개요
