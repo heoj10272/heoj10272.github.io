@@ -2,7 +2,7 @@
 layout: post
 title: SAA Examtopics 1~10
 subtitle: AWS
-date: '2022-06-09 15:00:00 +0900'
+date: '2022-06-10 3:00:00 +0900'
 category: study
 tags: aws
 image:
