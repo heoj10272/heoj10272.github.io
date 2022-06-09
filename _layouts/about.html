@@ -40,8 +40,8 @@ layout: base
     camera.position.set(0,0,5);
 
     scene.background = new THREE.Color('white');
-    //let light = new THREE.DirectionalLight(0xffff00, 10);
-    //scene.add(light);
+    let light = new THREE.DirectionalLight(0xffffff, 10);
+    scene.add(light);
 
     let loader = new GLTFLoader();
     loader.load('/assets/img/shiba/scene.gltf', function(gltf){
