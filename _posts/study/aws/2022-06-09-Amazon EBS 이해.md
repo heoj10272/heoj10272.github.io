@@ -35,36 +35,36 @@ AWS의 **Amazon EBS**를 이해해보자.
 
 ## 2. Amazon EBS 특징
 
-1. 가상 하드 드라이브
+1. **가상 하드 드라이브**
 
-2. EC2 인스턴스가 종료되어도 계속 유지 가능
+2. **EC2 인스턴스가 종료되어도 계속 유지 가능**
 
-3. EBS는 인스턴스와 네트워크로 연결되어있음
+3. **EBS는 인스턴스와 네트워크로 연결되어있음**
 
-4. 인스턴스 정지 후 재기동 가능(인스턴스 정지중엔 EBS 스토리지 요금만 부과)
+4. **인스턴스 정지 후 재기동 가능(인스턴스 정지중엔 EBS 스토리지 요금만 부과)**
 
-5. 하나의 EBS를 여러 EC2에 장착 가능(EBS Multi Attach)
+5. **하나의 EBS를 여러 EC2에 장착 가능(EBS Multi Attach)**
 
-6. 루트 볼륨으로 사용시 EC2가 종료되면 같이 삭제됨
+6. **루트 볼륨으로 사용시 EC2가 종료되면 같이 삭제됨**
     + 단 설정을 통해 EBS만 따로 존속 가능
 
-7. EC2와 같은 가용영역에 존재함
-    + EC2와 EBS가 서로 다른 가용영역에 있을 경우 연결 불가능
+7. **EC2와 같은 가용영역에 존재함**
+    + EC2와 EBS가 **서로 다른 가용영역에 있을 경우 연결 불가능**
 
-8. 총 5가지 타입을 제공
-    + 범용 (General Purpose of GP3) : SSD
-    + 프로비저닝된 IOPS(Provisioned IOPS or io2) : SSD
-    + 쓰루풋 최적화 (Throughput Optimized HDD or st1)
-    + 콜드 HDD (SC1)
-    + 마그네틱 (Standard)
+8. **총 5가지 타입을 제공**
+    + **범용 (General Purpose of GP3) : SSD**
+    + **프로비저닝된 IOPS(Provisioned IOPS or io2) : SSD**
+    + **쓰루풋 최적화 (Throughput Optimized HDD or st1)**
+    + **콜드 HDD (SC1)**
+    + **마그네틱 (Standard)**
 
 ![EBS_connect1](/assets/img/study_AWS/Amazon EBS 이해/EBS_connect1.png){: width="60%" height="60%"}{:.centered}
 
-EBS는 EC2 인스턴스와 네트워크로 연결되어 있기 때문에, 네트워크만 바꿔주면 다른 EC2와 연결할 수 있다.
+**EBS는 EC2 인스턴스와 네트워크로 연결되어 있기 때문에**, **네트워크만 바꿔주면 다른 EC2와 연결할 수 있다**.
 
 ![EBS_connect2](/assets/img/study_AWS/Amazon EBS 이해/EBS_connect2.png){: width="50%" height="50%"}{:.centered}
 
-또한 위 그림처럼 하나의 EC2 인스턴스에 여러 EBS를 연결하는 것도 가능하다.
+또한 위 그림처럼 **하나의 EC2 인스턴스에 여러 EBS를 연결하는 것도 가능하다**.
 
 <br>
 <hr/>
