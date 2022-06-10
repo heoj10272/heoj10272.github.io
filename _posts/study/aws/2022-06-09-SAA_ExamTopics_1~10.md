@@ -2,7 +2,7 @@
 layout: post
 title: SAA Examtopics 1~10
 subtitle: AWS
-date: '2022-06-10 3:00:00 +0900'
+date: '2022-06-10 19:00:00 +0900'
 category: study
 tags: aws
 image:
@@ -266,7 +266,7 @@ Answer : A
 회사에서 데이터 저장을 위해 Amazon DynamoDB 테이블을 사용할 계획입니다. 
 회사는 비용 최적화에 대해 우려하고 있습니다. 이 테이블은 대부분의 아침 저녁에 사용되지 않습니다. 읽기 및 쓰기 트래픽은 종종 예측할 수 없습니다. 
 트래픽 스파이크가 발생하면 매우 빠르게 발생합니다.
- 
+
 솔루션 아키텍트는 무엇을 추천해야 합니까?
 
 A. Create a DynamoDB table in on-demand capacity mode.
