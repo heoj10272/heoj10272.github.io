@@ -428,9 +428,23 @@ D. Configure the DB instance in one Availability Zone, and configure AWS Databas
 <hr/>
 <br>
 
-Answer : A
+Answer : A or D(불확실)
 
 해설 : 
+
+Discussion에서 대다수가 A를 답으로 지목하며 Multi-AZ를 사용하면 RPO를 1초미만을 보장한다고 하는데, 이를 뒷받침하는 어떠한 공식 문서도 찾을 수 없었다.
+
+반면 D가 정답이라고 하는 사람은 Aurora라면 1초 미만의 RPO를 보장하지만 RDS는 그럴 수 없다고 말했다.
+
+아래는 공식 문서에서의 DMS에 대한 설명이다.
+
+    AWS DMS는 자동 페일오버를 제공합니다.
+    어떤 이유로든 주 복제 서버에 장애가 발생할 경우 백업 복제 서버가 서비스를 중단하지 않고 대신 사용할 수 있습니다.
+
++ 추가.<br>
+[링크](https://aws.amazon.com/ko/blogs/database/managed-disaster-recovery-with-amazon-rds-for-sql-server-using-cross-region-automated-backups/)를 보면 RPO와 RTO 테이블이 나와있다. <br>
+다만 SQL Server 환경이다. 만약 RDS Postgre와 SQL Server의 차이가 없다면 답은 A가 확정일 것이다.
+
 
 1차 시도 : A 맞음
 
