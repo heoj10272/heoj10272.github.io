@@ -4,7 +4,7 @@ title: SAA Examtopics 1~10
 subtitle: AWS
 date: '2022-06-10 19:00:00 +0900'
 category: study
-tags: aws, examtopics
+tags: aws examtopics saa-c02
 image:
   path: /assets/img/study_AWS/SAA_ExamTopics_1~10/logo.png
 ---
@@ -344,7 +344,7 @@ Answer : C
 ## Prob. 8
 
 7개의 Amazon EC2 인스턴스를 사용하여 기업은 AWS에서 웹 애플리케이션을 실행합니다. 
-조직은 DNS 쿼리가 모든 정상 EC2 인스턴스의 IP 주소를 제공해야 합니다.
+조직은 DNS 쿼리가 모든 정상 EC2 인스턴스의 IP 주소를 제공하기를 원합니다.
 
 이 규정을 준수하려면 어떤 정책을 사용해야 합니까?
 
@@ -360,47 +360,79 @@ D. Geolocation routing policy
 <hr/>
 <br>
 
-Answer : 
+Answer : C
 
 해설 : 
 
-1차 시도 : 
+Multi-value routing policy를 사용하여 DNS 응답을 여러 리소스에 분산할 수 있다.<br>
+에를 들어 라우팅 레코드를 Route53 상태 점검과 연결하려면 Multi-value routing policy를 사용해야 한다.
+
+즉, DNS를 분산 시키려면 Multi-value 를 사용해야 하며, A. Single은 health check를 할 수 없지만 Multi-value는 가능하다.
+
+1차 시도 : A 틀림
 
 <br>
 <hr/>
 <hr/>
 
-## Prob. 
+## Prob. 9
 
-문제
+매일 기업은 수백만 명의 소비자로부터 약 1'에 달하는 데이터를 수집합니다. 
+회사는 고객에게 지난 12개월 동안의 사용 기록을 제공합니다. 
+규제 및 감사 표준을 충족하려면 모든 사용 데이터를 최소 5년 동안 보관해야 합니다.
+
+가장 저렴한 스토리지 옵션은 무엇입니까?
+
+A. 데이터를 Amazon S3 Standard에 보관합니다. 1년 후 데이터를 S3 Glacier Deep Archive로 전환하는 라이프사이클 규칙을 설정합니다. 5년 후 데이터를 삭제하도록 수명 주기 규칙을 설정합니다.
+
+B. 데이터를 Amazon S3 OneZone-Infrequent Access(S3 OneZone-IA)에 저장합니다. 1년 후 데이터를 S3 Glacier로 전환하는 라이프사이클 규칙을 설정합니다. 5년 후 데이터를 삭제하도록 수명 주기 규칙을 설정합니다.
+
+C. Amazon S3 Standard에 데이터를 저장합니다. 1년 후 데이터를 S3 Standard-Infrequent Access(S3 Standard-IA)로 전환하도록 라이프사이클 규칙을 설정합니다. 5년 후 데이터를 삭제하도록 수명 주기 규칙을 설정합니다.
+
+D. Amazon S3 Standard에 데이터를 저장합니다. 1년 후 데이터를 S3 One Zone-Infrequent Access(S3 One Zone-IA)로 전환하도록 라이프사이클 규칙을 설정합니다. 5년 후 데이터를 삭제하도록 수명 주기 규칙을 설정합니다.
 
 <br>
 <hr/>
 <br>
 
-Answer : 
+Answer : A
 
 해설 : 
 
-1차 시도 : 
+Discussion에서 A와 B를 두고 논쟁하고 있다.
+A가 맞는 이유는, 1년 후에는 규제 및 감사 표준만을 목적으로 데이터를 저장하는 것이기 때문에 거의 접근하지 않을 것이므로 Glacier Deep Archive에 보관하는것이 맞다.
+또한 매일 수백만명의 소비자로부터 데이터를 수집하고, 고객이 얼마나 자신의 사용 기록을 조회할 지 모르기 때문에 스토리지 요금은 더 비싸지만 요청 및 데이터 검색 요금이 Standard-IA보다 더 싼 Standard를 선택하는 것이 올바르다.
+
+1차 시도 : A 맞음
 
 <br>
 <hr/>
 <hr/>
 
-## Prob. 
+## Prob. 10
 
-문제
+기업은 Amazon RDS for PostgreSQL 데이터베이스 인스턴스를 사용하여 웹 서버 집합을 관리합니다. 
+정상적인 규정 준수 검토 후 회사는 모든 프로덕션 데이터베이스에 1초 미만의 RPO(복구 시점 목표)를 갖도록 요구하는 표준을 설정합니다.
+
+어떤 솔루션이 이러한 기준을 충족합니까?
+
+A. Enable a Multi-AZ deployment for the DB instance.
+
+B. Enable auto scaling for the DB instance in one Availability Zone.
+
+C. Configure the DB instance in one Availability Zone, and create multiple read replicas in a separate Availability Zone.
+
+D. Configure the DB instance in one Availability Zone, and configure AWS Database Migration Service (AWS DMS) change data capture (CDC) tasks.
 
 <br>
 <hr/>
 <br>
 
-Answer : 
+Answer : A
 
 해설 : 
 
-1차 시도 : 
+1차 시도 : A 맞음
 
 <br>
 <hr/>
