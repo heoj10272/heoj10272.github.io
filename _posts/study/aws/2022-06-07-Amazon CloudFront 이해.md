@@ -2,7 +2,7 @@
 layout: post
 title: Amazon CloudFront 이해
 subtitle: AWS
-date: '2022-06-07 13:30:00 +0900'
+date: '2022-06-10 19:30:00 +0900'
 category: study
 tags: aws
 image:

@@ -278,7 +278,9 @@ Answer : A
 ## Prob. 6
 
 회사에서 데이터 저장을 위해 Amazon DynamoDB 테이블을 사용할 계획입니다. 
-회사는 비용 최적화에 대해 우려하고 있습니다. 이 테이블은 대부분의 아침 저녁에 사용되지 않습니다. 읽기 및 쓰기 트래픽은 종종 예측할 수 없습니다. 
+회사는 비용 최적화에 대해 우려하고 있습니다. 
+이 테이블은 대부분의 아침 저녁에 사용되지 않습니다. 
+읽기 및 쓰기 트래픽은 종종 예측할 수 없습니다. 
 트래픽 스파이크가 발생하면 매우 빠르게 발생합니다.
 
 솔루션 아키텍트는 무엇을 추천해야 합니까?
@@ -295,19 +297,33 @@ D. Create a DynamoDB table in provisioned capacity mode, and configure it as a g
 <hr/>
 <br>
 
-Answer : 
+Answer : A
 
 해설 : 
 
-1차 시도 : 
+상황이 온디맨드에 매우 적합한 상황이다.
+
+1차 시도 : A 맞음
 
 <br>
 <hr/>
 <hr/>
 
-## Prob. 
+## Prob. 7
 
-문제
+기업은 AWS 애플리케이션을 사용하여 전 세계 구독자에게 콘텐츠를 제공합니다. 
+수많은 Amazon EC2 인스턴스가 애플리케이션용 Application Load Balancer(ALB) 뒤의 프라이빗 서브넷에 배포됩니다. 
+CIO(최고 정보 책임자)는 최근 저작권 규정 변경으로 인해 일부 국가에 대한 액세스를 제한하고자 합니다.
+
+이러한 기준을 충족하는 조치는 무엇입니까?
+
+A. Modify the ALB security group to deny incoming traffic from blocked countries.
+
+B. Modify the security group for EC2 instances to deny incoming traffic from blocked countries.
+
+C. Use Amazon CloudFront to serve the application and deny access to blocked countries.
+
+D. Use ALB listener rules to return access denied responses to incoming traffic from blocked countries.
 
 <br>
 <hr/>
