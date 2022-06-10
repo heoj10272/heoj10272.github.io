@@ -43,6 +43,8 @@ D. Add a resource-based policy to the function with lambda:InvokeFunction as the
 
 Answer : D
 
+해설 : 
+
 Add a resource-based policy to the function with lambda:InvokeFunction as the action and Service:events.amazonaws.com as the principal.
 
 Amazon EventBridge로 Lambda함수를 호출하려면 아래와 같은 문구가 필요하다.
@@ -81,6 +83,8 @@ D. Terminate the instance outside the application's availability window. Launch 
 
 Answer : B
 
+해설 : 
+
 최대 절전 모드(Hiberate)를 사용하면 인스턴스의 메모리를 보존한 채로 인스턴스를 중지시킬 수 있다.
 
 또한 인스턴스가 최대 절전 모드일 때는 EBS 볼륨과 Elastic IP 주소에 대한 요금만 지불한다.
@@ -110,6 +114,8 @@ D. Create a second S3 bucket in us-east-1 to store the replicated photos. Config
 <br>
 
 Answer : A
+
+해설 : 
 
 엑셀 상에서의 답은 A이지만 이유를 모르겠다.
 추후 검토 예정
@@ -144,6 +150,8 @@ E. Create an AWS Config rule to monitor whether CloudTrail is configured to use 
 <br>
 
 Answer : A, E
+
+해설 : 
 
 A<br>
 CloudTrail 로그 파일 유효성 검사를 실행한다.
@@ -188,6 +196,8 @@ D. Move the EC2 instances into a public subnet. Configure the public subnet rout
 
 Answer : Discussion에서 A와 B를 두고 대치.
 
+해설 : 
+
 
 1차 시도 : B와 C 둘 중에 헷갈림.
 
@@ -220,7 +230,9 @@ replication.
 
 Answer : A
 
-문제상 병목 현상이 발생하는 이유는 스토리지 성능이다.
+해설 : 
+
+문제상 병목 현상이 발생하는 이유는 스토리지 성능이다.<br>
 범용 SSD보다 더 성능이 좋은 프로비전된 IOPS SSD를 사용하면 병목 현상이 해결될 것이다.
 
 1차 시도 : A 맞음
@@ -252,7 +264,9 @@ D. Use AWS Storage Gateway pre-installed on a hardware appliance to cache the im
 
 Answer : A
 
-재해 상황이므로 데이터는 한 번 수집후 말 것이기 때문에, Snowball Edge device면 충분하다.<br>
+해설 : 
+
+재해 상황이므로 데이터는 한 번 수집 후 말 것이기 때문에, Snowball Edge device면 충분하다.<br>
 또한 Storage Gateway에는 compute가 없지만 Snowball에는 있다는 말이 있음.
 
 1차 시도 : A 맞음
@@ -283,21 +297,7 @@ D. Create a DynamoDB table in provisioned capacity mode, and configure it as a g
 
 Answer : 
 
-1차 시도 : 
-
-<br>
-<hr/>
-<hr/>
-
-## Prob. 
-
-문제
-
-<br>
-<hr/>
-<br>
-
-Answer : 
+해설 : 
 
 1차 시도 : 
 
@@ -315,21 +315,7 @@ Answer :
 
 Answer : 
 
-1차 시도 : 
-
-<br>
-<hr/>
-<hr/>
-
-## Prob. 
-
-문제
-
-<br>
-<hr/>
-<br>
-
-Answer : 
+해설 : 
 
 1차 시도 : 
 
@@ -347,21 +333,7 @@ Answer :
 
 Answer : 
 
-1차 시도 : 
-
-<br>
-<hr/>
-<hr/>
-
-## Prob. 
-
-문제
-
-<br>
-<hr/>
-<br>
-
-Answer : 
+해설 : 
 
 1차 시도 : 
 
@@ -378,6 +350,62 @@ Answer :
 <br>
 
 Answer : 
+
+해설 : 
+
+1차 시도 : 
+
+<br>
+<hr/>
+<hr/>
+
+## Prob. 
+
+문제
+
+<br>
+<hr/>
+<br>
+
+Answer : 
+
+해설 : 
+
+1차 시도 : 
+
+<br>
+<hr/>
+<hr/>
+
+## Prob. 
+
+문제
+
+<br>
+<hr/>
+<br>
+
+Answer : 
+
+해설 : 
+
+1차 시도 : 
+
+<br>
+<hr/>
+<hr/>
+
+## Prob. 
+
+문제
+
+<br>
+<hr/>
+<br>
+
+Answer : 
+
+해설 : 
 
 1차 시도 : 
 
