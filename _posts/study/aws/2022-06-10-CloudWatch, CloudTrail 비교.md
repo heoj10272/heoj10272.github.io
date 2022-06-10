@@ -49,7 +49,7 @@ AWS의 **Amazon CloudWatch, AWS CloudTrail**을 이해하고 비교해보자.
 
 ## 1-2-1. CloudWatch 로그
 
-* ****AWS 내외의 로그를 모아 보관하고 사용자에게 전달**
+* **AWS 내외의 로그를 모아 보관하고 사용자에게 전달**
 
 * **주요 서비스들에 대한 모니터링** (로그, 메트릭 등) 제공
   + EC2, AutoScaling Groups, ELB, Route53

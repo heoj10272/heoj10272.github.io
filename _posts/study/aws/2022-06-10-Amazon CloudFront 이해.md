@@ -28,7 +28,6 @@ AWS에서 제공하는 **Amazon CloudFront**를 이해해보자.
 
 <br>
 <hr/>
-<br>
 
 ### 엣지 로케이션
 
@@ -40,7 +39,6 @@ AWS에서 제공하는 **Amazon CloudFront**를 이해해보자.
 
 <br>
 <hr/>
-<br>
 
 ### Content Delivery Network(CDN)
 
@@ -136,7 +134,6 @@ Amazon CloudFront 동작 방식은 다음과 같다.
 
 <br>
 <hr/>
-<br>
 
 ### II. HTTPS 지원
 
@@ -158,7 +155,6 @@ Amazon CloudFront 동작 방식은 다음과 같다.
 
 <br>
 <hr/>
-<br>
 
 ### III. 지리적 제한
 
@@ -168,7 +164,6 @@ Amazon CloudFront 동작 방식은 다음과 같다.
 
 <br>
 <hr/>
-<br>
 
 ### IV. 다른 서비스와 연계
 
@@ -206,7 +201,6 @@ Amazon CloudFront 동작 방식은 다음과 같다.
 
 <br>
 <hr>
-<br>
 
 ### V. 리포팅
 
@@ -285,7 +279,6 @@ Top referrers
 
 <br>
 <hr/>
-<br>
 
 ### II. Signed Cookie
 
@@ -297,7 +290,6 @@ Top referrers
 
 <br>
 <hr/>
-<br>
 
 ### III. Origin Access Identity(OAI)
 
@@ -309,7 +301,6 @@ Top referrers
 
 <br>
 <hr/>
-<br>
 
 ### IV. Field Level Encryption
 
@@ -329,6 +320,11 @@ Top referrers
   암호화된 요청(필드)은 웹서버(EC2)에서 Private Key를 통해 해독된다.
 
   이러한 과정에 꺼려진다면 웹서버에 HTTPS 통신을 사용하도록 구현하면 되나, 과정에 까다로울 수 있다.
+
+<br>
+<hr/>
+<hr/>
+<br>
 
   * Ref
   - [Youtube](https://youtu.be/6C9284C-zP4)
