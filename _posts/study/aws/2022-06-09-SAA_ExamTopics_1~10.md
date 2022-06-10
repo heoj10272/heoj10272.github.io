@@ -445,55 +445,6 @@ Discussion에서 대다수가 A를 답으로 지목하며 Multi-AZ를 사용하�
 [링크](https://aws.amazon.com/ko/blogs/database/managed-disaster-recovery-with-amazon-rds-for-sql-server-using-cross-region-automated-backups/)를 보면 RPO와 RTO 테이블이 나와있다. <br>
 다만 SQL Server 환경이다. 만약 RDS Postgre와 SQL Server의 차이가 없다면 답은 A가 확정일 것이다.
 
-
-1차 시도 : A 맞음
-
-<br>
-<hr/>
-<hr/>
-
-## Prob. 
-
-문제
-
-<br>
-<hr/>
-<br>
-
-Answer : 
-
-해설 : 
-
-1차 시도 : 
-
-<br>
-<hr/>
-<hr/>
-
-## Prob. 
-
-문제
-
-<br>
-<hr/>
-<br>
-
-Answer : 
-
-해설 : 
-
-1차 시도 : 
-
-
-
-
-
-
-
-
-
-
-
 <br>
 <hr/>
 <hr/>
