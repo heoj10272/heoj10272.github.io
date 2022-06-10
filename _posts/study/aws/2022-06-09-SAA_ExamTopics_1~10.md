@@ -4,7 +4,7 @@ title: SAA Examtopics 1~10
 subtitle: AWS
 date: '2022-06-10 19:00:00 +0900'
 category: study
-tags: aws
+tags: aws, examtopics
 image:
   path: /assets/img/study_AWS/SAA_ExamTopics_1~10/logo.png
 ---
@@ -329,19 +329,32 @@ D. Use ALB listener rules to return access denied responses to incoming traffic 
 <hr/>
 <br>
 
-Answer : 
+Answer : C
 
 해설 : 
 
-1차 시도 : 
+저작권 등의 이유로 접속하는 국가에 따라 컨텐츠를 제한해야할 경우, CloudFront의 `지리적 제한` 기능을 사용하여 해당 국가로부터의 액세스를 제한할 수 있다.
+
+1차 시도 : A 틀림
 
 <br>
 <hr/>
 <hr/>
 
-## Prob. 
+## Prob. 8
 
-문제
+7개의 Amazon EC2 인스턴스를 사용하여 기업은 AWS에서 웹 애플리케이션을 실행합니다. 
+조직은 DNS 쿼리가 모든 정상 EC2 인스턴스의 IP 주소를 제공해야 합니다.
+
+이 규정을 준수하려면 어떤 정책을 사용해야 합니까?
+
+A. Simple routing policy
+
+B. Latency routing policy
+
+C. Multi-value routing policy
+
+D. Geolocation routing policy
 
 <br>
 <hr/>
