@@ -4,7 +4,7 @@ title: Amazon Neptune 이해
 subtitle: AWS
 date: '2022-06-07 7:00:00 +0900'
 category: study
-tags: aws
+tags: aws aws-base
 image:
   path: /assets/img/study_AWS/Amazon Neptune 이해/logo.png
 ---

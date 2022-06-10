@@ -4,7 +4,7 @@ title: Amazon EBS 이해, Snapshot
 subtitle: AWS
 date: '2022-06-09 17:00:00 +0900'
 category: study
-tags: aws
+tags: aws aws-base
 image:
   path: /assets/img/study_AWS/Amazon_EBS_이해/logo.png
 ---
