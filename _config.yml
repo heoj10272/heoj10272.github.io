@@ -91,7 +91,7 @@ excerpt_separator:     <!--more-->
 
 # Sidebar image and theme color of the site.
 accent_image:
-  background:          cover url(/assets/img/hotel_room_night_2.png)
+  background:          center / cover url(/assets/img/hotel_room_night_2.png)
   overlay:             false
 accent_color:          rgb(0,174,239)
 
