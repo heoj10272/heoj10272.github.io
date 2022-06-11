@@ -76,7 +76,21 @@ AWS의 **Amazon EBS**를 이해해보자.
 
 ![EBS_connect2](/assets/img/study_AWS/Amazon_EBS_이해/EBS_types.png){:.centered}
 
-위 그림은 EBS 타입들에 따른 사양이다.
+위 그림은 EBS 타입들에 따른 사양이다.<br>
+자세한 사항은 아래와 같다.
+
+![ssd](/assets/img/study_AWS/Amazon_EBS_이해/ssd.png){:.centered}
+
+SSD
+{:.figcaption}
+
+![hdd](/assets/img/study_AWS/Amazon_EBS_이해/hdd.png){:.centered}
+
+HDD
+{:.figcaption}
+
+처리량 최적화(쓰루풋 최적화) HDD는 싼 가격으로 자주 접근되는 경우 사용된다.<br>
+Cold HDD는 가장 싼 가격으로 상대적으로 덜 자주 사용되는 경우에 사용된다.
 
 <br>
 <hr/>
