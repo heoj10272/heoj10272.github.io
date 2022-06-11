@@ -1,15 +1,15 @@
 ---
 layout: post
-title: SAA Examtopics 11~20
+title: SAA Examtopics 21~30
 subtitle: AWS
-date: '2022-06-11 21:10:00 +0900'
+date: '2022-06-11 21:20:00 +0900'
 category: study
 tags: aws examtopics saa-c02
 image:
-  path: /assets/img/study_AWS/SAA_ExamTopics_11~20/logo.png
+  path: /assets/img/study_AWS/SAA_ExamTopics_21~30/logo.png
 ---
 
-SAA Examtopics 11~20번 문제를 풀어보자.
+SAA Examtopics 21~30번 문제를 풀어보자.
 
 <!--more-->
 
@@ -20,7 +20,7 @@ SAA Examtopics 11~20번 문제를 풀어보자.
 <hr/>
 <hr/>
 
-## Prob. 11
+## Prob. 21
 
 문제
 
@@ -38,7 +38,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 12
+## Prob. 22
 
 문제
 
@@ -56,7 +56,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 13
+## Prob. 23
 
 문제
 
@@ -74,7 +74,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 14
+## Prob. 24
 
 문제
 
@@ -92,7 +92,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 15
+## Prob. 25
 
 문제
 
@@ -110,7 +110,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 16
+## Prob. 26
 
 문제
 
@@ -128,7 +128,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 17
+## Prob. 27
 
 문제
 
@@ -146,7 +146,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 18
+## Prob. 28
 
 문제
 
@@ -164,7 +164,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 19
+## Prob. 29
 
 문제
 
@@ -182,7 +182,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 20
+## Prob. 30
 
 문제
 
@@ -202,4 +202,4 @@ Answer :
 <br>
 
 * Ref
-  - [ExamTopics](https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-associate-saa-c02/view/2)
+  - [ExamTopics](https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-associate-saa-c02/view/3)
