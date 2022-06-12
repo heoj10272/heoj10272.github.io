@@ -45,6 +45,9 @@ Answer : C
 잘 모르겠음.<br>
 Discussion 참조.
 
+C is my answer: Only gp3, io1, or io2 Volumes have configurable IOPS.<br>
+https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes.html
+
 1차 시도 : 모름
 
 <br>

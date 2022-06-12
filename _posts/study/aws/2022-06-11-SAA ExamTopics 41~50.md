@@ -74,7 +74,8 @@ Answer : C
 
 JSON 문서와 같은 비구조화된 데이터는 RDS에 저장할 수 없다.
 
-minimal operational overhead expenditures => lambda & API gateway instead of Beanstalk or EKS
+minimal operational overhead expenditures => lambda & API gateway instead of Beanstalk or EKS<br>
+API Gateway + Lambda is best for "Microservices"
 
 1차 시도 : B
 
