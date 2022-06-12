@@ -106,13 +106,19 @@ D. Amazon S3
 <hr/>
 <br>
 
-Answer : D
+Answer : D, (or B?)
 
 해설 : 
 
 EFS도 동시 접속이 가능하다.
 EFS는 EC2에 S3를 빠르게 붙이려고 하는 형태?
 EC2를 벗어나면 쓸 수 없다?
+
+EFS는 Concurrency를 지원한다.
+
+S2는 Write Concurrency를 지원하지 않지만, 지금 상황은 Read이므로 D가 답이라는 말이 있다.
+
+또한 S3는 비용효율적 측면에서 아주 싸다.
 
 1차 시도 : D
 
@@ -145,9 +151,9 @@ Answer : C
 
 이러한 형태의 경우 대부분 S3와 CloudFront조합이 권고된다.
 
-A. Redis에는 인메모리데이터에 비디오를 올릴 수 없다.
-B. EFS가 생각보다 빠르지 않다? EBS보다 느리다?
-D. 구현 레벨이 복잡하다?
+A. Redis에는 인메모리데이터에 비디오를 저장하는데에 적합하지 않다.
+B. EFS로 서버 로드를 줄일 수 없다. EFS가 생각보다 빠르지 않다? EBS보다 느리다?
+D. 온프레미스에 대한 솔루션이다.
 
 1차 시도 : C
 
@@ -179,6 +185,8 @@ Answer : A
 해설 : 
 
 C, D의 DynamoDB는 테이블 조인이 불가능하다.<br>
+RDS scaling is not dynamic. It is manual.<br>
+RDS는 Unscalable, Aurora는 Scalable?<br>
 참고 : RDS, Aurora 둘 다 디스크에 한정해서 축소 불가, 확장 가능?<br>
 Aurora가 엄청 비싸긴 비싸다고 함
 
@@ -249,7 +257,10 @@ Answer : D (B가 답이라는 말이 있음) // 답 B가 유력
 
 해설 : 
 
-Intelligent Tiering도 
+    S3 Intelligent-Tiering is the ideal storage class for data with UNKNOWN, CHANGING, or UNPREDICTABLE access patterns, independent of object size or retention period.
+
+위 내용을 이유로 B는 답이 아니라는 말이 있음.
+하지만 한 유저는 Intelligent-Tiering이 ML/AI 서비스를 위한 스토리지 클래스이기 때문에 B 일 수도 있다고 말함.
 
 1차 시도 : D
 
@@ -312,7 +323,7 @@ Answer : D
 
 해설 : 
 
-
+표시 시간 제한은 Amazon SQS가 메시지를 반환할 때 시작됩니다. 이 시간 동안 소비자는 메시지를 처리하고 삭제합니다. 그러나 메시지를 삭제하기 전에 소비자가 실패하고 표시 시간 제한이 만료되기 전에 시스템에서 해당 메시지에 대한 메시지 삭제 작업을 호출하지 않으면 메시지가 다른 소비자에게 표시되고 메시지가 다시 수신됩니다. 메시지를 한 번만 수신해야 하는 경우, 사용자는 가시성 제한 시간 내에 메시지를 삭제해야 합니다.
 
 1차 시도 : 모름
 
@@ -322,7 +333,7 @@ Answer : D
 
 ## Prob. 40
 
-한 기업이 소매 웹사이트의 전 세계 출시를 발표했습니다. 웹사이트는 Elastic Load Balancer를 통해 라우팅되는 수많은 Amazon EC2 인스턴스에서 호스팅됩니다. 인스턴스는 Auto Scaling 그룹의 여러 가용 영역에 분산됩니다. 회사는 고객이 웹사이트를 보는 장치에 따라 맞춤형 자료를 제공하기를 원합니다.
+한 기업이 리테일 웹사이트의 전 세계 출시를 발표했습니다. 웹사이트는 Elastic Load Balancer를 통해 라우팅되는 수많은 Amazon EC2 인스턴스에서 호스팅됩니다. 인스턴스는 Auto Scaling 그룹의 여러 가용 영역에 분산됩니다. 회사는 고객이 웹사이트를 보는 장치에 따라 맞춤형 자료를 제공하기를 원합니다.
 
 이러한 요구 사항을 충족하기 위해 솔루션 설계자는 어떤 단계를 함께 수행해야 합니까? (2개를 선택하세요.)
 
@@ -340,11 +351,19 @@ E. AWS Global Accelerator를 구성합니다. 요청을 NLB(네트워크 로드 
 <hr/>
 <br>
 
-Answer : 
+Answer : A, C
 
 해설 : 
 
-1차 시도 : 
+1차 시도 : A, C
+
+A. <br>
+CloudFront는 요청 헤더 기반의 콘텐츠 캐싱이 가능하다.<br>
+이렇게 하면 사용자가 사용하는 디바이스, 최종 사용자의 위치, 최종 사용자가 사용하는 언어 및 다양한 조건에 따라 서로 다른 버전의 콘텐츠를 제공할 수 있다.
+
+C. <br>
+Lambda@Edge기능을 사용하면 요청을 제출한 디바이스에 대한 정보가 포함된 User-Agent 헤더를 기반으로 사용자에게 다른 객체를 전송한다.<br>
+예를 들어 디바이스별로 사용자에게 서로 다른 해상도로 이미지를 보낼 수 있다.
 
 <br>
 <hr/>

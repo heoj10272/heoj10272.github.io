@@ -38,11 +38,24 @@ D. 응용 프로그램을 확장하여 현재 타임스탬프 값에 테이블�
 <hr/>
 <br>
 
-Answer : 
+Answer : D
 
 해설 : 
 
-1차 시도 : 
+D가 정답입니다. 
+TTL(Amazon DynamoDB Time to Live)을 사용하면 항목별 타임스탬프를 정의하여 항목이 더 이상 필요하지 않은 시기를 결정할 수 있습니다. 
+지정한 타임스탬프의 날짜 및 시간이 지나면 DynamoDB는 쓰기 처리량을 사용하지 않고 테이블에서 항목을 삭제합니다. TTL은 워크로드 요구사항에 맞게 최신 상태로 유지되는 항목만 유지하여 저장된 데이터 볼륨을 줄이기 위한 수단으로 추가 비용 없이 제공됩니다.
+
+TTL은 특정 시간 후에 관련성이 손실된 항목을 저장할 때 유용합니다. 다음은 TTL 사용 사례의 예입니다.
+
+응용 프로그램에서 1년 동안 사용하지 않은 사용자 또는 센서 데이터를 제거합니다.
+
+만료된 항목을 Amazon DynamoDB Streams 및 AWS Lambda를 통해 Amazon S3 데이터 레이크에 아카이브합니다.
+
+계약 또는 규제 의무에 따라 중요한 데이터를 일정 기간 동안 보관합니다.<br>
+https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html
+
+1차 시도 : D
 
 <br>
 <hr/>
@@ -66,11 +79,21 @@ D. 시각화 도구를 데이터 웨어하우스와 동일한 AWS 영역에 호�
 <hr/>
 <br>
 
-Answer : 
+Answer : D
 
 해설 : 
 
-1차 시도 : 
+Should be D<br>
+https://aws.amazon.com/directconnect/pricing/<br>
+https://aws.amazon.com/blogs/aws/aws-data-transfer-prices-reduced/
+
+"Data transfer pricing over Direct Connect is lower than data transfer pricing over the internet"
+
+A and B are out
+
+I would take D over C as transfer from AWS to on-premises would cost more than transfer from AWS to AWS
+
+1차 시도 : 모름
 
 <br>
 <hr/>
@@ -96,11 +119,21 @@ E. 여러 가용성 영역에 걸쳐 있는 Amazon EC2 인스턴스에 Kubernete
 <hr/>
 <br>
 
-Answer : 
+Answer : A, D
 
 해설 : 
 
-1차 시도 : 
+It should be A and D. <br>
+The question repeatedly says managing infrastructure must not be an option so EC2 is off the topic. <br>
+Also can user fargate with micro services without any issue. 
+
+(https://docs.aws.amazon.com/prescriptive-guidance/latest/patterns/deploy-java-microservices-on-amazon-ecs-using-aws-fargate.html)
+
+
+관리형 : EC2<br>
+완전 관리형 : RDS, DynamoDB, ElastiCache, Redshift
+
+1차 시도 : 모름
 
 <br>
 <hr/>
@@ -126,11 +159,19 @@ D. 사용자의 원본 IP가 10.100.100.254인 경우 사용자는 us-east-1 영
 <hr/>
 <br>
 
-Answer : 
+Answer : C
 
 해설 : 
 
-1차 시도 : 
+10.100.100.1은 예약된 IP 주소이다.
+
+0 : 네트워크 어드레스
+1 : VPC Router
+2 : DNS
+3 : Future use
+4 : Broadcast
+
+1차 시도 : B
 
 <br>
 <hr/>
@@ -154,11 +195,14 @@ D. Amazon Redshift 데이터베이스를 생성하고 트래픽을 Amazon Redshi
 <hr/>
 <br>
 
-Answer : 
+Answer : A
 
 해설 : 
 
-1차 시도 : 
+An RDS read replica instance is an asynchronous read-only replica of a primary ("master") database instance located upstream. <br>
+It can be used by your application for any query that does not require changing data, relieving the master of the load.
+
+1차 시도 : A
 
 <br>
 <hr/>
@@ -170,11 +214,11 @@ Answer :
 
 솔루션 설계자는 이 변경 사항을 배포하기 전에 어떤 활동을 수행해야 합니까? (2개를 선택하세요.)
 
-A. RDS 기본 노드에서 binlog 복제를 사용하도록 설정합니다.
+A. RDS primary 노드에서 binlog 복제를 사용하도록 설정합니다.
 
 B. 원본 DB 인스턴스에 대한 장애 조치 우선 순위를 선택합니다.
 
-C. 원본 DB 인스턴스에서 장시간 실행되는 트랜잭션을 완료할 수 있습니다.
+C. 원본 DB 인스턴스에서 장시간 실행되는 트랜잭션을 완료할 수 있게 허가합니다.
 
 D. 글로벌 테이블을 만들고 테이블을 사용할 AWS 영역을 지정합니다.
 
@@ -184,11 +228,16 @@ E. 백업 보존 기간을 0이 아닌 값으로 설정하여 원본 인스턴�
 <hr/>
 <br>
 
-Answer : 
+Answer : C, E
 
 해설 : 
 
-1차 시도 : 
+"An active, long-running transaction can slow the process of creating the read replica. We recommend that you wait for long-running transactions to complete before creating a read replica. If you create multiple read replicas in parallel from the same source DB instance, Amazon RDS takes only one snapshot at the start of the first create action.
+
+When creating a read replica, there are a few things to consider. First, you must enable automatic backups on the source DB instance by setting the backup retention period to a value other than 0. This requirement also applies to a read replica that is the source DB instance for another read replica"<br>
+https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html
+
+1차 시도 : A, B
 
 <br>
 <hr/>
@@ -212,11 +261,13 @@ D. Amazon Route 53 with internal Application Load Balancers
 <hr/>
 <br>
 
-Answer : 
+Answer : A
 
 해설 : 
 
-1차 시도 : 
+CloundFront와 S3의 조합은 신이다.
+
+1차 시도 : A
 
 <br>
 <hr/>
@@ -240,11 +291,14 @@ D. DX 연결 위에 여러 가상 인터페이스를 구성합니다.
 <hr/>
 <br>
 
-Answer : 
+Answer : B
 
 해설 : 
 
-1차 시도 : 
+Highly resilient, fault-tolerant network connections are key to a well-architected system. <br>
+AWS recommends connecting from multiple data centers for physical location redundancy.
+
+1차 시도 : A
 
 <br>
 <hr/>
@@ -252,12 +306,12 @@ Answer :
 
 ## Prob. 59
 
-금융 기관은 AWS를 사용하여 웹 애플리케이션을 호스팅합니다. 이 프로그램은 Amazon API Gateway 지역 API 엔드포인트를 사용하여 현재 주가를 검색합니다. 조직의 보안 직원이 API 쿼리의 급증을 감지했습니다. 보안 팀은 HTTP 플러드 공격으로 인해 애플리케이션이 작동하지 않을 수 있다고 우려하고 있습니다.
+금융 기관은 AWS를 사용하여 웹 애플리케이션을 호스팅합니다. 이 프로그램은 Amazon API Gateway 지역 API 엔드포인트를 사용하여 현재 주가를 검색합니다. 조직의 보안 직원이 API 쿼리의 급증을 감지했습니다. 보안 팀은 HTTP flood 공격으로 인해 애플리케이션이 작동하지 않을 수 있다고 우려하고 있습니다.
 솔루션 설계자는 이러한 형태의 공격에 대한 방어책을 만들어야 합니다.
 
 다음 중 운영 오버헤드가 가장 적은 이 기준을 충족하는 방법은 무엇입니까?
 
-A. API Gateway Regional API 끝점 앞에 최대 TTL이 24시간인 Amazon CloudFront 배포를 생성합니다.
+A. API Gateway Regional API 엔드포인트 앞에 최대 TTL이 24시간인 Amazon CloudFront 배포를 생성합니다.
 
 B. 속도 기반 규칙을 사용하여 지역 AWS WAF 웹 ACL을 만듭니다. 웹 ACL을 API 게이트웨이 단계에 연결합니다.
 
@@ -269,11 +323,18 @@ D. API Gateway Regional API 끝점 앞에 Lambda@Edge를 사용하여 Amazon Clo
 <hr/>
 <br>
 
-Answer : 
+Answer : B
 
 해설 : 
 
-1차 시도 : 
+Question is asking for DDoS protection<br>
+This is a form of DDOS protection. So AWS WAF does the best with least efforts.<br>
+
+API Gateway throttles requests by default (https://docs.aws.amazon.com/apigateway/latest/developerguide/api-gateway-request-throttling.html)
+
+We need AWS Shield or WAF - https://aws.amazon.com/blogs/security/how-to-protect-dynamic-web-applications-against-ddos-attacks-by-using-amazon-cloudfront-and-amazon-route-53/
+
+1차 시도 : B
 
 <br>
 <hr/>
@@ -297,11 +358,29 @@ D. Amazon EventBridge(Amazon CloudWatch Events)를 사용하여 AWS Trusted Advi
 <hr/>
 <br>
 
-Answer : 
+Answer : C
 
 해설 : 
 
-1차 시도 : 
+Answer is C-Inspector.
+
+Guard Duty:<br>
+Aim is to analyze logs:<br>
+-CloudTrail Logs: unusual API calls, unauthorized deployments<br>
+-VPC Flow Logs: unusual internal traffic, unusual IP address<br>
+-DNS Logs: compromised EC2 instances sending encoded data within DNS queries
+
+Can protect against CryptoCurrency attacks (has a dedicated “finding” for it).<br>
+It uses Machine Learning.
+
+Macie helps identify and alert you to sensitive data, such as personally identifiable information (PII).<br>
+Applies only for S3.
+
+Inspector is specific to EC2.<br>
+-Provides Automated Security Assessments for EC2 instances.<br>
+-Requires agent installation on EC2 for Host(vulnerability assessment/best practices) OR can do NW Assessment for EC2 without installing agent
+
+1차 시도 : B
 
 <br>
 <hr/>

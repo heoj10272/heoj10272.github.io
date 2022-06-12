@@ -32,17 +32,19 @@ B. 서비스 제어 정책을 사용하여 조직 단위의 모든 계정에서 
 
 C. 개발자가 정책을 첨부하지 못하도록 하고 모든 IAM 작업을 보안 운영 팀에 할당합니다.
 
-D. 관리자 정책 연결을 명시적으로 거부하는 개발자 IAM 역할에 IAM 권한 경계를 설정합니다.
+D. 개발자 IAM 역할에 관리자 정책 연결을 명시적으로 거부하는 IAM 권한 경계를 설정합니다.
 
 <br>
 <hr/>
 <br>
 
-Answer : 
+Answer : D
 
 해설 : 
 
-1차 시도 : 
+Permission boundaries are for this use case. Be aware that you can assign boundaries only to users and roles, not groups
+
+1차 시도 : D
 
 <br>
 <hr/>
@@ -66,11 +68,15 @@ D. Amazon S3 정적 웹 사이트 호스팅을 사용하여 프런트 엔드를 
 <hr/>
 <br>
 
-Answer : 
+Answer : C
 
 해설 : 
 
-1차 시도 : 
+JSON 문서와 같은 비구조화된 데이터는 RDS에 저장할 수 없다.
+
+minimal operational overhead expenditures => lambda & API gateway instead of Beanstalk or EKS
+
+1차 시도 : B
 
 <br>
 <hr/>
@@ -94,11 +100,14 @@ D. AWS 자동 스케일링을 설정하여 ALB 대상 그룹의 CPU 사용률이
 <hr/>
 <br>
 
-Answer : 
+Answer : Discussion 참고
 
 해설 : 
 
-1차 시도 : 
+모르겠다.<br>
+Discussion 참고
+
+1차 시도 : C
 
 <br>
 <hr/>
@@ -111,7 +120,7 @@ Answer :
 
 A. 동일한 네트워크에 대해 여러 고객 게이트웨이를 구현하여 처리량을 확장합니다.
 
-B. 동일한 비용의 다중 경로 라우팅이 있는 중계 게이트웨이를 사용하고 VPN 터널을 추가합니다.
+B. 동일한 비용의 다중 경로 라우팅이 있는 중계(Transit) 게이트웨이를 사용하고 VPN 터널을 추가합니다.
 
 C. 등가 비용 다중 경로 라우팅 및 다중 채널로 가상 사설 게이트웨이를 구성합니다.
 
@@ -121,11 +130,16 @@ D. VPN 구성의 터널 수를 늘려 기본 제한을 초과하여 처리량을
 <hr/>
 <br>
 
-Answer : 
+Answer : B
 
 해설 : 
 
-1차 시도 : 
+AWS Transit Gateway를 사용하면 여러 VPC 간의 연결을 간소화할 수 있으며 단일 VPN 연결로 AWS Transit Gateway에 연결된 모든 VPC에 연결할 수도 있다.<br>
+또한 AWS Transit Gateway를 사용하면 여러 VPN 터널에서 ECMP(등비용 다중 경로) 라우팅 지원을 통해 IPsec VPN 처리량을 확장할 수 있다. <br>
+단일 VPN 터널의 최대 처리량은 여전히 1.25Gbps이다. <br>
+ECMP 사용 중계 게이트웨이에 대한 VPN 터널을 여러 개 설정하면 기본 제한인 1.25Gbps 이상으로 확장할 수 있습니다.
+
+1차 시도 : A
 
 <br>
 <hr/>
@@ -149,11 +163,13 @@ D. EC2 콘솔에서 상세 모니터링을 활성화합니다. Amazon CloudWatch
 <hr/>
 <br>
 
-Answer : 
+Answer : C
 
 해설 : 
 
-1차 시도 : 
+Cloudwatch agent for swap, memory utilization monitoring. Default cant. Must be custom.
+
+1차 시도 : C
 
 <br>
 <hr/>
@@ -177,11 +193,13 @@ D. AWS KMS(키 관리 서비스) 관리 키(SSE-KMS)를 사용하여 서버 측 
 <hr/>
 <br>
 
-Answer : 
+Answer : A
 
 해설 : 
 
-1차 시도 : 
+You can't restore from a DB snapshot to an existing DB instance; a new DB instance is created when you restore.
+
+1차 시도 : C
 
 <br>
 <hr/>
@@ -193,7 +211,7 @@ Answer :
 
 어떤 솔루션이 이러한 기준을 충족합니까?
 
-A. 주문형 인스턴스가 있는 자동 확장 그룹에서 Amazon EC2를 사용합니다.
+A. 온디맨드 인스턴스가 있는 오토 스케일링 그룹에서 Amazon EC2를 사용합니다.
 
 B. 온디맨드 인스턴스와 함께 Amazon Lightsail을 사용하도록 애플리케이션을 구축합니다.
 
@@ -205,11 +223,13 @@ D. Amazon SQS(Amazon Simple Queue Service) 및 AWS Lambda와 함께 이벤트 �
 <hr/>
 <br>
 
-Answer : 
+Answer : A or D
 
 해설 : 
 
-1차 시도 : 
+Discussion 참고
+
+1차 시도 : C
 
 <br>
 <hr/>
@@ -235,11 +255,13 @@ E. 조직에 AWS SSO(Single Sign-On)를 설정합니다. AWS SSO를 구성하고
 <hr/>
 <br>
 
-Answer : 
+Answer : Discussion 참고
 
 해설 : 
 
-1차 시도 : 
+Discussion 참고
+
+1차 시도 : B, C
 
 <br>
 <hr/>
@@ -263,11 +285,16 @@ D. Amazon EventBridge(Amazon CloudWatch Events) 스케줄링된 이벤트로 트
 <hr/>
 <br>
 
-Answer : 
+Answer : C
 
 해설 : 
 
-1차 시도 : 
+A is wrong; "EC2 Reserved Instance" not cost effective compared to serverless
+B is wrong; Lambda runs for 15 minutes max
+D is wrong; "running on Amazon EC2" not cost effective
+C is correct; Fargate is serverless & cost effective comparted to other options.
+
+1차 시도 : D
 
 <br>
 <hr/>
@@ -290,11 +317,18 @@ D. 쓰기를 캡처하고 데이터베이스에 쓸 때마다 대기열을 배�
 <hr/>
 <br>
 
-Answer : 
+Answer : D
 
 해설 : 
 
-1차 시도 : 
+Amazon SQS is used for capturing data asynchronously.
+SNS is not correct because there is no resilient once SNS pushes messages out .
+
+Why is it D and not C? Because if the consumer consumes connections that doesn't make sense.
+
+1차 시도 : C
+
+
 
 <br>
 <hr/>
