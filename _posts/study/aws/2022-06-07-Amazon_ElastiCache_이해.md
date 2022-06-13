@@ -17,6 +17,7 @@ AWS에서 제공하는 **Amazon ElastiCache**를 이해해보자.
 {:toc}
 
 <hr/>
+<hr/>
 
 ## 1. Amazon ElastiCache 개요
 
@@ -31,6 +32,8 @@ AWS에서 제공하는 **Amazon ElastiCache**를 이해해보자.
 
 하지만 **응답 시간은 마이크로초 대기 시간을 일관되게 유지할 수 없다**.
 
+<br>
+<hr/>
 <hr/>
 
 ## 2. Amazon ElastiCache 엔진
@@ -56,7 +59,16 @@ AWS에서 제공하는 **Amazon ElastiCache**를 이해해보자.
     + Redis용 ElastiCache는 확장 가능하고 안전한 완전관리형 서비스로서, 웹, 모바일 앱, 게임, 광고 기술 및 IoT와 같은 고성능 사용 사례에 지원하는 데 매우 적합한 서비스
 
 
+## 3. Amazon ElastiCache 기능
+
+ElastiCache Redis/Memcached와 같은 In-Memory Key/Value 저장소를 활용하여 세션 데이터를 관리하고 저장할 수 있다.
+
+세션 데이터는 어플리케이션 계층에서 관리되기 때문에, 분산 캐시(distribued cache)가 사용되어야 한다.
+
+<br>
 <hr/>
+<hr/>
+<br>
 
 * Ref
   - [AWS Amazon ElastiCache Userguide](https://docs.aws.amazon.com/ko_kr/AmazonElastiCache/latest/mem-ug/WhatIs.html)
