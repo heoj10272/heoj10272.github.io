@@ -6,7 +6,7 @@ date: '2022-06-11 21:50:00 +0900'
 category: study
 tags: aws examtopics saa-c02
 image:
-  path: /assets/img/study_AWS/SAA_ExamTopics_51~60/logo.png
+  path: /assets/img/study_AWS/2022-06-11-SAA_ExamTopics_51~60/logo.png
 ---
 
 SAA Examtopics 51~60번 문제를 풀어보자.
@@ -143,7 +143,7 @@ Also can user fargate with micro services without any issue.
 
 The following policy was developed by an Amazon EC2 administrator and assigned to an IAM group including numerous users:
 
-![prob_54](/assets/img/study_AWS/SAA_ExamTopics_51~60/prob_54.png)
+![prob_54](/assets/img/study_AWS/2022-06-11-SAA_ExamTopics_51~60/prob_54.png)
 
 What impact does this policy have?
 
