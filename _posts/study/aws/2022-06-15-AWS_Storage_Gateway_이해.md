@@ -34,7 +34,7 @@ AWS에서 기존의 온프레미스 환경의 데이터센터를 운영하고 �
 
 ![archi](/assets/img/study_AWS/2022-06-15-AWS_Storage_Gateway_이해/archi.png)
 
-이처럼 이미 운영중인 데이터센터에서 Storage Gateway를 통해 S3에 백업을 하고, S3에 저장된 데이터로 분석하는 등의 기능을 할 수 있다.
+이처럼 이미 운영중인 데이터센터에 Appliance를 설치하고 Storage Gateway를 통해 S3에 백업을 하고, S3에 저장된 데이터로 분석하는 등의 기능을 할 수 있다.
 
 <br>
 <hr/>
@@ -57,6 +57,7 @@ Storage Gateway는 총 3가지의 옵션으로 구성되어 있다.
 
   * NFS, SMB 마운트 포인트로 전송받은 데이터를 S3에 저장
     + 소유권, 퍼미션, 파일 생성 시간등은 S3의 메타데이터로 저장
+    + S3는 오브젝트 저장소이기 때문에 일반적인 하드웨어에서 읽는 파일과는 다르므로 NFS, SMB등을 통해 액세스 가능
 
   * S3에 저장후에는 S3의 모든 기능 활용 가능
     + 이벤트 트리거를 통한 다른 서비스(Lambda, Athena, 분석 서비스 등) 사용
@@ -73,6 +74,7 @@ Storage Gateway는 총 3가지의 옵션으로 구성되어 있다.
 
   * iSCSI 프로토콜을 통해 전달받은 데이터를 비동기적으로 EBS 스냅샷 형식으로 저장
     + 스냅샷은 Incremental -> 이전 스냅샷에서 바뀐 부분만 저장함
+    + 주로 백업 용도로 사용함
 
   * Stored Volume : 모든 데이터를 로컬에 저장하고 비동기적으로 AWS에 백업
     + 1GB ~ 16TB
@@ -98,7 +100,9 @@ Storage Gateway는 총 3가지의 옵션으로 구성되어 있다.
 
   * Storage Gateway Appliance 사용
     + 가상머신(VM)으로 온프레미스 데이터센터에 설치하여 데이터를 수집 및 전송
-    + [DataSync](https://heoj10272.github.io/study/AWS_Storage_Gateway_이해.html)의 Agent와 비슷함
+    + 또는 AWS로부터 하드웨어를 구매해 설치 가능
+    + [DataSync](https://heoj10272.github.io/study/DataSync_Storage_Gateway_%EB%B9%84%EA%B5%90.html#1-2-aws-datasync-%EA%B0%9C%EB%85%90)의 `Agent`와 비슷한 역할
+
 <br>
 <hr/>
 <hr/>

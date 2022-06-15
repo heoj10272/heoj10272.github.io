@@ -101,8 +101,61 @@ DataSync 서비스끼리 서로 싱크를 맞춰서 자동으로 해당 리전�
 
 ## 2. AWS Storage Gateway 개요
 
-[AWS Storage Gateway](https://heoj10272.github.io/study/DataSync_Storage_Gateway_비교.html) 참조
+[AWS Storage Gateway](https://heoj10272.github.io/study/AWS_Storage_Gateway_%EC%9D%B4%ED%95%B4.html) 참조
 
+<br>
+<hr/>
+<hr/>
+
+## 3. DataSync와 Storage Gateway 비교
+
+![compare](/assets/img/study_AWS/2022-06-15-DataSync_Storage_Gateway_비교/compare.png)
+
+DataSync의 경우 `AWS안에서 혹은 온프레미스`에서 데이터를 `이동`하기 위한 서비스이고<br>
+Storage Gateway의 경우 `하이브리드환경의 온프레미스`에서 클라우드의 저장 서비스를 `연동`하기 위한 서비스이다.
+
+DataSync는 `전송 필터`가 가능하고<br>
+Storage Gateway는 불가능하다.
+
+DataSync와 Storage Gateway 모두 `NFS, SBM`을 지원한다.<br>
+하지만<br>
+DataSync는 `HDFS`, `S3 API`를 지원하는 반면<br>
+Storage Gateway는 `iSCSI`를 지원한다.
+
+DataSync와 Storage Gateway 모두 `S3`로의 전송이 가능하다.<br>
+DataSync는 여기에 추가로 `EFS`, `FSx`로의 전송도 가능하다.<br>
+Storage Gateway는 `S3`만 전송 가능하다.
+
+DataSync와 Storage Gateway 모두 `온프레미스 -> AWS` 전송이 가능하다.<br>
+DataSync는 여기에 추가로 `AWS -> AWS` 전송 또한 가능하다.<br>
+Storage Gateway는 `온프레미스 -> AWS` 전송만 가능하다.
+
+DataSync는 `Glacier/DA`로의 전송이 `직접적`으로 지원된다.<br>
+Storage Gateway는 일단 S3에 저장하고, 이후 `LifeCycle`로 `Glacier/DA`로의 전송이 `간접적`으로 가능하다.
+
+DataSync는 `실패시 재전송` 기능이 있지만<br>
+Storage Gateway는 `불가능`하다.
+
+DataSync는 최대 `10GB/sec` 처리량을 지원한다.<br>
+Storage Gateway는 최대 `500MB/sec` 처리량을 지원한다.
+
+DataSync는 `데이터 액세스`가 `불가능`하지만<br>
+Storage Gateway는 `File Gateway`로 `데이터 액세스`가 가능하다.
+
+## 4. 결론
+
+* DataSync : **데이터의 전송을 위한 서비스**
+    + 데이터를 잘 전달하기 위한 기능으로 구성
+        - 데이터 필터, 무결성 검사, 스케줄링, 재시도 등
+    + 다양한 서비스/주체간 데이터 전송 지원
+
+* Storage Gateway : **온프레미스 환경에서 AWS의 스토리지를 이용(주로 백업)하기 위한 서비스**
+    + 데이터를 클라우드에 저장하고 사용하거나 백업하기 위한 기능
+        - 온프레미스에서 클라우드 환경의 데이터를 액세스 가능
+    + 테이프 기반(혹은 레거시 환경) 백업 어플리케이션 지원
+
+DataSync와 Storage Gateway는 상호 배타적인 서비스가 아니다.<br>
+둘 다 사용하는 아키텍쳐또한 많다.
 <br>
 <hr/>
 <hr/>
