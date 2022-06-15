@@ -6,7 +6,7 @@ date: '2022-06-15 18:00:00 +0900'
 category: study
 tags: aws aws-base
 image:
-  path: /assets/img/study_AWS/2022-06-15-AWS_Storage_Gateway_이해/logo.png
+  path: /assets/img/study_AWS/2022-06-15-DataSync_Storage_Gateway_비교/logo.png
 ---
 
 AWS의 **DataSync, Storage Gateway**를 이해하고 비교해보자.
@@ -115,7 +115,7 @@ DataSync의 경우 `AWS안에서 혹은 온프레미스`에서 데이터를 `이
 Storage Gateway의 경우 `하이브리드환경의 온프레미스`에서 클라우드의 저장 서비스를 `연동`하기 위한 서비스이다.
 
 DataSync는 `전송 필터`가 가능하고<br>
-Storage Gateway는 불가능하다.
+Storage Gateway는 `불가능`하다.
 
 DataSync와 Storage Gateway 모두 `NFS, SBM`을 지원한다.<br>
 하지만<br>
@@ -156,6 +156,7 @@ Storage Gateway는 `File Gateway`로 `데이터 액세스`가 가능하다.
 
 DataSync와 Storage Gateway는 상호 배타적인 서비스가 아니다.<br>
 둘 다 사용하는 아키텍쳐또한 많다.
+
 <br>
 <hr/>
 <hr/>
