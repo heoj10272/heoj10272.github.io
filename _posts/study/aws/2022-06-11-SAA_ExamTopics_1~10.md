@@ -41,8 +41,10 @@ D. Add a resource-based policy to the function with lambda:InvokeFunction as the
 <hr/>
 <br>
 
+<details>
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
+<br>
 Answer : D
 
 해설 : 
@@ -58,6 +60,7 @@ Amazon EventBridge로 Lambda함수를 호출하려면 아래와 같은 문구가
 
 1차 시도 : 틀림
 </div>
+</details>
 
 <br>
 <hr/>
