@@ -2,7 +2,7 @@
 layout: post
 title: AWS STS 이해
 subtitle: AWS
-date: '2022-06-07 13:15:00 +0900'
+date: '2022-06-15 17:00:00 +0900'
 category: study
 tags: aws aws-base
 image:
