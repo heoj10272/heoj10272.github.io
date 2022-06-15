@@ -87,6 +87,10 @@ D. Terminate the instance outside the application's availability window. Launch 
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : B
 
 해설 : 
@@ -96,6 +100,8 @@ Answer : B
 또한 인스턴스가 최대 절전 모드일 때는 EBS 볼륨과 Elastic IP 주소에 대한 요금만 지불한다.
 
 1차 시도 : B 맞음
+</div>
+</details>
 
 <br>
 <hr/>
@@ -119,6 +125,10 @@ D. Create a second S3 bucket in us-east-1 to store the replicated photos. Config
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : A
 
 해설 : 
@@ -127,6 +137,8 @@ Answer : A
 추후 검토 예정
 
 1차 시도 : D 틀림
+</div>
+</details>
 
 <br>
 <hr/>
@@ -155,6 +167,10 @@ E. Create an AWS Config rule to monitor whether CloudTrail is configured to use 
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : A, E
 
 해설 : 
@@ -171,6 +187,8 @@ AWS 계정 간에 CloudTrail 로그 파일 공유
 
 
 1차 시도 : C, E 틀림
+</div>
+</details>
 
 <br>
 <hr/>
@@ -200,12 +218,18 @@ D. Move the EC2 instances into a public subnet. Configure the public subnet rout
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : Discussion에서 A와 B를 두고 대치.
 
 해설 : 
 
 
 1차 시도 : B와 C 둘 중에 헷갈림.
+</div>
+</details>
 
 <br>
 <hr/>
@@ -234,6 +258,10 @@ replication.
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : A
 
 해설 : 
@@ -242,6 +270,8 @@ Answer : A
 범용 SSD보다 더 성능이 좋은 프로비전된 IOPS SSD를 사용하면 병목 현상이 해결될 것이다.
 
 1차 시도 : A 맞음
+</div>
+</details>
 
 <br>
 <hr/>
@@ -268,6 +298,10 @@ D. Use AWS Storage Gateway pre-installed on a hardware appliance to cache the im
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : A
 
 해설 : 
@@ -276,6 +310,8 @@ Answer : A
 또한 Storage Gateway에는 compute가 없지만 Snowball에는 있다는 말이 있음.
 
 1차 시도 : A 맞음
+</div>
+</details>
 
 <br>
 <hr/>
@@ -303,6 +339,10 @@ D. Create a DynamoDB table in provisioned capacity mode, and configure it as a g
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : A
 
 해설 : 
@@ -310,6 +350,8 @@ Answer : A
 상황이 온디맨드에 매우 적합한 상황이다.
 
 1차 시도 : A 맞음
+</div>
+</details>
 
 <br>
 <hr/>
@@ -335,6 +377,10 @@ D. Use ALB listener rules to return access denied responses to incoming traffic 
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : C
 
 해설 : 
@@ -342,6 +388,8 @@ Answer : C
 저작권 등의 이유로 접속하는 국가에 따라 컨텐츠를 제한해야할 경우, CloudFront의 `지리적 제한` 기능을 사용하여 해당 국가로부터의 액세스를 제한할 수 있다.
 
 1차 시도 : A 틀림
+</div>
+</details>
 
 <br>
 <hr/>
@@ -366,6 +414,10 @@ D. Geolocation routing policy
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : C
 
 해설 : 
@@ -376,6 +428,8 @@ Multi-value routing policy를 사용하여 DNS 응답을 여러 리소스에 분
 즉, DNS를 분산 시키려면 Multi-value 를 사용해야 하며, A. Single은 health check를 할 수 없지만 Multi-value는 가능하다.
 
 1차 시도 : A 틀림
+</div>
+</details>
 
 <br>
 <hr/>
@@ -401,6 +455,10 @@ D. Amazon S3 Standard에 데이터를 저장합니다. 1년 후 데이터를 S3 
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : A
 
 해설 : 
@@ -410,6 +468,8 @@ A가 맞는 이유는, 1년 후에는 규제 및 감사 표준만을 목적으�
 또한 매일 수백만명의 소비자로부터 데이터를 수집하고, 고객이 얼마나 자신의 사용 기록을 조회할 지 모르기 때문에 스토리지 요금은 더 비싸지만 요청 및 데이터 검색 요금이 Standard-IA보다 더 싼 Standard를 선택하는 것이 올바르다.
 
 1차 시도 : A 맞음
+</div>
+</details>
 
 <br>
 <hr/>
@@ -434,6 +494,10 @@ D. Configure the DB instance in one Availability Zone, and configure AWS Databas
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : A or D(불확실)
 
 해설 : 
@@ -450,6 +514,8 @@ Discussion에서 대다수가 A를 답으로 지목하며 Multi-AZ를 사용하�
 + 추가.<br>
 [링크](https://aws.amazon.com/ko/blogs/database/managed-disaster-recovery-with-amazon-rds-for-sql-server-using-cross-region-automated-backups/)를 보면 RPO와 RTO 테이블이 나와있다. <br>
 다만 SQL Server 환경이다. 만약 RDS Postgre와 SQL Server의 차이가 없다면 답은 A가 확정일 것이다.
+</div>
+</details>
 
 <br>
 <hr/>

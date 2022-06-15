@@ -38,6 +38,10 @@ D. 범용 SSD(gp2) 루트 볼륨을 사용하여 EC2 인스턴스를 프로비�
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : C
 
 해설 : 
@@ -49,6 +53,8 @@ C is my answer: Only gp3, io1, or io2 Volumes have configurable IOPS.<br>
 https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes.html
 
 1차 시도 : 모름
+</div>
+</details>
 
 <br>
 <hr/>
@@ -74,6 +80,10 @@ D. 사용자는 s3을 제외한 모든 작업이 거부됩니다.MFA(Multi-facto
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : D
 
 해설 : 
@@ -87,6 +97,8 @@ MFA(Multi-factor Authentication)가 활성화되지 않은 경우 PutObject를 �
 "Condition": "aws:MultiFactorAuthPresent": "false" = If MFA is not enabled
 
 1차 시도 : A
+</div>
+</details>
 
 <br>
 <hr/>
@@ -113,6 +125,10 @@ E. 아마존 심플 알림 서비스(Amazon SNS) 항목에 주문 이벤트를 �
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : Discussion 참조
 
 해설 : 
@@ -120,6 +136,8 @@ Answer : Discussion 참조
 Discussion 참조
 
 1차 시도 : A, D
+</div>
+</details>
 
 <br>
 <hr/>
@@ -143,6 +161,10 @@ D. 사진을 Amazon S3 Glacier 스토리지 클래스에 저장합니다. 30일�
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : B
 
 해설 : 
@@ -150,6 +172,8 @@ Answer : B
 그냥 B라고 함.
 
 1차 시도 : B
+</div>
+</details>
 
 <br>
 <hr/>
@@ -173,6 +197,10 @@ D. 웹 사이트의 용량을 자동으로 조정하도록 자동 배율을 구�
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : B
 
 해설 : 
@@ -180,6 +208,8 @@ Answer : B
 Cloudfront + S3 = Static Website
 
 1차 시도 : B
+</div>
+</details>
 
 <br>
 <hr/>
@@ -204,6 +234,10 @@ D. 트랜잭션을 DynamoDB로 대기열에 넣으려면 Amazon SQS(Amazon Simpl
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : A or B
 
 해설 : 
@@ -213,6 +247,8 @@ Discussion에서의 한 유저는 B. DAX의 경우 Read에만 영향을 주며, 
 하지만 다른 유저는 DAX는 Read 뿐만 아니라 Write(Put)에도 영향을 주며, DynamoDB는 capacity가 부족할 경우 자동으로 확장할 수 있기 때문에 답이 B. 라고 주장한다.
 
 1차 시도 : B
+</div>
+</details>
 
 <br>
 <hr/>
@@ -235,6 +271,10 @@ D. S3 버킷을 웹 응용 프로그램에 연결하려면 Amazon Simple Queue S
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : C
 
 해설 : 
@@ -246,6 +286,8 @@ D. SQS는 문제와 상관이 없는 솔루션이다.
 C. CloudFront는 [OAI](https://heoj10272.github.io/study/Amazon-CloudFront-%EC%9D%B4%ED%95%B4.html#iii-origin-access-identityoai)로 `비밀 캐싱`에 도움이 된다.
 
 1차 시도 : C
+</div>
+</details>
 
 <br>
 <hr/>
@@ -269,6 +311,10 @@ D. 애플리케이션 로드 밸런서를 생성합니다. 로드 밸런서 뒤�
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : C
 
 해설 : 
@@ -278,6 +324,8 @@ AWS WAF는 CLB가 아닌 ALB(애플리케이션 로드 밸런서)와 통합되�
 ALB + WAF = Protection from XSS, DDOS => Shield
 
 1차 시도 : C
+</div>
+</details>
 
 <br>
 <hr/>
@@ -301,6 +349,10 @@ D. MySQL 기본 비동기 복제로 Multi-AZ RDS 읽기 복제본을 사용합�
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : A
 
 해설 : 
@@ -308,6 +360,8 @@ Answer : A
 데이터 I/O에 따른 스토리지 성능 개선이 필요하므로, A. Provisioned IOPS SSD 솔루션의 이상적인 상황이다.
 
 1차 시도 : A
+</div>
+</details>
 
 <br>
 <hr/>
@@ -331,6 +385,10 @@ D. 자동 회전을 통한 AWS KMS(SSE-KMS) 고객 마스터 키(CMK)를 통한 
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : D
 
 해설 : 
@@ -340,6 +398,8 @@ Answer : D
 암호화 키에 대한 감사와 키 순환 모두 AWS-KMS에서만 가능하다.
 
 1차 시도 : D
+</div>
+</details>
 
 <br>
 <hr/>

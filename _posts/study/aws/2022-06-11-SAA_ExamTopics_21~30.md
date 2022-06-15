@@ -38,6 +38,10 @@ D. AWS Budgets에서 Amazon Simple Email Service(Amazon SES)를 사용하여 경
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : B
 
 해설 : 
@@ -47,6 +51,8 @@ Answer : B
 책갈피로 저장하거나 CSV 파일을 다운로드하거나 보고서로 저장할 수 있습니다.
 
 1차 시도 : B
+</div>
+</details>
 
 <br>
 <hr/>
@@ -70,6 +76,10 @@ D. AWS 백업
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : A (and B)
 
 해설 : 
@@ -82,6 +92,8 @@ EFS는 동시성을 지원하기 때문에 답은 A이다.
 다음은 Multi-Attach에 대한 설명이다.
 
     Amazon EBS Multi-Attach를 사용하면 동일한 가용성 영역에 있는 여러 인스턴스에 단일 Provisioned IOPS SSD(i1 또는 io2) 볼륨을 연결할 수 있습니다. 여러 다중 연결 사용 볼륨을 인스턴스 또는 인스턴스 집합에 연결할 수 있습니다. 볼륨이 연결된 각 인스턴스에는 공유 볼륨에 대한 전체 읽기 및 쓰기 권한이 있습니다. Multi-Attach를 사용하면 동시 쓰기 작업을 관리하는 클러스터된 리눅스 애플리케이션에서 애플리케이션 가용성을 높일 수 있습니다.
+</div>
+</details>
 
 <br>
 <hr/>
@@ -105,6 +117,10 @@ D. 파일을 Amazon S3로 마이그레이션하고 공용 VPC 엔드포인트를
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : B
 
 해설 : 
@@ -118,6 +134,8 @@ Windows file server + AD => FSx
 보안 인증 시스템(B)을 사용하는 것이 더 안전합니다.
 
 1차 시도 : C
+</div>
+</details>
 
 <br>
 <hr/>
@@ -142,6 +160,10 @@ D. 정적 웹 사이트 호스팅을 위해 구성된 Amazon S3 버킷에 모든
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : B
 
 해설 : 
@@ -158,6 +180,8 @@ Answer : B
 또한 IAM 권한이 아니라 버킷 정책일 수 있으므로 이 경우에도 D는 제외됩니다.
 
 1차 시도 : A
+</div>
+</details>
 
 <br>
 <hr/>
@@ -181,6 +205,10 @@ D. AWS 관리 VPN 연결 두 개를 새로 설정합니다. 하나는 현재 AWS
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : C
 
 해설 : 
@@ -189,6 +217,8 @@ Answer : C
 또한 동일한 영역에 새 연결이 있으면 연결 로드를 공유하므로 기존 연결에서 "트래픽 대역폭"이 감소합니다.
 
 1차 시도 : B
+</div>
+</details>
 
 <br>
 <hr/>
@@ -212,6 +242,10 @@ D. 관리 VPC와 운영 VPC 사이에 두 번째 VPC 피어링 연결을 추가�
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : C
 
 해설 : 
@@ -229,6 +263,8 @@ C 정답 - "고객 게이트웨이 디바이스를 사용할 수 없게 될 경�
 https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-redundant-connection.html
 
 1차 시도 : 모름
+</div>
+</details>
 
 <br>
 <hr/>
@@ -254,7 +290,11 @@ E. AWS Fargate with Amazon Elastic Container Service(Amazon ECS)를 사용하여
 <hr/>
 <br>
 
-Answer : 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
+Answer : A, E
 
 해설 : 
 
@@ -275,6 +315,8 @@ https://aws.amazon.com/fargate/?whats-new-cards.sort-by=item.additionalFields.po
 그래서 A와 E가 해결책이다.
 
 1차 시도 : A, E
+</div>
+</details>
 
 <br>
 <hr/>
@@ -298,6 +340,10 @@ D. 각 영역에서 Amazon S3 버킷을 지우고(Clear) 비디오를 업로드�
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : B
 
 해설 : 
@@ -305,6 +351,8 @@ Answer : B
 S3에 비디오를 저장하고 배포를 위해 Cloudfront를 사용한다. 
 
 1차 시도 : B
+</div>
+</details>
 
 <br>
 <hr/>
@@ -328,6 +376,10 @@ D. 계정 수준에서 S3 공용 액세스 차단 기능을 사용합니다. AWS
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : D
 
 해설 : 
@@ -335,6 +387,8 @@ Answer : D
 Answer is D ladies and gentlemen. While guard duty helps to monitor s3 for potential threats its a reactive action. We should always be proactive and not reactive in our solutions so D, block public access to avoid any possibility of the info becoming publicly accessible
 
 1차 시도 : D
+</div>
+</details>
 
 <br>
 <hr/>
@@ -358,6 +412,10 @@ D. RDS DB 인스턴스에 Read Replica를 추가하고 읽기 복제본을 쿼�
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : D
 
 해설 : 
@@ -370,6 +428,8 @@ Option B is wrong as ElastiCache would only help for caching data from same quer
 Option C is wrong as Multi-AZ database spans across 2 AZs and its an high availability solution.
 
 1차 시도 : B
+</div>
+</details>
 
 <br>
 <hr/>

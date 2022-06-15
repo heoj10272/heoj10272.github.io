@@ -38,6 +38,10 @@ D. 개발자 IAM 역할에 관리자 정책 연결을 명시적으로 거부하�
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : D
 
 해설 : 
@@ -45,6 +49,8 @@ Answer : D
 Permission boundaries are for this use case. Be aware that you can assign boundaries only to users and roles, not groups
 
 1차 시도 : D
+</div>
+</details>
 
 <br>
 <hr/>
@@ -68,6 +74,10 @@ D. Amazon S3 정적 웹 사이트 호스팅을 사용하여 프런트 엔드를 
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : C
 
 해설 : 
@@ -78,6 +88,8 @@ minimal operational overhead expenditures => lambda & API gateway instead of Bea
 API Gateway + Lambda is best for "Microservices"
 
 1차 시도 : B
+</div>
+</details>
 
 <br>
 <hr/>
@@ -101,6 +113,10 @@ D. AWS 자동 스케일링을 설정하여 ALB 대상 그룹의 CPU 사용률이
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : Discussion 참고
 
 해설 : 
@@ -109,6 +125,8 @@ Answer : Discussion 참고
 Discussion 참고
 
 1차 시도 : C
+</div>
+</details>
 
 <br>
 <hr/>
@@ -131,6 +149,10 @@ D. VPN 구성의 터널 수를 늘려 기본 제한을 초과하여 처리량을
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : B
 
 해설 : 
@@ -141,6 +163,8 @@ AWS Transit Gateway를 사용하면 여러 VPC 간의 연결을 간소화할 수
 ECMP 사용 중계 게이트웨이에 대한 VPN 터널을 여러 개 설정하면 기본 제한인 1.25Gbps 이상으로 확장할 수 있습니다.
 
 1차 시도 : A
+</div>
+</details>
 
 <br>
 <hr/>
@@ -164,6 +188,10 @@ D. EC2 콘솔에서 상세 모니터링을 활성화합니다. Amazon CloudWatch
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : C
 
 해설 : 
@@ -171,6 +199,8 @@ Answer : C
 Cloudwatch agent for swap, memory utilization monitoring. Default cant. Must be custom.
 
 1차 시도 : C
+</div>
+</details>
 
 <br>
 <hr/>
@@ -194,6 +224,10 @@ D. AWS KMS(키 관리 서비스) 관리 키(SSE-KMS)를 사용하여 서버 측 
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : A
 
 해설 : 
@@ -201,6 +235,9 @@ Answer : A
 You can't restore from a DB snapshot to an existing DB instance; a new DB instance is created when you restore.
 
 1차 시도 : C
+</div>
+</details>
+
 
 <br>
 <hr/>
@@ -224,6 +261,10 @@ D. Amazon SQS(Amazon Simple Queue Service) 및 AWS Lambda와 함께 이벤트 �
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : A or D
 
 해설 : 
@@ -231,6 +272,8 @@ Answer : A or D
 Discussion 참고
 
 1차 시도 : C
+</div>
+</details>
 
 <br>
 <hr/>
@@ -256,6 +299,10 @@ E. 조직에 AWS SSO(Single Sign-On)를 설정합니다. AWS SSO를 구성하고
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : Discussion 참고
 
 해설 : 
@@ -263,6 +310,8 @@ Answer : Discussion 참고
 Discussion 참고
 
 1차 시도 : B, C
+</div>
+</details>
 
 <br>
 <hr/>
@@ -286,6 +335,10 @@ D. Amazon EventBridge(Amazon CloudWatch Events) 스케줄링된 이벤트로 트
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : C
 
 해설 : 
@@ -296,6 +349,8 @@ D is wrong; "running on Amazon EC2" not cost effective
 C is correct; Fargate is serverless & cost effective comparted to other options.
 
 1차 시도 : D
+</div>
+</details>
 
 <br>
 <hr/>
@@ -318,6 +373,10 @@ D. 쓰기를 캡처하고 데이터베이스에 쓸 때마다 대기열을 배�
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : D
 
 해설 : 
@@ -328,8 +387,8 @@ SNS is not correct because there is no resilient once SNS pushes messages out .
 Why is it D and not C? Because if the consumer consumes connections that doesn't make sense.
 
 1차 시도 : C
-
-
+</div>
+</details>
 
 <br>
 <hr/>

@@ -39,6 +39,10 @@ D. 암호화가 활성화된 RDS 읽기 복제본을 작성합니다. 읽기 복
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : C
 
 해설 : 
@@ -49,6 +53,8 @@ Answer : C
 평문으로 삽입 후 데이터 전체가 암호화된다.
 
 1차 시도 : C
+</div>
+</details>
 
 <br>
 <hr/>
@@ -73,6 +79,10 @@ D. 인스턴스의 응용 프로그램이 API 호출에 사용할 수 있도록 
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : C
 
 해설 : 
@@ -81,6 +91,8 @@ IAM 역할을 할당하는 것이 가장 낫다.<br>
 다른 옵션들은 CLI등을 통해 내부에 Access Key를 남기게 된다.
 
 1차 시도 : D
+</div>
+</details>
 
 <br>
 <hr/>
@@ -106,6 +118,10 @@ D. Amazon S3
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : D, (or B?)
 
 해설 : 
@@ -121,6 +137,8 @@ S2는 Write Concurrency를 지원하지 않지만, 지금 상황은 Read이므�
 또한 S3는 비용효율적 측면에서 아주 싸다.
 
 1차 시도 : D
+</div>
+</details>
 
 <br>
 <hr/>
@@ -145,6 +163,10 @@ D. 비디오를 Amazon S3 버킷에 저장합니다. AWS 스토리지 게이트�
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : C
 
 해설 : 
@@ -156,6 +178,8 @@ B. EFS로 서버 로드를 줄일 수 없다. EFS가 생각보다 빠르지 않�
 D. 온프레미스에 대한 솔루션이다.
 
 1차 시도 : C
+</div>
+</details>
 
 <br>
 <hr/>
@@ -180,6 +204,10 @@ D. Amazon DynamoDB on-demand
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : A
 
 해설 : 
@@ -191,6 +219,8 @@ RDS는 Unscalable, Aurora는 Scalable?<br>
 Aurora가 엄청 비싸긴 비싸다고 함
 
 1차 시도 : A
+</div>
+</details>
 
 <br>
 <hr/>
@@ -217,6 +247,10 @@ D. 기본 용량에는 예약 인스턴스를 사용하고 추가 용량을 처�
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : C or D // 답 C인듯
 
 해설 : 
@@ -224,6 +258,8 @@ Answer : C or D // 답 C인듯
 데이터는 SQS에 쌓이고 있기 때문에, 데이터가 날아갈 일은 없다?
 
 1차 시도 : D
+</div>
+</details>
 
 <br>
 <hr/>
@@ -253,6 +289,10 @@ D. S3 Standard 스토리지 클래스를 사용합니다. 30일 후 개체를 S3
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : D (B가 답이라는 말이 있음) // 답 B가 유력
 
 해설 : 
@@ -263,6 +303,8 @@ Answer : D (B가 답이라는 말이 있음) // 답 B가 유력
 하지만 한 유저는 Intelligent-Tiering이 ML/AI 서비스를 위한 스토리지 클래스이기 때문에 B 일 수도 있다고 말함.
 
 1차 시도 : D
+</div>
+</details>
 
 <br>
 <hr/>
@@ -288,11 +330,17 @@ D. 개체 수준 버전 지정을 사용합니다. 5년 이상 된 데이터를 
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : C (B라는 말이 있음)
 
 해설 : 
 
 1차 시도 : C
+</div>
+</details>
 
 <br>
 <hr/>
@@ -319,6 +367,10 @@ D. ChangeMessageVisibility API 호출을 사용하여 가시성 시간 초과를
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : D
 
 해설 : 
@@ -326,6 +378,8 @@ Answer : D
 표시 시간 제한은 Amazon SQS가 메시지를 반환할 때 시작됩니다. 이 시간 동안 소비자는 메시지를 처리하고 삭제합니다. 그러나 메시지를 삭제하기 전에 소비자가 실패하고 표시 시간 제한이 만료되기 전에 시스템에서 해당 메시지에 대한 메시지 삭제 작업을 호출하지 않으면 메시지가 다른 소비자에게 표시되고 메시지가 다시 수신됩니다. 메시지를 한 번만 수신해야 하는 경우, 사용자는 가시성 제한 시간 내에 메시지를 삭제해야 합니다.
 
 1차 시도 : 모름
+</div>
+</details>
 
 <br>
 <hr/>
@@ -351,11 +405,13 @@ E. AWS Global Accelerator를 구성합니다. 요청을 NLB(네트워크 로드 
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : A, C
 
 해설 : 
-
-1차 시도 : A, C
 
 A. <br>
 CloudFront는 요청 헤더 기반의 콘텐츠 캐싱이 가능하다.<br>
@@ -364,6 +420,10 @@ CloudFront는 요청 헤더 기반의 콘텐츠 캐싱이 가능하다.<br>
 C. <br>
 Lambda@Edge기능을 사용하면 요청을 제출한 디바이스에 대한 정보가 포함된 User-Agent 헤더를 기반으로 사용자에게 다른 객체를 전송한다.<br>
 예를 들어 디바이스별로 사용자에게 서로 다른 해상도로 이미지를 보낼 수 있다.
+
+1차 시도 : A, C
+</div>
+</details>
 
 <br>
 <hr/>

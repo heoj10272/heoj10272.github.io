@@ -38,6 +38,10 @@ D. 응용 프로그램을 확장하여 현재 타임스탬프 값에 테이블�
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : D
 
 해설 : 
@@ -56,6 +60,8 @@ TTL은 특정 시간 후에 관련성이 손실된 항목을 저장할 때 유�
 https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html
 
 1차 시도 : D
+</div>
+</details>
 
 <br>
 <hr/>
@@ -79,6 +85,10 @@ D. 시각화 도구를 데이터 웨어하우스와 동일한 AWS 영역에 호�
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : D
 
 해설 : 
@@ -94,6 +104,8 @@ A and B are out
 I would take D over C as transfer from AWS to on-premises would cost more than transfer from AWS to AWS
 
 1차 시도 : 모름
+</div>
+</details>
 
 <br>
 <hr/>
@@ -119,6 +131,10 @@ E. 여러 가용성 영역에 걸쳐 있는 Amazon EC2 인스턴스에 Kubernete
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : A, D
 
 해설 : 
@@ -134,6 +150,8 @@ Also can user fargate with micro services without any issue.
 완전 관리형 : RDS, DynamoDB, ElastiCache, Redshift
 
 1차 시도 : 모름
+</div>
+</details>
 
 <br>
 <hr/>
@@ -159,6 +177,10 @@ D. 사용자의 원본 IP가 10.100.100.254인 경우 사용자는 us-east-1 영
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : C
 
 해설 : 
@@ -172,6 +194,8 @@ Answer : C
 4 : Broadcast
 
 1차 시도 : B
+</div>
+</details>
 
 <br>
 <hr/>
@@ -195,6 +219,10 @@ D. Amazon Redshift 데이터베이스를 생성하고 트래픽을 Amazon Redshi
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : A
 
 해설 : 
@@ -203,6 +231,8 @@ An RDS read replica instance is an asynchronous read-only replica of a primary (
 It can be used by your application for any query that does not require changing data, relieving the master of the load.
 
 1차 시도 : A
+</div>
+</details>
 
 <br>
 <hr/>
@@ -228,6 +258,10 @@ E. 백업 보존 기간을 0이 아닌 값으로 설정하여 원본 인스턴�
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : C, E
 
 해설 : 
@@ -238,6 +272,8 @@ When creating a read replica, there are a few things to consider. First, you mus
 https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html
 
 1차 시도 : A, B
+</div>
+</details>
 
 <br>
 <hr/>
@@ -261,6 +297,10 @@ D. Amazon Route 53 with internal Application Load Balancers
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : A
 
 해설 : 
@@ -268,6 +308,8 @@ Answer : A
 CloundFront와 S3의 조합은 신이다.
 
 1차 시도 : A
+</div>
+</details>
 
 <br>
 <hr/>
@@ -291,6 +333,10 @@ D. DX 연결 위에 여러 가상 인터페이스를 구성합니다.
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : B
 
 해설 : 
@@ -299,6 +345,8 @@ Highly resilient, fault-tolerant network connections are key to a well-architect
 AWS recommends connecting from multiple data centers for physical location redundancy.
 
 1차 시도 : A
+</div>
+</details>
 
 <br>
 <hr/>
@@ -323,6 +371,10 @@ D. API Gateway Regional API 끝점 앞에 Lambda@Edge를 사용하여 Amazon Clo
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : B
 
 해설 : 
@@ -335,6 +387,8 @@ API Gateway throttles requests by default (https://docs.aws.amazon.com/apigatewa
 We need AWS Shield or WAF - https://aws.amazon.com/blogs/security/how-to-protect-dynamic-web-applications-against-ddos-attacks-by-using-amazon-cloudfront-and-amazon-route-53/
 
 1차 시도 : B
+</div>
+</details>
 
 <br>
 <hr/>
@@ -358,6 +412,10 @@ D. Amazon EventBridge(Amazon CloudWatch Events)를 사용하여 AWS Trusted Advi
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : C
 
 해설 : 
@@ -381,6 +439,8 @@ Inspector is specific to EC2.<br>
 -Requires agent installation on EC2 for Host(vulnerability assessment/best practices) OR can do NW Assessment for EC2 without installing agent
 
 1차 시도 : B
+</div>
+</details>
 
 <br>
 <hr/>

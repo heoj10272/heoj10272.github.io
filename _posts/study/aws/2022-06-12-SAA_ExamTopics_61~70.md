@@ -38,6 +38,10 @@ D. AWS KMS(키 관리 서비스) 키를 사용하여 Amazon EBS(Amazon Elastic B
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : D
 
 해설 : 
@@ -50,6 +54,8 @@ Certificates /SSL are for encryption in transit.
 B does not fulfill 'Minimum' Infrastrucure changes, it also does not talk about the EC2 volume.
 
 1차 시도 : C
+</div>
+</details>
 
 <br>
 <hr/>
@@ -75,6 +81,10 @@ D. 220.100.16.0/20 네트워크에서 AWS 람다 기능을 삭제할 수 있습�
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : C
 
 해설 : 
@@ -82,6 +92,8 @@ Answer : C
 쉬운 문제.
 
 1차 시도 : C
+</div>
+</details>
 
 <br>
 <hr/>
@@ -107,6 +119,10 @@ E. MySQL Multi-AZ 배포를 위해 데이터베이스를 Amazon RDS로 마이그
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : A, C
 
 해설 : 
@@ -139,6 +155,8 @@ Active-passive failover is adopted.<br>
  https://aws.amazon.com/rds/features/multi-az/
 
 1차 시도 : B, C
+</div>
+</details>
 
 <br>
 <hr/>
@@ -162,6 +180,10 @@ D. DynamoDB 테이블에 대한 액세스를 허용하는 적절한 정책을 �
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : A
 
 해설 : 
@@ -173,6 +195,8 @@ So the EC2 instance runs under the EC2 instance profile, defining “who” the 
 https://medium.com/devops-dudes/the-difference-between-an-aws-role-and-an-instance-profile-ae81abd700d#:~:text=Roles%20are%20designed%20to%20be,instance%20profile%20represents%20EC2%20instances.
 
 1차 시도 : A
+</div>
+</details>
 
 <br>
 <hr/>
@@ -196,11 +220,17 @@ D. Amazon Simple Queue Service(Amazon SQS)를 사용하여 인벤토리 업데�
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : Discussion 참조
 
 해설 : 
 
 1차 시도 : D
+</div>
+</details>
 
 <br>
 <hr/>
@@ -214,11 +244,17 @@ Answer : Discussion 참조
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : 
 
 해설 : 
 
 1차 시도 : 
+</div>
+</details>
 
 <br>
 <hr/>
@@ -232,11 +268,17 @@ Answer :
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : 
 
 해설 : 
 
 1차 시도 : 
+</div>
+</details>
 
 <br>
 <hr/>
@@ -250,11 +292,17 @@ Answer :
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : 
 
 해설 : 
 
 1차 시도 : 
+</div>
+</details>
 
 <br>
 <hr/>
@@ -268,11 +316,17 @@ Answer :
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : 
 
 해설 : 
 
 1차 시도 : 
+</div>
+</details>
 
 <br>
 <hr/>
@@ -286,11 +340,17 @@ Answer :
 <hr/>
 <br>
 
+<details>
+<summary>정답 및 해설 보기</summary>
+<div markdown="1">
+<br>
 Answer : 
 
 해설 : 
 
 1차 시도 : 
+</div>
+</details>
 
 <br>
 <hr/>
