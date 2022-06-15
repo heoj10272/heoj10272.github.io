@@ -1,6 +1,6 @@
 ---
 layout: post
-title: CloudWatch, Cloudtrail 비교
+title: CloudWatch와 Cloudtrail 비교
 subtitle: AWS
 date: '2022-06-10 18:00:00 +0900'
 category: study
