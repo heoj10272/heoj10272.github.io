@@ -147,7 +147,7 @@ Also can user fargate with micro services without any issue.
 
 
 관리형 : EC2<br>
-완전 관리형 : RDS, DynamoDB, ElastiCache, Redshift
+완전 관리형 : RDS, DynamoDB, ElastiCache, Redshift, SNS
 
 1차 시도 : 모름
 </div>
