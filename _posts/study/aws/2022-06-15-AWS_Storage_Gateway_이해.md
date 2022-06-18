@@ -82,6 +82,8 @@ Storage Gateway는 총 3가지의 옵션으로 구성되어 있다.
   * Cached Volume : 자주 사용되는 데이터만 로컬에 남겨두고 나머지는 모두 AWS에 백업
     + 1GB ~ 32TB
 
+  * Block Storage를 위해 사용 가능
+
 ### III. Tape Gateway(VTL, Virtual Table Library)
 
   * 이미 존재하는 Tape 기반 백업 어플리케이션을 위한 서비스
