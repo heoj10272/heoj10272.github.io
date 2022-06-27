@@ -1,7 +1,7 @@
 ---
 layout: tag-list
 type: tag
-title: ExamTopics
+title: SAA-C02 ExamTopics
 slug: examtopics
 category: study
 sidebar: false
