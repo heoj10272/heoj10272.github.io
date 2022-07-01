@@ -33,11 +33,11 @@ font-weight:bold">
 
 ## Education
 ---
-> 2017.Mar ~ : 서경대학교 컴퓨터공학과<br>
-> 2022.Feb ~ : SKU Algoritm Study<br>
-> 2022.Jun ~ : AWSKRUG AWS SAA Study<br>
-> 2022.July.03 ~ July.30 : SKU 하계 코딩테스트 특강<br>
-> 2022.July.04 ~ July.15 : 2022 삼성 SDS 하계 알고리즘 특강
+> 2017.03 ~ : 서경대학교 컴퓨터공학과<br>
+> 2022.02 ~ : SKU Algoritm Study<br>
+> 2022.06 ~ : AWSKRUG AWS SAA Study<br>
+> 2022.07.03 ~ 07.30 : SKU 하계 코딩테스트 특강<br>
+> 2022.07.04 ~ 07.15 : 2022 삼성 SDS 하계 알고리즘 특강
 
 
 ## Research Interest
