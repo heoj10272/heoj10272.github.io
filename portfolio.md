@@ -33,9 +33,11 @@ font-weight:bold">
 
 ## Education
 ---
-> Mar.2017 ~ 현재 : 서경대학교 컴퓨터공학과<br>
-> Feb.2022 ~ 현재 : SKU Algoritm Study<br>
-> Jun.2022 ~ 현재 : AWSKRUG AWS Study
+> 2017.Mar ~ : 서경대학교 컴퓨터공학과<br>
+> 2022.Feb ~ : SKU Algoritm Study<br>
+> 2022.Jun ~ : AWSKRUG AWS SAA Study<br>
+> 2022.July.03 ~ July.30 : SKU 하계 코딩테스트 특강<br>
+> 2022.July.04 ~ July.15 : 2022 삼성 SDS 하계 알고리즘 특강
 
 
 ## Research Interest
@@ -53,6 +55,7 @@ font-weight:bold">
 * CLOUD
     + AWS
     + GCP
+    + NCP
 
 ## Project
 ---
