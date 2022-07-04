@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Samsung SDS 1일차 A-고스택 BOJ 3425
+title: SAMSUNG SDS 1일차 A-고스택 BOJ 3425
 subtitle: Algorithm
 date: '2022-07-04 16:20:00 +0900'
 category: study

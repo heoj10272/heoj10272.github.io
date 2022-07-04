@@ -1,7 +1,7 @@
 ---
 layout: tag-list
 type: tag
-title: Samsung SDS
+title: SAMSUNG SDS
 slug: samsung-sds
 category: study
 sidebar: false
