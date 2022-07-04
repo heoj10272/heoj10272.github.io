@@ -6,7 +6,7 @@ date: '2022-07-04 16:20:00 +0900'
 category: study
 tags: algorithm samsung-sds
 image:
-  path: /assets/img/study_AWS/aws_logo.png
+  path: /assets/img/study_Algorithm/samsung_sds/icon.png
 ---
 
 삼성 SDS 알고리즘 특강 1일차<br>
