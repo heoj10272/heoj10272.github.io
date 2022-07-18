@@ -20,7 +20,7 @@ SAA Examtopics 21~30번 문제를 풀어보자.
 <hr/>
 <hr/>
 
-## Prob. 21
+## Prob. 21 ⭕⭕
 
 관리는 예산 계획 프로세스의 일부로 사용자별로 분류된 AWS 청구 항목 요약이 필요합니다. 부서에 대한 예산은 데이터를 사용하여 생성됩니다. 솔루션 설계자는 이 보고서 데이터를 얻는 가장 효과적인 방법을 확인해야 합니다.
 
@@ -50,7 +50,9 @@ Answer : B
 비용 탐색기는 사용자가 만든 리포트를 저장하는 방법도 제공합니다. <br>
 책갈피로 저장하거나 CSV 파일을 다운로드하거나 보고서로 저장할 수 있습니다.
 
-1차 시도 : B
+1차 시도 : B 맞음<br>
+2차 시도 : B 맞음<br>
+
 </div>
 </details>
 
@@ -58,7 +60,7 @@ Answer : B
 <hr/>
 <hr/>
 
-## Prob. 22
+## Prob. 22 ⭕⭕
 
 솔루션 설계자는 클라이언트 사례 파일을 보관하기 위한 시스템을 만들어야 합니다. 파일은 중요한 기업 자산입니다. 파일 수는 시간이 지남에 따라 증가합니다. Amazon EC2 인스턴스에서 실행되는 여러 애플리케이션 서버는 파일에 동시에 액세스할 수 있어야 합니다. 솔루션에는 기본 제공 중복성이 있어야 합니다.
 
@@ -80,11 +82,9 @@ D. AWS 백업
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : A (and B)
+Answer : A (and B) 중복 정답
 
 해설 : 
-
-1차 시도 : B
 
 EFS는 동시성을 지원하기 때문에 답은 A이다.
 
@@ -92,6 +92,10 @@ EFS는 동시성을 지원하기 때문에 답은 A이다.
 다음은 Multi-Attach에 대한 설명이다.
 
     Amazon EBS Multi-Attach를 사용하면 동일한 가용성 영역에 있는 여러 인스턴스에 단일 Provisioned IOPS SSD(i1 또는 io2) 볼륨을 연결할 수 있습니다. 여러 다중 연결 사용 볼륨을 인스턴스 또는 인스턴스 집합에 연결할 수 있습니다. 볼륨이 연결된 각 인스턴스에는 공유 볼륨에 대한 전체 읽기 및 쓰기 권한이 있습니다. Multi-Attach를 사용하면 동시 쓰기 작업을 관리하는 클러스터된 리눅스 애플리케이션에서 애플리케이션 가용성을 높일 수 있습니다.
+
+1차 시도 : B 맞음<br>
+2차 시도 : A 맞음<br>
+
 </div>
 </details>
 
@@ -99,7 +103,7 @@ EFS는 동시성을 지원하기 때문에 답은 A이다.
 <hr/>
 <hr/>
 
-## Prob. 23
+## Prob. 23 ❌⭕
 
 기업은 직원에게 기밀 및 민감한 데이터에 대한 보안 액세스를 제공해야 합니다. 회사는 승인된 개인만 데이터에 액세스할 수 있도록 보장하기를 원합니다. 데이터는 작업자의 장치에 안전하게 다운로드되어야 합니다. 파일은 온프레미스 Windows 파일 서버에 보관됩니다. 그러나 원격 트래픽이 증가함에 따라 파일 서버의 용량이 고갈되고 있습니다.
 
@@ -133,7 +137,8 @@ Windows file server + AD => FSx
 보안 그룹(A)을 통한 IP 화이트리스트는 직원 공용 IPv4가 변경되거나 디바이스가 손상될 수 있으므로 위험합니다.
 보안 인증 시스템(B)을 사용하는 것이 더 안전합니다.
 
-1차 시도 : C
+1차 시도 : C 틀림<br>
+2차 시도 : B 맞음<br>
 </div>
 </details>
 
@@ -141,7 +146,7 @@ Windows file server + AD => FSx
 <hr/>
 <hr/>
 
-## Prob. 24
+## Prob. 24 ❌⭕
 
 법률 회사는 대중과 소통해야 합니다. 수백 개의 파일에 공개적으로 액세스할 수 있어야 합니다. 누구든지 지정된 미래 날짜 이전에 파일을 수정하거나 삭제할 수 없습니다.
 
@@ -179,7 +184,8 @@ Answer : B
 즉, 새 버킷을 생성해야 합니다(버전링이 자동으로 활성화됨).
 또한 IAM 권한이 아니라 버킷 정책일 수 있으므로 이 경우에도 D는 제외됩니다.
 
-1차 시도 : A
+1차 시도 : A 틀림<br>
+2차 시도 : B 맞음<br>
 </div>
 </details>
 
@@ -187,7 +193,7 @@ Answer : B
 <hr/>
 <hr/>
 
-## Prob. 25
+## Prob. 25 ❌⭕
 
 기업은 10Gbps AWS Direct Connect 연결을 통해 온프레미스 서버를 AWS에 연결합니다. 연결의 작업 부하가 중요합니다. 조직에는 기존 연결 대역폭을 최소화하면서 최대한 탄력적인 재해 복구 접근 방식이 필요합니다.
 
@@ -216,7 +222,8 @@ Answer : C
 정답은 C: 두 가지 키워드는 "maximum resiliency"과 "재해 복구"입니다. 한 영역에 2개의 서로 다른 연결이 있으면 maximum resiliency가 보장됩니다. 서로 다른 영역에 서로 연결하면 재해/재해 복구가 포함됩니다.
 또한 동일한 영역에 새 연결이 있으면 연결 로드를 공유하므로 기존 연결에서 "트래픽 대역폭"이 감소합니다.
 
-1차 시도 : B
+1차 시도 : B 틀림<br>
+2차 시도 : C 맞음<br>
 </div>
 </details>
 
@@ -224,7 +231,7 @@ Answer : C
 <hr/>
 <hr/>
 
-## Prob. 26
+## Prob. 26 ❓❌
 
 기업에는 관리 및 프로덕션이라는 레이블이 붙은 두 개의 가상 사설 클라우드(VPC)가 있습니다. 관리 VPC는 ​​고객 게이트웨이를 통해 VPN을 사용하여 데이터 센터의 단일 장치에 연결합니다. 프로덕션 VPC는 ​​가상 프라이빗 게이트웨이를 통해 두 개의 AWS Direct Connect 연결을 통해 AWS에 연결됩니다. 관리 및 프로덕션 VPC는 ​​모두 단일 VPC 피어링 연결을 통해 서로 통신합니다.
 
@@ -262,7 +269,9 @@ VPC https://docs.aws.amazon.com/vpc/latest/peering/vpc-peering-basics.html
 C 정답 - "고객 게이트웨이 디바이스를 사용할 수 없게 될 경우 연결이 끊어지는 것을 방지하기 위해 두 번째 고객 게이트웨이 디바이스를 사용하여 VPC 및 가상 프라이빗 게이트웨이에 대한 두 번째 사이트 간 VPN 연결을 설정할 수 있습니다."
 https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-redundant-connection.html
 
-1차 시도 : 모름
+1차 시도 : 모름<br>
+2차 시도 : 틀림, 모름<br>
+
 </div>
 </details>
 
@@ -270,7 +279,7 @@ https://docs.aws.amazon.com/vpn/latest/s2svpn/vpn-redundant-connection.html
 <hr/>
 <hr/>
 
-## Prob. 27
+## Prob. 27 ⭕⭕
 
 AWS는 회사의 거의 실시간 스트리밍 애플리케이션을 호스팅합니다. 데이터가 수집되는 동안 완료하는 데 30분이 걸리는 작업이 수행됩니다. 방대한 양의 수신 데이터로 인해 워크로드는 정기적으로 상당한 대기 시간에 직면합니다. 성능을 최적화하기 위해 솔루션 설계자는 확장 가능한 서버리스 시스템을 구축해야 합니다.
 
@@ -314,7 +323,8 @@ https://aws.amazon.com/fargate/?whats-new-cards.sort-by=item.additionalFields.po
 
 그래서 A와 E가 해결책이다.
 
-1차 시도 : A, E
+1차 시도 : A, E 맞음<br>
+2차 시도 : A, E 맞음<br>
 </div>
 </details>
 
@@ -322,7 +332,7 @@ https://aws.amazon.com/fargate/?whats-new-cards.sort-by=item.additionalFields.po
 <hr/>
 <hr/>
 
-## Prob. 28
+## Prob. 28 ⭕⭕
 
 Amazon Elastic Block Store(Amazon EBS) 볼륨은 미디어 조직에서 비디오 자료를 저장하는 데 사용합니다. 특정 비디오 파일이 인기를 얻었고 현재 전 세계에서 많은 사람들이 이 파일을 보고 있습니다. 결과적으로 비용이 증가했습니다.
 
@@ -350,7 +360,8 @@ Answer : B
 
 S3에 비디오를 저장하고 배포를 위해 Cloudfront를 사용한다. 
 
-1차 시도 : B
+1차 시도 : B 맞음<br>
+2차 시도 : B 맞음<br>
 </div>
 </details>
 
@@ -358,7 +369,7 @@ S3에 비디오를 저장하고 배포를 위해 Cloudfront를 사용한다.
 <hr/>
 <hr/>
 
-## Prob. 29
+## Prob. 29 ⭕⭕
 
 Amazon S3 버킷은 이미지 호스팅 회사에서 객체를 저장하는 데 사용합니다. 회사는 S3 버킷에 포함된 항목이 의도하지 않게 공개되는 것을 방지하고자 합니다. AWS 계정의 모든 S3 항목은 전체적으로 비공개로 유지되어야 합니다.
 
@@ -386,7 +397,9 @@ Answer : D
 
 Answer is D ladies and gentlemen. While guard duty helps to monitor s3 for potential threats its a reactive action. We should always be proactive and not reactive in our solutions so D, block public access to avoid any possibility of the info becoming publicly accessible
 
-1차 시도 : D
+1차 시도 : D 맞음<br>
+2차 시도 : D 맞음<br>
+
 </div>
 </details>
 
@@ -394,7 +407,7 @@ Answer is D ladies and gentlemen. While guard duty helps to monitor s3 for poten
 <hr/>
 <hr/>
 
-## Prob. 30
+## Prob. 30 ❌⭕
 
 회사 웹 사이트는 Amazon RDS MySQL 다중 AZ DB 인스턴스에 트랜잭션 데이터를 저장합니다. 다른 내부 시스템은 이 데이터베이스 인스턴스를 쿼리하여 일괄 처리를 위한 데이터를 가져옵니다. 내부 시스템이 RDS DB 인스턴스에서 데이터를 요청하면 RDS DB 인스턴스가 급격히 느려집니다. 이는 웹사이트의 읽기 및 쓰기 성능에 영향을 미치므로 사용자의 응답 시간이 느려집니다.
 
@@ -427,7 +440,8 @@ Option A is wrong as changing DB would not help improve performance.
 Option B is wrong as ElastiCache would only help for caching data from same queries.
 Option C is wrong as Multi-AZ database spans across 2 AZs and its an high availability solution.
 
-1차 시도 : B
+1차 시도 : B 틀림<br>
+2차 시도 : D 맞음<br>
 </div>
 </details>
 
