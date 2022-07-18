@@ -37,7 +37,8 @@ font-weight:bold">
 > 2022.02 ~ : SKU Algoritm Study<br>
 > 2022.06 ~ : AWSKRUG AWS SAA Study<br>
 > 2022.07.03 ~ 07.30 : SKU 하계 코딩테스트 특강<br>
-> 2022.07.04 ~ 07.15 : 2022 삼성 SDS 하계 알고리즘 특강
+> 2022.07.04 ~ 07.15 : 2022 삼성 SDS 하계 대학생 알고리즘 특강<br>
+> 2022.07.18 ~ 08.26 : 2022 삼성전자 DX 부문 하계 대학생 S/W 알고리즘 역량 강화 특강
 
 
 ## Research Interest
