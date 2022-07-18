@@ -20,7 +20,7 @@ SAA Examtopics 11~20번 문제를 풀어보자.
 <hr/>
 <hr/>
 
-## Prob. 11
+## Prob. 11 ❓⭕
 
 Amazon EC2 인스턴스에서 기업은 일시적인 트랜잭션 데이터를 생성하는 애플리케이션을 개발하고 있습니다. 
 애플리케이션에는 조정 가능하고 일관된 IOPS를 제공할 수 있는 데이터 스토리지에 대한 액세스가 필요합니다.
@@ -50,9 +50,11 @@ Answer : C
 Discussion 참조.
 
 C is my answer: Only gp3, io1, or io2 Volumes have configurable IOPS.<br>
-https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes.html
+[링크](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes.html)
 
-1차 시도 : 모름
+1차 시도 : 모름<br>
+2차 시도 : 맞음<br>
+
 </div>
 </details>
 
@@ -60,7 +62,7 @@ https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-volumes.html
 <hr/>
 <hr/>
 
-## Prob. 12
+## Prob. 12 ❌❌
 
 새로운 워크로드를 구현하기 전에 솔루션 설계자는 회사의 현재 IAM 규칙을 검토하고 업데이트해야 합니다. 솔루션 설계자가 작성한 정책은 다음과 같습니다:
 
@@ -96,7 +98,9 @@ MFA(Multi-factor Authentication)가 활성화되지 않은 경우 PutObject를 �
 "NotAction": "S3:PutObject" = Except S3:PutObject<br>
 "Condition": "aws:MultiFactorAuthPresent": "false" = If MFA is not enabled
 
-1차 시도 : A
+1차 시도 : A<br>
+2차 시도 : 틀림<br>
+
 </div>
 </details>
 
@@ -104,7 +108,7 @@ MFA(Multi-factor Authentication)가 활성화되지 않은 경우 PutObject를 �
 <hr/>
 <hr/>
 
-## Prob. 13
+## Prob. 13 ❌❓
 
 실시간 처리를 허용하려면 웹 애플리케이션이 Amazon S3에 주문 데이터를 유지해야 합니다.
 솔루션 설계자는 확장 가능하고 내결함성이 있는 아키텍처를 설계해야 합니다.
@@ -129,13 +133,14 @@ E. 아마존 심플 알림 서비스(Amazon SNS) 항목에 주문 이벤트를 �
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : Discussion 참조
+Answer : Discussion 대환장 A, B가 제일 많긴 하다
 
 해설 : 
 
 Discussion 참조
 
-1차 시도 : A, D
+1차 시도 : A, D<br>
+2차 시도 : B, ?<br>
 </div>
 </details>
 
@@ -143,7 +148,7 @@ Discussion 참조
 <hr/>
 <hr/>
 
-## Prob. 14
+## Prob. 14 ⭕❌
 
 us-east-1 지역의 비즈니스에서 사진 호스팅 서비스를 제공합니다. 많은 국가의 사용자가 프로그램을 사용하여 이미지를 업로드하고 탐색할 수 있습니다. 일부 사진은 몇 달 동안 조회수가 높은 반면 다른 사진은 일주일 미만 동안 조회수가 적습니다. 이 프로그램은 최대 20MB 크기의 사진 업로드를 지원합니다. 서비스는 사진 정보를 기반으로 각 사용자에게 어떤 사진을 보여줄지 결정합니다.
 
@@ -171,7 +176,9 @@ Answer : B
 
 그냥 B라고 함.
 
-1차 시도 : B
+1차 시도 : B 맞음<br>
+2차 시도 : A 틀림<br>
+
 </div>
 </details>
 
@@ -179,7 +186,7 @@ Answer : B
 <hr/>
 <hr/>
 
-## Prob. 15
+## Prob. 15 ⭕⭕
 
 한 비즈니스에서 Amazon S3 버킷에 정적 사진을 저장할 웹 사이트를 만들고 있습니다. 회사의 목표는 모든 향후 요청에 대한 대기 시간과 비용을 줄이는 것입니다.
 
@@ -207,7 +214,9 @@ Answer : B
 
 Cloudfront + S3 = Static Website
 
-1차 시도 : B
+1차 시도 : B 맞음<br>
+2차 시도 : B 맞음<br>
+
 </div>
 </details>
 
@@ -215,7 +224,7 @@ Cloudfront + S3 = Static Website
 <hr/>
 <hr/>
 
-## Prob. 16
+## Prob. 16 ❌❌
 
 전자 상거래 웹 사이트의 데이터베이스 계층의 경우 회사는 처리량이 제공되는 Amazon DynamoDB를 사용합니다. 플래시 판매 기간 동안 데이터베이스가 트랜잭션 볼륨을 관리할 수 없을 때 클라이언트는 지연 기간에 직면할 수 있습니다. 결과적으로 비즈니스는 거래를 잃게 됩니다. 데이터베이스는 정규 시간 동안 정상적으로 작동합니다.
 
@@ -238,7 +247,7 @@ D. 트랜잭션을 DynamoDB로 대기열에 넣으려면 Amazon SQS(Amazon Simpl
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : A or B
+Answer : A(91%) or B(9%)
 
 해설 : 
 
@@ -246,7 +255,9 @@ Discussion에서의 한 유저는 B. DAX의 경우 Read에만 영향을 주며, 
 
 하지만 다른 유저는 DAX는 Read 뿐만 아니라 Write(Put)에도 영향을 주며, DynamoDB는 capacity가 부족할 경우 자동으로 확장할 수 있기 때문에 답이 B. 라고 주장한다.
 
-1차 시도 : B
+1차 시도 : B 틀림<br>
+2차 시도 : D 틀림<br>
+
 </div>
 </details>
 
@@ -254,7 +265,7 @@ Discussion에서의 한 유저는 B. DAX의 경우 Read에만 영향을 주며, 
 <hr/>
 <hr/>
 
-## Prob. 17
+## Prob. 17 ⭕⭕
 
 중요한 미디어 회사는 AWS를 사용하여 웹 애플리케이션을 호스팅합니다. 회사는 전 세계 소비자에게 신뢰할 수 있는 액세스를 제공하기 위해 비밀 미디어 파일 캐싱을 시작할 계획입니다. Amazon S3 버킷은 자료를 저장하는 데 사용됩니다. 조직은 요청의 출처에 관계없이 신속하게 자재를 공급해야 합니다.
 어떤 솔루션이 이러한 기준을 충족할까요?
@@ -285,7 +296,9 @@ D. SQS는 문제와 상관이 없는 솔루션이다.
 
 C. CloudFront는 [OAI](https://heoj10272.github.io/study/Amazon-CloudFront-%EC%9D%B4%ED%95%B4.html#iii-origin-access-identityoai)로 `비밀 캐싱`에 도움이 된다.
 
-1차 시도 : C
+1차 시도 : C 맞음<br>
+2차 시도 : C 맞음<br>
+
 </div>
 </details>
 
@@ -293,7 +306,7 @@ C. CloudFront는 [OAI](https://heoj10272.github.io/study/Amazon-CloudFront-%EC%9
 <hr/>
 <hr/>
 
-## Prob. 18
+## Prob. 18 ⭕⭕
 
 AWS 클라우드에는 웹 애플리케이션이 배포됩니다. 웹 및 데이터베이스 계층으로 구성된 2계층 설계입니다. 웹 서버에서 XSS(교차 사이트 스크립팅) 공격이 가능합니다.
 
@@ -323,7 +336,8 @@ AWS WAF는 CLB가 아닌 ALB(애플리케이션 로드 밸런서)와 통합되�
 
 ALB + WAF = Protection from XSS, DDOS => Shield
 
-1차 시도 : C
+1차 시도 : C 맞음<br>
+2차 시도 : C 맞음<br>
 </div>
 </details>
 
@@ -331,7 +345,7 @@ ALB + WAF = Protection from XSS, DDOS => Shield
 <hr/>
 <hr/>
 
-## Prob. 19
+## Prob. 19 ⭕⭕
 
 웹사이트에서 기업은 검색 가능한 물건을 보관합니다. 데이터는 Amazon RDS for MySQL 데이터베이스의 천만 개 이상의 행이 있는 테이블에 저장됩니다. 데이터베이스는 2TB 범용 SSD(gp2) 어레이에 저장됩니다. 매일 회사 웹 사이트는 이 데이터에 대한 수백만 건의 변경 사항을 수신합니다. 조직은 특정 작업에 10초 이상이 소요된다는 사실을 발견하고 병목 현상이 데이터베이스 스토리지 성능이라는 결론을 내렸습니다.
 
@@ -359,7 +373,9 @@ Answer : A
 
 데이터 I/O에 따른 스토리지 성능 개선이 필요하므로, A. Provisioned IOPS SSD 솔루션의 이상적인 상황이다.
 
-1차 시도 : A
+1차 시도 : A 맞음 <br>
+2차 시도 : A 맞음 <br>
+
 </div>
 </details>
 
@@ -367,7 +383,7 @@ Answer : A
 <hr/>
 <hr/>
 
-## Prob. 20
+## Prob. 20 ⭕⭕
 
 기업은 Amazon S3를 사용하여 민감한 데이터를 저장할 준비가 되어 있습니다. 규정 준수를 위해 데이터를 암호화해야 합니다. 암호화 키 사용에 대한 감사가 필요합니다. 매년 키를 교체해야 합니다.
 
@@ -397,7 +413,9 @@ Answer : D
 
 암호화 키에 대한 감사와 키 순환 모두 AWS-KMS에서만 가능하다.
 
-1차 시도 : D
+1차 시도 : D 맞음<br>
+2차 시도 : D 맞음<br>
+
 </div>
 </details>
 
