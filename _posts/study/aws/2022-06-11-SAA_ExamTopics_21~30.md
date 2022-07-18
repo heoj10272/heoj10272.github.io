@@ -9,7 +9,9 @@ image:
   path: /assets/img/study_AWS/2022-06-11-SAA_ExamTopics_21~30/logo.png
 ---
 
-SAA Examtopics 21~30번 문제를 풀어보자.
+SAA Examtopics 21~30번 문제를 풀어보자.<br>
+1차 5/10<br>
+2차 9/10<br>
 
 <!--more-->
 

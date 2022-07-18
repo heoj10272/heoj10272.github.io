@@ -9,8 +9,9 @@ image:
   path: /assets/img/study_AWS/2022-06-11-SAA_ExamTopics_11~20/logo.png
 ---
 
-SAA Examtopics 11~20번 문제를 풀어보자.
-
+SAA Examtopics 11~20번 문제를 풀어보자.<br>
+1차 6/10<br>
+2차 6/10<br>
 <!--more-->
 
 * this unordered seed list will be replaced by the toc
