@@ -20,7 +20,7 @@ SAA Examtopics 1~10번 문제를 풀어보자.
 <hr/>
 <hr/>
 
-## Prob. 1
+## Prob. 1 ❌⭕
 
 한 회사가 새로운 serverless 워크로드를 배치하려고 합니다.
 솔루션 아키텍트는 AWS Lambda 함수를 호출하기 위한 권한을 구성해야 합니다.
@@ -58,7 +58,8 @@ Amazon EventBridge로 Lambda함수를 호출하려면 아래와 같은 문구가
       "Service": "events.amazonaws.com"
     }
 
-1차 시도 : 틀림
+1차 시도 : 틀림<br>
+2차 시도 : 맞음
 </div>
 </details>
 
@@ -66,7 +67,7 @@ Amazon EventBridge로 Lambda함수를 호출하려면 아래와 같은 문구가
 <hr/>
 <hr/>
 
-## Prob. 2-1
+## Prob. 2-1 ⭕⭕
 
 한 회사는 Amazon EBS(Amazon Elastic Block Store)가 지원하는 Amazon EC2 인스턴스에서 애플리케이션을 실행합니다.
 인스턴스는 매일 12시간 사용 가능해야합니다.
@@ -99,7 +100,8 @@ Answer : B
 
 또한 인스턴스가 최대 절전 모드일 때는 EBS 볼륨과 Elastic IP 주소에 대한 요금만 지불한다.
 
-1차 시도 : B 맞음
+1차 시도 : B 맞음<br>
+2차 시도 : B 맞음
 </div>
 </details>
 
@@ -107,7 +109,7 @@ Answer : B
 <hr/>
 <hr/>
 
-## Prob. 2-2
+## Prob. 2-2 ⭕⭕
 
 한 온라인 사진 공유 회사가 us-west-1 Region에 있는 Amazon S3 버킷에 사진을 저장합니다. 
 회사는 기존의 모든 사진과 새로운 사진의 복사본을 다른 지리적 위치에 저장해야 합니다.
@@ -136,7 +138,8 @@ Answer : A
 엑셀 상에서의 답은 A이지만 이유를 모르겠다.
 추후 검토 예정
 
-1차 시도 : D 틀림
+1차 시도 : D 틀림<br>
+2차 시도 : A 맞음
 </div>
 </details>
 
@@ -144,7 +147,7 @@ Answer : A
 <hr/>
 <hr/>
 
-## Prob. 3
+## Prob. 3 ❌⭕
 
 회사는 회계 시스템을 온프레미스 데이터 센터에서 Amazon Web Services(AWS) 리전으로 마이그레이션하려고 합니다. 
 데이터 보안과 변경 불가능한 감사 로그가 우선되어야 합니다. 
@@ -186,7 +189,8 @@ CloudTrail 로그 파일 무결성에 대한 유효성 검토<br>
 AWS 계정 간에 CloudTrail 로그 파일 공유
 
 
-1차 시도 : C, E 틀림
+1차 시도 : C, E 틀림<br>
+2차 시도 : A, E 맞음
 </div>
 </details>
 
@@ -194,7 +198,7 @@ AWS 계정 간에 CloudTrail 로그 파일 공유
 <hr/>
 <hr/>
 
-## Prob. 4-1
+## Prob. 4-1 ❌❌
 
  한 회사가 최근 의료 영상과 관련된 새로운 서비스를 출시했습니다. 
  회사는 이미지를 스캔하고 Amazon EC2 인스턴스에 대한 AWS Direct Connect 연결을 통해 온프레미스 데이터 센터에서 이미지를 보냅니다. 
@@ -222,12 +226,14 @@ D. Move the EC2 instances into a public subnet. Configure the public subnet rout
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : Discussion에서 A와 B를 두고 대치.
+Answer : Discussion에서 A와 B를 두고 대치. 답 A가 맞는듯 
 
 해설 : 
 
 
-1차 시도 : B와 C 둘 중에 헷갈림.
+1차 시도 : B와 C 둘 중에 헷갈림.<br>
+2차 시도 : B 
+
 </div>
 </details>
 
@@ -235,7 +241,7 @@ Answer : Discussion에서 A와 B를 두고 대치.
 <hr/>
 <hr/>
 
-## Prob. 4-2
+## Prob. 4-2 ⭕⭕
 
 회사는 웹사이트에서 검색 가능한 항목 목록을 유지 관리합니다. 
 데이터는 천만 개 이상의 항목이 있는 테이블의 MySQL용 Amazon RDS 데이터베이스에 저장됩니다. 
@@ -269,7 +275,9 @@ Answer : A
 문제상 병목 현상이 발생하는 이유는 스토리지 성능이다.<br>
 범용 SSD보다 더 성능이 좋은 프로비전된 IOPS SSD를 사용하면 병목 현상이 해결될 것이다.
 
-1차 시도 : A 맞음
+1차 시도 : A 맞음<br>
+2차 시도 : A 맞음<br>
+
 </div>
 </details>
 
@@ -277,7 +285,7 @@ Answer : A
 <hr/>
 <hr/>
 
-## Prob. 5
+## Prob. 5 ⭕⭕
 
 재난 대응 팀이 드론을 사용하여 최근 폭풍 피해의 이미지를 수집하고 있습니다. 
 대응팀의 노트북에는 이미지를 전송하고 데이터를 처리할 수 있는 스토리지 및 컴퓨팅 용량이 부족합니다. 
@@ -309,7 +317,9 @@ Answer : A
 재해 상황이므로 데이터는 한 번 수집 후 말 것이기 때문에, Snowball Edge device면 충분하다.<br>
 또한 Storage Gateway에는 compute가 없지만 Snowball에는 있다는 말이 있음.
 
-1차 시도 : A 맞음
+1차 시도 : A 맞음<br>
+2차 시도 : A 맞음<br>
+
 </div>
 </details>
 
@@ -317,7 +327,7 @@ Answer : A
 <hr/>
 <hr/>
 
-## Prob. 6
+## Prob. 6 ⭕⭕
 
 회사에서 데이터 저장을 위해 Amazon DynamoDB 테이블을 사용할 계획입니다. 
 회사는 비용 최적화에 대해 우려하고 있습니다. 
@@ -349,7 +359,9 @@ Answer : A
 
 상황이 온디맨드에 매우 적합한 상황이다.
 
-1차 시도 : A 맞음
+1차 시도 : A 맞음<br>
+2차 시도 : A 맞음<br>
+
 </div>
 </details>
 
@@ -357,7 +369,7 @@ Answer : A
 <hr/>
 <hr/>
 
-## Prob. 7
+## Prob. 7 ❌⭕
 
 기업은 AWS 애플리케이션을 사용하여 전 세계 구독자에게 콘텐츠를 제공합니다. 
 수많은 Amazon EC2 인스턴스가 애플리케이션용 Application Load Balancer(ALB) 뒤의 프라이빗 서브넷에 배포됩니다. 
@@ -387,7 +399,9 @@ Answer : C
 
 저작권 등의 이유로 접속하는 국가에 따라 컨텐츠를 제한해야할 경우, CloudFront의 `지리적 제한` 기능을 사용하여 해당 국가로부터의 액세스를 제한할 수 있다.
 
-1차 시도 : A 틀림
+1차 시도 : A 틀림<br>
+2차 시도 : C 맞음<br>
+
 </div>
 </details>
 
@@ -395,7 +409,7 @@ Answer : C
 <hr/>
 <hr/>
 
-## Prob. 8
+## Prob. 8 ❌❌
 
 7개의 Amazon EC2 인스턴스를 사용하여 기업은 AWS에서 웹 애플리케이션을 실행합니다. 
 조직은 DNS 쿼리가 모든 정상 EC2 인스턴스의 IP 주소를 제공하기를 원합니다.
@@ -427,7 +441,9 @@ Multi-value routing policy를 사용하여 DNS 응답을 여러 리소스에 분
 
 즉, DNS를 분산 시키려면 Multi-value 를 사용해야 하며, A. Single은 health check를 할 수 없지만 Multi-value는 가능하다.
 
-1차 시도 : A 틀림
+1차 시도 : A 틀림<br>
+2차 시도 : A 틀림<br>
+
 </div>
 </details>
 
@@ -435,7 +451,7 @@ Multi-value routing policy를 사용하여 DNS 응답을 여러 리소스에 분
 <hr/>
 <hr/>
 
-## Prob. 9
+## Prob. 9 ⭕❌
 
 매일 기업은 수백만 명의 소비자로부터 약 1'에 달하는 데이터를 수집합니다. 
 회사는 고객에게 지난 12개월 동안의 사용 기록을 제공합니다. 
@@ -467,7 +483,9 @@ Discussion에서 A와 B를 두고 논쟁하고 있다.
 A가 맞는 이유는, 1년 후에는 규제 및 감사 표준만을 목적으로 데이터를 저장하는 것이기 때문에 거의 접근하지 않을 것이므로 Glacier Deep Archive에 보관하는것이 맞다.
 또한 매일 수백만명의 소비자로부터 데이터를 수집하고, 고객이 얼마나 자신의 사용 기록을 조회할 지 모르기 때문에 스토리지 요금은 더 비싸지만 요청 및 데이터 검색 요금이 Standard-IA보다 더 싼 Standard를 선택하는 것이 올바르다.
 
-1차 시도 : A 맞음
+1차 시도 : A 맞음<br>
+2차 시도 : B 틀림<br>
+
 </div>
 </details>
 
@@ -475,7 +493,7 @@ A가 맞는 이유는, 1년 후에는 규제 및 감사 표준만을 목적으�
 <hr/>
 <hr/>
 
-## Prob. 10
+## Prob. 10 ❌❌
 
 기업은 Amazon RDS for PostgreSQL 데이터베이스 인스턴스를 사용하여 웹 서버 집합을 관리합니다. 
 정상적인 규정 준수 검토 후 회사는 모든 프로덕션 데이터베이스에 1초 미만의 RPO(복구 시점 목표)를 갖도록 요구하는 표준을 설정합니다.
@@ -498,7 +516,7 @@ D. Configure the DB instance in one Availability Zone, and configure AWS Databas
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : A or D(불확실)
+Answer : A or D(불확실). A 유력
 
 해설 : 
 
@@ -514,6 +532,10 @@ Discussion에서 대다수가 A를 답으로 지목하며 Multi-AZ를 사용하�
 + 추가.<br>
 [링크](https://aws.amazon.com/ko/blogs/database/managed-disaster-recovery-with-amazon-rds-for-sql-server-using-cross-region-automated-backups/)를 보면 RPO와 RTO 테이블이 나와있다. <br>
 다만 SQL Server 환경이다. 만약 RDS Postgre와 SQL Server의 차이가 없다면 답은 A가 확정일 것이다.
+
+1차 시도 : 틀림<br>
+2차 시도 : C 틀림<br>
+
 </div>
 </details>
 
