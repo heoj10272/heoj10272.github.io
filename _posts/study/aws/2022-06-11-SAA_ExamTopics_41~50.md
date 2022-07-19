@@ -9,8 +9,9 @@ image:
   path: /assets/img/study_AWS/2022-06-11-SAA_ExamTopics_41~50/logo.png
 ---
 
-SAA Examtopics 41~50번 문제를 풀어보자.
-
+SAA Examtopics 41~50번 문제를 풀어보자.<br>
+1차 2/10<br>
+2차 5/10<br>
 <!--more-->
 
 * this unordered seed list will be replaced by the toc
@@ -20,7 +21,7 @@ SAA Examtopics 41~50번 문제를 풀어보자.
 <hr/>
 <hr/>
 
-## Prob. 41
+## Prob. 41 ⭕⭕
 
 실험과 민첩성을 촉진하기 위해 비즈니스에서는 개발자가 현재 IAM 정책을 기존 IAM 역할에 연결할 수 있습니다. 반면 보안 운영 팀은 개발자가 현재 관리자 정책을 첨부하여 다른 보안 규칙을 우회할 수 있다고 우려하고 있습니다.
 
@@ -48,7 +49,8 @@ Answer : D
 
 Permission boundaries are for this use case. Be aware that you can assign boundaries only to users and roles, not groups
 
-1차 시도 : D
+1차 시도 : D 맞음<br>
+2차 시도 : D 맞음<br>
 </div>
 </details>
 
@@ -56,7 +58,7 @@ Permission boundaries are for this use case. Be aware that you can assign bounda
 <hr/>
 <hr/>
 
-## Prob. 42
+## Prob. 42 ❌⭕
 
 새로 형성된 회사는 3계층 웹 애플리케이션을 개발했습니다. 프런트 엔드는 완전히 정적 정보로 구성됩니다. 마이크로서비스는 애플리케이션 계층을 형성합니다. 사용자 데이터는 최소한의 지연으로 액세스할 수 있는 JSON 문서 형식으로 보관됩니다. 회사는 첫 해에 월별 트래픽 급증과 함께 최소한의 정규 트래픽을 예상합니다. 스타트업 팀의 운영 간접비는 최소한으로 유지되어야 합니다.
 
@@ -87,7 +89,8 @@ JSON 문서와 같은 비구조화된 데이터는 RDS에 저장할 수 없다.
 minimal operational overhead expenditures => lambda & API gateway instead of Beanstalk or EKS<br>
 API Gateway + Lambda is best for "Microservices"
 
-1차 시도 : B
+1차 시도 : B 틀림<br>
+2차 시도 : C 맞음<br>
 </div>
 </details>
 
@@ -95,7 +98,7 @@ API Gateway + Lambda is best for "Microservices"
 <hr/>
 <hr/>
 
-## Prob. 43
+## Prob. 43 ❓❓
 
 Amazon Elastic Container Service(Amazon ECS) 컨테이너 인스턴스는 ALB(Application Load Balancer) 뒤에 전자 상거래 웹 사이트의 웹 애플리케이션을 설치하는 데 사용됩니다. 사용량이 많은 순간에는 웹 사이트 속도가 느려지고 가용성이 감소합니다. 솔루션 설계자는 Amazon CloudWatch 경보를 활용하여 가용성 문제가 발생할 때 알림을 받고 리소스를 확장할 수 있습니다. 비즈니스 경영진은 이러한 상황에 자동으로 대응하는 시스템을 원합니다.
 
@@ -117,14 +120,15 @@ D. AWS 자동 스케일링을 설정하여 ALB 대상 그룹의 CPU 사용률이
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : Discussion 참고
+Answer : Discussion 참고 / 답 C나 D인데 C가 유력하긴 하다.
 
 해설 : 
 
 모르겠다.<br>
 Discussion 참고
 
-1차 시도 : C
+1차 시도 : C 맞았는데 모름
+2차 시도 : D 틀림 모르겠음
 </div>
 </details>
 
@@ -132,7 +136,7 @@ Discussion 참고
 <hr/>
 <hr/>
 
-## Prob. 44
+## Prob. 44 ❌❌
 
 기업은 Site-to-Site VPN 연결을 사용하여 온프레미스에서 AWS 클라우드 서비스에 안전하게 액세스할 수 있도록 합니다. Amazon EC2 인스턴스에 대한 VPN 연결을 통한 트래픽 증가로 인해 사용자가 VPN 연결 속도가 느려지고 있습니다.
 어떤 접근 방식이 VPN 처리량을 증가시킬까요?
@@ -162,7 +166,8 @@ AWS Transit Gateway를 사용하면 여러 VPC 간의 연결을 간소화할 수
 단일 VPN 터널의 최대 처리량은 여전히 1.25Gbps이다. <br>
 ECMP 사용 중계 게이트웨이에 대한 VPN 터널을 여러 개 설정하면 기본 제한인 1.25Gbps 이상으로 확장할 수 있습니다.
 
-1차 시도 : A
+1차 시도 : A 틀림<br>
+2차 시도 : A 틀림<br>
 </div>
 </details>
 
@@ -170,7 +175,7 @@ ECMP 사용 중계 게이트웨이에 대한 VPN 터널을 여러 개 설정하�
 <hr/>
 <hr/>
 
-## Prob. 45
+## Prob. 45 ⭕❓
 
 Amazon EC2 Linux 인스턴스에서 비즈니스는 웹 사이트를 호스팅합니다. 몇 가지 예가 오작동하고 있습니다. 문제 해결은 실패한 인스턴스에 스왑 공간이 부족함을 나타냅니다. 운영 팀의 리더는 이를 위한 모니터링 솔루션이 필요합니다.
 
@@ -198,7 +203,10 @@ Answer : C
 
 Cloudwatch agent for swap, memory utilization monitoring. Default cant. Must be custom.
 
-1차 시도 : C
+D option does not provide SwapUtilization , it s only available thru agent (option C)
+
+1차 시도 : C 맞음<br>
+2차 시도 : D 모르겠음<br>
 </div>
 </details>
 
@@ -206,7 +214,7 @@ Cloudwatch agent for swap, memory utilization monitoring. Default cant. Must be 
 <hr/>
 <hr/>
 
-## Prob. 46
+## Prob. 46 ❌⭕
 
 AWS는 기업에서 OLTP(온라인 트랜잭션 처리) 부담을 수행하는 데 사용됩니다. 이 워크로드는 암호화되지 않은 Amazon RDS 데이터베이스 인스턴스를 사용하여 다중 AZ 환경에 배포됩니다. 이 인스턴스의 데이터베이스는 매일 백업됩니다.
 
@@ -234,7 +242,8 @@ Answer : A
 
 You can't restore from a DB snapshot to an existing DB instance; a new DB instance is created when you restore.
 
-1차 시도 : C
+1차 시도 : C 틀림<br>
+2차 시도 : A 맞음<br>
 </div>
 </details>
 
@@ -243,7 +252,7 @@ You can't restore from a DB snapshot to an existing DB instance; a new DB instan
 <hr/>
 <hr/>
 
-## Prob. 47
+## Prob. 47 ❌⭕
 
 기업은 다양한 Amazon EC2 인스턴스를 통해 소비자로부터 데이터를 수집하는 애플리케이션을 운영합니다. 처리 후 데이터는 장기 저장을 위해 Amazon S3에 업로드됩니다. 애플리케이션 연구에 따르면 EC2 인스턴스가 장기간 비활성 상태인 것으로 나타났습니다. 솔루션 설계자는 비용을 최소화하면서 사용량을 최대화하는 시스템을 제공해야 합니다.
 
@@ -269,9 +278,12 @@ Answer : A or D
 
 해설 : 
 
-Discussion 참고
+D가 일반적인 답이지만, 재설계는 꺼려진다면 A가 답일 수 있다.<br>
+또한 사용량을 최대화해야 하므로 람다 D가 아니라 A가 답이라는 사람이 있다.<br>
+둘 다 맞다 치겠다.
 
-1차 시도 : C
+1차 시도 : C 틀림<br>
+2차 시도 : D 맞음<br>
 </div>
 </details>
 
@@ -279,7 +291,7 @@ Discussion 참고
 <hr/>
 <hr/>
 
-## Prob. 48
+## Prob. 48 ❌❓
 
 기업은 많은 독립적인 Amazon Web Services 계정에서 통합된 다중 계정 설계로 마이그레이션하려고 합니다. 조직은 사업부를 위해 많은 수의 새 AWS 계정을 생성할 계획입니다. 조직은 이러한 AWS 계정에 대한 액세스를 인증하기 위해 단일 회사 디렉터리 서비스를 사용해야 합니다.
 
@@ -303,13 +315,18 @@ E. 조직에 AWS SSO(Single Sign-On)를 설정합니다. AWS SSO를 구성하고
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : Discussion 참고
+Answer : A, E
 
 해설 : 
+
+[링크1](https://docs.aws.amazon.com/singlesignon/latest/userguide/manage-your-identity-source-ad.html)
+
+[링크2](https://docs.aws.amazon.com/singlesignon/latest/userguide/what-is.html)
 
 Discussion 참고
 
 1차 시도 : B, C
+2차 시도 : 모르겠음
 </div>
 </details>
 
@@ -317,7 +334,7 @@ Discussion 참고
 <hr/>
 <hr/>
 
-## Prob. 49
+## Prob. 49 ❌❓
 
 솔루션 설계자는 완료하는 데 최대 2시간이 소요되는 일일 데이터 처리 작업을 개발하고 있습니다. 작업이 중지되면 처음부터 다시 시작해야 합니다.
 
@@ -343,12 +360,13 @@ Answer : C
 
 해설 : 
 
-A is wrong; "EC2 Reserved Instance" not cost effective compared to serverless
-B is wrong; Lambda runs for 15 minutes max
-D is wrong; "running on Amazon EC2" not cost effective
-C is correct; Fargate is serverless & cost effective comparted to other options.
+A is wrong; "EC2 Reserved Instance" not cost effective compared to serverless<br>
+B is wrong; Lambda runs for 15 minutes max<br>
+D is wrong; "running on Amazon EC2" not cost effective<br>
+C is correct; Fargate is serverless & cost effective comparted to other options.<br>
 
-1차 시도 : D
+1차 시도 : D 틀림<br>
+2ck 시도 : 모름<br>
 </div>
 </details>
 
@@ -356,9 +374,9 @@ C is correct; Fargate is serverless & cost effective comparted to other options.
 <hr/>
 <hr/>
 
-## Prob. 50
+## Prob. 50 ❌⭕
 
-비즈니스에서 AWS를 사용하여 설문 조사 웹 사이트를 호스팅하려고 합니다. 회사는 많은 양의 트래픽을 예상했습니다. 이 트래픽의 결과로 데이터베이스는 비동기식으로 업데이트됩니다. 조직은 AWS에 보관된 데이터베이스에 대한 쓰기 삭제를 방지하기를 원합니다. (The organization want to avoid dropping writes to the database housed on AWS.)
+비즈니스에서 AWS를 사용하여 설문 조사 웹 사이트를 호스팅하려고 합니다. 회사는 많은 양의 트래픽을 예상했습니다. 이 트래픽의 결과로 데이터베이스는 비동기식으로 업데이트됩니다. 조직은 AWS에 보관된 데이터베이스에 대한 쓰기 누락을 방지하기를 원합니다. (The organization want to avoid dropping writes to the database housed on AWS.)
 이러한 데이터베이스 요청을 처리하려면 비즈니스 애플리케이션을 어떻게 작성해야 합니까?
 
 A. Amazon Simple Notification Service(Amazon SNS) 항목에 게시하도록 응용 프로그램을 구성합니다. SNS 항목에 데이터베이스를 등록합니다.
@@ -381,12 +399,13 @@ Answer : D
 
 해설 : 
 
-Amazon SQS is used for capturing data asynchronously.
+Amazon SQS is used for capturing data asynchronously.<br>
 SNS is not correct because there is no resilient once SNS pushes messages out .
 
 Why is it D and not C? Because if the consumer consumes connections that doesn't make sense.
 
-1차 시도 : C
+1차 시도 : C 틀림<br>
+2차 시도 : D 맞음 근데 C랑 D 차이 잘 모르곘음<br>
 </div>
 </details>
 

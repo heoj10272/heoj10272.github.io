@@ -153,3 +153,6 @@ SQS는 이런 경우를 방지하기 위한 하나의 서비스에서 다른 서
 ![sns_sqs](/assets/img/study_AWS/2022-06-15-SES_SNS_SQS_비교/sns_sqs.png)
 
 SNS와 SQS는 위 표와 같은 차이를 가진다.
+
+SQS는 비동기식 데이터 캡쳐에 사용된다.<br>
+SNS는 한 번 메시지를 푸쉬하고 나면 회복력이 없다.
