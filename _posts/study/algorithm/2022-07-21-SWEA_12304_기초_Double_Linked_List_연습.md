@@ -4,7 +4,7 @@ title: "[SWEA] 12304. 기초 Double Linked List 연습"
 subtitle: Algorithm
 date: '2022-07-20 23:50:00 +0900'
 category: study
-tags: algorithm swea
+tags: algorithm samsung-dx swea
 image:
   path: /assets/img/study_Algorithm/samsung_dx/logo.png
 ---
