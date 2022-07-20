@@ -325,8 +325,8 @@ Answer : A, E
 
 Discussion 참고
 
-1차 시도 : B, C
-2차 시도 : 모르겠음
+1차 시도 : B, C<br>
+2차 시도 : 모르겠음<br>
 </div>
 </details>
 
