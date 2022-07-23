@@ -20,7 +20,7 @@ SAA Examtopics 61~70번 문제를 풀어보자.
 <hr/>
 <hr/>
 
-## Prob. 61
+## Prob. 61 ❌❌
 
 Amazon EC2에서 기업은 Amazon RDS 데이터베이스에 의해 백업되는 매우 안전한 애플리케이션을 운영하고 있습니다. 모든 개인 식별 정보(PII)는 규정 준수 표준을 준수하기 위해 저장 시 암호화되어야 합니다.
 
@@ -53,7 +53,8 @@ Certificates /SSL are for encryption in transit.
 
 B does not fulfill 'Minimum' Infrastrucure changes, it also does not talk about the EC2 volume.
 
-1차 시도 : C
+1차 시도 : C 틀림<br>
+2차 시도 : C 틀림<br>
 </div>
 </details>
 
@@ -61,7 +62,7 @@ B does not fulfill 'Minimum' Infrastrucure changes, it also does not talk about 
 <hr/>
 <hr/>
 
-## Prob. 62
+## Prob. 62 ⭕⭕
 
 솔루션 설계자가 설정한 IAM 정책은 다음과 같습니다.
 
@@ -91,7 +92,8 @@ Answer : C
 
 쉬운 문제.
 
-1차 시도 : C
+1차 시도 : C 맞음<br>
+2차 시도 : C 맞음<br>
 </div>
 </details>
 
@@ -99,7 +101,7 @@ Answer : C
 <hr/>
 <hr/>
 
-## Prob. 63
+## Prob. 63 ❌⭕
 
 Amazon Aurora에서 기업은 데이터베이스를 운영하고 있습니다. 매일 밤 데이터베이스는 비활성화됩니다. 사용자 트래픽이 이른 시간에 급증하면 데이터베이스에서 많은 양의 읽기를 수행하는 애플리케이션이 성능 문제에 직면하게 됩니다. 이러한 피크 시간 동안 데이터베이스에서 읽을 때 프로그램에서 시간 초과 문제가 발생합니다. 전담 운영 인력이 없기 때문에 조직은 성능 문제를 해결하기 위한 자동화된 솔루션이 필요합니다.
 
@@ -154,7 +156,8 @@ The standby instance is NOT used to serve reads or writes. <br>
 Active-passive failover is adopted.<br>
  https://aws.amazon.com/rds/features/multi-az/
 
-1차 시도 : B, C
+1차 시도 : B, C 틀림<br>
+2차 시도 : A, C 맞음<br>
 </div>
 </details>
 
@@ -162,7 +165,7 @@ Active-passive failover is adopted.<br>
 <hr/>
 <hr/>
 
-## Prob. 64
+## Prob. 64 ⭕⭕
 
 Amazon EC2 인스턴스 기반 애플리케이션은 Amazon DynamoDB 데이터베이스에 대한 액세스 권한이 필요합니다. EC2 인스턴스와 DynamoDB 테이블은 모두 동일한 AWS 계정으로 관리됩니다. 권한은 솔루션 설계자가 구성해야 합니다.
 
@@ -194,7 +197,8 @@ An instance profile, on the other hand, defines “who am I?” Just like an IAM
 So the EC2 instance runs under the EC2 instance profile, defining “who” the instance is. It then “assumes” the IAM role, which ultimately gives it any real power.<br>
 https://medium.com/devops-dudes/the-difference-between-an-aws-role-and-an-instance-profile-ae81abd700d#:~:text=Roles%20are%20designed%20to%20be,instance%20profile%20represents%20EC2%20instances.
 
-1차 시도 : A
+1차 시도 : A 맞음<br>
+2차 시도 : A 맞음<br>
 </div>
 </details>
 
@@ -202,7 +206,7 @@ https://medium.com/devops-dudes/the-difference-between-an-aws-role-and-an-instan
 <hr/>
 <hr/>
 
-## Prob. 65
+## Prob. 65 ⭕⭕
 
 비즈니스는 Amazon EC2 인스턴스를 사용하여 API 기반 인벤토리 보고 애플리케이션을 운영합니다. 이 프로그램은 Amazon DynamoDB 데이터베이스를 사용하여 데이터를 저장합니다. 기업의 물류 센터는 API와 통신하는 온프레미스 배송 애플리케이션을 사용하여 배송 라벨을 생성하기 전에 인벤토리를 업데이트합니다. 매일 조직은 애플리케이션 중단으로 인해 트랜잭션이 누락되는 것을 목격했습니다.
 
@@ -224,11 +228,12 @@ D. Amazon Simple Queue Service(Amazon SQS)를 사용하여 인벤토리 업데�
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : Discussion 참조
+Answer : D
 
 해설 : 
 
-1차 시도 : D
+1차 시도 : D 맞음<br>
+2차 시도 : D 맞음<br>
 </div>
 </details>
 

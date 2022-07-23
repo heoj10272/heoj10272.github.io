@@ -10,7 +10,8 @@ image:
 ---
 
 SAA Examtopics 51~60번 문제를 풀어보자.
-
+1차 4/10<br>
+2차 5/10<br>
 <!--more-->
 
 * this unordered seed list will be replaced by the toc
@@ -20,7 +21,7 @@ SAA Examtopics 51~60번 문제를 풀어보자.
 <hr/>
 <hr/>
 
-## Prob. 51
+## Prob. 51 ⭕❌
 
 거대한 Amazon EC2 인스턴스 집합에서 기업은 애플리케이션을 실행합니다. 이 프로그램은 Amazon에서 호스팅하는 DynamoDB 데이터베이스에 항목을 읽고 씁니다. DynamoDB 데이터베이스의 크기는 정기적으로 증가하지만 애플리케이션에는 이전 30일 동안의 데이터만 필요합니다. 조직은 구현하기에 비용 효율적이고 시간 효율적인 솔루션이 필요합니다.
 
@@ -59,7 +60,8 @@ TTL은 특정 시간 후에 관련성이 손실된 항목을 저장할 때 유�
 계약 또는 규제 의무에 따라 중요한 데이터를 일정 기간 동안 보관합니다.<br>
 https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html
 
-1차 시도 : D
+1차 시도 : D 맞음 <br>
+2차 시도 : C 틀림 <br>
 </div>
 </details>
 
@@ -67,7 +69,7 @@ https://docs.aws.amazon.com/amazondynamodb/latest/developerguide/TTL.html
 <hr/>
 <hr/>
 
-## Prob. 52
+## Prob. 52 ❓❓
 
 이전에는 기업에서 데이터 웨어하우징 솔루션을 AWS로 이전했습니다. 또한 회사에는 AWS Direct Connect 연결이 있습니다. 회사 사무실의 사용자는 시각화 도구를 사용하여 데이터 웨어하우스를 쿼리할 수 있습니다. 데이터 웨어하우스에서 응답하는 각 쿼리의 크기는 평균 50MB인 반면 시각화 도구에서 제공하는 각 웹 페이지의 크기는 약 500KB입니다. 데이터 웨어하우스는 반환하는 결과 집합을 캐시하지 않습니다.
 
@@ -103,7 +105,8 @@ A and B are out
 
 I would take D over C as transfer from AWS to on-premises would cost more than transfer from AWS to AWS
 
-1차 시도 : 모름
+1차 시도 : 모름<br>
+2차 시도 : 모름<br>
 </div>
 </details>
 
@@ -111,7 +114,7 @@ I would take D over C as transfer from AWS to on-premises would cost more than t
 <hr/>
 <hr/>
 
-## Prob. 53
+## Prob. 53 ❓❌
 
 비즈니스에서 많은 마이크로서비스로 구성된 애플리케이션을 개발 중입니다. 조직은 컨테이너 기술을 통해 AWS에 소프트웨어를 배포하기로 결정했습니다. 비즈니스에는 유지 관리 및 성장을 위해 지속적인 작업이 거의 필요하지 않은 솔루션이 필요합니다. 추가 인프라는 비즈니스에서 관리할 수 없습니다.
 
@@ -149,7 +152,8 @@ Also can user fargate with micro services without any issue.
 관리형 : EC2<br>
 완전 관리형 : RDS, DynamoDB, ElastiCache, Redshift, SNS
 
-1차 시도 : 모름
+1차 시도 : 모름 <br>
+2차 시도 : 틀림 <br>
 </div>
 </details>
 
@@ -157,7 +161,7 @@ Also can user fargate with micro services without any issue.
 <hr/>
 <hr/>
 
-## Prob. 54
+## Prob. 54 ❌⭕
 
 The following policy was developed by an Amazon EC2 administrator and assigned to an IAM group including numerous users:
 
@@ -187,13 +191,14 @@ Answer : C
 
 10.100.100.1은 예약된 IP 주소이다.
 
-0 : 네트워크 어드레스
-1 : VPC Router
-2 : DNS
-3 : Future use
-4 : Broadcast
+0 : 네트워크 어드레스<br>
+1 : VPC Router<br>
+2 : DNS<br>
+3 : Future use<br>
+4 : Broadcast<br>
 
-1차 시도 : B
+1차 시도 : B 틀림<br>
+2차 시도 : C 맞음<br>
 </div>
 </details>
 
@@ -201,7 +206,7 @@ Answer : C
 <hr/>
 <hr/>
 
-## Prob. 55
+## Prob. 55 ⭕⭕
 
 비즈니스의 웹 애플리케이션은 데이터를 Amazon RDS PostgreSQL 데이터베이스 인스턴스에 저장합니다. 회계사는 결산 기간 중 매월 초에 대량 쿼리를 수행하며 과도한 활용으로 인해 데이터베이스 성능에 부정적인 영향을 미칩니다. 비즈니스는 온라인 지원에 대한 보고의 영향을 줄이기를 원합니다.
 
@@ -230,7 +235,8 @@ Answer : A
 An RDS read replica instance is an asynchronous read-only replica of a primary ("master") database instance located upstream. <br>
 It can be used by your application for any query that does not require changing data, relieving the master of the load.
 
-1차 시도 : A
+1차 시도 : A 맞음<br>
+2차 시도 : A 맞음<br>
 </div>
 </details>
 
@@ -238,7 +244,7 @@ It can be used by your application for any query that does not require changing 
 <hr/>
 <hr/>
 
-## Prob. 56
+## Prob. 56 ❌⭕ 유념
 
 한 기업이 Amazon RDS에 MySQL 데이터베이스를 구현했습니다. 데이터베이스 지원팀은 트랜잭션 증가로 인해 DB 인스턴스에 대한 읽기 지연이 발생했다고 보고하고 읽기 전용 복제본을 설치할 것을 권고하고 있습니다.
 
@@ -272,6 +278,7 @@ When creating a read replica, there are a few things to consider. First, you mus
 https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html
 
 1차 시도 : A, B
+2차 시도 : C, E
 </div>
 </details>
 
@@ -279,7 +286,7 @@ https://docs.aws.amazon.com/AmazonRDS/latest/UserGuide/USER_ReadRepl.html
 <hr/>
 <hr/>
 
-## Prob. 57
+## Prob. 57 ⭕⭕
 
 사용자는 회사 웹사이트에서 과거 실적 보고서를 받을 수 있습니다. 웹 사이트에는 회사의 전세계 웹 사이트 요구 사항에 맞게 확장할 수 있는 솔루션이 필요합니다. 솔루션은 비용 효율적이고 인프라 리소스 프로비저닝을 최소화하며 실현 가능한 가장 빠른 반응 시간을 제공해야 합니다.
 
@@ -307,7 +314,8 @@ Answer : A
 
 CloundFront와 S3의 조합은 신이다.
 
-1차 시도 : A
+1차 시도 : A 맞음<br>
+2차 시도 : A 맞음<br>
 </div>
 </details>
 
@@ -315,7 +323,7 @@ CloundFront와 S3의 조합은 신이다.
 <hr/>
 <hr/>
 
-## Prob. 58
+## Prob. 58 ❌⭕
 
 솔루션 설계자는 Amazon Web Services(AWS) 클라우드에서 하이브리드 애플리케이션을 개발하고 있습니다. AWS Direct Link(DX)는 온프레미스 데이터 센터를 AWS에 연결하는 데 사용됩니다. AWS와 온프레미스 데이터 센터 간의 애플리케이션 연결은 매우 내구성이 있어야 합니다.
 
@@ -344,7 +352,8 @@ Answer : B
 Highly resilient, fault-tolerant network connections are key to a well-architected system. <br>
 AWS recommends connecting from multiple data centers for physical location redundancy.
 
-1차 시도 : A
+1차 시도 : A 틀림<br>
+2차 시도 : B 맞음<br>
 </div>
 </details>
 
@@ -352,7 +361,7 @@ AWS recommends connecting from multiple data centers for physical location redun
 <hr/>
 <hr/>
 
-## Prob. 59
+## Prob. 59 ⭕❌
 
 금융 기관은 AWS를 사용하여 웹 애플리케이션을 호스팅합니다. 이 프로그램은 Amazon API Gateway 지역 API 엔드포인트를 사용하여 현재 주가를 검색합니다. 조직의 보안 직원이 API 쿼리의 급증을 감지했습니다. 보안 팀은 HTTP flood 공격으로 인해 애플리케이션이 작동하지 않을 수 있다고 우려하고 있습니다.
 솔루션 설계자는 이러한 형태의 공격에 대한 방어책을 만들어야 합니다.
@@ -386,7 +395,8 @@ API Gateway throttles requests by default (https://docs.aws.amazon.com/apigatewa
 
 We need AWS Shield or WAF - https://aws.amazon.com/blogs/security/how-to-protect-dynamic-web-applications-against-ddos-attacks-by-using-amazon-cloudfront-and-amazon-route-53/
 
-1차 시도 : B
+1차 시도 : B 맞음<br>
+2차 시도 : A 틀림<br>
 </div>
 </details>
 
@@ -394,7 +404,7 @@ We need AWS Shield or WAF - https://aws.amazon.com/blogs/security/how-to-protect
 <hr/>
 <hr/>
 
-## Prob. 60
+## Prob. 60 ❌❌
 
 비즈니스에서 Amazon EC2 인스턴스의 보안 평가를 자동화하려고 합니다. 조직은 개발 프로세스가 보안 및 규정 준수 요구 사항을 준수하는지 확인하고 보여야 합니다.
 
@@ -438,7 +448,8 @@ Inspector is specific to EC2.<br>
 -Provides Automated Security Assessments for EC2 instances.<br>
 -Requires agent installation on EC2 for Host(vulnerability assessment/best practices) OR can do NW Assessment for EC2 without installing agent
 
-1차 시도 : B
+1차 시도 : B 틀림<br>
+2차 시도 : D 틀림<br>
 </div>
 </details>
 
