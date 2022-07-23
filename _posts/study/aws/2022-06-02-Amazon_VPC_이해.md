@@ -40,6 +40,7 @@ Amazon EC2 인스턴스와 같은 AWS 리소스를 사용자 VPC의 서브넷에
 * **CIDR(Classless Inter-Domain Routing) block**
   - 클래스 없는 도메인간 라우팅 기법을 이용한 IP address들의 그룹
   - 인터넷 프로토콜 주소 할당 및 라우팅 집계 방법
+  - 모든 서브넷에서 처음 4개 IP 주소와 마지막 IP 주소는 예약되어 있어서 인스턴스에 할당할 수 없음
 * **Routing Table**
   - 네트워크 트래픽을 전달할 위치를 결정하는데 사용하는 라우팅이라는 이름의 규칙 집합
 * **DHCP option sets**
@@ -65,8 +66,12 @@ Amazon EC2 인스턴스와 같은 AWS 리소스를 사용자 VPC의 서브넷에
 * **Security groups**
   - EC2 인스턴스 등의 AWS 리소스에 대한 인바운드 및 아웃바운드 트래픽을 제어하는 가상 방화벽 역할을 함
   - 각 VPC는 기본 보안 그룹과 함께 제공되며 추가 보안 그룹을 생성할 수 있음
+  - 허용 규칙만 지원함
   - 보안 그룹은 보안 그룹이 생성된 VPC에서만 사용할 수 있음
 * **Network ACLs**
+  - 보안 그룹보다 좀 더 큰 개념
+  - 보안 그룹은 인스턴스 레벨, Network ACLs는 서브넷 레벨로 서브넷 간의 통신 규칙을 관리
+  - 허용 및 거부 규칙을 모두 지원
   - 서브넷에서 들어오고 나가는 트래픽을 제어하기 위해 방화벽 역할을 수행하는 VPC에 대한 선택적 보안 계층
 
 <hr/>
@@ -86,6 +91,26 @@ Amazon EC2 인스턴스와 같은 AWS 리소스를 사용자 VPC의 서브넷에
   + Query API 사용이 Amazon VPC에 액세스하는 가장 직접적인 방법이지만, 어플리케이션에서 요청에 서명할 해시 생성 및 오류 처리와 같은 하위 수준의 세부 정보를 처리해야 함
 
 <hr/>
+
+## 3. VPC Peering
+
+VPC Peering Connection은 서로 다른 두 VPC 간에 트래픽을 라우팅할 수 있도록 하는 네트워킹 연결이다.
+
+VPC 피어링 연결은 원활한 데이터 전송에 많은 도움이 된다.<br>
+예를 들어 AWS 계정이 두 개 이상인 경우 이들 계정을 대상으로 VPC를 피어링하여 파일 공유 네트워크를 만들 수 있다.<br>
+VPC 피어링 연결을 사용하여 다른 VPC가 사용자의 VPC 중 하나에 있는 리소스에 액세스 하도록 허용할 수도 있다.<br>
+
+피어링은 항상 가능한 것이 아니다.<br>
+다음과 같은 상황에서는 피어링 구성이 지원되지 않는다.
+
+* 겹치는 CIDR 블록
+  + 중첩되는 CIDR 블록이 있을 경우 VPC 피어링 연결을 만들 수 없음
+
+* 전이적 피어링(transive peering)
+  + A-B-C로 연결되어 있을 때, VPC B를 통해 VPC A에서 VPC C로 직접 패킷을 라우팅 할 수 없음
+
+* 게이트웨이 또는 private 연결을 통한 엣지 간 라우팅
+  + A-B 연결에서 B에 인터넷 게이트웨이를 통한 인터넷 연결, AWS Direct Connect 연결, 프라이빗 서브넷에서 NAT 디바이스를 통한 인터넷 연결 등이 있는 경우, A에서 해당 외부 연결에 있는 리소스에 액세스할 수 없음
 
 * Ref
   - [AWS UserGuide amazon vpc](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/what-is-amazon-vpc.html)
