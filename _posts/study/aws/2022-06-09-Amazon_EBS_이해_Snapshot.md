@@ -46,6 +46,12 @@ AWS의 **Amazon EBS**를 이해해보자.
 
 5. **하나의 EBS를 여러 EC2에 장착 가능(EBS Multi Attach)**
 
+![EBS_connect1](/assets/img/study_AWS/2022-06-09-Amazon_EBS_이해_Snapshot/EBS_connect1.png){: width="60%" height="60%"}{:.centered}
+
+하나의 EBS를 여러 EC2에서 접속하는것이 가능하다.<br>
+최대 16개의 클라이언트를 지원한다? <- 확실하지 않음.<br>
+[그림 출처](https://towardsdatascience.com/stop-duplicating-deep-learning-training-datasets-with-amazon-ebs-multi-attach-d9f61fdc1de4)
+
 6. **루트 볼륨으로 사용시 EC2가 종료되면 같이 삭제됨**
     + 단 설정을 통해 EBS만 따로 존속 가능
 
