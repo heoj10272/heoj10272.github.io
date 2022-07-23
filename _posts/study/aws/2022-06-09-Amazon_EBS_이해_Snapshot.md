@@ -46,7 +46,7 @@ AWS의 **Amazon EBS**를 이해해보자.
 
 5. **하나의 EBS를 여러 EC2에 장착 가능(EBS Multi Attach)**
 
-![EBS_Multi_Attach](/assets/img/study_AWS/2022-06-09-Amazon_EBS_이해_Snapshot/EBS_connect1.png){: width="60%" height="60%"}{:.centered}
+![EBS_Multi_Attach](/assets/img/study_AWS/2022-06-09-Amazon_EBS_이해_Snapshot/multi_attach.png){: width="60%" height="60%"}{:.centered}
 
 하나의 EBS를 여러 EC2에서 접속하는것이 가능하다.<br>
 최대 16개의 클라이언트를 지원한다? <- 확실하지 않음.<br>
