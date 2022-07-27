@@ -114,6 +114,20 @@ VPC 피어링 연결을 사용하여 다른 VPC가 사용자의 VPC 중 하나�
 * 게이트웨이 또는 private 연결을 통한 엣지 간 라우팅
   + A-B 연결에서 B에 인터넷 게이트웨이를 통한 인터넷 연결, AWS Direct Connect 연결, 프라이빗 서브넷에서 NAT 디바이스를 통한 인터넷 연결 등이 있는 경우, A에서 해당 외부 연결에 있는 리소스에 액세스할 수 없음
 
+
+## 4. Site-to-Site VPN vs AWS Clinet VPN
+
+**Site-to-Site VPN** 
+
+- 사내 네트워크 또는 지사 사이트를 Amazon Virtual Private Cloud(Amazon VPC)에 안전하게 연결할 수 있다.
+- AWS 클라이언트 VPN을 사용하면 사용자를 AWS 또는 사내 네트워크에 안전하게 연결할 수 있다.
+[https://aws.amazon.com/vpn/faqs/#:~:text=AWS VPN](https://aws.amazon.com/vpn/faqs/#:~:text=AWS%20VPN%20%EC%9D%80)
+- AWS Site-to-Site VPN 연결은 연결이 활성 상태인 각 시간에 대해 시간당 요금이 부과됩니다. 이 AWS 지역의 경우 요금은 시간당 0.05달러입니다. 처음 1GB는 무료입니다.
+
+**AWS Clinet VPN** 
+
+- 시간당 요금: AWS Client VPN endpoint과의 연결 비용은 매 시간마다 청구(요금은 시간당 $0.10)
+
 * Ref
   - [AWS UserGuide amazon vpc](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/what-is-amazon-vpc.html)
   - [AWS UserGuide using vpc](https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/using-vpc.html)

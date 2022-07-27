@@ -121,6 +121,12 @@ AWS의 **SES, SNS, SQS**를 이해하고 비교해보자.
 
 * AWS에서 제일 오래된 서비스
 
+## 3-3. Amazon Simple Queue Service(SQS)용 Temporary Queue Client
+
+- 클라이언트는 요청-응답과 같은 일반 메시지 유형을 지원하고 애플리케이션 관리형 임시 대기열을 생성할 때 발전 시간과 발전 비용 절약을 지원합니다.
+
+- 클라이언트는 다양한 여러 대기열을 단일 Amazon SQS 대기열에 매핑하여 애플리케이션이 더 적은 API 호출을 실시하여 더 높은 처리량을 얻을 수 있도록 합니다. 임시 대기열이 더 이상 사용되지 않으면 클라이언트가 임시 대기열을 자동으로 정리합니다.
+
 ### SQS의 필요성
 
 ![sqs_fail](/assets/img/study_AWS/2022-06-15-SES_SNS_SQS_비교/sqs_fail.png)
