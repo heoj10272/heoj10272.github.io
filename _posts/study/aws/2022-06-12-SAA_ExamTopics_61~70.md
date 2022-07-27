@@ -10,6 +10,7 @@ image:
 ---
 
 SAA Examtopics 61~70번 문제를 풀어보자.
+1차 5/10<br>
 
 <!--more-->
 
@@ -241,9 +242,20 @@ Answer : D
 <hr/>
 <hr/>
 
-## Prob. 66
+## Prob. 66 ⭕
 
-거대한
+프라이빗 서브넷에서 Amazon EC2 인스턴스는 애플리케이션을 실행하는 데 사용됩니다. 
+애플리케이션은 Amazon DynamoDB의 테이블에 액세스해야 합니다.
+
+트래픽이 AWS 네트워크를 나가는 것을 허용하지 않고 테이블에 액세스하는 가장 안전한 방법은 무엇입니까?
+
+A. Use a VPC endpoint for DynamoDB.
+
+B. Use a NAT gateway in a public subnet.
+
+C. Use a NAT instance in a private subnet.
+
+D. Use the internet gateway attached to the VPC.
 
 <br>
 <hr/>
@@ -253,11 +265,13 @@ Answer : D
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
 
 해설 : 
 
-1차 시도 : 
+Dynamo DB는 VPC endpoint를 사용한다.
+
+1차 시도 : A 맞음<br>
 </div>
 </details>
 
@@ -265,9 +279,19 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 67
+## Prob. 67 ❌
 
-거대한
+단일 Amazon EC2 인스턴스에서 기업은 ASP.NET MVC 애플리케이션을 실행합니다.최근 애플리케이션 사용량이 급증했기 때문에 점심 시간에는 사용자의 응답 시간이 느려지고 있습니다.회사는 가능한 최소한의 설정을 사용하여 이 문제를 해결해야 합니다.
+
+이러한 요구 사항을 충족하기 위해 솔루션 설계자는 어떤 권장 사항을 제시해야 합니까?
+
+A. Move the application to AWS Elastic Beanstalk. Configure load-based auto scaling and time-based scaling to handle scaling during lunch hours.
+
+B. Move the application to Amazon Elastic Container Service (Amazon ECS). Create an AWS Lambda function to handle scaling during lunch hours.
+
+C. Move the application to Amazon Elastic Container Service (Amazon ECS). Configure scheduled scaling for AWS Application Auto Scaling during lunch hours.
+
+D. Move the application to AWS Elastic Beanstalk. Configure load-based auto scaling, and create an AWS Lambda function to handle scaling during lunch hours.
 
 <br>
 <hr/>
@@ -277,11 +301,18 @@ Answer :
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
 
 해설 : 
 
-1차 시도 : 
+왜 D가 아닌가?**AWS Elastic Beanstalk**는 자동 스케일링. 즉 굳이 람다가 안해도 된다. 그래서 B도 아님.
+
+왜 B, C가 아닌가? 가능은 한데, 여기서 최소한의 설정을 사용하는 대신, 예약된 확장이 해결책입니다.
+
+- Beanstalk vs. ECS - ECS로 이동하려면 Beanstalk(응용 프로그램 코드 업로드)보다 더 많은 구성/설정(작업 및 서비스 정의, ECS 컨테이너 에이전트 구성)이 필요합니다.
+- Beanstalk는 Scheduled Scaling을 지원합니다.
+
+1차 시도 : C 틀림<br>
 </div>
 </details>
 
@@ -289,9 +320,19 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 68
+## Prob. 68 ⭕
 
-거대한
+기업이 온프레미스 애플리케이션을 AWS로 마이그레이션하는 과정에 있습니다. 프로그램 서버와 Microsoft SQL Server 데이터베이스가 응용 프로그램을 구성합니다. SQL Server 기능을 사용하는 응용 프로그램의 NET 코드로 인해 데이터베이스를 다른 엔진으로 전송할 수 없습니다. 회사의 목표는 운영 및 관리 비용을 줄이는 동시에 가용성을 극대화하는 것입니다. 
+
+솔루션 설계자는 이를 달성하기 위해 어떤 조치를 취해야 합니까?
+
+A. Install SQL Server on Amazon EC2 in a Multi-AZ deployment.
+
+B. Migrate the data to Amazon RDS for SQL Server in a Multi-AZ deployment.
+
+C. Deploy the database on Amazon RDS for SQL Server with Multi-AZ Replicas.
+
+D. Migrate the data to Amazon RDS for SQL Server in a cross-Region Multi-AZ deployment.
 
 <br>
 <hr/>
@@ -301,11 +342,13 @@ Answer :
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 : 
 
-1차 시도 : 
+cross region multi az란 서비스는 존재하지 않는다.
+
+1차 시도 : B 맞음<br>
 </div>
 </details>
 
@@ -313,9 +356,20 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 69
+## Prob. 69 ❓
 
-거대한
+회사는 Amazon Redshift으로 분석을 수행하고 고객 보고서를 생성하는 데 사용됩니다. 
+회사는 고객에 대한 추가 50TB의 인구 통계 데이터를 얻었습니다. 이 데이터는 Amazon S3안 in.csv 파일에 저장됩니다. 조직에는 데이터를 효율적으로 병합하고 결과를 시각화하는 시스템이 필요합니다.
+
+솔루션 설계자는 이러한 요구 사항을 충족하기 위해 어떤 권장 사항을 제시해야 합니까?
+
+A. Use Amazon Redshift Spectrum to query the data in Amazon S3 directly and join that data with the existing data in Amazon Redshift. Use Amazon QuickSight to build the visualizations.
+
+B. Use Amazon Athena to query the data in Amazon S3. Use Amazon QuickSight to join the data from Athena with the existing data in Amazon Redshift and to build the visualizations.
+
+C. Increase the size of the Amazon Redshift cluster, and load the data from Amazon S3. Use Amazon EMR Notebooks to query the data and build the visualizations in Amazon Redshift.
+
+D. Export the data from the Amazon Redshift cluster into Apache Parquet files in Amazon S3. Use Amazon Elasticsearch Service (Amazon ES) to query the data. Use Kibana to visualize the results.
 
 <br>
 <hr/>
@@ -325,11 +379,16 @@ Answer :
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
 
 해설 : 
 
-1차 시도 : 
+AWS Redshift Spectrum
+  - Redshift와 함께 기본 제공 기능
+  - AWS Redshift Spectrum과 EXTERNAL 명령을 사용하여 S3에 저장된 CSV 파일에 대해 SQL 쿼리를 실행할 수 있다. 즉, 데이터를 Amazon Redshift 테이블에 로드할 필요 없이 Amazon S3 파일의 데이터를 쿼리.
+  - Amazon Redshift는 Amazon Redshift 클러스터와 Amazon S3 데이터 레이크 모두에 저장된 매우 큰 데이터 세트의 빠른 온라인 분석 처리(OLAP)를 위해 설계된 SQL 기능 제공
+
+1차 시도 : ? 모름<br>
 </div>
 </details>
 
@@ -337,9 +396,19 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 70
+## Prob. 70 ❓
 
-거대한
+매달 기업은 Amazon S3에 200GB의 데이터를 보관합니다. 매월 말에 회사는 이 데이터를 분석하여 전월 동안 각 판매 영역에서 판매된 물건 수를 계산해야 합니다.
+
+비즈니스에 가장 비용 효율적인 옵션은 어떤 분석 접근 방식입니까?
+
+A. Create an Amazon Elasticsearch Service (Amazon ES) cluster. Query the data in Amazon ES. Visualize the data by using Kibana.
+
+B. Create a table in the AWS Glue Data Catalog. Query the data in Amazon S3 by using Amazon Athena. Visualize the data in Amazon QuickSight.
+
+C. Create an Amazon EMR cluster. Query the data by using Amazon EMR, and store the results in Amazon S3. Visualize the data in Amazon QuickSight.
+
+D. Create an Amazon Redshift cluster. Query the data in Amazon Redshift, and upload the results to Amazon S3. Visualize the data in Amazon QuickSight.
 
 <br>
 <hr/>
@@ -349,11 +418,17 @@ Answer :
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 : 
 
-1차 시도 : 
+A: 데이터 쿼리가 아닌 데이터 시각화를 위한 ElasticSearch이기 때문에 부족함.
+C, D: B보다 비용이 더 많이 듬. 
+EMR 및 Redshfit은 Athena보다 높은 컴퓨팅 수준에서 작동합니다.
+
+S3 → Glue → Athena → QuickSight
+
+1차 시도 : ? 모름<br>
 </div>
 </details>
 

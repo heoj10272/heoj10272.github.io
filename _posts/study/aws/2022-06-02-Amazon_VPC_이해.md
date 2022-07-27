@@ -56,6 +56,8 @@ Amazon EC2 인스턴스와 같은 AWS 리소스를 사용자 VPC의 서브넷에
   - VPC의 인스턴스는 서비스의 리소스와 통신하는데 퍼블릭 IP 주소를 필요로 하지 않음
 * **NAT gateway**
   - 프라이빗 서브넷의 EC2 인스턴스가 인터넷, 다른 VPC 또는 온프레미스 네트워크에 연결되도록 허용하는 관리형 AWS 서비스
+  - NAT gateway는 항상 public subnet에 위치하여야 함
+  - 가용 영역에 failure가 발생할 경우 그에 위치한 NAT gateway는 사용할 수 없게 되고, 다른 가용 영역이 인터넷을 사용할 수 없게 됨. 이를 보완하기 위해서 NAT gateway는 최소 두 가용 영역에 deploy 되어야 함
 * **NAT instance**
   - 프라이빗 서브넷의 인스턴스가 인터넷, 다른 VPC 또는 온프레미스 네트워크에 연결되도록 허용하는 퍼블릭 서브넷의 EC2 인스턴스
 * **Carrier gateways**
