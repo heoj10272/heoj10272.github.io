@@ -28,6 +28,9 @@ SAA-C02 시험은 제한시간 140분 + 30분(비 영어권 추가시간)에 65�
 
 해당 시험에는 채점에 포함되지 않는 문제가 15문제(깍두기 문제)가 포함되므로, 많이 틀린 것 같아도 희망을 가지고 포기하지 말자.
 
+시험 결과는 시험 문제를 다 풀고 설문 조사를 끝내면 바로 나온다!
+때문에 설문 조사 끝내기가 굉장히 무섭다 ...
+
 ## 합격
 
 ![archi](/assets/img/study_AWS/2022-07-28-[AWS]_Certified_SAA-C02(Solutions_Architect_-_Associate)_합격_후기/AWS_Certified_Solutions_Architect_-_Associate_certificate.png)
