@@ -93,7 +93,7 @@ ExamTopics의 문제 수가 워낙 많기 때문에 둘 다 푼다는 선택지�
 
 ## 베네핏
 
-<div data-iframe-width="150" data-iframe-height="270" data-share-badge-id="1e6da221-09db-4388-8d5b-8411f4a8c515" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+<div data-iframe-width="300" data-iframe-height="240" data-share-badge-id="1e6da221-09db-4388-8d5b-8411f4a8c515" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 
 시험에 합격하면 [Credly](https://www.credly.com/earner/earned)에서 멋있는 뱃지를 발급받을 수 있다!
 

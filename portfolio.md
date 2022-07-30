@@ -71,7 +71,7 @@ font-weight:bold">
 ## Skills and Certification
 ---
 - AWS Certified Solutions Architect - Associate<br>
-<div data-iframe-width="300" data-iframe-height="270" data-share-badge-id="1e6da221-09db-4388-8d5b-8411f4a8c515" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
+<div data-iframe-width="300" data-iframe-height="240" data-share-badge-id="1e6da221-09db-4388-8d5b-8411f4a8c515" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 
 
 
