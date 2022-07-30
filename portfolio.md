@@ -70,8 +70,8 @@ font-weight:bold">
 
 ## Skills and Certification
 ---
--Language : C++
-
+- AWS Certified Solutions Architect - Associate<br>
+[Credly](https://www.credly.com/earner/earned)
 
 
 
