@@ -30,3 +30,13 @@ IntelliJ에서의 Spring 팁 목록
 
 > 코드에서도 미적용 시키려면 `Process code` 체크 해제<br>
 > 리터럴에서도 미적용 시키려면 `Process literals` 체크 해제
+
+### 한글 변수 사용시 경고 해제
+
+내 경우에는 주석 내부에서 한글에 노랑색 블럭 처리가 되는것을 없애기 위해 적용했다.
+
+`File` - `Settings`<br>
+`Editor` - `Inspections` - `Internationalization` - `Non-ASCII characters`<br>
+`Options` - 
+  - `Warn of non-ASCII characters in:` - `identifiers` 체크 해제
+  - `Warn of mixed ASCII/non-ASCII characters in:` - `identifiers` 체크 해제
