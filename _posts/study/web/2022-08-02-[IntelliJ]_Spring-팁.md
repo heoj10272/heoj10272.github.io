@@ -20,7 +20,7 @@ IntelliJ에서의 Spring 팁 목록
 <hr/>
 <hr/>
 
-## 팁
+## 💡 팁
 
 ### 주석에서 Spellchecker 미적용하기
 
