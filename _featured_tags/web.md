@@ -1,11 +1,11 @@
 ---
 layout: tag-list
 type: tag
-title: Cryptography
-slug: cryptography
+title: WEB
+slug: web
 category: study
 sidebar: true
-order: 5
+order: 4
 description: >
-   Cryptography study
+   Web study
 ---
