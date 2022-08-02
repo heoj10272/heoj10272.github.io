@@ -72,3 +72,16 @@ INFO: 0 containers and 1 tests were Method or class mismatch
 
 테스트 메소드 중 일부만 실행하였을 때 발생한다.<br>
 모든 메소드를 테스트시 출력되지 않으므로 그냥 넘어가도 괜찮다.
+
+
+### Test 오류 : No tests found for given includes
+
+```
+No tests found for given includes: .....
+```
+
+### 해결 방법
+
+`Settings` - `Build, Execution, Deployment` - `Build Tools` - `Gradle`<br>
+`Gradle projects` - `Build and run`<br>
+`Run test using:` 을 `Gradle`에서 `intelliJ IDEA`로 바꾼 후 적용
