@@ -56,3 +56,19 @@ implementation('org.projectlombok:lombok:1.18.24')
 annotationProcessor('org.projectlombok:lombok:1.18.24')
 compileOnly('org.projectlombok:lombok:1.18.24')
 ```
+
+<br>
+<hr>
+<br>
+
+### Test Results 내부 빨간 경고 출력
+
+```
+8월 02, 2022 8:03:42 오후 org.junit.platform.launcher.core.EngineDiscoveryOrchestrator lambda$logTestDescriptorExclusionReasons$7
+INFO: 0 containers and 1 tests were Method or class mismatch
+```
+
+### 해결 방법
+
+테스트 메소드 중 일부만 실행하였을 때 발생한다.<br>
+모든 메소드를 테스트시 출력되지 않으므로 그냥 넘어가도 괜찮다.
