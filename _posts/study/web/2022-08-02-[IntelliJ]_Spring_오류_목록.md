@@ -34,16 +34,16 @@ com.sun.tools.javac.processing to unnamed module @0x45970520
 
 ### 해결 방법
 
-1. 로컬 `cmd`에서 아래 명령어 실행 가능 여부 확인
+1\. 로컬 `cmd`에서 아래 명령어 실행 가능 여부 확인
 
 ```
 java -version
 javac -version
 ```
 
-2. `IntelliJ SDK`가 위 `java` 버전과 동일한지 확인
+2\. `IntelliJ SDK`가 위 `java` 버전과 동일한지 확인
 
-3. `build.gradle`의 `dependency`에서 `lombok` 버전 명시
+3\. `build.gradle`의 `dependency`에서 `lombok` 버전 명시
 
 ```
 implementation('org.projectlombok:lombok')
