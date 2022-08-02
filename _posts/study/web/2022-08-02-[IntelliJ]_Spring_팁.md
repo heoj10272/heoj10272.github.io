@@ -3,8 +3,8 @@ layout: post
 title: "[IntelliJ] Spring 팁 목록"
 subtitle: IntelliJ
 date: '2022-8-2 03:00:00 +0900'
-category: web
-tags: intellij spring
+category: study
+tags: web intellij spring
 image:
   path: /assets/img/study_Web/2022-08-02-[IntelliJ]_Spring_팁/logo.png
 ---
