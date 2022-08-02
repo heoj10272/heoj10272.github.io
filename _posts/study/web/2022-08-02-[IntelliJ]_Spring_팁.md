@@ -6,7 +6,7 @@ date: '2022-8-2 03:00:00 +0900'
 category: web
 tags: intellij spring
 image:
-  path: /assets/img/study_AWS/2022-07-28-[AWS]_Certified_SAA-C02(Solutions_Architect_-_Associate)_합격_후기/AWS_Certified_Solutions_Architect_-_Associate_certificate.png
+  path: /assets/img/study_Web/2022-08-02-[IntelliJ]_Spring_팁/logo.png
 ---
 
 IntelliJ에서의 Spring 팁 목록
