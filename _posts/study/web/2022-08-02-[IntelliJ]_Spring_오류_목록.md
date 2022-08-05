@@ -16,13 +16,12 @@ IntelliJ에서의 Spring 오류 목록
 * this unordered seed list will be replaced by the toc
 {:toc}
 
-<br>
-<hr/>
-<hr/>
 
-## 오류 목록
+# 🎯 오류 목록
+* * *
 
-### lombok
+## lombok
+---
 
 ```
 Cause: class lombok.javac.apt.LombokProcessor 
@@ -33,6 +32,7 @@ com.sun.tools.javac.processing to unnamed module @0x45970520
 ```
 
 ### 해결 방법
+---
 
 1\. 로컬 `cmd`에서 아래 명령어 실행 가능 여부 확인
 
@@ -57,11 +57,10 @@ annotationProcessor('org.projectlombok:lombok:1.18.24')
 compileOnly('org.projectlombok:lombok:1.18.24')
 ```
 
-<br>
-<hr>
-<br>
 
-### Test Results 내부 빨간 경고 출력
+
+## Test Results 내부 빨간 경고 출력
+---
 
 ```
 8월 02, 2022 8:03:42 오후 org.junit.platform.launcher.core.EngineDiscoveryOrchestrator lambda$logTestDescriptorExclusionReasons$7
@@ -69,34 +68,34 @@ INFO: 0 containers and 1 tests were Method or class mismatch
 ```
 
 ### 해결 방법
+---
 
 테스트 메소드 중 일부만 실행하였을 때 발생한다.<br>
 모든 메소드를 테스트시 출력되지 않으므로 그냥 넘어가도 괜찮다.
 
-<br>
-<hr>
-<br>
 
-### Test 오류 : No tests found for given includes
+
+## Test 오류 : No tests found for given includes
+---
 
 ```
 No tests found for given includes: .....
 ```
 
 ### 해결 방법
+---
 
 `Settings` - `Build, Execution, Deployment` - `Build Tools` - `Gradle`<br>
 `Gradle projects` - `Build and run`<br>
 `Run test using:` 을 `Gradle`에서 `intelliJ IDEA`로 바꾼 후 적용
 
-<br>
-<hr>
-<br>
 
-### h2 console에서 POSTS 테이블이 보이지 않음
 
+## h2 console에서 POSTS 테이블이 보이지 않음
+---
 
 ### 해결 방법
+---
 
 `application.properties`에 다음 문구 추가
 
