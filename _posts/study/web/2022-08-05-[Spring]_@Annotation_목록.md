@@ -42,6 +42,20 @@ SpringApplication.run(Application.class, args);
 + `내장 WAS`란 별도로 외부에 WAS를 두지 않고 애플리케이션을 실행할 때 내부에서 `WAS`를 실행하는 것을 이야기합니다.
 + 이렇게 되면 항상 서버에서 `톰캣`을 설치할 필요가 없게 되고, 스프링 부트로 만들어진 `Jar 파일(실행 가능한 Java 패키징 파일)`로 실행하면 됩니다.
 
+## @EnableJpaAuditing
+---
+```java
+@EnableJpaAuditing // <--
+@SpringBootApplication
+public class Application {
+    public static void main(String[] args){
+        SpringApplication.run(Application.class, args);
+    }
+}
+```
+
++ JPA `Auditing` 어노테이션들을 모두 활성화할 수 있게 해주는 활성화 어노테이션입니다.
+
 # Entity
 * * *
 
@@ -199,6 +213,195 @@ public class Posts extends BaseTimeEntity {
 + 해당 클래스의 빌더 패턴 클래스를 생성
 + 생성자 상단에 선언 시 생성자에 포함된 필드만 빌더에 포함
 
+## @MappedSuperclass
+---
+```java
+@Getter
+@MappedSuperclass // <-- 
+@EntityListeners(AuditingEntityListener.class)
+public class BaseTimeEntity {
+
+    @CreatedDate
+    private LocalDateTime createdDate;
+
+    @LastModifiedDate
+    private LocalDateTime modifiedDate;
+}
+```
+
++ JPA `Entity` 클래스들이 `BaseTimeEntity`을 상속할 경우 필드들(`createdDate`, `modifiedDate`)도 칼럼으로 인식하도록 합니다.
+
+## @EntityListeners(AuditingEntityListener.class)
+---
+```java
+@Getter
+@MappedSuperclass 
+@EntityListeners(AuditingEntityListener.class) // <-- 
+public class BaseTimeEntity {
+
+    @CreatedDate
+    private LocalDateTime createdDate;
+
+    @LastModifiedDate
+    private LocalDateTime modifiedDate;
+}
+```
+
++ `BaseTimeEntity` 클래스에 `Auditing` 기능을 포함시킵니다.
+
+## @CreatedDate
+---
+```java
+@Getter
+@MappedSuperclass 
+@EntityListeners(AuditingEntityListener.class) 
+public class BaseTimeEntity {
+
+    @CreatedDate // <-- 
+    private LocalDateTime createdDate;
+
+    @LastModifiedDate
+    private LocalDateTime modifiedDate;
+}
+```
+
++ `Entity`가 생성되어 저장될 때 시간이 저장됩니다.
+
+## @LastModifiedDate
+---
+```java
+@Getter
+@MappedSuperclass 
+@EntityListeners(AuditingEntityListener.class) 
+public class BaseTimeEntity {
+
+    @CreatedDate 
+    private LocalDateTime createdDate;
+
+    @LastModifiedDate // <-- 
+    private LocalDateTime modifiedDate;
+}
+```
+
++ 조회한 `Entity`의 값을 변경할 때 시간이 자동 저장됩니다.
+
+
+# Repository
+* * *
+
+## @Query
+---
+
+```java
+public interface PostsRepository extends JpaRepository<Posts, Long> {
+
+    @Query("SELECT p FROM Posts p ORDER BY p.id DESC") // <--
+    List<Posts> findAllDesc();
+}
+```
+
++  `SpringDataJpa`에서 제공하지 않는 메소드는 위처럼 쿼리로 작성해도 된다.
+
+# Repository Test
+* * *
+
+## @SpringBootTest
+---
+
+```java
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class PostsRepositoryTest {
+
+}
+```
+
++ 별다른 설정 없이 `@SpringBootTest`를 사용할 경우 `H2` 데이터베이스를 자동으로 실행해 줍니다.
+
+
+## @After
+---
+
+```java
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class PostsRepositoryTest {
+
+    @Autowired
+    PostsRepository postsRepository;
+
+    @After // <--
+    public void cleanup(){
+        postsRepository.deleteAll();
+    }
+}
+```
+
++ `Junit`에서 단위 테스트가 끝날 때마다 수행되는 메소드를 지정
++ 보통은 배포 전 전체 테스트를 수행할 때 테스트간 데이터 침범을 막기 위해 사용합니다.
++ 여러 테스트가 동시에 수행되면 테스트용 데이터베이스인 `H2`에 데이터가 그대로 남아 있어 다음 테스트 실행 시 테스트가 실패할 수 있습니다.
+
+## @postsRepository
+---
+
+```java
+@RunWith(SpringRunner.class)
+@SpringBootTest
+public class PostsRepositoryTest {
+
+    @Autowired
+    PostsRepository postsRepository;
+
+    @After
+    public void cleanup(){
+        postsRepository.deleteAll();
+    }
+
+    @Test
+    public void 게시글저장_불러오기(){
+
+        //given
+        String title = "테스트 게시글";
+        String content = "테스트 본문";
+
+        postsRepository.save(Posts.builder() // <--
+                .title(title)
+                .content(content)
+                .author("heoj10272@gmail.com")
+                .build());
+
+        //when
+        List<Posts> postsList = postsRepository.findAll(); // <--
+
+        // then
+        Posts posts = postsList.get(0);
+        assertThat(posts.getTitle()).isEqualTo(title);
+        assertThat(posts.getContent()).isEqualTo(content);
+    }
+}
+```
+
+### save
+
+```java
+postsRepository.save(Posts.builder()
+                .title(title)
+                .content(content)
+                .author("heoj10272@gmail.com")
+                .build());
+```
+
++ 테이블 `posts`에 `insert/update` 쿼리를 실행합니다.
++ `id` 값이 있다면 `update`가, 없다면 `insert` 쿼리가 실행됩니다.
+
+### findAll
+
+```java
+List<Posts> postsList = postsRepository.findAll();
+```
+
++ 테이블 `posts`에 있는 모든 데이터를 조회해오는 메소드입니다.
+
 # Controller
 * * *
 
@@ -214,6 +417,30 @@ public class HelloController {
 
 + 컨트롤러를 `JSON`을 반환하는 컨트롤러로 만들어 줍니다.
 + 예전에는 `@ResponseBody`를 각 메소드마다 선언했던 것을 한번에 사용할 수 있게 해준다고 생각하면 됩니다.
+
+## Model
+---
+```java
+@RequiredArgsConstructor
+@Controller
+public class indexController {
+
+    private final PostsService postsService;
+    
+    @GetMapping("/")
+    public String index(Model model){ // <--
+        model.addAttribute("posts", postsService.findAllDesc());
+        return "index";
+    }
+
+    @GetMapping("/posts/save")
+    public String postsSave() {
+        return "posts-save";
+    }
+}
+```
++ 서버 템플릿 엔진에서 사용할 수 있는 객체를 저장할 수 있습니다.
++ 여기서는 `postsService.findAllDesc()`로 가져온 결과를 `posts`로 `index.mustache`에 전달합니다.
 
 ## @GetMapping
 ---
@@ -460,3 +687,140 @@ assertThat(dto.getName()).isEqualTo(name);
 
 + `assertj`의 동등 비교 메소드입니다.
 + `assertThat`에 있는 값과 `isEqualTo`의 값을 비교해서 같을 때만 성공입니다.
+
+# Mustache
+* * *
+
+## layout/header, layout/footer
+---
+```java
+{{>layout/header}}
+{{>layout/footer}}
+```
+
++ `{{> }}`는 현재 `머스테치 파일(index.mustache)`을 기준으로 다른 파일을 가져옵니다.
+
+## window.location.href
+---
+```java
+var main = {
+    init : function () {
+        var _this = this;
+        $('#btn-save').on('click', function () {
+            _this.save();
+        });
+    },
+    save : function () {
+        var data = {
+            title: $('#title').val(),
+            author: $('#author').val(),
+            content: $('#content').val()
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: '/api/v1/posts',
+            dataType: 'json',
+            contentType:'application/json; charset=utf-8',
+            data: JSON.stringify(data)
+        }).done(function() {
+            alert('글이 등록되었습니다.');
+            window.location.href = '/'; // <--
+        }).fail(function (error) {
+            alert(JSON.stringify(error));
+        });
+    }
+};
+main.init();
+```
+
++ 글 등록이 성공하면 메인페이지(/)로 이동합니다.
+
+## {{#posts}}
+---
+
+```java
+{{>layout/header}}
+
+    <h1>스프링 부트로 시작하는 웹 서비스 Ver. 2</h1>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6">
+                <a href="/posts/save" role="button"
+                   class="btn btn-primary">글 등록</a>
+            </div>
+        </div>
+        <br>
+        <!-- 목록 출력 영역 -->
+        <table class="table table-horizontal table-bordered">
+            <thead class="thead-strong">
+            <tr>
+                <th>게시글번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>최종수정일</th>
+            </tr>
+            </thead>
+            <tbody id="tbody">
+            <!-- posts라는 List를 순회함 -->
+            <!-- Java의 for문과 동일하게 생각하면 됨 -->
+            {{#posts}} // <--
+                <tr>
+                    <!-- List에서 뽑아낸 객체의 필드를 사용함 -->
+                    <td>{{id}}</td>
+                    <td>{{title}}</td>
+                    <td>{{author}}</td>
+                    <td>{{modifiedDate}}</td>
+                </tr>
+            {{/posts}}
+            </tbody>
+        </table>
+    </div>
+{{>layout/footer}}
+```
+
++ `posts`라는 `List`를 순회합니다.
++ `java`의 `for문`과 동일하게 생각하면 됩니다.
+
+## {{변수명}}
+---
+```java
+{{>layout/header}}
+
+    <h1>스프링 부트로 시작하는 웹 서비스 Ver. 2</h1>
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-6">
+                <a href="/posts/save" role="button"
+                   class="btn btn-primary">글 등록</a>
+            </div>
+        </div>
+        <br>
+        <!-- 목록 출력 영역 -->
+        <table class="table table-horizontal table-bordered">
+            <thead class="thead-strong">
+            <tr>
+                <th>게시글번호</th>
+                <th>제목</th>
+                <th>작성자</th>
+                <th>최종수정일</th>
+            </tr>
+            </thead>
+            <tbody id="tbody">
+            <!-- posts라는 List를 순회함 -->
+            <!-- Java의 for문과 동일하게 생각하면 됨 -->
+            {{#posts}}
+                <tr>
+                    <!-- List에서 뽑아낸 객체의 필드를 사용함 -->
+                    <td>{{id}}</td> // <--
+                    <td>{{title}}</td> // <--
+                    <td>{{author}}</td> // <--
+                    <td>{{modifiedDate}}</td> // <--
+                </tr>
+            {{/posts}}
+            </tbody>
+        </table>
+    </div>
+{{>layout/footer}}
+```
++ List에서 뽑아낸 객체의 필드를 사용합니다.
