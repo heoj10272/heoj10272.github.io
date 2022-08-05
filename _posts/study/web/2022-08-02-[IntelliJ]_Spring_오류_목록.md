@@ -20,7 +20,7 @@ IntelliJ에서의 Spring 오류 목록
 # 🎯 오류 목록
 * * *
 
-## lombok
+## 📌 lombok
 ---
 
 ```
@@ -59,7 +59,7 @@ compileOnly('org.projectlombok:lombok:1.18.24')
 
 
 
-## Test Results 내부 빨간 경고 출력
+## 📌 Test Results 내부 빨간 경고 출력
 ---
 
 ```
@@ -75,7 +75,7 @@ INFO: 0 containers and 1 tests were Method or class mismatch
 
 
 
-## Test 오류 : No tests found for given includes
+## 📌 Test 오류 : No tests found for given includes
 ---
 
 ```
@@ -91,7 +91,7 @@ No tests found for given includes: .....
 
 
 
-## h2 console에서 POSTS 테이블이 보이지 않음
+## 📌 h2 console에서 POSTS 테이블이 보이지 않음
 ---
 
 ### 해결 방법
