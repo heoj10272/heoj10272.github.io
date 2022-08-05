@@ -106,3 +106,14 @@ spring.datasource.hikari.jdbc-url=jdbc:h2:mem:testdb;MODE=MYSQL
 spring.datasource.hikari.username=sa
 spring.h2.console.enabled=true
 ```
+
+
+## 📌 구글 로그인시 로그인한 사용자의 이름이 아닌 로컬 컴퓨터 로그인 이름이 출력되는 경우
+---
+
+### ✔ 해결 방법
+---
+
+`userName`이라는 이름을 윈도우 환경변수에서 사용하고 있기 때문에 충돌이 난 것으로 예상됨.
+
+`IndexController`, `index.mustache`에서 변수명을 `userName` → `loginUserName` 으로 바꿔주면 해결

@@ -16,6 +16,210 @@ Spring @Annotation, Method 목록
 * this unordered seed list will be replaced by the toc
 {:toc}
 
+# Auth
+* * *
+
+## @EnableWebSecurity
+---
+
+```java
+
+@RequiredArgsConstructor
+@EnableWebSecurity // <--
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    private final CustomOAuth2UserService customOAuth2UserService;
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+
+    }
+}
+```
+
++ `Spring Security` 설정들을 활성화시켜 줍니다.
+
+## http
+---
+```java
+@RequiredArgsConstructor
+@EnableWebSecurity
+public class SecurityConfig extends WebSecurityConfigurerAdapter {
+
+    private final CustomOAuth2UserService customOAuth2UserService;
+
+    @Override
+    protected void configure(HttpSecurity http) throws Exception {
+        http
+                .csrf().disable()
+                .headers().frameOptions().disable()
+                .and()
+                .authorizeRequests()
+                .antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**", "/profile").permitAll()
+                .antMatchers("/api/v1/**").hasRole(Role.USER.name())
+                .anyRequest().authenticated()
+                .and()
+                .logout()
+                .logoutSuccessUrl("/")
+                .and()
+                .oauth2Login()
+                .userInfoEndpoint()
+                .userService(customOAuth2UserService);
+    }
+}
+```
+
+### csrf().disable().headers().frameOptions().disable()
+
+```java
+.csrf().disable().headers().frameOptions().disable()
+```
+
++ `h2-console` 화면을 사용하기 위해 해당 옵션들을 `disabled` 합니다.
+
+### authorizeRequests
+
+```java
+.authorizeRequests()
+```
+
++ `URL`별 권한 관리를 설정하는 옵션의 시작점입니다.
++ `authorizeRequests`가 선언되어야만 `antMatchers` 옵션을 사용할 수 있습니다.
+
+### andMatchers
+
+```java
+.antMatchers("/", "/css/**", "/images/**", "/js/**", "/h2-console/**", "/profile").permitAll()
+.antMatchers("/api/v1/**").hasRole(Role.USER.name())
+```
+
++ 권한 관리 대상을 지정하는 옵션입니다.
++ `URL`, `HTTP 메소드`별로 관리가 가능합니다.
++ `"/"`등 지정된 `URL`들은 `permitAll()` 옵션을 통해 전체 열람 권한을 주었습니다.
++ `"api/v1/**"` 주소를 가진 API는 `USER` 권한을 가진 사람만 가능하도록 했습니다.
+
+### anyRequest
+
+```java
+.anyRequest().authenticated()
+```
+
++ 설정된 값들 이외 나머지 `URL`들을 나타냅니다.
++ 여기서는 `authenticated()`을 추가하여 나머지 `URL`들은 모두 인증된 사용자들에게만 허용하게 합니다.
++ 인증된 사용자 즉, 로그인한 사용자들을 이야기합니다.
+
+### logout().logoutSuccessUrl("/")
+
+```java
+.logout()
+.logoutSuccessUrl("/")
+```
+
++ 로그아웃 기능에 대한 여러 설정의 진입점입니다.
++ 로그아웃 성공 시 `/` 주소로 이동합니다.
+
+### oauth2Login
+
+```java
+.oauth2Login()
+```
+
++ `OAuth 2` 로그인 기능에 대한 여러 설정의 진입점입니다.
+
+### userInfoEndpoint()
+
+```java
+.userInfoEndpoint()
+```
+
++ `OAuth 2` 로그인 성공 이후 사용자 정보를 가져올 때의 설정들을 담당합니다.
+
+### userService
+
+```java
+.userService(customOAuth2UserService);
+```
+
++ 소셜 로그인 성공 시 후속 조치를 진행할 `UserService` 인터페이스의 구현체를 등록합니다.
++ 리소스 서버(즉, 소셜 서비스들)에서 사용자 정보를 가져온 상태에서 추가로 진행하고자 하는 기능을 명시할 수 있습니다.
+
+## CustomOAuth2UserService
+---
+```java
+@RequiredArgsConstructor
+@Service
+public class CustomOAuth2UserService implements OAuth2UserService<OAuth2UserRequest, OAuth2User> {
+    private final UserRepository userRepository;
+    private final HttpSession httpSession;
+
+    @Override
+    public OAuth2User loadUser(OAuth2UserRequest userRequest) throws OAuth2AuthenticationException {
+        OAuth2UserService delegate = new DefaultOAuth2UserService();
+        OAuth2User oAuth2User = delegate.loadUser(userRequest);
+
+        String registrationId = userRequest.getClientRegistration().getRegistrationId();
+        String userNameAttributeName = userRequest.getClientRegistration().getProviderDetails()
+                .getUserInfoEndpoint().getUserNameAttributeName();
+
+        OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
+
+        User user = saveOrUpdate(attributes);
+
+        httpSession.setAttribute("user", new SessionUser(user));
+
+        return new DefaultOAuth2User(
+                Collections.singleton(new SimpleGrantedAuthority(user.getRoleKey())),
+                attributes.getAttributes(),
+                attributes.getNameAttributeKey());
+    }
+
+
+    private User saveOrUpdate(OAuthAttributes attributes) {
+        User user = userRepository.findByEmail(attributes.getEmail())
+                .map(entity -> entity.update(attributes.getName(), attributes.getPicture()))
+                .orElse(attributes.toEntity());
+
+        return userRepository.save(user);
+    }
+}
+```
+### registrationId
+
+```java
+String registrationId = userRequest.getClientRegistration().getRegistrationId();
+```
+
++ 현재 로그인 진행 중인 서비스를 구분하는 코드입니다.
++ 지금은 `구글`만 사용하는 불필요한 값이지만, 이후 `네이버` 로그인 연동 시에 `네이버` 로그인인지, `구글` 로그인인지 구분하기 위해 사용합니다.
+
+### userNameAttributeName
+
+```java
+String userNameAttributeName = userRequest.getClientRegistration().getProviderDetails()
+                .getUserInfoEndpoint().getUserNameAttributeName();
+```
+
++ `OAuth2` 로그인 진행 시 키가 되는 필드값을 이야기합니다. `Primary Key`와 같은 의미입니다.
++ `구글`의 경우 기본적으로 코드를 지원하지만, `네이버` `카카오` 등은 기본 지원하지 않습니다. `구글`의 경우 기본 코드는 `"sub"`입니다.
++ 이후 `네이버` 로그인과 `구글` 로그인을 동시 지원할 때 사용됩니다.
+
+### OAuthAttributes
+```java
+OAuthAttributes attributes = OAuthAttributes.of(registrationId, userNameAttributeName, oAuth2User.getAttributes());
+```
+
++ `OAuth2UserService`를 통해 가져온 `OAuth2user`의 `attribute`를 담을 클래스입니다.
++ 이후 `네이버` 등 다른 소셜 로그인도 이 클래스를 사용합니다.
+
+### SessionUser
+
+```java
+httpSession.setAttribute("user", new SessionUser(user));
+```
+
++ 세션에 사용자 정보를 저장하기 위한 `Dto` 클래스입니다.
++ 왜 `User` 클래스를 쓰지 않고 새로 만들어서 쓰는지 뒤이어서 상세하게 설명하겠습니다.
+
 # Application
 * * *
 
@@ -285,6 +489,56 @@ public class BaseTimeEntity {
 
 + 조회한 `Entity`의 값을 변경할 때 시간이 자동 저장됩니다.
 
+## @Enumerated(EnumType.STRING)
+---
+```java
+@Getter
+@NoArgsConstructor
+@Entity
+public class User extends BaseTimeEntity {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
+
+    @Column(nullable = false)
+    private String name;
+
+    @Column(nullable = false)
+    private String email;
+
+    @Column
+    private String picture;
+
+    @Enumerated(EnumType.STRING)
+    @Column(nullable = false)
+    private Role role;
+
+    @Builder
+    public User(String name, String email, String picture, Role role) {
+        this.name = name;
+        this.email = email;
+        this.picture = picture;
+        this.role = role;
+    }
+
+    public User update(String name, String picture) {
+        this.name = name;
+        this.picture = picture;
+
+        return this;
+    }
+
+    public String getRoleKey() {
+        return this.role.getKey();
+    }
+}
+```
+
++ JPA로 데이터베이스를 저장할 때 `Enum` 값을 어떤 형태로 저장할지를 결정합니다.
++ 기본적으로는 `int`로 된 숫자가 지정됩니다.
++ 숫자로 지정되면 데이터베이스로 확인할 떄 그 값이 무슨 코드를 의미하는지 알 수가 없습니다.
++ 그래서 `문자열(EnumType.STRING)`로 저장될 수 있도록 선언합니다.
 
 # Repository
 * * *
@@ -302,8 +556,40 @@ public interface PostsRepository extends JpaRepository<Posts, Long> {
 
 +  `SpringDataJpa`에서 제공하지 않는 메소드는 위처럼 쿼리로 작성해도 된다.
 
+## findByEmail
+---
+```java
+public interface UserRepository extends JpaRepository<User, Long> {
+
+    Optional<User> findByEmail(String email); // <--
+}
+```
+
++ 소셜 로그인으로 반환되는 값 중 `email`을 통해 이미 생성된 사용자인지 처음 가입하는 사용자인지 판단하기 위한 메소드입니다.
+
 # Repository Test
 * * *
+
+# Service
+* * *
+
+## postsRepository.delete(posts)
+---
+
+```java
+@Transactional
+    public void delete (Long id) {
+        Posts posts = postsRepository.findById(id)
+                .orElseThrow(() -> new IllegalArgumentException("해당 사용자가 없습니다. id=" + id));
+
+        postsRepository.delete(posts);
+    }
+```
+
++ `JpaRepository`에서 이미 `delete` 메소드를 지원하고 있으니 이를 활용합니다.
++ 엔티티를 파라미터로 삭제할 수도 있고, `deleteById` 메소드를 이용하면 `id`로 삭제할 수도 있습니다.
++ 존재하는 `Posts`인지 확인을 위하 엔티티 조회 후 그대로 삭제합니다.
+
 
 ## @SpringBootTest
 ---
@@ -651,6 +937,81 @@ public class HelloResponseDto {
 
 + 선언된 모든 `final` 필드가 포함된 생성자를 생성해 줍니다.
 + `final`이 없는 필드는 생성자에 포함되지 않습니다.
+
+## OAuthAttributes
+---
+
+```java
+@Getter
+public class OAuthAttributes {
+    private Map<String, Object> attributes;
+    private String nameAttributeKey;
+    private String name;
+    private String email;
+    private String picture;
+
+    @Builder
+    public OAuthAttributes(Map<String, Object> attributes, String nameAttributeKey, String name, String email, String picture) {
+        this.attributes = attributes;
+        this.nameAttributeKey = nameAttributeKey;
+        this.name = name;
+        this.email = email;
+        this.picture = picture;
+    }
+
+    public static OAuthAttributes of(String registrationId, String userNameAttributeName, Map<String, Object> attributes) {
+
+        return ofGoogle(userNameAttributeName, attributes);
+    }
+
+    private static OAuthAttributes ofGoogle(String userNameAttributeName, Map<String, Object> attributes) {
+        return OAuthAttributes.builder()
+                .name((String) attributes.get("name"))
+                .email((String) attributes.get("email"))
+                .picture((String) attributes.get("picture"))
+                .attributes(attributes)
+                .nameAttributeKey(userNameAttributeName)
+                .build();
+    }
+
+    public User toEntity() {
+        return User.builder()
+                .name(name)
+                .email(email)
+                .picture(picture)
+                .role(Role.GUEST)
+                .build();
+    }
+}
+```
+### of()
+
+```java
+public static OAuthAttributes of(String registrationId, String userNameAttributeName, Map<String, Object> attributes) {
+
+        return ofGoogle(userNameAttributeName, attributes);
+    }
+```
+
++ `OAuth2User`에서 반환하는 사용자 정보는 `Map`이기 때문에 값 하나하나를 변환해야만 합니다.
+
+### toEntity()
+
+```java
+public User toEntity() {
+    return User.builder()
+            .name(name)
+            .email(email)
+            .picture(picture)
+            .role(Role.GUEST)
+            .build();
+}
+```
+
++ `User` 엔티티를 생성합니다.
++ `OAuthAttributes`에서 엔티티를 생성하는 시점은 처음 가입할 때입니다.
++ 가입할 때의 기본 권한을 `GUEST`로 주기 위해서 `role` 빌더값에는 `Role.GUEST`를 사용합니다.
++ `OAuthAttributes` 클래스 생성이 끝났으면 패키지에 `SessionUser` 클래스를 생성합니다.
 
 # DTO Test
 * * *
@@ -1013,3 +1374,43 @@ type: 'PUT'
 url: '/api/v1/posts/'+id
 ```
 + 어느 게시글을 수정할지 `URL Path`로 구분하기 위해 `Path`에 `id`를 추가합니다.
+
+## {{#userName}}
+---
+```java
+{{#userName}}
+    Logged in as: <span id="user">{{userName}}</span>
+    <a href="/logout" class="btn btn-info active" role="button">Logout</a>
+{{/userName}}
+```
++ 머스테치는 다른 언어와 같은 `if문(if userName != null 등)`을 제공하지 않습니다.
++ `true/false` 여부만을 판단할 뿐입니다.
++ 그래서 머스테치에서는 항상 최종값을 넘겨줘야 합니다. 
++ 여기서도 역시 `userName`이 있다면 `userName`을 노출시키도록 구성했습니다.
+
+### a href="/logout"
+
+```java
+<a href="/logout" class="btn btn-info active" role="button">Logout</a>
+```
+
++ 스프링 시큐리티에서 기본적으로 제공하는 로그아웃 `URL`입니다.
++ 즉, 개발자가 별도로 저 `URL`에 해당하는 컨트롤러를 만들 필요가 없습니다.
++ `SecurityConfig` 클래스에서 `URL`을 변경할 순 있지만 기본 `URL`을 사용해도 충분하니 여기서는 그대로 사용합니다.
+
+## {{^userName}}
+---
+```java
+{{^userName}}
+    <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+{{/userName}}   
+```
++ 머스테치에서 해당 값이 존재하지 않는 경우에는 `^`을 사용합니다.
++ 여기서는 `userName`이 없다면 로그인 버튼을 노출시키도록 구성했습니다.
+
+### a href="/oauth2/authorization/google"
+```java
+<a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
+```
++ 스프링 시큐리티에서 기본적으로 제공하는 로그인 `URL`입니다.
++ 로그아웃 `URL`과 마찬가지로 개발자가 별도의 컨트롤러를 생성할 필요가 없습니다.
