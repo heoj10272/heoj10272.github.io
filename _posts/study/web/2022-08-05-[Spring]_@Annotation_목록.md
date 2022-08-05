@@ -175,3 +175,71 @@ mvc.perform(get("/hello"))
 + mvc.perform의 결과를 검증합니다.
 + 응답 본문의 내용을 검증합니다.
 + Controller에서 "hello"를 리턴하기 때문에 이 값이 맞는지 검증합니다.
+
+## assertThat
+---
+
+```java
+public class HelloResponseDtoTest {
+
+    @Test
+    public void 롬복_기능_테스트(){
+        //given
+        String name = "test";
+        int amount = 1000;
+
+        //when
+        HelloResponseDto dto = new HelloResponseDto(name, amount);
+
+        //then
+        assertThat(dto.getName()).isEqualTo(name); // <--
+        assertThat(dto.getAmount()).isEqualTo(amount); // <--
+    }
+}
+```
+
++ `assertj`라는 테스트 검증 라이브러리의 검증 메소드입니다.
++ 검증하고 싶은 대상을 메소드 인자로 받습니다.
++ 메소드 체이닝이 지원되어 `isEqualTo`와 같이 메소드를 이어서 사용할 수 있습니다.
+
+```java
+assertThat(dto.getName()).isEqualTo(name);
+```
+
++ `assertj`의 동등 비교 메소드입니다.
++ `assertThat`에 있는 값과 `isEqualTo`의 값을 비교해서 같을 때만 성공입니다.
+
+# DTO
+* * *
+
+## @Getter
+---
+
+```java
+@Getter // <--
+@RequiredArgsConstructor
+public class HelloResponseDto {
+    
+    private final String name;
+    private final int amount;
+}
+```
+
++ 선언된 모든 필드의 get 메소드를 생성해 줍니다.
+
+## @ReqiredArgsConstructor
+---
+
+```java
+@Getter
+@RequiredArgsConstructor // <--
+public class HelloResponseDto {
+    
+    private final String name;
+    private final int amount;
+}
+
+```
+
++ 선언된 모든 `final` 필드가 포함된 생성자를 생성해 줍니다.
++ `final`이 없는 필드는 생성자에 포함되지 않습니다.
