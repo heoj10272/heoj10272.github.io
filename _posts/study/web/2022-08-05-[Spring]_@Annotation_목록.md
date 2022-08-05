@@ -1097,7 +1097,7 @@ main.init();
 
 + 글 등록이 성공하면 메인페이지(/)로 이동합니다.
 
-## "{{#posts}}"
+## {%raw%}{{#posts}}{%endraw%}
 ---
 
 ```java
@@ -1143,7 +1143,7 @@ main.init();
 + `posts`라는 `List`를 순회합니다.
 + `java`의 `for문`과 동일하게 생각하면 됩니다.
 
-## "{{변수명}}"
+## {%raw%}{{변수명}}{%endraw%}
 ---
 ```java
 {{>layout/header}}
@@ -1186,7 +1186,7 @@ main.init();
 ```
 + List에서 뽑아낸 객체의 필드를 사용합니다.
 
-## "{{post.id}}"
+## {%raw%}{{post.id}}{%endraw%}
 ---
 
 ```java
@@ -1375,7 +1375,7 @@ url: '/api/v1/posts/'+id
 ```
 + 어느 게시글을 수정할지 `URL Path`로 구분하기 위해 `Path`에 `id`를 추가합니다.
 
-## "{{#userName}}"
+## {%raw%}{{#userName}}{%endraw%}
 ---
 ```java
 {{#userName}}
