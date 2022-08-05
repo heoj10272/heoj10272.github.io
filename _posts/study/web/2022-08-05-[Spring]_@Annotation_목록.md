@@ -42,6 +42,163 @@ SpringApplication.run(Application.class, args);
 + `내장 WAS`란 별도로 외부에 WAS를 두지 않고 애플리케이션을 실행할 때 내부에서 `WAS`를 실행하는 것을 이야기합니다.
 + 이렇게 되면 항상 서버에서 `톰캣`을 설치할 필요가 없게 되고, 스프링 부트로 만들어진 `Jar 파일(실행 가능한 Java 패키징 파일)`로 실행하면 됩니다.
 
+# Entity
+* * *
+
+## @Entity
+---
+
+```java
+@Entity // <--
+public class Posts extends BaseTimeEntity {
+
+}
+```
++ 테이블과 링크될 클래스임을 나타냅니다.
++ 기본값으로 클래스의 카멜케이스 이름을 언더스코어 네이밍(_)으로 테이블 이름을 매칭합니다.
++ ex) `SalesManager.java` -> `sales_manager table`
+
+## @id
+---
+
+```java
+@Entity
+public class Posts extends BaseTimeEntity {
+    
+    @Id // <--
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id; 
+
+}
+```
+
++ 해당 테이블의 `PK` 필드를 나타냅니다.
+
+## @GeneratedValue
+---
+
+```java
+@Entity
+public class Posts extends BaseTimeEntity {
+    
+    @Id // <--
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id; 
+
+}
+```
+
++ `PK`의 생성 규칙을 나타냅니다.
++ 스프링 부트 2.0 에서는 `GenerationType.IDENTITY` 옵션을 추가해야만 `auto_increment`가 됩니다.
+
+## @Column
+---
+
+```java
+@Entity
+public class Posts extends BaseTimeEntity {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id; 
+    
+    @Column(length = 500, nullable = false) // <--
+    private String title;
+    
+    @Column(columnDefinition = "TEXT", nullable = false) // <--
+    private String content;
+    private String author;
+}
+```
+
++ 테이블의 `칼럼`을 나타내며 굳이 선언하지 않아도 해당 클래스의 필드는 모두 `칼럼`이 됩니다.
++ 사용하는 이유는, 기본값 외에 추가로 변경이 필요한 옵션이 있으면 사용합니다.
++ 문자열의 경우 `VARCHAR(255)`가 기본값인데, 사이즈를 `500`으로 늘리고 싶거나(ex: title), 타입을 `TEXT`로 변경하고 싶거나(ex: content)등의 경우에 사용합니다.
+
+
+## @NoArgsConstructor
+---
+
+```java
+@NoArgsConstructor
+@Entity
+public class Posts extends BaseTimeEntity {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id; 
+    
+
+    @Column(length = 500, nullable = false)
+    private String title;
+    
+    @Column(columnDefinition = "TEXT", nullable = false)
+    private String content;
+    private String author;
+}
+```
+
++ 기본 생성자 자동 추가
++ `public Posts(){}`와 같은 효과
+
+## @Getter
+---
+
+```java
+@Getter
+@NoArgsConstructor
+@Entity
+public class Posts extends BaseTimeEntity {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id; 
+    
+
+    @Column(length = 500, nullable = false)
+    private String title;
+    
+    @Column(columnDefinition = "TEXT", nullable = false)
+    private String content;
+    private String author;
+}
+```
+
++ 클래스 내 모든 필드의 `Getter` 메소드를 자동생성
+
+## @Builder
+---
+
+```java
+@Getter
+@NoArgsConstructor
+@Entity
+public class Posts extends BaseTimeEntity {
+    
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id; 
+    
+
+    @Column(length = 500, nullable = false)
+    private String title;
+    
+    @Column(columnDefinition = "TEXT", nullable = false)
+    private String content;
+    private String author;
+
+    @Builder
+    public Posts(String title, String content, String author){
+        this.title = title;
+        this.content = content;
+        this.author = author;
+    }
+}
+```
+
++ 해당 클래스의 빌더 패턴 클래스를 생성
++ 생성자 상단에 선언 시 생성자에 포함된 필드만 빌더에 포함
+
 # Controller
 * * *
 
