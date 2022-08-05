@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "[Spring] @Annotation 목록"
+title: "[Spring] @Annotation, Method 목록"
 subtitle: Spring
 date: '2022-8-2 03:00:00 +0900'
 category: study
 tags: web spring
 image:
-  path: /assets/img/study_Web/2022-08-02-[IntelliJ]_Spring_오류_목록/logo.png
+  path: /assets/img/study_Web/2022-08-05-[Spring]_@Annotation_목록/logo.png
 ---
 
-IntelliJ에서의 Spring 오류 목록
+Spring @Annotation, Method 목록
 
 <!--more-->
 
