@@ -73,6 +73,9 @@ INFO: 0 containers and 1 tests were Method or class mismatch
 테스트 메소드 중 일부만 실행하였을 때 발생한다.<br>
 모든 메소드를 테스트시 출력되지 않으므로 그냥 넘어가도 괜찮다.
 
+<br>
+<hr>
+<br>
 
 ### Test 오류 : No tests found for given includes
 
@@ -85,3 +88,22 @@ No tests found for given includes: .....
 `Settings` - `Build, Execution, Deployment` - `Build Tools` - `Gradle`<br>
 `Gradle projects` - `Build and run`<br>
 `Run test using:` 을 `Gradle`에서 `intelliJ IDEA`로 바꾼 후 적용
+
+<br>
+<hr>
+<br>
+
+### h2 console에서 POSTS 테이블이 보이지 않음
+
+
+### 해결 방법
+
+`application.properties`에 다음 문구 추가
+
+```
+spring.jpa.properties.hibernate.dialect=org.hibernate.dialect.MySQL57Dialect
+spring.jpa.properties.hibernate.dialect.storage_engine=innodb
+spring.datasource.hikari.jdbc-url=jdbc:h2:mem:testdb;MODE=MYSQL
+spring.datasource.hikari.username=sa
+spring.h2.console.enabled=true
+```
