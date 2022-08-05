@@ -1055,8 +1055,8 @@ assertThat(dto.getName()).isEqualTo(name);
 ## layout/header, layout/footer
 ---
 ```java
-{{>layout/header}}
-{{>layout/footer}}
+{%raw%}{{>layout/header}}{%endraw%}
+{%raw%}{{>layout/footer}}{%endraw%}
 ```
 
 + `{{> }}`는 현재 `머스테치 파일(index.mustache)`을 기준으로 다른 파일을 가져옵니다.
@@ -1101,7 +1101,7 @@ main.init();
 ---
 
 ```java
-{{>layout/header}}
+{%raw%}{{>layout/header}}{%endraw%}
 
     <h1>스프링 부트로 시작하는 웹 서비스 Ver. 2</h1>
     <div class="col-md-12">
@@ -1125,19 +1125,19 @@ main.init();
             <tbody id="tbody">
             <!-- posts라는 List를 순회함 -->
             <!-- Java의 for문과 동일하게 생각하면 됨 -->
-            {{#posts}} // <--
+            {%raw%}{{#posts}}{%endraw%} // <--
                 <tr>
                     <!-- List에서 뽑아낸 객체의 필드를 사용함 -->
-                    <td>{{id}}</td>
-                    <td>{{title}}</td>
-                    <td>{{author}}</td>
-                    <td>{{modifiedDate}}</td>
+                    <td>{%raw%}{{id}}{%endraw%}</td>
+                    <td>{%raw%}{{title}}{%endraw%}</td>
+                    <td>{%raw%}{{author}}{%endraw%}</td>
+                    <td>{%raw%}{{modifiedDate}}{%endraw%}</td>
                 </tr>
-            {{/posts}}
+            {%raw%}{{/posts}}{%endraw%}
             </tbody>
         </table>
     </div>
-{{>layout/footer}}
+{%raw%}{{>layout/footer}}{%endraw%}
 ```
 
 + `posts`라는 `List`를 순회합니다.
@@ -1146,9 +1146,7 @@ main.init();
 ## {%raw%}{{변수명}}{%endraw%}
 ---
 ```java
-{%raw%}
-{{>layout/header}}
-{%endraw%}
+{%raw%}{{>layout/header}}{%endraw%}
 
     <h1>스프링 부트로 시작하는 웹 서비스 Ver. 2</h1>
     <div class="col-md-12">
@@ -1180,15 +1178,11 @@ main.init();
                     <td>{%raw%}{{author}}{%endraw%}</td> // <--
                     <td>{%raw%}{{modifiedDate}}{%endraw%}</td> // <--
                 </tr>
-            {%raw%}
-            {{/posts}}
-            {%endraw%}
+            {%raw%}{{/posts}}{%endraw%}
             </tbody>
         </table>
     </div>
-{%raw%}
-{{>layout/footer}}
-{%endraw%}
+{%raw%}{{>layout/footer}}{%endraw%}
 ```
 + List에서 뽑아낸 객체의 필드를 사용합니다.
 
@@ -1196,9 +1190,7 @@ main.init();
 ---
 
 ```java
-{%raw%}
-{{>layout/header}}
-{%endraw%}
+{%raw%}{{>layout/header}}{%endraw%}
 <h1>게시글 수정</h1>
 
 <div class="col-md-12">
@@ -1218,7 +1210,7 @@ main.init();
             </div>
             <div class="form-group">
                 <label for="content"> 내용 </label>
-                <textarea class="form-control" id="content">{{post.content}}</textarea>
+                <textarea class="form-control" id="content">{%raw%}{{post.content}}{%endraw%}</textarea>
             </div>
         </form>
         <a href="/" role="button" class="btn btn-secondary">취소</a>
@@ -1226,9 +1218,7 @@ main.init();
         <button type="button" class="btn btn-danger" id="btn-delete">삭제</button>
     </div>
 </div>
-{%raw%}
-{{>layout/footer}}
-{%endraw%}
+{%raw%}{{>layout/footer}}{%endraw%}
 ```
 
 + 머스테치는 객체의 필드 접근 시 점(Dot)으로 구분합니다.
@@ -1386,14 +1376,10 @@ url: '/api/v1/posts/'+id
 ## {%raw%}{{#userName}}{%endraw%}
 ---
 ```java
-{%raw%}
-{{#userName}}
-{%endraw%}
-    Logged in as: <span id="user">{{userName}}</span>
+{%raw%}{{#userName}}{%endraw%}
+    Logged in as: <span id="user">{%raw%}{{userName}}{%endraw%}</span>
     <a href="/logout" class="btn btn-info active" role="button">Logout</a>
-{%raw%}
-{{/userName}}
-{%endraw%}
+{%raw%}{{/userName}}{%endraw%}
 ```
 + 머스테치는 다른 언어와 같은 `if문(if userName != null 등)`을 제공하지 않습니다.
 + `true/false` 여부만을 판단할 뿐입니다.
@@ -1413,13 +1399,9 @@ url: '/api/v1/posts/'+id
 ## {%raw%}{{^userName}}{%endraw%}
 ---
 ```java
-{%raw%}
-{{^userName}}
-{%endraw%}
+{%raw%}{{^userName}}{%endraw%}
     <a href="/oauth2/authorization/google" class="btn btn-success active" role="button">Google Login</a>
-{%raw%}
-{{/userName}}   
-{%endraw%}
+{%raw%}{{/userName}}{%endraw%}
 ```
 + 머스테치에서 해당 값이 존재하지 않는 경우에는 `^`을 사용합니다.
 + 여기서는 `userName`이 없다면 로그인 버튼을 노출시키도록 구성했습니다.
