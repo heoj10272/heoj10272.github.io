@@ -75,6 +75,23 @@ public class HelloController {
 + 예전에는 `@RequestMapping(method = RequestMethod.GET)`으로 사용되었습니다.
 + 이제 이 프로젝트는 `/hello`로 요청이 오면 문자열 `hello`를 반환하는 기능을 가지게 되었습니다.
 
+## @RequestParam
+---
+
+```java
+@RestController
+public class HelloController {
+
+    @GetMapping("/hello/dto")
+    public HelloResponseDto helloDto(@RequestParam("name") String name, @RequestParam("amount") int amount) { // <--
+        return new HelloResponseDto(name, amount);
+    }
+}
+```
+
++ 외부에서 API로 넘긴 파라미터를 가져오는 어노테이션입니다.
++ 여기서는 외부에서 `name (@RequestParam("name"))`이란 이름으로 넘긴 파라미터를 메소드 파라미터 `name(String name)`을 저장하게 됩니다.
+
 # Controller Test
 * * *
 
@@ -176,38 +193,68 @@ mvc.perform(get("/hello"))
 + 응답 본문의 내용을 검증합니다.
 + Controller에서 "hello"를 리턴하기 때문에 이 값이 맞는지 검증합니다.
 
-## assertThat
+
+## param
 ---
 
 ```java
-public class HelloResponseDtoTest {
+@RunWith(SpringRunner.class)
+@WebMvcTest(controllers = HelloController.class)
+public class HelloControllerTest {
+
+    @Autowired
+    private MockMvc mvc;
 
     @Test
-    public void 롬복_기능_테스트(){
-        //given
-        String name = "test";
+    public void helloDto가_리턴된다() throws Exception{
+        String name = "hello";
         int amount = 1000;
 
-        //when
-        HelloResponseDto dto = new HelloResponseDto(name, amount);
-
-        //then
-        assertThat(dto.getName()).isEqualTo(name); // <--
-        assertThat(dto.getAmount()).isEqualTo(amount); // <--
+        mvc.perform(
+                get("/hello/dto")
+                        .param("name",name) // <--
+                        .param("amount",String.valueOf(amount))) // <--
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.name", is(name)))
+                .andExpect(jsonPath("$.amount", is(amount)));
     }
 }
 ```
 
-+ `assertj`라는 테스트 검증 라이브러리의 검증 메소드입니다.
-+ 검증하고 싶은 대상을 메소드 인자로 받습니다.
-+ 메소드 체이닝이 지원되어 `isEqualTo`와 같이 메소드를 이어서 사용할 수 있습니다.
++ API 테스트할 때 사용될 요청 파라미터를 설정합니다.
++ 단, 값은 `String`만 허용됩니다.
++ 그래서 숫자/날짜 등의 데이터도 등록할 때는 문자열로 변경해야만 합니다.
+
+## jsonPath
+---
 
 ```java
-assertThat(dto.getName()).isEqualTo(name);
+@RunWith(SpringRunner.class)
+@WebMvcTest(controllers = HelloController.class)
+public class HelloControllerTest {
+
+    @Autowired
+    private MockMvc mvc;
+
+    @Test
+    public void helloDto가_리턴된다() throws Exception{
+        String name = "hello";
+        int amount = 1000;
+
+        mvc.perform(
+                get("/hello/dto")
+                        .param("name",name)
+                        .param("amount",String.valueOf(amount)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.name", is(name))) // <--
+                .andExpect(jsonPath("$.amount", is(amount))); // <--
+    }
+}
 ```
 
-+ `assertj`의 동등 비교 메소드입니다.
-+ `assertThat`에 있는 값과 `isEqualTo`의 값을 비교해서 같을 때만 성공입니다.
++ `JSON` 응답값을 필드별로 검증할 수 있는 메소드입니다.
++ `$`를 기준으로 필드명을 명시합니다.
++ 여기서는 `name`과 `amount`를 검증하니 `$.name`, `$.amount`로 검증합니다.
 
 # DTO
 * * *
@@ -243,3 +290,39 @@ public class HelloResponseDto {
 
 + 선언된 모든 `final` 필드가 포함된 생성자를 생성해 줍니다.
 + `final`이 없는 필드는 생성자에 포함되지 않습니다.
+
+# DTO Test
+* * *
+
+## assertThat
+---
+
+```java
+public class HelloResponseDtoTest {
+
+    @Test
+    public void 롬복_기능_테스트(){
+        //given
+        String name = "test";
+        int amount = 1000;
+
+        //when
+        HelloResponseDto dto = new HelloResponseDto(name, amount);
+
+        //then
+        assertThat(dto.getName()).isEqualTo(name); // <--
+        assertThat(dto.getAmount()).isEqualTo(amount); // <--
+    }
+}
+```
+
++ `assertj`라는 테스트 검증 라이브러리의 검증 메소드입니다.
++ 검증하고 싶은 대상을 메소드 인자로 받습니다.
++ 메소드 체이닝이 지원되어 `isEqualTo`와 같이 메소드를 이어서 사용할 수 있습니다.
+
+```java
+assertThat(dto.getName()).isEqualTo(name);
+```
+
++ `assertj`의 동등 비교 메소드입니다.
++ `assertThat`에 있는 값과 `isEqualTo`의 값을 비교해서 같을 때만 성공입니다.
