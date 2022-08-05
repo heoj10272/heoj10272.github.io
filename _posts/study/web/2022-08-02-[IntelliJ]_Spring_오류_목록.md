@@ -31,7 +31,7 @@ com.sun.tools.javac.processing.JavacProcessingEnvironment
 com.sun.tools.javac.processing to unnamed module @0x45970520
 ```
 
-### 해결 방법
+### ✔ 해결 방법
 ---
 
 1\. 로컬 `cmd`에서 아래 명령어 실행 가능 여부 확인
@@ -67,7 +67,7 @@ compileOnly('org.projectlombok:lombok:1.18.24')
 INFO: 0 containers and 1 tests were Method or class mismatch
 ```
 
-### 해결 방법
+### ✔ 해결 방법
 ---
 
 테스트 메소드 중 일부만 실행하였을 때 발생한다.<br>
@@ -82,7 +82,7 @@ INFO: 0 containers and 1 tests were Method or class mismatch
 No tests found for given includes: .....
 ```
 
-### 해결 방법
+### ✔ 해결 방법
 ---
 
 `Settings` - `Build, Execution, Deployment` - `Build Tools` - `Gradle`<br>
@@ -94,7 +94,7 @@ No tests found for given includes: .....
 ## 📌 h2 console에서 POSTS 테이블이 보이지 않음
 ---
 
-### 해결 방법
+### ✔ 해결 방법
 ---
 
 `application.properties`에 다음 문구 추가
