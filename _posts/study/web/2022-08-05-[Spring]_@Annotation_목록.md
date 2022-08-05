@@ -1398,7 +1398,7 @@ url: '/api/v1/posts/'+id
 + 즉, 개발자가 별도로 저 `URL`에 해당하는 컨트롤러를 만들 필요가 없습니다.
 + `SecurityConfig` 클래스에서 `URL`을 변경할 순 있지만 기본 `URL`을 사용해도 충분하니 여기서는 그대로 사용합니다.
 
-## "{{^userName}}"
+## {%raw%}{{^userName}}{%endraw%}
 ---
 ```java
 {{^userName}}
