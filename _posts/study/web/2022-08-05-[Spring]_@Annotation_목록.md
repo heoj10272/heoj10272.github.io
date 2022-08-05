@@ -824,3 +824,192 @@ main.init();
 {{>layout/footer}}
 ```
 + List에서 뽑아낸 객체의 필드를 사용합니다.
+
+## {{post.id}}
+---
+
+```java
+{{>layout/header}}
+
+<h1>게시글 수정</h1>
+
+<div class="col-md-12">
+    <div class="col-md-4">
+        <form>
+            <div class="form-group">
+                <label for="title">글 번호</label>
+                <input type="text" class="form-control" id="id" value="{{post.id}}" readonly> // <--
+            </div>
+            <div class="form-group">
+                <label for="title">제목</label>
+                <input type="text" class="form-control" id="title" value="{{post.title}}"> // <--
+            </div>
+            <div class="form-group">
+                <label for="author"> 작성자 </label>
+                <input type="text" class="form-control" id="author" value="{{post.author}}" readonly> // <--
+            </div>
+            <div class="form-group">
+                <label for="content"> 내용 </label>
+                <textarea class="form-control" id="content">{{post.content}}</textarea>
+            </div>
+        </form>
+        <a href="/" role="button" class="btn btn-secondary">취소</a>
+        <button type="button" class="btn btn-primary" id="btn-update">수정 완료</button>
+        <button type="button" class="btn btn-danger" id="btn-delete">삭제</button>
+    </div>
+</div>
+
+{{>layout/footer}}
+```
+
++ 머스테치는 객체의 필드 접근 시 점(Dot)으로 구분합니다.
++ 즉, `Post` 클래스의 `id`에 대한 접근은 `post.id`로 사용할 수 있습니다.
+
+### readOnly
+
+```java
+<input type="text" class="form-control" id="id" value="{{post.id}}" readonly>
+<input type="text" class="form-control" id="author" value="{{post.author}}" readonly>
+```
+
++ `Input` 태그에 읽기 가능만 허용하는 속성입니다.
++ `id`와 `author`는 수정할 수 없도록 읽기만 허용하도록 추가합니다.
+
+## $('#btn-update').on('click')
+---
+```java
+var main = {
+    init : function () {
+        var _this = this;
+        $('#btn-save').on('click', function () { // <--
+            _this.save();
+        });
+        $('#btn-update').on('click', function () { // <--
+            _this.update();
+        });
+    },
+    save : function () {
+        var data = {
+            title: $('#title').val(),
+            author: $('#author').val(),
+            content: $('#content').val()
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: '/api/v1/posts',
+            dataType: 'json',
+            contentType:'application/json; charset=utf-8',
+            data: JSON.stringify(data)
+        }).done(function() {
+            alert('글이 등록되었습니다.');
+            window.location.href = '/';
+        }).fail(function (error) {
+            alert(JSON.stringify(error));
+        });
+    },
+    update : function () {
+        var data = {
+            title: $('#title').val(),
+            content: $('#content').val()
+        };
+
+        var id = $('#id').val();
+
+        $.ajax({
+            type: 'PUT',
+            url: '/api/v1/posts/'+id,
+            dataType: 'json',
+            contentType:'application/json; charset=utf-8',
+            data: JSON.stringify(data)
+        }).done(function() {
+            alert('글이 수정되었습니다.');
+            window.location.href = '/';
+        }).fail(function (error) {
+            alert(JSON.stringify(error));
+        });
+    }
+};
+main.init();
+```
+
++ `btn-update`란 `id`를 가진 HTML 엘리먼트에 `click` 이벤트가 발생할 때 `update function`을 실행하도록 이벤트를 등록합니다.
+
+## ajax
+---
+```java
+var main = {
+    init : function () {
+        var _this = this;
+        $('#btn-save').on('click', function () {
+            _this.save();
+        });
+        $('#btn-update').on('click', function () { 
+            _this.update();
+        });
+    },
+    save : function () {
+        var data = {
+            title: $('#title').val(),
+            author: $('#author').val(),
+            content: $('#content').val()
+        };
+
+        $.ajax({
+            type: 'POST',
+            url: '/api/v1/posts',
+            dataType: 'json',
+            contentType:'application/json; charset=utf-8',
+            data: JSON.stringify(data)
+        }).done(function() {
+            alert('글이 등록되었습니다.');
+            window.location.href = '/';
+        }).fail(function (error) {
+            alert(JSON.stringify(error));
+        });
+    },
+    update : function () {
+        var data = {
+            title: $('#title').val(),
+            content: $('#content').val()
+        };
+
+        var id = $('#id').val();
+
+        $.ajax({
+            type: 'PUT', // <--
+            url: '/api/v1/posts/'+id, // <--
+            dataType: 'json',
+            contentType:'application/json; charset=utf-8',
+            data: JSON.stringify(data)
+        }).done(function() {
+            alert('글이 수정되었습니다.');
+            window.location.href = '/';
+        }).fail(function (error) {
+            alert(JSON.stringify(error));
+        });
+    }
+};
+main.init();
+```
+### type:'PUT'
+
+```java
+type: 'PUT'
+```
+
++ 여러 `HTTP Method` 중 `PUT` 메소드를 선택합니다.
++ `PostsApiController`에 있는 API에서 이미 `@PutMapping`으로 선언했기 때문에 `PUT`을 사용해야 합니다. 
++ 참고로 이는 `REST` 규약에 맞게 설정된 것입니다.
++ `REST`에서 `CRUD`는 다음과 같이 `HTTP Method`에 매핑됩니다.
+    - 생성(Create) - `POST`
+    - 읽기(Read) - `GET`
+    - 수정(Update) - `PUT`
+    - 삭제(Delete) - `DELETE`
+
+### url: '/api/v1/posts/'+id
+
+```java
+url: '/api/v1/posts/'+id
+```
++ 어느 게시글을 수정할지 `URL Path`로 구분하기 위해 `Path`에 `id`를 추가합니다.
