@@ -220,6 +220,84 @@ httpSession.setAttribute("user", new SessionUser(user));
 + 세션에 사용자 정보를 저장하기 위한 `Dto` 클래스입니다.
 + 왜 `User` 클래스를 쓰지 않고 새로 만들어서 쓰는지 뒤이어서 상세하게 설명하겠습니다.
 
+## @Target(ElementType.PARAMETER)
+---
+```java
+@Target(ElementType.PARAMETER) // <--
+@Retention(RetentionPolicy.RUNTIME)
+public @interface LoginUser {
+
+}
+```
+
++ 이 어노테이션이 생성될 수 있는 위치를 지정합니다.
++ `PARAMETER`로 지정했으니 메소드의 파라미터로 선언된 객체에서만 사용할 수 있습니다.
++ 이 외에도 클래스 선언문에 쓸 수 있는 `TYPE` 등이 있습니다.
+
+## @interface
+---
+```java
+@Target(ElementType.PARAMETER)
+@Retention(RetentionPolicy.RUNTIME)
+public @interface LoginUser { // <--
+
+}
+```
+
++ 이 파일을 어노테이션 클래스로 지정합니다.
++ `LoginUser`라는 이름을 가진 어노테이션이 생성되었다고 보면 됩니다.
+
+## supportsParameter()
+---
+```java
+@RequiredArgsConstructor
+@Component
+public class LoginUserArgumentResolver implements HandlerMethodArgumentResolver {
+
+    private final HttpSession httpSession;
+
+    @Override
+    public boolean supportsParameter(MethodParameter parameter) { // <--
+        boolean isLoginUserAnnotation = parameter.getParameterAnnotation(LoginUser.class) != null;
+        boolean isUserClass = SessionUser.class.equals(parameter.getParameterType());
+        return isLoginUserAnnotation && isUserClass;
+    }
+
+    @Override
+    public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception {
+        return httpSession.getAttribute("user");
+    }
+}
+```
+
++ 컨트롤러 메서드의 특정 파라미터를 지원하는지 판단합니다.
++ 여기서는 파라미터에 `@LoginUser` 어노테이션이 붙어 있고, 파라미터 클래스 타입이 `SessionUser.class`인 경우 `true`를 반환합니다.
+
+## resolveArgument()
+---
+```java
+@RequiredArgsConstructor
+@Component
+public class LoginUserArgumentResolver implements HandlerMethodArgumentResolver {
+
+    private final HttpSession httpSession;
+
+    @Override
+    public boolean supportsParameter(MethodParameter parameter) { 
+        boolean isLoginUserAnnotation = parameter.getParameterAnnotation(LoginUser.class) != null;
+        boolean isUserClass = SessionUser.class.equals(parameter.getParameterType());
+        return isLoginUserAnnotation && isUserClass;
+    }
+
+    @Override
+    public Object resolveArgument(MethodParameter parameter, ModelAndViewContainer mavContainer, NativeWebRequest webRequest, WebDataBinderFactory binderFactory) throws Exception { // <--
+        return httpSession.getAttribute("user");
+    }
+}
+```
++ 파라미터에 전달할 객체를 생성합니다.
++ 여기서는 세션에서 객체를 가져옵니다.
+
 # Application
 * * *
 
@@ -902,6 +980,42 @@ mvc.perform(get("/hello"))
 + `JSON` 응답값을 필드별로 검증할 수 있는 메소드입니다.
 + `$`를 기준으로 필드명을 명시합니다.
 + 여기서는 `name`과 `amount`를 검증하니 `$.name`, `$.amount`로 검증합니다.
+
+## @WithMockUser(roles="USER")
+---
+```java
+@Test
+@WithMockUser(roles="USER") // <--
+    public void Posts_등록된다() throws Exception{
+}
+```
++ 인증된 모의(가짜) 사용자를 만들어서 사용합니다.
++ `roles`에 권한을 추가할 수 있습니다.
++ 즉, 이 어노테이션으로 인해 `ROLE_USER` 권한을 가진 사용자가 API를 요청하는 것과 동일한 효과를 가지게 됩니다.
+
+## @Before
+---
+```java
+@Before
+    public void setup(){
+        mvc = MockMvcBuilders
+                .webAppContextSetup(context)
+                .apply(springSecurity())
+                .build();
+    }
+```
++ 매번 테스트가 시작되기 전에 `MockMvc` 인스턴스를 생성합니다.
+
+## mvc.perform
+---
+```java
+mvc.perform(post(url)
+                .contentType(MediaType.APPLICATION_JSON_UTF8)
+                .content(new ObjectMapper().writeValueAsString(requestDto)))
+                .andExpect(status().isOk());
+```
++ 생성된 `MockMvc`를 통해 API를 테스트합니다.
++ 본문(Body) 영역은 문자열로 표현하기 위해 `ObjectMapper`를 통해 문자열 `JSON`으로 변환합니다.
 
 # DTO
 * * *
