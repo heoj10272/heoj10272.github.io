@@ -21,7 +21,7 @@ SAP Examtopics 401~410번 문제를 풀어보자.<br>
 <hr/>
 <hr/>
 
-## Prob. 401 ⭕❌
+## Prob. 401 ❌
 
 한 인사말 카드 회사는 최근 고객들이 회사의 플랫폼을 사용하여 그들이 좋아하는 연예인들에게 카드를 보낼 수 있다고 광고했습니다. 광고가 공개된 이후, 이 사이트는 매초마다 10,000명의 고유 사용자들로부터 지속적으로 트래픽을 수신하고 있습니다.
 플랫폼은 m5.xlarge로 구동됩니다. 애플리케이션 로드 밸런서 뒤에 Amazon EC2 인스턴스(ALB)가 있습니다. 인스턴스는 자동 확장 그룹에 속하며 Amazon Linux 기반 사용자 지정 AMI에서 작동합니다. 이 플랫폼은 접근성이 높은 메인 및 리더 엔드포인트가 있는 Amazon Aurora MySQL DB 클러스터를 사용합니다. 또한 플랫폼에서는 클러스터 끝점을 통해 액세스할 수 있는 Redis용 Amazon ElastiCache 클러스터를 사용합니다.
@@ -46,12 +46,13 @@ D. Redis용 ElastiCache 클러스터의 노드 수를 늘립니다.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 : 
 
+[RDS Proxy](https://heoj10272.github.io/study/AWS-_Amazon_RDS_%EC%9D%B4%ED%95%B4.html#rds-proxy)를 사용해야 하는 경우이다.
 
-1차 시도 :  <br>
+1차 시도 : A 틀림<br>
 </div>
 </details>
 
@@ -59,9 +60,9 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 402 ⭕❌
+## Prob. 402 ⭕
 
-한 기업은 인적 자원 부서에 가상 사설 클라우드(VPC)를, 다른 기업은 행정 부서에 가상 사설 클라우드(VPC)를 보유하고 있습니다. HR은 Admin VPC에서 작동하는 모든 인스턴스에 대한 액세스 권한이 필요한 반면, Admin 부서에서는 모든 HR 리소스에 대한 액세스 권한이 필요합니다.
+한 기업은 인적 자원(HR) 부서에 가상 사설 클라우드(VPC)를, 다른 기업은 행정(Admin) 부서에 가상 사설 클라우드(VPC)를 보유하고 있습니다. HR은 Admin VPC에서 작동하는 모든 인스턴스에 대한 액세스 권한이 필요한 반면, Admin 부서에서는 모든 HR 리소스에 대한 액세스 권한이 필요합니다.
 
 이 상황이 조직 내부에서 어떻게 나타날 수 있을까요?
 
@@ -81,12 +82,14 @@ D. It is not possible to connect resources of one VPC from another VPC.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
 
 해설 : 
 
+쉬운 문제.<br>
+`VPC Peering`을 통해 VPC간의 연결을 활성화 할 수 있다.
 
-1차 시도 :  <br>
+1차 시도 : A 맞음<br>
 </div>
 </details>
 
@@ -94,7 +97,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 403 ⭕❌
+## Prob. 403 ❌
 
 미국에 본사를 둔 한 회사가 유럽에서 사업을 매입했습니다. 두 기업 모두 AWS 클라우드에 의존합니다. 미국의 회사는 마이크로 서비스 아키텍처를 사용하여 새로운 애플리케이션을 개발했습니다. 미국에 본사를 둔 이 회사는 us-east-2 지역에 있는 5개의 VPC(Virtual Private Cloud)에서 애플리케이션을 호스팅합니다. 애플리케이션은 eu-west-1 영역의 단일 VPC에 포함된 리소스에 액세스할 수 있어야 합니다. 그러나 애플리케이션이 다른 VPC에 액세스할 수 없어야 합니다.
 
@@ -118,12 +121,20 @@ D. Create one VPC peering connection for each VPC in us-east-2 to the VPC in eu-
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D
 
 해설 : 
 
+D - is the most cost effective
 
-1차 시도 :  <br>
+A - not possible you cant attach VPCs from multi-regions to one transit GW<br>
+B - Can work but not cost effective you pay every hour for a transit GW attachments<br>
+C - Can work but no need for full mesh, the requirement is for one VPC<br>
+
+생각보다 `VPC peering`이 답이 되는 경우가 많은 것 같다.<br>
+`transit GW`에 대해 다시 공부해보자.
+
+1차 시도 : A 틀림<br>
 </div>
 </details>
 
@@ -131,7 +142,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 404 ⭕❌
+## Prob. 404 ❌
 
 여러 사업 부문이 거대한 글로벌 금융 서비스 법인으로 구성되어 있습니다. 조직은 개발자가 새로운 서비스를 실험하도록 권장하고 싶지만, 다양한 워크로드에 대한 규정 준수 요구 사항이 많습니다. 보안 팀은 사내 및 AWS 액세스 전략에 대해 우려하고 있습니다. 이들은 비즈니스 팀이 PCI(Payment Card Industry) 규정 준수와 같은 규제 워크로드를 관리하기 위해 사용하는 AWS 서비스에 대한 제어 권한을 부여하고자 합니다.
 
@@ -153,12 +164,25 @@ D. Build one AWS account for the company for strong security controls. Ensure th
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 : 
 
+A: Too reactive. The users will still be able to do what they want.<br>
+B: Sounds feasible.<br>
+C: SCP should be used because this is multi-account.<br>
+D: Too restrictive and it does not address Developer’s needs.<br>
 
-1차 시도 :  <br>
+Two requirements<br>
+1. The Security team is concerned about the access strategy for on-premises and AWS implementations.
+→ I guess we need to use ID store on premise.
+2. They would like to enforce governance for AWS services used by business team for regulatory workloads, including Payment Card Industry (PCI) requirements.
+→ Organization and SCP are needed.
+
+모르겠다 ...<br>
+`SCP`, `OUs`가 무엇인지 알아보자.
+
+1차 시도 : C 틀림<br>
 </div>
 </details>
 
@@ -166,7 +190,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 405 ⭕❌
+## Prob. 405 ⭕ 유념
 
 A사는 AWS CodePipeline을 사용하여 Amazon EC2 AutoScaling 그룹에 대한 애플리케이션의 지속적인 통합 및 전달을 자동화하고 있습니다. AWS CloudFormation 템플릿은 모든 AWS 리소스를 지정합니다. 애플리케이션 아티팩트는 Amazon S3 버킷에 저장되고 인스턴스 사용자 데이터 스크립트를 사용하여 Auto Scaling 그룹에 배포됩니다.
 애플리케이션의 복잡성 증가로 인해 CloudFormation 템플릿의 최근 리소스 수정으로 인해 의도하지 않은 다운타임이 발생했습니다.
@@ -189,12 +213,21 @@ D. Use AWS CodeDeploy and a blue/green deployment pattern with CloudFormation to
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 : 
 
+Why do manual testing in option D when it can be automated with CodeBuild? CF Change sets to preview changes, and CodeDeploy b/g deployment with ASG.<br>
+[Link](https://aws.amazon.com/blogs/devops/performing-bluegreen-deployments-with-aws-codedeploy-and-auto-scaling-groups/)
 
-1차 시도 :  <br>
+B is right , this is straight forward question
+
+B: fully automated, with ChangeSets, all other answers have way to much room for human errors.
+
+잘 모르겠다.<br>
+`AWS CodePipeline`, `CloudFormation`, `CodeBuild`, `CodeDeploy`에 대해 공부해보자.
+
+1차 시도 : B 맞았는데 잘 모름<br>
 </div>
 </details>
 

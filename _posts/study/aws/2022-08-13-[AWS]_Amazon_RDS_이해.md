@@ -38,6 +38,7 @@ RDS Proxy는 완전 관리형, 고가용성의 사용이 간편한 Amazon RDS의
 3. 선택적으로 데이터베이스에 AWS IAM 인증을 적용하고 AWS Secrets Manager에 자격 증명을 안전하게 저장함으로써 보안을 강화할 수 있다.
 
 ### RDS Proxy address의 Use Case
+---
 
 1. 예측할 수 없는 워크로드가 있는 애플리케이션
 
@@ -48,3 +49,7 @@ RDS Proxy는 완전 관리형, 고가용성의 사용이 간편한 Amazon RDS의
 4. 일시적인 장애에 대한 가용성을 필요로 하는 애플리케이션
 
 5. 보안 강화 및 중앙 집중식 자격 증명 관리 - IAM, Secrets Manager 사용
+
+
+* Ref
+  - [AWS Docs](https://aws.amazon.com/ko/rds/proxy/faqs/)
