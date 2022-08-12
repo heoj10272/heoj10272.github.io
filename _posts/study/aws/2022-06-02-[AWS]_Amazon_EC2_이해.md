@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Amazon EC2 이해
+title: "[AWS] Amazon EC2 이해"
 subtitle: AWS
 date: '2022-06-02 4:00:00 +0900'
 category: study
 tags: aws aws-base
 image:
-  path: /assets/img/study_AWS/2022-06-02-Amazon_EC2_이해/logo.png
+  path: /assets/img/study_AWS/2022-06-02-[AWS]_Amazon_EC2_이해/logo.png
 ---
 
 AWS 서비스 중 하나인 **EC2**를 이해해보자.
@@ -136,7 +136,7 @@ Amazon EC2에서는 확장 또는 축소를 통해 요구사항이나 popularity
 일반적인 인스턴스는 기본 하드웨어 전반에 분산되어 상호 관련 오류의 위험성을 줄인다.
 하지만 인스턴스 배치 그룹을 사용함으로서 인스턴스를 좀 더 효율적으로 배치하고 활용할 수 있다.
 
-  ![Single_Master](/assets/img/study_AWS/2022-06-02-Amazon_EC2_이해/placement_group.png)
+  ![Single_Master](/assets/img/study_AWS/2022-06-02-[AWS]_Amazon_EC2_이해/placement_group.png)
 
 * 클러스터 배치 그룹
   + 단일 가용 영역 내에 있는 인스턴스 논리적 그룹
@@ -149,6 +149,7 @@ Amazon EC2에서는 확장 또는 축소를 통해 요구사항이나 popularity
 * 분산형 배치 그룹
   + 소규모의 인스턴스 그룹을 다른 기본 하드웨어로 분산하여 상호 관련 오류를 줄임
   + 동일한 리전의 여러 가용 영역에 적용될 수 있고, 그룹당 가용 영역별로 최대 7개의 인스턴스까지 가능
+  
 <br>
 <hr/>
 <hr/>
