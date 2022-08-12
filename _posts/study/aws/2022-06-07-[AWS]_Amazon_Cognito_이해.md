@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Amazon Cognito 이해
+title: "[AWS] Amazon Cognito 이해"
 subtitle: AWS
 date: '2022-06-07 13:00:00 +0900'
 category: study
 tags: aws aws-base
 image:
-  path: /assets/img/study_AWS/2022-06-07-Amazon_Cognito_이해/logo.png
+  path: /assets/img/study_AWS/2022-06-07-[AWS]_Amazon_Cognito_이해/logo.png
 ---
 
 AWS에서 제공하는 **Amazon Cognito**를 이해해보자.
@@ -40,7 +40,7 @@ AWS에서 제공하는 **Amazon Cognito**를 이해해보자.
 
 함께 사용할 경우 아래 시나리오 다이어그램을 따른다.
 
-  ![Scenario_Diagram](/assets/img/study_AWS/2022-06-07-Amazon_Cognito_이해/Scenario_Diagram.png)
+  ![Scenario_Diagram](/assets/img/study_AWS/2022-06-07-[AWS]_Amazon_Cognito_이해/Scenario_Diagram.png)
 
 위 시나리오의 목표는 **사용자 인증 이후 다른 AWS 서비스에 대한 사용자 액세스 권한을 부여하는 것**이다.
 

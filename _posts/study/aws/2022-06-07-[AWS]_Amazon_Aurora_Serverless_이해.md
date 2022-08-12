@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Amazon Aurora Serverless 이해
+title: "[AWS] Amazon Aurora Serverless 이해"
 subtitle: AWS
 date: '2022-06-07 5:00:00 +0900'
 category: study
@@ -65,7 +65,7 @@ T2.micro/T2.midium 등의 **인스턴스 타입도 선택할 필요가 없다**.
   
 ## 3. Amazon Aurora Serverless 구조
 
-  ![Architecture](/assets/img/study_AWS/2022-06-07-Amazon_Aurora_Serverless_이해/Architecture.png)
+  ![Architecture](/assets/img/study_AWS/2022-06-07-[AWS]_Amazon_Aurora_Serverless_이해/Architecture.png)
 
   Aurora Serverless에는 **외부에서 직접 연결할 수 없으며** **퍼블릭 IP도 없다**.<br>
   외부 VPC의 인스턴스에서 VPC Endpoints를 통해 Network Load Balancer를 거쳐 내부 VPC Endpoints를 통해 동작한다.

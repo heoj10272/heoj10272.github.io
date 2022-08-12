@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Amazon Neptune 이해
+title: "[AWS] Amazon Neptune 이해"
 subtitle: AWS
 date: '2022-06-07 7:00:00 +0900'
 category: study

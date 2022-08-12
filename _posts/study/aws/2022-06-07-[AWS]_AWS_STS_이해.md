@@ -1,6 +1,6 @@
 ---
 layout: post
-title: AWS STS 이해
+title: "[AWS] AWS STS 이해"
 subtitle: AWS
 date: '2022-06-07 13:15:00 +0900'
 category: study

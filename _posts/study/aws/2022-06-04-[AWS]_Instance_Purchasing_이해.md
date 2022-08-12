@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Instance Purchasing 이해
+title: "[AWS] Instance Purchasing 이해"
 subtitle: AWS
 date: '2022-06-04 6:30:00 +0900'
 category: study

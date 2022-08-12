@@ -6,7 +6,7 @@ date: '2022-06-10 18:00:00 +0900'
 category: study
 tags: aws aws-base
 image:
-  path: /assets/img/study_AWS/2022-06-10-CloudWatch_CloudTrail_비교/logo.png
+  path: /assets/img/study_AWS/2022-06-10-[AWS]_CloudWatch_CloudTrail_비교/logo.png
 ---
 
 AWS의 **Amazon CloudWatch, AWS CloudTrail**을 이해하고 비교해보자.
@@ -75,7 +75,7 @@ AWS의 **Amazon CloudWatch, AWS CloudTrail**을 이해하고 비교해보자.
 
 * AWS의 **여러 이벤트를 잡아 생성**
 
-![CloudWatch_eventbus](/assets/img/study_AWS/2022-06-10-CloudWatch_CloudTrail_비교/CloudWatch_eventbus.png)
+![CloudWatch_eventbus](/assets/img/study_AWS/2022-06-10-[AWS]_CloudWatch_CloudTrail_비교/CloudWatch_eventbus.png)
 
 위 그림은 **CloudWatch**가 **이벤트 버스(Event Bus)**로부터 **이벤트를 잡아 규칙을 생성**하여 **다른 서비스들을 호출**하는 과정을 나타낸다.
 

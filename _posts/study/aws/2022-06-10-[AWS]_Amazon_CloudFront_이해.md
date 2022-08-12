@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Amazon CloudFront 이해
+title: "[AWS] Amazon CloudFront 이해"
 subtitle: AWS
 date: '2022-06-10 19:30:00 +0900'
 category: study
 tags: aws aws-base
 image:
-  path: /assets/img/study_AWS/2022-06-10-Amazon_CloudFront_이해/logo.png
+  path: /assets/img/study_AWS/2022-06-10-[AWS]_Amazon_CloudFront_이해/logo.png
 ---
 
 AWS에서 제공하는 **Amazon CloudFront**를 이해해보자.
@@ -31,7 +31,7 @@ AWS에서 제공하는 **Amazon CloudFront**를 이해해보자.
 
 ### 엣지 로케이션
 
-![edge_location](/assets/img/study_AWS/2022-06-10-Amazon_CloudFront_이해/edge_location.png){:.centered}
+![edge_location](/assets/img/study_AWS/2022-06-10-[AWS]_Amazon_CloudFront_이해/edge_location.png){:.centered}
 
 위 그림은 전세계의 AWS 엣지 로케이션의 위치를 나타낸다.
 
@@ -52,13 +52,13 @@ AWS에서 제공하는 **Amazon CloudFront**를 이해해보자.
 
 * 서버로 요청이 필요 없기 때문에, 서버의 부하를 낮추는 효과가 있음
 
-![CDN](/assets/img/study_AWS/2022-06-10-Amazon_CloudFront_이해/CDN.png){:.centered}
+![CDN](/assets/img/study_AWS/2022-06-10-[AWS]_Amazon_CloudFront_이해/CDN.png){:.centered}
 
 위 그림은 **세계 각 지점(검정색)**에서 **우리나라에 위치한 서버(초록색)**로 데이터를 요청 할 때의 상황을 나타낸 것이다.
 
 각 지점으로부터 우리나라까지의 위치가 굉장히 멀리 떨어져 있기 때문에, 필연적으로 속도가 느려진다.
 
-![CDN_2](/assets/img/study_AWS/2022-06-10-Amazon_CloudFront_이해/CDN_2.png){:.centered}
+![CDN_2](/assets/img/study_AWS/2022-06-10-[AWS]_Amazon_CloudFront_이해/CDN_2.png){:.centered}
 
 따라서 위 그림과 같이 각 지역별로 **엣지 로케이션(청록색)**을 둠으로서 서울에 위치한 서버로부터 각각 데이터를 받아와 전송해줄 수 있다.
 
@@ -120,7 +120,7 @@ Amazon CloudFront 동작 방식은 다음과 같다.
 
 보통의 다른 CDN에서는 동적 컨텐츠는 캐싱을 잘 못시키는데, CloudFront에서는 동적 컨텐츠 또한 지원한다.
 
-![Dynamic_Static](/assets/img/study_AWS/2022-06-10-Amazon_CloudFront_이해/Dynamic_Static.png){:.centered}
+![Dynamic_Static](/assets/img/study_AWS/2022-06-10-[AWS]_Amazon_CloudFront_이해/Dynamic_Static.png){:.centered}
 
 일반적인 CloudFront의 처리 패턴은 위 그림과 같다.<br>
 동적 컨텐츠는 동적 컨텐츠를 제공하는 Origin으로, 정적 컨텐츠는 정적 컨텐츠를 제공하는 오리진으로 **경로 패턴을 분기 처리** 한다.
@@ -142,14 +142,14 @@ Amazon CloudFront 동작 방식은 다음과 같다.
 
 일반적으로 웹 브라우저를 통해서 웹서버에 접근하면 HTTP만을 지원한다.
 
-![alert](/assets/img/study_AWS/2022-06-10-Amazon_CloudFront_이해/alert.png){: width="60%" height="60%"}{:.centered}
+![alert](/assets/img/study_AWS/2022-06-10-[AWS]_Amazon_CloudFront_이해/alert.png){: width="60%" height="60%"}{:.centered}
 
 이 경우 위와 같이 `주의 요함`이 뜨게 된다.
 
 하지만 CloudFront를 사용하면 HTTPS를 Origin에서 지원하지 않더라도 지원하게끔 만들 수 있다.<br>
 그 과정은 다음과 같다.
 
-![https](/assets/img/study_AWS/2022-06-10-Amazon_CloudFront_이해/https.png){:.centered}
+![https](/assets/img/study_AWS/2022-06-10-[AWS]_Amazon_CloudFront_이해/https.png){:.centered}
 
 웹서버(EC2)와 CloudFront간의 통신은 HTTP 통신이지만, 사용자와 CloudFront 사이의 통신은 **AWS Certificate Manager(ACM)**를 통해서 HTTPS 통신으로 만든다.
 
@@ -182,7 +182,7 @@ Amazon CloudFront 동작 방식은 다음과 같다.
 
   과정은 다음과 같다.
 
-  ![Lambda_edge](/assets/img/study_AWS/2022-06-10-Amazon_CloudFront_이해/Lambda_edge.png){:.centered}
+  ![Lambda_edge](/assets/img/study_AWS/2022-06-10-[AWS]_Amazon_CloudFront_이해/Lambda_edge.png){:.centered}
   
   Lambda@edge는 위와 같이 **4가지 case**가 있다.
 
@@ -212,21 +212,21 @@ Amazon CloudFront 동작 방식은 다음과 같다.
 
   다음은 위 요소들의 화면이다.
 
-![total_requests](/assets/img/study_AWS/2022-06-10-Amazon_CloudFront_이해/total_requests.png){:.centered}
+![total_requests](/assets/img/study_AWS/2022-06-10-[AWS]_Amazon_CloudFront_이해/total_requests.png){:.centered}
 
 Total requests
 {:.figcaption}
 
 <br>
 
-![top_referrers](/assets/img/study_AWS/2022-06-10-Amazon_CloudFront_이해/top_referrers.png){:.centered}
+![top_referrers](/assets/img/study_AWS/2022-06-10-[AWS]_Amazon_CloudFront_이해/top_referrers.png){:.centered}
 
 Top referrers
 {:.figcaption}
 
 <br>
 
-![which_device](/assets/img/study_AWS/2022-06-10-Amazon_CloudFront_이해/which_device.png){:.centered}
+![which_device](/assets/img/study_AWS/2022-06-10-[AWS]_Amazon_CloudFront_이해/which_device.png){:.centered}
 
 어떤 디바이스로 요청했는지도 알 수 있다.
 {:.figcaption}
@@ -311,7 +311,7 @@ Top referrers
 
   과정은 다음 그림과 같다.
 
-  ![Field_Level_Encryption](/assets/img/study_AWS/2022-06-10-Amazon_CloudFront_이해/Field_Level_Encryption.png){:.centered}
+  ![Field_Level_Encryption](/assets/img/study_AWS/2022-06-10-[AWS]_Amazon_CloudFront_이해/Field_Level_Encryption.png){:.centered}
 
   유저가 CloudFront에 요청을 보낸다.<br>
   그러면 CloudFront에서 웹서버(EC2)로 요청을 보낸다.<br>

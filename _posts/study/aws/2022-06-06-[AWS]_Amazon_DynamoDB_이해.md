@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Amazon DynamoDB 이해
+title: "[AWS] Amazon DynamoDB 이해"
 subtitle: AWS
 date: '2022-06-06 6:30:00 +0900'
 category: study

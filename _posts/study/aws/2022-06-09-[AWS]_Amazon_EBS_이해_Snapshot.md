@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Amazon EBS 이해, Snapshot
+title: "[AWS] Amazon EBS 이해, Snapshot"
 subtitle: AWS
 date: '2022-06-09 17:00:00 +0900'
 category: study
 tags: aws aws-base
 image:
-  path: /assets/img/study_AWS/2022-06-09-Amazon_EBS_이해_Snapshot/logo.png
+  path: /assets/img/study_AWS/2022-06-09-[AWS]_Amazon_EBS_이해_Snapshot/logo.png
 ---
 
 AWS의 **Amazon EBS**를 이해해보자.
@@ -46,7 +46,7 @@ AWS의 **Amazon EBS**를 이해해보자.
 
 5. **하나의 EBS를 여러 EC2에 장착 가능(EBS Multi Attach)**
 
-![EBS_Multi_Attach](/assets/img/study_AWS/2022-06-09-Amazon_EBS_이해_Snapshot/multi_attach.png){: width="60%" height="60%"}{:.centered}
+![EBS_Multi_Attach](/assets/img/study_AWS/2022-06-09-[AWS]_Amazon_EBS_이해_Snapshot/multi_attach.png){: width="60%" height="60%"}{:.centered}
 
 하나의 EBS를 여러 EC2에서 접속하는것이 가능하다.<br>
 최대 16개의 클라이언트를 지원한다? <- 확실하지 않음.<br>
@@ -58,11 +58,11 @@ AWS의 **Amazon EBS**를 이해해보자.
 7. **EC2와 같은 가용영역에 존재함**
     + EC2와 EBS가 **서로 다른 가용영역에 있을 경우 연결 불가능**
 
-![EBS_connect1](/assets/img/study_AWS/2022-06-09-Amazon_EBS_이해_Snapshot/EBS_connect1.png){: width="60%" height="60%"}{:.centered}
+![EBS_connect1](/assets/img/study_AWS/2022-06-09-[AWS]_Amazon_EBS_이해_Snapshot/EBS_connect1.png){: width="60%" height="60%"}{:.centered}
 
 **EBS는 EC2 인스턴스와 네트워크로 연결되어 있기 때문에**, **네트워크만 바꿔주면 다른 EC2와 연결할 수 있다**.
 
-![EBS_connect2](/assets/img/study_AWS/2022-06-09-Amazon_EBS_이해_Snapshot/EBS_connect2.png){: width="50%" height="50%"}{:.centered}
+![EBS_connect2](/assets/img/study_AWS/2022-06-09-[AWS]_Amazon_EBS_이해_Snapshot/EBS_connect2.png){: width="50%" height="50%"}{:.centered}
 
 또한 위 그림처럼 **하나의 EC2 인스턴스에 여러 EBS를 연결하는 것도 가능하다**.
 
@@ -80,17 +80,17 @@ AWS의 **Amazon EBS**를 이해해보자.
     콜드 HDD (SC1)
     마그네틱 (Standard)
 
-![EBS_connect2](/assets/img/study_AWS/2022-06-09-Amazon_EBS_이해_Snapshot/EBS_types.png){:.centered}
+![EBS_connect2](/assets/img/study_AWS/2022-06-09-[AWS]_Amazon_EBS_이해_Snapshot/EBS_types.png){:.centered}
 
 위 그림은 EBS 타입들에 따른 사양이다.<br>
 자세한 사항은 아래와 같다.
 
-![ssd](/assets/img/study_AWS/2022-06-09-Amazon_EBS_이해_Snapshot/ssd.png){:.centered}
+![ssd](/assets/img/study_AWS/2022-06-09-[AWS]_Amazon_EBS_이해_Snapshot/ssd.png){:.centered}
 
 SSD
 {:.figcaption}
 
-![hdd](/assets/img/study_AWS/2022-06-09-Amazon_EBS_이해_Snapshot/hdd.png){:.centered}
+![hdd](/assets/img/study_AWS/2022-06-09-[AWS]_Amazon_EBS_이해_Snapshot/hdd.png){:.centered}
 
 HDD
 {:.figcaption}

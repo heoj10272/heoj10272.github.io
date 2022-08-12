@@ -1,12 +1,12 @@
 ---
 layout: post
-title: Amazon S3 이해
+title: "[AWS] Amazon S3 이해"
 subtitle: AWS
 date: '2022-06-04 4:30:00 +0900'
 category: study
 tags: aws aws-base
 image:
-  path: /assets/img/study_AWS/2022-06-04-Amazon_S3_이해/logo.png
+  path: /assets/img/study_AWS/2022-06-04-[AWS]_Amazon_S3_이해/logo.png
 ---
 
 AWS 서비스 중 하나인 **Amazon S3**를 이해해보자.
@@ -35,7 +35,7 @@ Amazon S3는 여러 사용 사례에 맞춰 설계된 다양한 스토리지 클
 
 #### i. 스토리지 클래스 유형
 
-![Storage_Class](/assets/img/study_AWS/2022-06-04-Amazon_S3_이해/Storage_Class.png)
+![Storage_Class](/assets/img/study_AWS/2022-06-04-[AWS]_Amazon_S3_이해/Storage_Class.png)
 
 내구성은 법적으로 AWS가 보장하는 수치이다.<br>
 가용 영역은 물리적으로 저장되는 리전을 뜻한다.
@@ -136,7 +136,7 @@ Amazon S3는 여러 사용 사례에 맞춰 설계된 다양한 스토리지 클
     데이터 전송 요금은 클래스별로 구분되지 않고 공통적으로 부과된다.<br>
     요금은 다음과 같다.
 
-    ![Data_Transfer_fee](/assets/img/study_AWS/2022-06-04-Amazon_S3_이해/Data_Transfer_fee.png)
+    ![Data_Transfer_fee](/assets/img/study_AWS/2022-06-04-[AWS]_Amazon_S3_이해/Data_Transfer_fee.png)
 
     인터넷에서 Amazon S3로 데이터를 수신할 때(Amazon S3에 업로드 할 때)의 요금은 **무료**이다.<br>
     Amazon S3에서 인터넷으로 데이터를 송신할 때(Amazon S3에서 다운로드 할 때)의 요금은 매달 100GB의 무료 데이터 전송을 사용한 뒤 부과된다.

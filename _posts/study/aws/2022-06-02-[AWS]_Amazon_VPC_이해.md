@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Amazon VPC 이해
+title: "[AWS] Amazon VPC 이해"
 subtitle: AWS
 date: '2022-06-02 5:45:00 +0900'
 category: study
