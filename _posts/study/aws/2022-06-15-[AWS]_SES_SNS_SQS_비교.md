@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SES, SNS, SQS 비교
+title: "[AWS] SES, SNS, SQS 비교"
 subtitle: AWS
 date: '2022-06-15 19:00:00 +0900'
 category: study

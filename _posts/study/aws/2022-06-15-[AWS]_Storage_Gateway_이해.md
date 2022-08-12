@@ -1,12 +1,12 @@
 ---
 layout: post
-title: AWS Storage Gateway 이해
+title: "[AWS] Storage Gateway 이해"
 subtitle: AWS
 date: '2022-06-15 17:00:00 +0900'
 category: study
 tags: aws aws-base
 image:
-  path: /assets/img/study_AWS/2022-06-15-AWS_Storage_Gateway_이해/logo.png
+  path: /assets/img/study_AWS/2022-06-15-[AWS]_Storage_Gateway_이해/logo.png
 ---
 
 AWS에서 제공하는 **AWS Storage Gateway**를 이해해보자.

@@ -1,12 +1,12 @@
 ---
 layout: post
-title: DataSync와 Storage Gateway 비교
+title: "[AWS] DataSync와 Storage Gateway 비교"
 subtitle: AWS
 date: '2022-06-15 18:00:00 +0900'
 category: study
 tags: aws aws-base
 image:
-  path: /assets/img/study_AWS/2022-06-15-DataSync_Storage_Gateway_비교/logo.png
+  path: /assets/img/study_AWS/2022-06-15-[AWS]_DataSync_Storage_Gateway_비교/logo.png
 ---
 
 AWS의 **DataSync, Storage Gateway**를 이해하고 비교해보자.
