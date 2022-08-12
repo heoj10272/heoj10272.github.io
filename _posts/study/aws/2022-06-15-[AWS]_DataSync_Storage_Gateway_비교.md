@@ -55,7 +55,7 @@ AWS의 **DataSync, Storage Gateway**를 이해하고 비교해보자.
 
 ### I. 온프레미스 -> AWS 스토리지
 
-![archi](/assets/img/study_AWS/2022-06-15-DataSync_Storage_Gateway_비교/archi.png)
+![archi](/assets/img/study_AWS/2022-06-15-[AWS]_DataSync_Storage_Gateway_비교/archi.png)
 
 온프레미스에서 AWS 스토리지로 데이터를 옮기고 싶을 때의 상황이다.<br>
 온프레미스 서버에 Agent를 설치하고, DataSync로 데이터를 전송하면 DataSync에서 각 서비스로 데이터를 전송하게 된다.
@@ -65,7 +65,7 @@ AWS의 **DataSync, Storage Gateway**를 이해하고 비교해보자.
 
 ### II. AWS 스토리지 -> AWS 스토리지
 
-![archi2](/assets/img/study_AWS/2022-06-15-DataSync_Storage_Gateway_비교/archi2.png)
+![archi2](/assets/img/study_AWS/2022-06-15-[AWS]_DataSync_Storage_Gateway_비교/archi2.png)
 
 AWS 스토리지에서 AWS 스토리지로 데이터를 옮기고 싶을 때의 상황이다.<br>
 해당 그림은 다른 리전에서의 데이터 전송이지만, 같은 리전에서도 가능하다.<br>
@@ -109,7 +109,7 @@ DataSync 서비스끼리 서로 싱크를 맞춰서 자동으로 해당 리전�
 
 ## 3. DataSync와 Storage Gateway 비교
 
-![compare](/assets/img/study_AWS/2022-06-15-DataSync_Storage_Gateway_비교/compare.png)
+![compare](/assets/img/study_AWS/2022-06-15-[AWS]_DataSync_Storage_Gateway_비교/compare.png)
 
 DataSync의 경우 `AWS안에서 혹은 온프레미스`에서 데이터를 `이동`하기 위한 서비스이고<br>
 Storage Gateway의 경우 `하이브리드환경의 온프레미스`에서 클라우드의 저장 서비스를 `연동`하기 위한 서비스이다.

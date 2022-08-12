@@ -6,7 +6,7 @@ date: '2022-06-15 19:00:00 +0900'
 category: study
 tags: aws aws-base
 image:
-  path: /assets/img/study_AWS/2022-06-15-SES_SNS_SQS_비교/logo.png
+  path: /assets/img/study_AWS/2022-06-15-[AWS]_SES_SNS_SQS_비교/logo.png
 ---
 
 AWS의 **SES, SNS, SQS**를 이해하고 비교해보자.
@@ -73,11 +73,11 @@ AWS의 **SES, SNS, SQS**를 이해하고 비교해보자.
 
 아래는 SNS의 간단한 구조도이다.
 
-![sns_archi](/assets/img/study_AWS/2022-06-15-SES_SNS_SQS_비교/sns_archi.png)
+![sns_archi](/assets/img/study_AWS/2022-06-15-[AWS]_SES_SNS_SQS_비교/sns_archi.png)
 
 아래는 자세한 전달 대상들이다.
 
-![sns_archi2](/assets/img/study_AWS/2022-06-15-SES_SNS_SQS_비교/sns_archi2.png)
+![sns_archi2](/assets/img/study_AWS/2022-06-15-[AWS]_SES_SNS_SQS_비교/sns_archi2.png)
 
 <br>
 <hr>
@@ -86,7 +86,7 @@ AWS의 **SES, SNS, SQS**를 이해하고 비교해보자.
 
 다음은 SNS를 말할 때 빼놓을 수 없는 `Fan Out Architecture`에 대한 그림이다.
 
-![fan_out](/assets/img/study_AWS/2022-06-15-SES_SNS_SQS_비교/fan_out.png)
+![fan_out](/assets/img/study_AWS/2022-06-15-[AWS]_SES_SNS_SQS_비교/fan_out.png)
 
 1. 먼저 User가 S3에 원본 영상을 업로드한다.
 2. 이를 Lambda를 통해(그림에선 생략) SNS로 보낸다.
@@ -129,7 +129,7 @@ AWS의 **SES, SNS, SQS**를 이해하고 비교해보자.
 
 ### SQS의 필요성
 
-![sqs_fail](/assets/img/study_AWS/2022-06-15-SES_SNS_SQS_비교/sqs_fail.png)
+![sqs_fail](/assets/img/study_AWS/2022-06-15-[AWS]_SES_SNS_SQS_비교/sqs_fail.png)
 
 위는 유저가 S3에 영상을 올리면 EC2에서 인코딩하는 시스템을 나타낸 그림이다.
 
@@ -139,7 +139,7 @@ AWS의 **SES, SNS, SQS**를 이해하고 비교해보자.
 즉, Fail 처리에 대한 매커니즘이 없다.<br>
 Lambda는 tight한 연결이기 때문에, 로직이 Fail이 나면 그대로 끝이 나게 된다.
 
-![sqs_decoupling](/assets/img/study_AWS/2022-06-15-SES_SNS_SQS_비교/sqs_decoupling.png)
+![sqs_decoupling](/assets/img/study_AWS/2022-06-15-[AWS]_SES_SNS_SQS_비교/sqs_decoupling.png)
 
 따라서 이를 방지하기 위해 중간에 Amazon SQS를 배치한다.
 
@@ -156,7 +156,7 @@ SQS는 이런 경우를 방지하기 위한 하나의 서비스에서 다른 서
 
 ## 4. SNS와 SQS 비교
 
-![sns_sqs](/assets/img/study_AWS/2022-06-15-SES_SNS_SQS_비교/sns_sqs.png)
+![sns_sqs](/assets/img/study_AWS/2022-06-15-[AWS]_SES_SNS_SQS_비교/sns_sqs.png)
 
 SNS와 SQS는 위 표와 같은 차이를 가진다.
 
