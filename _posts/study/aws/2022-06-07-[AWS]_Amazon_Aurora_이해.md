@@ -6,7 +6,7 @@ date: '2022-06-07 4:00:00 +0900'
 category: study
 tags: aws aws-base
 image:
-  path: /assets/img/study_AWS/2022-06-06-[AWS]_Amazon_Aurora_이해/logo.png
+  path: /assets/img/study_AWS/2022-06-07-[AWS]_Amazon_Aurora_이해/logo.png
 ---
 
 AWS에서 제공하는 **Amazon Aurora**를 이해해보자.
@@ -36,7 +36,7 @@ AWS에서 제공하는 **Amazon Aurora**를 이해해보자.
 
 ### I. Single-Master
 
-  ![Single_Master](/assets/img/study_AWS/2022-06-06-[AWS]_Amazon_Aurora_이해/Single_Master.png)
+  ![Single_Master](/assets/img/study_AWS/2022-06-07-[AWS]_Amazon_Aurora_이해/Single_Master.png)
 
   **Single-Master**는 여러 가용 영역에 걸쳐서 **Storage Cluster(=Cluster Volume, 저장 공간)**이 분리되어있으며, 그 위에 **Master 인스턴스(=Writer 인스턴스, 쓰기, 읽기를 담당)**와 **Replica 인스턴스(= Reader 인스턴스, 읽기만 가능)**이 올려져 있는 형태이다.
 
@@ -53,7 +53,7 @@ AWS에서 제공하는 **Amazon Aurora**를 이해해보자.
 
 ### II. Multi-Master
 
-  ![Multi_Master](/assets/img/study_AWS/2022-06-06-[AWS]_Amazon_Aurora_이해/Multi_Master.png)
+  ![Multi_Master](/assets/img/study_AWS/2022-06-07-[AWS]_Amazon_Aurora_이해/Multi_Master.png)
 
   **Multi-Master**는 Single Master와 다르게 읽기/쓰기를 담당하는 **Master 인스턴스가 여러개이다**.<br>
   이러한 Master 인스턴스는 **최대 4개**까지 생성할 수 있다.<br>
@@ -86,7 +86,7 @@ AWS에서 제공하는 **Amazon Aurora**를 이해해보자.
 
 ## 4. Aurora Global Database
 
-  ![Global_Database](/assets/img/study_AWS/2022-06-06-[AWS]_Amazon_Aurora_이해/Global_Database.png)
+  ![Global_Database](/assets/img/study_AWS/2022-06-07-[AWS]_Amazon_Aurora_이해/Global_Database.png)
 
 **Aurora Global Database**는 **전 세계의 모든 리전에서 1초내의 지연시간으로 데이터 액세스가 가능한 서비스**이다.<br>
 **Aurora가 위치한 리전에서 다른 리전으로** 데이터를 **자동 복제**한다.<br>
@@ -113,7 +113,7 @@ AWS에서 제공하는 **Amazon Aurora**를 이해해보자.
 
 ## 6. Aurora 백업
 
-  ![Logical_Replication](/assets/img/study_AWS/2022-06-06-[AWS]_Amazon_Aurora_이해/Logical_Replication.png)
+  ![Logical_Replication](/assets/img/study_AWS/2022-06-07-[AWS]_Amazon_Aurora_이해/Logical_Replication.png)
 
   **읽기 전용 인스턴스(Read Replica)**를 지원한다.<br>
   **MySQL DB의 Binary log 복제(Binlog)**이다.<br>
