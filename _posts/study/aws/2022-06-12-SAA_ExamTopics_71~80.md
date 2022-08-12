@@ -9,7 +9,7 @@ image:
   path: /assets/img/study_AWS/2022-06-14-SAA_ExamTopics_191~200/logo.png
 ---
 
-SAA Examtopics 71~80번 문제를 풀어보자.
+SAA Examtopics 71~80번 문제를 풀어보자.<br>
 
 <!--more-->
 
