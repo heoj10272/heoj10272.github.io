@@ -2,11 +2,11 @@
 layout: post
 title: "[AWS-SAA] Examtopics 71~80"
 subtitle: AWS
-date: '2022-06-12 20:30:01 +0900'
+date: '2022-12-12 20:30:01 +0900'
 category: study
 tags: aws examtopics saa-c02
 image:
-  path: /assets/img/study_AWS/2022-06-14-SAA_ExamTopics_191~200/logo.png
+  path: /assets/img/study_AWS/2022-06-12-[AWS-SAA]_ExamTopics_71~80/logo.png
 ---
 
 SAA Examtopics 71~80번 문제를 풀어보자.<br>

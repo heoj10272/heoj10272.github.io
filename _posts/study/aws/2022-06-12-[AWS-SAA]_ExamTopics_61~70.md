@@ -6,7 +6,7 @@ date: '2022-06-12 20:30:00 +0900'
 category: study
 tags: aws examtopics saa-c02
 image:
-  path: /assets/img/study_AWS/2022-06-12-SAA_ExamTopics_61~70/logo.png
+  path: /assets/img/study_AWS/2022-06-12-[AWS-SAA]_ExamTopics_61~70/logo.png
 ---
 
 SAA Examtopics 61~70번 문제를 풀어보자.<br>

@@ -6,7 +6,7 @@ date: '2022-06-27 18:00:00 +0900'
 category: study
 tags: aws examtopics saa-c02
 image:
-  path: /assets/img/study_AWS/2022-06-27-SAA_ExamTopics_271~280/logo.png
+  path: /assets/img/study_AWS/2022-06-27-[AWS-SAA]_ExamTopics_271~280/logo.png
 ---
 
 SAA Examtopics 271~280번 문제를 풀어보자.<br>

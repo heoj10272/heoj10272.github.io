@@ -6,7 +6,7 @@ date: '2022-06-02 5:45:00 +0900'
 category: study
 tags: aws aws-base
 image:
-  path: /assets/img/study_AWS/2022-06-02-Amazon_VPC_이해/logo.png
+  path: /assets/img/study_AWS/2022-06-02-[AWS]_Amazon_VPC_이해/logo.png
 ---
 
 **Amazon VPC**를 이해해보자.

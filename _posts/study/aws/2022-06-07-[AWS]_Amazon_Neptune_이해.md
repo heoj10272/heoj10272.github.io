@@ -6,7 +6,7 @@ date: '2022-06-07 7:00:00 +0900'
 category: study
 tags: aws aws-base
 image:
-  path: /assets/img/study_AWS/2022-06-07-Amazon_Neptune_이해/logo.png
+  path: /assets/img/study_AWS/2022-06-07-[AWS]_Amazon_Neptune_이해/logo.png
 ---
 
 AWS에서 제공하는 **Amazon Neptune**를 이해해보자.

@@ -6,7 +6,7 @@ date: '2022-06-04 6:30:00 +0900'
 category: study
 tags: aws aws-base
 image:
-  path: /assets/img/study_AWS/2022-06-04-Instance_Purchasing_이해/logo.png
+  path: /assets/img/study_AWS/2022-06-04-[AWS]_Instance_Purchasing_이해/logo.png
 ---
 
 AWS 인스턴스 요금제를 알아보자.
