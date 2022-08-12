@@ -6,10 +6,11 @@ date: '2022-08-10 23:00:00 +0900'
 category: study
 tags: aws examtopics sap-c01
 image:
-  path: /assets/img/study_AWS/2022-06-14-SAA_ExamTopics_191~200/logo.png
+  path: /assets/img/study_AWS/2022-08-10-[AWS-SAP]_ExamTopics_391~400/logo.png
 ---
 
 SAP Examtopics 391~400번 문제를 풀어보자.
+1차 5/10<br>
 
 <!--more-->
 
@@ -20,7 +21,7 @@ SAP Examtopics 391~400번 문제를 풀어보자.
 <hr/>
 <hr/>
 
-## Prob. 391
+## Prob. 391 ❌
 
 AWS 서비스에 액세스하기 위해 현재 회사의 AWS 아키텍처는 각 인스턴스에 저장된 액세스 키와 비밀 액세스 키에 의존합니다. 각 인스턴스의 데이터베이스 인증 정보는 하드 코딩됩니다. SSH 키는 명령줄 원격 액세스를 지원하는 보안 Amazon S3 버킷에 보관됩니다. 조직은 솔루션 설계자에게 운영 복잡성을 늘리지 않고 아키텍처의 보안 상태를 개선하는 업무를 맡겼습니다.
 
@@ -46,13 +47,27 @@ F. Use AWS Systems Manager Session Manager for remote access
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, C, F
 
 해설 : 
 
+A - roles and instance profiles attached to an instance defining who and what access is a best practice
 
+B - not required if your using SSM session manager so you would not need access keys for instances
 
-1차 시도 : A, 
+C - parameter store can be used to store secrets so we are green better option would be secrets manager which password rotation
+
+D - not wrong but why would you when you can use session manager?
+
+E - just wrong
+
+F - no brainer https://docs.aws.amazon.com/systems-manager/latest/userguide/session-manager.html
+
+A. Use Amazon EC2 instance profiles with an IAM role<br>
+C. Use AWS Systems Manager Parameter Store to store database credentials<br>
+F. Use AWS Systems Manager Session Manager for remote access<br>
+
+1차 시도 : A, B, E 틀림 <br>
 </div>
 </details>
 
@@ -60,9 +75,9 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 392
+## Prob. 392 ⭕
 
-AWS에서 비즈니스는 a를 운영하고 있습니다.NET 3계층 웹 애플리케이션입니다. 이 팀은 현재 XL 스토리지에 최적화된 인스턴스를 통해 웹 사이트의 사진 및 비디오 자산을 로컬 인스턴스 스토리지에 저장하고 제공하고 있습니다. 이 기업은 복제 및 인스턴스 장애로 인해 데이터 손실을 경험했습니다. Solutions Architect는 비용 효율적인 아키텍처를 유지하면서 신뢰성을 높이기 위해 이 애플리케이션을 재설계하는 작업을 수행했습니다.
+AWS에서 비즈니스는 .NET 3계층 웹 어플리케이션을 운영하고 있습니다. 이 팀은 현재 XL 스토리지에 최적화된 인스턴스를 통해 웹 사이트의 사진 및 비디오 자산을 로컬 인스턴스 스토리지에 저장하고 제공하고 있습니다. 이 기업은 복제 및 인스턴스 장애로 인해 데이터 손실을 경험했습니다. Solutions Architect는 비용 효율적인 아키텍처를 유지하면서 신뢰성을 높이기 위해 이 애플리케이션을 재설계하는 작업을 수행했습니다.
 
 어떤 솔루션이 이러한 기준을 충족시킬까요?
 
@@ -82,13 +97,16 @@ D. Use AWS Elastic Beanstalk to deploy the .NET application. Move all images and
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 : 
 
+A: EFS is more than 10 times more expensive than S3 although it has better performance. This is where CloudFront comes in to mitigate the performance impact caused by S3.<br>
+C: S3 does not suppose server side scripting (.net).<br>
+D: Cloudfront origin must be S3 or HTTP based. EFS is not HTTP.
+[docs](https://docs.aws.amazon.com/AmazonS3/latest/dev/WebsiteHosting.html)
 
-
-1차 시도 : 
+1차 시도 : B 맞음<br>
 </div>
 </details>
 
@@ -96,7 +114,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 393
+## Prob. 393 ❌
 
 AWS IAM에서 다음 사전 설정된 정책 조건 키 중 요청을 수행하는 데 사용된 MFA에서 확인된 보안 자격 증명이 얼마나 최근에 발급되었는지 검사하는 키(초)는 무엇입니까?
 
@@ -116,13 +134,13 @@ D. aws:MultiFactorAuthPrevious
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
 
 해설 : 
 
+[aws:MultiFactorAuthAge docs](https://docs.aws.amazon.com/IAM/latest/UserGuide/reference_policies_condition-keys.html#condition-keys-multifactorauthage)
 
-
-1차 시도 : 
+1차 시도 : B 틀림<br>
 </div>
 </details>
 
@@ -130,7 +148,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 394
+## Prob. 394 ⭕
 
 소셜 네트워킹 사이트를 만들고 분산 서비스 거부(DDoS) 공격으로부터 보호하는 방법을 고려하고 있습니다.
 
@@ -156,13 +174,18 @@ F. Create processes and capabilities to quickly add and remove rules to the inst
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C, E, F 
 
 해설 : 
 
+왜 WAF Shield가 옵션으로 없을까? DDos하면 Shield인데...
 
+A, B : 완화 전략에는 도움이 되지 않고, 성능만을 향상시킨다.<br>
+D : RDS는 ELB를 지원하지 않는다.
 
-1차 시도 : 
+AWS Shield는 ELB와 CloudFront에 디폴트로 적용된다는 말이 있다.
+
+1차 시도 : C, E, F 맞음<br>
 </div>
 </details>
 
@@ -170,7 +193,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 395
+## Prob. 395 ⭕
 
 Amazon ElastiCache에서 적절한 설명을 선택합니다.
 
@@ -190,13 +213,15 @@ D. It cannot run in the Amazon Virtual Private Cloud (Amazon VPC) environment.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
 
 해설 : 
 
+굉장히 쉬운 문제.<br>
+진짜로 Pro시험에 나올까 싶을 정도.
 
 
-1차 시도 : 
+1차 시도 : A 맞음<br>
 </div>
 </details>
 
@@ -204,7 +229,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 396
+## Prob. 396 ❌
 
 IAM Secure and Scalable은 고객에게 확장 가능하고 안전한 SaaS를 제공하는 회사입니다. AWS VPC에서 웹 서버와 애플리케이션 서버를 별개의 계층으로 실행하려고 합니다. 기업은 애플리케이션 서버(중간 계층)에 자동 확장 및 로드 밸런서를 구현하여 확장성을 달성하고자 합니다.
 
@@ -226,13 +251,13 @@ D. Create an Internal Load balancer with VPC and register all the App servers wi
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D
 
 해설 : 
 
+App tier does not needs to be exposed to the internet so it's common to use an internal load balancer for it.
 
-
-1차 시도 : 
+1차 시도 : C 틀림<br>
 </div>
 </details>
 
@@ -240,7 +265,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 397
+## Prob. 397 ❌
 
 한 의료 기업은 AWS 클라우드를 사용하여 애플리케이션을 호스팅하고 있습니다. 그 프로그램은 의약품을 개발하는 것의 영향을 복제합니다.
 
@@ -266,13 +291,17 @@ D. Purchase Compute Savings Plans to cover the usage for the configuration part.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
 해설 : 
 
+A is wrong: "older than 30 days to S3 Intelligent-Tiering."- Good for unpredictable retrieval requirements. Not cost effective.<br>
+B is wrong: Savings Plan to cover also for simulation part which can be interrupted and restarted - Not cost effective.<br>
+D is wrong: "be able to recover them within five hours". Glacier Deep Archive retrieval time within 12 hours. Does not meet the requirements.<br>
 
+시뮬레이션 파트는 중단되어도 다시 시작할 수 있기 때문에 Savings Plan으로 커버하지 않아도 되고, 같은 이유로 예약 인스턴스보다 싼 스팟 인스턴스를 사용해도 된다.
 
-1차 시도 : 
+1차 시도 : B 틀림<br>
 </div>
 </details>
 
@@ -280,7 +309,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 398
+## Prob. 398 ⭕
 
 Amazon Web Services(AWS)에서 앱을 운영하는 한 회사가 새로운 서비스형 데이터(SaaS) 제공업체에 가입했습니다. 벤더는 벤더가 AWS에서 호스팅하는 REST API를 통해 데이터를 제공합니다. 공급업체는 API를 위한 다양한 연결 옵션을 제공하며 최적의 연결 방법을 결정하기 위해 회사와 협력하고 있습니다.
 
@@ -305,13 +334,17 @@ D. Connect to a public bastion host that the vendor provides. Tunnel the API tra
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
 해설 : 
 
+C : With AWS PrivateLink, you can create an endpoint within your Amazon Virtual Private Cloud (Amazon VPC) that provides access to SaaS applications over a secure, private connection that eliminates the exposure of private data to the public internet.
 
+[Docs Link](https://aws.amazon.com/blogs/apn/using-aws-privatelink-integrations-to-access-saas-solutions-from-apn-partners/#:~:text=With%20AWS%20PrivateLink%2C%20you%20can,data%20to%20the%20public%20internet.)
 
-1차 시도 : 
+주의 : Endpoint 연결은 같은 리전에서만 지원된다.
+
+1차 시도 : C 맞음<br>
 </div>
 </details>
 
@@ -319,7 +352,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 399
+## Prob. 399 ❌
 
 Solutions Architect는 회사의 Amazon Redshift 클러스터를 검사하는 임무를 맡았습니다. 이 클러스터는 빠르게 자사 기술의 핵심 요소가 되었고 중요한 비즈니스 프로세스를 지원합니다. Solutions Architect의 역할은 클러스터의 안정성과 가용성을 강화하고 문제가 발생할 경우 4시간 이내에 클러스터를 복원할 수 있는 대안을 제시하는 것입니다.
 
@@ -342,13 +375,19 @@ D. Create two identical Amazon Redshift clusters in different regions (one as th
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 : 
 
+I do support answer "B".<br>
+The question does not request availability on different AZ.<br>
+The solution can tolerate 4 hours RTO. Therefore, CloudFront for Redshift, and backup stored in S3.<br>
+[link](https://aws.amazon.com/blogs/big-data/building-multi-az-or-multi-region-amazon-redshift-clusters/)<br>
+A: Redshift can not work on Multi AZ!<br>
+C: Kinesis not meant for cross region population!<br>
+D: is a perfect answer, but not cost effective. More redundant than required!<br>
 
-
-1차 시도 : 
+1차 시도 : D 틀림<br>
 </div>
 </details>
 
@@ -356,7 +395,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 400
+## Prob. 400 ⭕
 
 웹 사이트에서 직원에게 주문형 교육 비디오를 제공하고 있습니다. 매월 고해상도 MP4 형식의 동영상이 업로드됩니다. 직원들은 비디오를 보기 위해 HTTP Live Streaming(HLS) 프로토콜이 필요한 회사에서 제공하는 태블릿을 사용하여 지리적으로 분산되어 있으며 이동 중인 경우가 많습니다. 귀사는 비디오 트랜스코딩에 대한 경험이 부족하므로 컨설턴트를 고용해야 할 수도 있습니다.
 
@@ -378,13 +417,17 @@ D. A video transcoding pipeline running on EC2 using SQS to distribute tasks and
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C 
 
 해설 : 
 
+Amazon Elastic Transcoder는 파이프라인을 사용하여 트랜스코딩 작업을 관리합니다. <br>
+작업을 생성할 때 작업을 제출할 파이프라인을 지정합니다. <br>
+파이프라인은 사용자가 지정한 S3 버킷에 밀접하게 연결되어 있습니다.<br>
 
+Glacier 계층에 저장하는 것은 original files 이므로 비용적으로 문제가 없을 것이다.
 
-1차 시도 : 
+1차 시도 : C 맞음<br>
 </div>
 </details>
 
