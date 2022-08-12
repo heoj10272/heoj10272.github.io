@@ -4,7 +4,7 @@ title: "[AWS-SAP] ExamTopics 391~400"
 subtitle: AWS
 date: '2022-08-10 23:00:00 +0900'
 category: study
-tags: aws examtopics sap-c02
+tags: aws examtopics sap-c01
 image:
   path: /assets/img/study_AWS/2022-06-14-SAA_ExamTopics_191~200/logo.png
 ---
@@ -52,7 +52,7 @@ Answer :
 
 
 
-1차 시도 : 
+1차 시도 : A, 
 </div>
 </details>
 
