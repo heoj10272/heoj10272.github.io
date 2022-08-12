@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SAA Examtopics 141~150
+title: "[AWS-SAA] Examtopics 141~150"
 subtitle: AWS
 date: '2022-06-14 1:10:00 +0900'
 category: study

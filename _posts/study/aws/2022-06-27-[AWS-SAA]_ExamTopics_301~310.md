@@ -1,6 +1,6 @@
 ---
 layout: post
-title: SAA Examtopics 291~300
+title: "[AWS-SAA] Examtopics 301~310"
 subtitle: AWS
 date: '2022-12-12 16:00:00 +0900'
 category: study
@@ -297,4 +297,4 @@ Answer :
 <br>
 
 * Ref
-  - [ExamTopics](https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-associate-saa-c02/view/30)
+  - [ExamTopics](https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-associate-saa-c02/view/31)
