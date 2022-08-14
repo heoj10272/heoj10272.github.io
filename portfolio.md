@@ -45,13 +45,12 @@ font-weight:bold">
 ---
 
 * WEB
-    + HTML
-    + JSP
     + SPRING
 
 * DATABASE
     + ORACLE
     + MYSQL
+    + MariaDB
 
 * CLOUD
     + AWS

@@ -18,7 +18,8 @@ image:
 
 <hr/>
 
-## 1. Amazon VPC 개요
+# 1. Amazon VPC 개요
+---
 
 **Amazon Virtual Private Cloud(Amazon VPC)**는 AWS 클라우드 내에서 사용자의 논리적으로 격리된 공간에 virtual private cloud(vpc)라고 불리는 가상 네트워크를 정의할 수 있게 해준다.<br>
 Amazon EC2 인스턴스와 같은 AWS 리소스를 사용자 VPC의 서브넷에서 만들 수 있다.<br>
@@ -26,9 +27,9 @@ Amazon EC2 인스턴스와 같은 AWS 리소스를 사용자 VPC의 서브넷에
 사용자는 VPC의 IP주소 범위를 선택하고, 서브넷을 만든 후 라우팅 테이블, 네트워크 게이트웨이 및 보안 설정을 구성하여 VPC를 구성할 수 있다.<br>
 사용자는 자신의 VPC에 있는 인스턴스를 인터넷에 연결하거나 자체 데이터센터에 연결할 수 있다.
 
-<hr/>
 
-## 2. Amazon VPC 개념
+# 2. Amazon VPC 개념
+---
 
 **Amazon VPC**는 Amazon EC2의 네트워킹 계층이다.
 다음은 VPC의 핵심 개념이다.
@@ -76,9 +77,10 @@ Amazon EC2 인스턴스와 같은 AWS 리소스를 사용자 VPC의 서브넷에
   - 허용 및 거부 규칙을 모두 지원
   - 서브넷에서 들어오고 나가는 트래픽을 제어하기 위해 방화벽 역할을 수행하는 VPC에 대한 선택적 보안 계층
 
-<hr/>
 
-## 2. Amazon VPC 액세스
+
+# 3. Amazon VPC 액세스
+---
 
 다음 인터페이스 중 하나를 사용하여 VPC를 생성하고, 액세스하고, 관리할 수 있음
 
@@ -92,9 +94,9 @@ Amazon EC2 인스턴스와 같은 AWS 리소스를 사용자 VPC의 서브넷에
   + HTTPS 요청을 사용하여 호출하는 하위 수준의 API 작업을 제공
   + Query API 사용이 Amazon VPC에 액세스하는 가장 직접적인 방법이지만, 어플리케이션에서 요청에 서명할 해시 생성 및 오류 처리와 같은 하위 수준의 세부 정보를 처리해야 함
 
-<hr/>
 
-## 3. VPC Peering
+# 4. VPC Peering
+---
 
 VPC Peering Connection은 서로 다른 두 VPC 간에 트래픽을 라우팅할 수 있도록 하는 네트워킹 연결이다.
 
@@ -115,20 +117,27 @@ VPC 피어링 연결을 사용하여 다른 VPC가 사용자의 VPC 중 하나�
   + A-B 연결에서 B에 인터넷 게이트웨이를 통한 인터넷 연결, AWS Direct Connect 연결, 프라이빗 서브넷에서 NAT 디바이스를 통한 인터넷 연결 등이 있는 경우, A에서 해당 외부 연결에 있는 리소스에 액세스할 수 없음
 
 
-## 4. Site-to-Site VPN vs AWS Clinet VPN
+# 5. Site-to-Site VPN vs AWS Client VPN
+---
+```
+AWS VPN은 AWS Site-to-Site VPN 및 AWS Client VPN이라는 두 가지 서비스로 구성됩니다. AWS Site-to-Site VPN을 사용하면 온프레미스 네트워크 또는 지사 사이트를 Amazon Virtual Private Cloud(Amazon VPC)에 안전하게 연결할 수 있습니다. AWS Client VPN을 사용하면 사용자를 AWS 또는 온프레미스 네트워크에 안전하게 연결할 수 있습니다.
+```
+[AWS VPN FAQ](https://aws.amazon.com/vpn/faqs/#:~:text=AWS%20VPN%20%EC%9D%80)
+
+아래는 ExamTopics 문제 중 한 유저의 해설 발췌이다.
 
 **Site-to-Site VPN** 
 
 - 사내 네트워크 또는 지사 사이트를 Amazon Virtual Private Cloud(Amazon VPC)에 안전하게 연결할 수 있다.
-- AWS 클라이언트 VPN을 사용하면 사용자를 AWS 또는 사내 네트워크에 안전하게 연결할 수 있다.
-[https://aws.amazon.com/vpn/faqs/#:~:text=AWS VPN](https://aws.amazon.com/vpn/faqs/#:~:text=AWS%20VPN%20%EC%9D%80)
-- AWS Site-to-Site VPN 연결은 연결이 활성 상태인 각 시간에 대해 시간당 요금이 부과됩니다. 이 AWS 지역의 경우 요금은 시간당 0.05달러입니다. 처음 1GB는 무료입니다.
+- AWS Site-to-Site VPN 연결은 연결이 활성 상태인 각 시간에 대해 시간당 요금이 부과된다. 이 AWS 지역의 경우 요금은 시간당 0.05달러이다. 처음 1GB는 무료.
 
 **AWS Clinet VPN** 
 
 - 시간당 요금: AWS Client VPN endpoint과의 연결 비용은 매 시간마다 청구(요금은 시간당 $0.10)
 
-* Ref
+
+## Ref
+---
   - [AWS UserGuide amazon vpc](https://docs.aws.amazon.com/ko_kr/vpc/latest/userguide/what-is-amazon-vpc.html)
   - [AWS UserGuide using vpc](https://docs.aws.amazon.com/ko_kr/AWSEC2/latest/UserGuide/using-vpc.html)
   - [Developers](https://dev.classmethod.jp/articles/vpc-3/)

@@ -235,7 +235,7 @@ B: fully automated, with ChangeSets, all other answers have way to much room for
 <hr/>
 <hr/>
 
-## Prob. 406 ⭕❌
+## Prob. 406 ❌
 
 AWS에서 기업은 서버리스 멀티 테넌트(Multi-tenant) 콘텐츠 관리 시스템을 실행합니다. 웹 기반 프런트 엔드는 맞춤형 AWS 람다 인증자를 사용하여 Amazon API Gateway API와 통신합니다. 인증자는 테넌트 ID와 비교하여 사용자의 ID를 확인하고 정보를 JSON Web Token(JWT) 토큰에 저장합니다. 인증 후, API Gateway를 통해 이루어진 각 API 연결은 단일 Amazon DynamoDB 데이터베이스와 상호 작용하여 요청을 처리하는 람다 함수로 전송됩니다.
 
@@ -259,12 +259,18 @@ D. Add tenant ID as a sort key in every DynamoDB table. Add logic to each Lambda
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 : 
 
+B. [Link](https://aws.amazon.com/blogs/apn/isolating-saas-tenants-with-dynamically-generated-iam-policies/)
 
-1차 시도 :  <br>
+Answer seems to be B. Rather than creating table for each tenant, its better to use partition key in the already available table. This can be achieved with the LEAST operational.
+
+이미 존재하는 테이블을 대상으로는 partition key와 sort key를 업데이트 할 수 없다.
+
+
+1차 시도 : D 틀림<br>
 </div>
 </details>
 
@@ -272,7 +278,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 407 ⭕❌
+## Prob. 407 ⭕ SKIP
 
 Amazon DynamoDB에서 Amazon Redshift에 데이터를 넣을 수 있습니까?
 
@@ -292,12 +298,14 @@ D. Yes
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D
 
 해설 : 
 
+SAP 문제가 아닌 듯 하다.<br>
+스킵해도 무방.
 
-1차 시도 :  <br>
+1차 시도 : D 맞음 <br>
 </div>
 </details>
 
@@ -305,7 +313,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 408 ⭕❌
+## Prob. 408 ⭕ SKIP
 
 기본적으로 Amazon Cognito는 가장 최근에 작성된 데이터 버전을 유지합니다. 이 동작을 프로그래밍 방식으로 변경하고 데이터 불일치를 처리할 수 있습니다.
 또한 푸시 동기화를 사용하면 Amazon Cognito를 사용하여 새로운 데이터를 사용할 수 있을 때 ID와 연결된 모든 장치에 자동으로 알릴 수 있습니다.
@@ -326,12 +334,22 @@ D. push
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D
 
 해설 : 
 
+D <br>
+[Link](https://aws.amazon.com/cognito/faqs/)<br>
+Q: What is a silent push notification?<br>
+Amazon Cognito uses the Amazon Simple Notification Service (SNS) to send silent push notifications to devices. A silent push notification is a push message that is received by your application on a user's device that will not be seen by the user.
 
-1차 시도 :  <br>
+Q: How do I use push synchronization?<br>
+To enable push synchronization you need to declare a platform application using the Amazon SNS page in the AWS Management Console. Then, from the identity pool page in the Amazon Cognito page of the AWS Management Console, you can link the SNS platform application to your Cognito identity pool. Amazon Cognito automatically utilizes the SNS platform application to notify devices of changes.
+
+Q: How is data synchronized with Amazon Cognito?<br>
+You can programmatically trigger the sync of data sets between client devices and the Amazon Cognito sync store by using the synchronize() method in the AWS Mobile SDK. The synchronize() method reads the latest version of the data available in the Amazon Cognito sync store and compares it to the local, cached copy. After comparison, the synchronize() method writes the latest updates as necessary to the local data store and the Amazon Cognito sync store. By default Amazon Cognito maintains the last-written version of the data. You can override this behavior and resolve data conflicts programmatically. In addition, push synchronization allows you to use Amazon Cognito to send a silent push notification to all devices associated with an identity to notify them that new data is available.
+
+1차 시도 : D 맞음<br>
 </div>
 </details>
 
@@ -339,10 +357,10 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 409 ⭕❌
+## Prob. 409 ⭕
 
 한 소매업체가 Amazon EC2 인스턴스로 구성된 Amazon Elastic Container Service(Amazon ECS) 클러스터에서 미션 크리티컬 온라인 서비스를 호스팅하고 있습니다. 웹 서비스는 최종 사용자의 POST 요청을 수락하고 자체 EC2 서버에서 실행되는 MySQL 데이터베이스에 데이터를 게시합니다. 기업은 데이터 손실을 방지하기 위해 예방 조치를 취해야 합니다.
-현재 코드를 배포하는 프로세스에서는 ECS 서비스를 수동으로 변경해야 합니다. 최종 사용자는 최근 배포 중에 실제 웹 요청에 대한 응답으로 산발적으로 502개의 잘못된 게이트웨이 오류가 발생했다고 보고했습니다.
+현재 코드를 배포하는 프로세스에서는 ECS 서비스를 수동으로 변경해야 합니다. 최종 사용자는 최근 배포 중에 실제 웹 요청에 대한 응답으로 산발적으로 502 Bad Gateway failures가 발생했다고 보고했습니다.
 조직은 이러한 상황이 재발하지 않도록 신뢰할 수 있는 솔루션을 개발하려고 합니다. 또한 조직은 코드 배포를 자동화하고자 합니다. 솔루션은 접근성과 비용 효율성이 뛰어나야 합니다.
 
 어떤 조치의 조합이 이러한 기준을 충족합니까? (3개를 선택합니다.)
@@ -367,12 +385,17 @@ F. Migrate the MySQL database to run on an Amazon RDS for MySQL Multi-AZ DB inst
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, C, F
 
 해설 : 
 
+ACF -<br>
+The only concern is about D which is more cost effective - however it may cause some users to report errors if.<br>
+So if its a dependable solution it must be blue/green even its expensive no other choice as the question is not allowing failures.<br>
+GP3 is + MultAZ will provide good cost effective solution For DB part<br>
+And SQS will make sure no drop of data - you dont need to install an agent for this if using lambda.
 
-1차 시도 :  <br>
+1차 시도 : A, C, F <br>
 </div>
 </details>
 
@@ -380,7 +403,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 410 ⭕❌
+## Prob. 410 ⭕
 
 AWS에서 각 사업부의 워크로드가 완전한 자율성과 작은 폭발 반경을 갖도록 보장해야 합니다. 보안 팀은 특정 서비스가 사업부에서 활용되는 것을 방지하기 위해 계정의 리소스와 서비스에 대한 액세스를 관리할 수 있어야 합니다.
 
@@ -402,12 +425,19 @@ D. Create one shared account for the entire company. Create individual IAM polic
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
 
 해설 : 
 
+A<br>
+The best way is to use SCP and individual account.<br>
+B: This is difficult to manage.<br>
+C\D: Does not reduce the blast radius.<br>
 
-1차 시도 :  <br>
+A - SCP hidden deliberately, OU and multiaccount strategy is the key to reduce blast radius
+
+
+1차 시도 : A <br>
 </div>
 </details>
 
