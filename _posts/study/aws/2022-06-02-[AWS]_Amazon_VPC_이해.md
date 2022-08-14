@@ -116,13 +116,16 @@ VPC 피어링 연결을 사용하여 다른 VPC가 사용자의 VPC 중 하나�
 * 게이트웨이 또는 private 연결을 통한 엣지 간 라우팅
   + A-B 연결에서 B에 인터넷 게이트웨이를 통한 인터넷 연결, AWS Direct Connect 연결, 프라이빗 서브넷에서 NAT 디바이스를 통한 인터넷 연결 등이 있는 경우, A에서 해당 외부 연결에 있는 리소스에 액세스할 수 없음
 
+[Transit Gateway 이해](https://heoj10272.github.io/study/AWS-_Transit_Gateway_%EC%9D%B4%ED%95%B4.html) <- 링크에서 `Transit Gateway`와 `VPC Peering`에 대한 자세한 사항 확인 가능
 
 # 5. Site-to-Site VPN vs AWS Client VPN
 ---
-```
-AWS VPN은 AWS Site-to-Site VPN 및 AWS Client VPN이라는 두 가지 서비스로 구성됩니다. AWS Site-to-Site VPN을 사용하면 온프레미스 네트워크 또는 지사 사이트를 Amazon Virtual Private Cloud(Amazon VPC)에 안전하게 연결할 수 있습니다. AWS Client VPN을 사용하면 사용자를 AWS 또는 온프레미스 네트워크에 안전하게 연결할 수 있습니다.
-```
-[AWS VPN FAQ](https://aws.amazon.com/vpn/faqs/#:~:text=AWS%20VPN%20%EC%9D%80)
+
+> AWS VPN은 AWS Site-to-Site VPN 및 AWS Client VPN이라는 두 가지 서비스로 구성됩니다. <br>
+> AWS Site-to-Site VPN을 사용하면 온프레미스 네트워크 또는 지사 사이트를 Amazon Virtual Private Cloud(Amazon VPC)에 안전하게 연결할 수 있습니다. <br>
+> AWS Client VPN을 사용하면 사용자를 AWS 또는 온프레미스 네트워크에 안전하게 연결할 수 있습니다.
+
+[AWS VPN FAQ](https://aws.amazon.com/vpn/faqs/#:~:text=AWS%20VPN%20%EC%9D%80) 참고
 
 아래는 ExamTopics 문제 중 한 유저의 해설 발췌이다.
 
