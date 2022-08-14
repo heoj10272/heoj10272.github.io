@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[AWS] `Transit Gateway` 이해"
+title: "[AWS] Transit Gateway 이해"
 subtitle: AWS
 date: '2022-08-14 18:00:00 +0900'
 category: study
@@ -23,11 +23,12 @@ AWS의 Transit Gateway를 이해해보자.
 # 1. Transit Gateway 개요
 ---
 
-```
-`Transit Gateway`는 가상 사설 클라우드(VPC)와 온프레미스 네트워크를 상호 연결하는 데 사용할 수 있는 네트워크 전송 허브입니다. 클라우드 인프라가 전 세계적으로 확장됨에 따라 리전 간 피어링은 AWS 글로벌 인프라를 사용하여 `Transit Gateway`를 함께 연결합니다. 데이터는 자동으로 암호화되며 퍼블릭 인터넷을 통해 전송되지 않습니다.
+>`Transit Gateway`는 가상 사설 클라우드(VPC)와 온프레미스 네트워크를 상호 연결하는 데 사용할 수 있는 네트워크 전송 허브입니다.<br>
+>클라우드 인프라가 전 세계적으로 확장됨에 따라 리전 간 피어링은 AWS 글로벌 인프라를 사용하여 `Transit Gateway`를 함께 연결합니다. <br>
+>데이터는 자동으로 암호화되며 퍼블릭 인터넷을 통해 전송되지 않습니다.
+>
+> AWS `Transit Gateway` Docs
 
-- AWS `Transit Gateway` Docs
-```
 즉 `Transit Gateway`는 네트워크 전송 허브(라우터)로서, 서로 다른 VPC간의 통신을 가능하게 하는 서비스이다.<br>
 기존의 `VPC Peering`의 경우 1대 1 VPC 연결만 지원함에 따라 직접적으로 연결되지 않은 VPC에 바로 접근할 수 없었다면(전이적 피어링) `Transit Gateway`는 중앙 집중 허브를 통해 여러개의 VPC간 연결 정책을 중앙에서 관리할 수 있고, VPN을 통해 VPC와 온프레미스 네트워크를 연결할 수 있다.
 
@@ -93,22 +94,22 @@ AWS의 Transit Gateway를 이해해보자.
 
 ![archi](/assets/img/study_AWS/2022-08-14-[AWS]_Transit_Gateway_이해/vpc_peering_a_to_onpremise.png)
 
-`Amazon VPC A`와 `Amazon VPC B`는 `VPC Peering`으로 연결되어 있으며, `Amazon VPC B`와 `On-Premise`는 VPN Connection으로 연결되어 있는데, 이 때 VPN Connection은 `Direct Connect`, `Site-to-Site`의 경우를 포함한다.<br>
+`Amazon VPC A`와 `Amazon VPC B`는 `VPC Peering`으로 연결되어 있으며, `Amazon VPC B`와 `On-Premise`는 `VPN Connection`으로 연결되어 있는데, 이 때 `VPN Connection`은 `Direct Connect`, `Site-to-Site`의 경우를 포함한다.<br>
 
 위 경우와 마찬가지로 `Amazon VPC A`는 `Amazon VPC B`를 통해 `On-Premise`에 접근할 수 있을 것 처럼 보이지만, 이는 `엣지 간 라우팅` 제한으로 인해 불가능하다.
 
 ![archi](/assets/img/study_AWS/2022-08-14-[AWS]_Transit_Gateway_이해/edge-to-edge-vpn-diagram.png)
 
 위 그림은 `엣지 간 라우팅` 제한을 나타낸다.<br>
-온프레미스 네트워크에서의 트래픽은 `VPC A`에 대한 VPN 연결 또는 `AWS Direct Connect` 연결을 사용하여 `VPC B`에 직접 액세스할 수 없으며, 그 반대의 경우에도 불가능하다.
+`On-Premise` 네트워크에서의 트래픽은 `VPC A`에 대한 VPN 연결 또는 `AWS Direct Connect` 연결을 사용하여 `VPC B`에 직접 액세스할 수 없으며, 그 반대의 경우에도 불가능하다.
 
-비단 온프레미스에 대한 피어링 뿐만이 아니라, 다음의 경우도 불가능하다.
+비단 `On-Premise`에 대한 피어링 뿐만이 아니라, 다음의 경우도 불가능하다.
 
 + 인터넷 게이트웨이를 통한 엣지 간 라우팅
 
 ![archi](/assets/img/study_AWS/2022-08-14-[AWS]_Transit_Gateway_이해/edge-to-edge-igw-diagram.png)
 
-`VPC A`와 `VPC B` 사이(`pcx-abababab`)에 VPC 피어링 연결이 있다.<br> 
+`VPC A`와 `VPC B` 사이(`pcx-abababab`)에 `VPC Peering` 연결이 있다.<br> 
 `VPC A`에는 `인터넷 게이트웨이`가 있지만, `VPC B`에는 없다. <br>
 `엣지 간 라우팅`은 지원되지 않으므로, `VPC A`를 사용하여 피어링 관계를 확장함으로써 `VPC B`와 인터넷 사이에 피어링 관계가 존재하도록 할 수 없다. <br>
 
@@ -120,7 +121,7 @@ AWS의 Transit Gateway를 이해해보자.
 ![archi](/assets/img/study_AWS/2022-08-14-[AWS]_Transit_Gateway_이해/edge-to-edge-s3-diagram.png)
 
 `VPC A`와 `VPC B` 사이(`pcx-aaaabbbb`)에 `VPC Peering` 연결이 있다. <br>
-VPC에는 `Amazon S3`에 연결하는 `VPC 게이트웨이 엔드포인트`가 있다. <br>
+`VPC A`에는 `Amazon S3`에 연결하는 `VPC 게이트웨이 엔드포인트`가 있다. <br>
 `엣지 간 라우팅`은 지원되지 않으므로 `VPC A`로 피어링 관계를 확장하여 `VPC B`와 `Amazon S3` 사이에 피어링 관계가 존재하도록 할 수는 없다.
 
 예를 들어 `VPC B`는 `VPC A`에 대한 `VPC 게이트웨이 엔드포인트` 연결을 사용하여 `Amazon S3`에 직접 액세스할 수 없다.
@@ -188,4 +189,8 @@ AWS 서비스에는 `Hard Limit`과 `Soft Limit` 개념이 있다.
 
 [VPC Peering 과 Transit Gateway 어떻게 다를까](https://dev.classmethod.jp/articles/different-from-vpc-peering-and-transit-gateway/)
 
-[]
+[Transit Gateway?(1) - 개념 및 비용비교](https://junhyeong-jang.tistory.com/25)
+
+[Transit Gateway 소개](https://whchoi98.gitbook.io/aws-hybrid/1.transit-gwatway/1.1.tgw-overview)
+
+[VPC Peering과 Transit Gateway 비교](https://kim-dragon.tistory.com/178)
