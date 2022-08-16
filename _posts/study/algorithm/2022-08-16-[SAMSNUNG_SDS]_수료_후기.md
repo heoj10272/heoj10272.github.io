@@ -1,12 +1,12 @@
 ---
 layout: post
-title: 2022 SAMSUNG SDS 하계 대학생 알고리즘 특강 후기
+title: "[SAMSUNG SDS] 2022 SAMSUNG SDS 하계 대학생 알고리즘 특강 후기"
 subtitle: Algorithm
-date: '2022-07-15 19:00:00 +0900'
+date: '2022-08-16 18:00:00 +0900'
 category: study
 tags: algorithm samsung-sds
 image:
-  path: /assets/img/study_Algorithm/samsung_sds/icon.png
+  path: /assets/img/study_Algorithm/samsung_sds/수료증.png
 ---
 
 2주간 진행되었던 2022 SAMSUNG SDS 하계 대학생 알고리즘 특강 후기
@@ -21,12 +21,6 @@ image:
 <hr/>
 <hr/>
 
-## 서론
+## 수료증
 
-작성중 ,,,
-
-## 강의 진행
-
-작성중 ,,,
-
-
+![1](/assets/img/study_Algorithm/samsung_sds/수료증.jpg)
