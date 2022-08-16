@@ -19,8 +19,9 @@ image:
 
 <br>
 <hr/>
-<hr/>
+<br>
 
-## 수료증
+# 수료증
+---
 
 ![1](/assets/img/study_Algorithm/samsung_sds/수료증.jpg)
