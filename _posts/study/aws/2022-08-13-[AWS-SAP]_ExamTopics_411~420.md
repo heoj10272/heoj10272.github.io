@@ -21,7 +21,7 @@ SAP Examtopics 411~420번 문제를 풀어보자.<br>
 <hr/>
 <hr/>
 
-## Prob. 411 ⭕❌
+## Prob. 411 ❓
 
 Solutions Architect는 휴대폰 플랫폼에서 실행되는 성공적인 전세계 비디오 게임을 위해 고가용성 인프라를 개발하는 책임을 지고 있습니다. 애플리케이션은 애플리케이션 로드 밸런서를 통해 라우팅되는 Amazon EC2 인스턴스에 배포됩니다. 인스턴스는 자동 스케일링 그룹의 여러 가용성 영역에 분산됩니다. Amazon RDS MySQL Multi-AZ 인스턴스는 데이터베이스 계층 역할을 합니다. us-east-1과 eu-central-1 모두에서 전체 애플리케이션 스택이 배포됩니다. 지연 시간 기반 라우팅 전략을 사용하여 Amazon Route 53은 두 개의 설치로 트래픽을 라우팅합니다. Route 53에서는 한 지역의 설치가 응답하지 않을 경우 다른 지역으로의 장애 조치로서 가중 라우팅 정책이 구현됩니다.
 재해 복구 테스트 중에 해당 영역에서 작동하는 모든 애플리케이션 인스턴스에서 eu-central-1의 Amazon RDS MySQL 인스턴스에 대한 액세스를 제한한 후입니다. 53번 도로는 us-east-1로 가는 모든 트래픽을 자동으로 페일오버하지 않습니다.
@@ -46,12 +46,12 @@ E. Disable any existing health checks for the resources in the policies and set 
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C, D 비율 100%인데 B, C라는 의견도 있음
 
 해설 : 
 
 
-1차 시도 :  <br>
+1차 시도 : 모르겠음 <br>
 </div>
 </details>
 
@@ -59,7 +59,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 412 ⭕❌
+## Prob. 412 ❓
 
 기업은 애플리케이션 API의 일부를 Amazon EC2 인스턴스에서 서버리스 환경으로 이전하고 있습니다. 새로운 애플리케이션에는 Amazon API Gateway, AWS Lamda 및 Amazon DynamoDB를 사용했습니다. 람다 함수의 주요 작업은 타사 SaaS(Software as a Service) 공급자로부터 데이터를 가져오는 것입니다. 람다 함수는 일관성을 위해 원래 EC2 인스턴스와 동일한 VPC(Virtual Private Cloud)에 연결됩니다.
 테스트 사용자가 새로 재배치된 기능에 액세스할 수 없다고 보고하고 조직에 API Gateway 5xx 문제가 발생하고 있습니다. SaaS 공급자의 모니터링 레코드는 쿼리가 해당 시스템에 도달하지 않았음을 나타냅니다. 조직은 람다 서비스가 Amazon CloudWatch 로그를 생성하고 있음을 발견했습니다. Amazon EC2 인스턴스에서 동일한 기능을 테스트하면 올바르게 작동합니다.
@@ -82,12 +82,13 @@ D. API Gateway does not have the necessary permissions to invoke Lambda.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, D 중에 뭐가 답인지 확신이 서지 않음.
 
 해설 : 
 
+[Discussion](https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-professional/view/42/) 참조
 
-1차 시도 :  <br>
+1차 시도 : D <br>
 </div>
 </details>
 
@@ -95,7 +96,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 413 ⭕❌
+## Prob. 413 ⭕
 
 기업에는 100개 이상의 AWS 계정이 있으며, 각 계정이 자체 VPC를 가지고 있으며, 이 계정에는 인터넷에 대한 아웃바운드 HTTPS 통신이 필요합니다. 현재 각 VPC에는 AZ(Availability Zone)당 하나의 NAT 게이트웨이가 있습니다. 비용을 절감하고 외부 트래픽에 대한 가시성을 확보하기 위해 경영진은 새로운 인터넷 액세스 아키텍처를 요청했습니다.
 
@@ -117,12 +118,27 @@ D. Create a proxy fleet in a central VPC account. Create an AWS PrivateLink endp
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D
 
 해설 : 
 
+Answer is: "D"<br>
+user proxy fleet over PrivateLink. As explained in this AWS website:
+https://aws.amazon.com/blogs/networking-and-content-delivery/how-to-use-aws-privatelink-to-secure-and-scale-web-filtering-using-explicit-proxy/<br>
+A: does not provide a full solution, only showing transit VPC, and VPN but without the exiting solution to internet. Also, it is a costly solution.<br>
+B: This would work, but it will send traffic to on-premise, and the question does not show that the company is having on-premise network!<br>
+C: can not work, because VPC-Peering can not be used for transit traffic over Net Gateway.<br>
 
-1차 시도 :  <br>
+D<br>
+A: You can use VPC peering, there is no need to use VPN.<br>
+B: This will create unnecessary load on the Direct Connect and your on premise internet connection.<br>
+C: You cannot route traffic to a NAT gateway through a VPC peering connection, a Site-to-Site VPN connection, or AWS Direct Connect. A NAT gateway cannot be used by resources on the other side of these connections. https://docs.aws.amazon.com/vpc/latest/userguide/vpc-nat-gateway.html<br>
+D: https://aws.amazon.com/blogs/networking-and-content-delivery/how-to-use-aws-privatelink-to-secure-and-scale-web-filtering-using-explicit-proxy/<br>
+
+No one explained why A is incorrect properly. So let me do that. The method in A is valid, however it is far more expensive than D. Cause VPN traffic between VPCs traverses internet which is AWS to Internet traffic. And that is more expensive then D.
+
+`proxy fleet`에 대해서 공부해보자.
+1차 시도 : D <br>
 </div>
 </details>
 
@@ -130,7 +146,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 414 ⭕❌
+## Prob. 414 ❌
 
 A 기업은 많은 AWS 계정을 가지고 있습니다. 개발 팀은 현재 클라우드 거버넌스 및 교정 절차를 자동화하기 위해 노력하고 있습니다. 자동화 프레임워크는 중앙에서 관리되는 AWS 람다 서비스를 사용합니다. 솔루션 설계자는 회사의 각 AWS 계정에서 람다 함수가 최소한의 권한으로 실행될 수 있도록 하는 정책을 개발해야 합니다.
 
@@ -154,12 +170,19 @@ E. In the other AWS accounts, create an IAM role that has minimal permissions. A
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, B
 
 해설 : 
 
+AB - create a role that assumes a role in other account - need to add a trust entity for it
 
-1차 시도 :  <br>
+Create a role in central account for Lambda and allow it to assume roles in other acc.<br>
+In other accounts create a role with trusted policy for a role in central account and give it actual permissions.
+
+Lambda function located in centralized account - Lambda execution roles should assume a role in Managed accounts.<br>
+Managed Account IAM role should have minimum permission and lambda execution role as trusted entity.
+
+1차 시도 : C, D 틀림, 모르겠음<br>
 </div>
 </details>
 
@@ -167,7 +190,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 415 ⭕❌
+## Prob. 415 ❌
 
 A 기업은 주문 시스템을 위해 이벤트 중심 아키텍처를 채택했습니다. 시스템이 첫 번째 테스트 중에 주문 처리를 중지했습니다. 추가 로그 검사 결과 Amazon SQS(Amazon SQS) 표준 대기열의 단일 주문 메시지가 백엔드 문제를 트리거하고 추가 주문 메시지가 처리되지 않는 것으로 나타났습니다. 대기열의 가시성 시간 초과는 30초이고 백엔드 처리 시간 초과는 10초입니다. 솔루션 설계자는 잘못된 주문 메시지를 평가하고 후속 메시지가 시스템에서 처리되도록 보장해야 합니다.
 
@@ -189,12 +212,17 @@ D. Configure a new SQS standard queue as a dead-letter queue to isolate the faul
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D
 
 해설 : 
 
+You need a dead-letter queue with a type that matches the queue. So a DLQ for a standard queue must be a standard queue. Hence D.<br>
+Ref: https://docs.aws.amazon.com/AWSSimpleQueueService/latest/SQSDeveloperGuide/sqs-dead-letter-queues.html
 
-1차 시도 :  <br>
+`dead-letter queue`가 faulty messages를 처리할 수 있다고 한다.<br>
+`dead-letter queue`에 대해 공부해보자.
+
+1차 시도 : A 틀림<br>
 </div>
 </details>
 
@@ -202,9 +230,9 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 416 ⭕❌
+## Prob. 416 ❌
 
-한 기업이 최대한 짧은 복구 시간(RTO)의 목표를 충족하기 위해 애플리케이션이 사내 및 AWS에서 작동하는 다중 사이트 솔루션을 구현하고 있습니다.
+한 기업이 최대한 짧은 복구 시간(RTO)의 목표를 충족하기 위해 애플리케이션이 온프레미스 및 AWS에서 작동하는 다중 사이트 솔루션(multi-site solution)을 구현하고 있습니다.
 
 다음 구성 중 다중 사이트 솔루션과 관련된 시나리오의 기준과 일치하지 않는 구성은 무엇입니까?
 
@@ -224,12 +252,15 @@ D. Setup a weighted DNS service like Route 53 to route traffic across sites.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
 해설 : 
 
+Question is about multi site solution where you need one to one copy of your infrastructure that's why its C only one site db will not work
 
-1차 시도 :  <br>
+We talk about disaster recovery system design. Single DB has HA issue.
+
+1차 시도 : B 틀림<br>
 </div>
 </details>
 
