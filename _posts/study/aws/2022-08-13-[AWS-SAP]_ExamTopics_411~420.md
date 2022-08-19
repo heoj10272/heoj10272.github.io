@@ -10,7 +10,7 @@ image:
 ---
 
 SAP Examtopics 411~420번 문제를 풀어보자.<br>
-1차 x/10<br>
+1차 3/10<br>
 
 <!--more-->
 
@@ -268,7 +268,7 @@ We talk about disaster recovery system design. Single DB has HA issue.
 <hr/>
 <hr/>
 
-## Prob. 417 ⭕❌
+## Prob. 417 ⭕
 
 A사는 사내 인프라에서 AWS 클라우드로 앱을 이전하고 있습니다. 이러한 앱은 회사 내부 웹 양식의 토대 역할을 합니다. 이러한 온라인 양식은 분기별로 특정 사건에 대한 데이터를 수집합니다. 간단한 SQL 문은 웹 양식을 사용하여 로컬 관계형 데이터베이스에 데이터를 저장하는 데 사용됩니다.
 각 이벤트는 데이터를 생성하며, 대부분의 시간 동안 온프레미스 서버는 유휴 상태로 유지됩니다. 회사의 목표는 온라인 양식을 지원하는 유휴 인프라의 양을 줄이는 것입니다.
@@ -291,12 +291,17 @@ D. Provision an Amazon Aurora Serverless cluster. Build multiple schemas for eac
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D
 
 해설 : 
 
+Serverless API + Serverless Business Logic + Serverless DB
 
-1차 시도 :  <br>
+Because of "respond to each event" and "minimize the amount of idle infrastructure"
+
+Main point is "The company's goal should be to reduce the quantity of idle infrastructure supporting online forms." => serverless or scheduled autoscaling, but has no option about autoscaling => answer is D
+
+1차 시도 : D 맞음<br>
 </div>
 </details>
 
@@ -304,9 +309,9 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 418 ⭕❌
+## Prob. 418 ❌
 
-그 결과 AWS 데이터 파이프라인 작업 중 하나가 실패하고 세 번 재시도한 후 하드 오류 상태에 도달했습니다.
+결과적으로 AWS 데이터 파이프라인 작업 중 하나가 실패하고 세 번 재시도한 후 하드 오류 상태에 도달했습니다.
 당신은 그것을 다시 시도하고 싶습니다.
 
 자동 재시도 횟수를 3회 이상으로 늘릴 수 있습니까?
@@ -327,12 +332,14 @@ D. Yes, you can increase the number of automatic retries to 10.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D
 
 해설 : 
 
+An activity fails if all of its activity attempts return with a failed state. By default, an activity retries three times before entering a hard failure state. You can increase the number of automatic retries to 10; however, the system does not allow indefinite retries. After an activity exhausts its attempts, it triggers any configured onFailure alarm and will not try to run again unless you manually issue a rerun command via the CLI, API, or console button.
 
-1차 시도 :  <br>
+
+1차 시도 : A? 모름 <br>
 </div>
 </details>
 
@@ -340,13 +347,13 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 419 ⭕❌
+## Prob. 419 ❌
 
 기업은 단일 지역 사용자에게 서비스를 제공하는 애플리케이션 워크로드를 처리하기 위해 다중 계정 AWS 환경에 대한 연결을 준비하고 있습니다. 워크로드는 가용성이 높고 두 사이트에 분산되어 있는 사내 레거시 시스템에 의존합니다. 레거시 시스템에 대한 연결은 AWS 워크로드에 중요하며 최소 5Gbps의 대역폭이 필요합니다. 모든 AWS 애플리케이션 워크로드를 서로 연결해야 합니다.
 
 어떤 솔루션이 이러한 기준을 충족시킬까요?
 
-A. Configure multiple AWS Direct Connect (DX) 10 Gbps dedicated connections from a DX partner for each onג€"premises location. Create private virtual interfaces on each connection for each AWS account VPC. Associate the private virtual interface with a virtual private gateway attached to each VPC.
+A. Configure multiple AWS Direct Connect (DX) 10 Gbps dedicated connections from a DX partner for each on-premises location. Create private virtual interfaces on each connection for each AWS account VPC. Associate the private virtual interface with a virtual private gateway attached to each VPC.
 
 B. Configure multiple AWS Direct Connect (DX) 10 Gbps dedicated connections from two DX partners for each on-premises location. Create and attach a virtual private gateway for each AWS account VPC. Create a DX gateway in a central network account and associate it with the virtual private gateways. Create a public virtual interface on each DX connection and associate the interface with the DX gateway.
 
@@ -362,12 +369,16 @@ D. Configure multiple AWS Direct Connect (DX) 10 Gbps dedicated connections from
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
 해설 : 
 
+A - no, there is no connection between VPCs.<br>
+B - no, bcz DX gateway doesn't support routing from one VPN to another ( https://docs.aws.amazon.com/directconnect/latest/UserGuide/direct-connect-gateways-intro.html )<br>
+C - right answer. https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/aws-direct-connect-aws-transit-gateway.html<br>
+D - no, you can not connect Direct Connect to the Transit gateway without Direct Connect gateway in the middle.
 
-1차 시도 :  <br>
+1차 시도 : D 틀림 <br>
 </div>
 </details>
 
@@ -375,7 +386,7 @@ Answer :
 <hr/>
 <hr/>
 
-## Prob. 420 ⭕❌
+## Prob. 420 ⭕
 
 Solutions Architect는 70TB의 정적 파일을 포함하고 공개 오픈 데이터 프로젝트를 지원하는 데 사용되는 기존 사내 웹 애플리케이션을 마이그레이션하는 업무를 담당합니다. 마이그레이션 프로세스의 일부로, 설계자는 호스트 운영 체제의 최신 버전으로 업데이트하려고 합니다.
 
@@ -397,12 +408,12 @@ D. Re-platform the server by using the AWS Server Migration Service to move the 
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
 해설 : 
 
 
-1차 시도 :  <br>
+1차 시도 : C 맞음 <br>
 </div>
 </details>
 

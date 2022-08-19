@@ -10,7 +10,7 @@ image:
 ---
 
 SAP Examtopics 401~410번 문제를 풀어보자.<br>
-1차 x/10<br>
+1차 6/10<br>
 
 <!--more-->
 
