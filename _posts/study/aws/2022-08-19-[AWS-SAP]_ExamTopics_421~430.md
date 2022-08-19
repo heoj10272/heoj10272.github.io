@@ -28,29 +28,29 @@ A사는 규제되고 보안에 민감한 작업을 AWS로 마이그레이션할 
 
 솔루션 설계자는 비즈니스 요구사항을 충족하고 AWS 리소스의 구성을 정기적으로 평가, 감사 및 모니터링하기 위해 어떤 전략을 사용해야 합니까? (둘을 선택하십시오.)
 
-**A.** AWS 구성 규칙을 사용하여 AWS 리소스에 대한 변경 사항을 정기적으로 감사하고 구성 규정 준수를 모니터링합니다. AWS Lambda를 사용하여 AWS Config 사용자 지정 규칙을 개발하여 테스트 기반 개발 접근 방식을 설정하고 필요한 컨트롤에 대한 구성 변경 평가를 추가로 자동화합니다.
+A. AWS 구성 규칙을 사용하여 AWS 리소스에 대한 변경 사항을 정기적으로 감사하고 구성 규정 준수를 모니터링합니다. AWS Lambda를 사용하여 AWS Config 사용자 지정 규칙을 개발하여 테스트 기반 개발 접근 방식을 설정하고 필요한 컨트롤에 대한 구성 변경 평가를 추가로 자동화합니다.
 
-**B.** Amazon CloudWatch Logs 에이전트를 사용하여 모든 AWS SDK 로그를 수집합니다. 뮤팅 API 호출과 일치하는 미리 정의된 필터 패턴 집합을 사용하여 로그 데이터를 검색합니다. 의도하지 않은 변경이 수행될 때 Amazon CloudWatch 알람을 사용하여 알림을 보냅니다. Amazon S3로 일괄 내보낸 다음 Amazon Glacier로 장기 보존 및 감사 기능을 사용하여 로그 데이터를 보관합니다.
+B. Amazon CloudWatch Logs 에이전트를 사용하여 모든 AWS SDK 로그를 수집합니다. 뮤팅 API 호출과 일치하는 미리 정의된 필터 패턴 집합을 사용하여 로그 데이터를 검색합니다. 의도하지 않은 변경이 수행될 때 Amazon CloudWatch 알람을 사용하여 알림을 보냅니다. Amazon S3로 일괄 내보낸 다음 Amazon Glacier로 장기 보존 및 감사 기능을 사용하여 로그 데이터를 보관합니다.
 
-**C.** AWS CloudTrail 이벤트를 사용하여 모든 AWS 계정의 관리 활동을 평가합니다. CloudTrail이 모든 계정과 사용 가능한 AWS 서비스에서 사용하도록 설정되어 있는지 확인하십시오. 추적 기능을 활성화하고, AWS KMS 키를 사용하여 CloudTrail 이벤트 로그 파일을 암호화하며, CloudWatch Logs를 통해 기록된 작업을 모니터링할 수 있습니다.
+C. AWS CloudTrail 이벤트를 사용하여 모든 AWS 계정의 관리 활동을 평가합니다. CloudTrail이 모든 계정과 사용 가능한 AWS 서비스에서 사용하도록 설정되어 있는지 확인하십시오. 추적 기능을 활성화하고, AWS KMS 키를 사용하여 CloudTrail 이벤트 로그 파일을 암호화하며, CloudWatch Logs를 통해 기록된 작업을 모니터링할 수 있습니다.
 
-**D.** Amazon CloudWatch Events 거의 실시간 기능을 사용하여 시스템 이벤트 패턴을 모니터링하고 AWS Lambda 기능을 트리거하여 AWS 리소스의 승인되지 않은 변경 사항을 자동으로 되돌립니다. 또한 Amazon SNS 주제를 대상으로 하여 알림을 활성화하고 사고 대응 시간을 단축합니다.
+D. Amazon CloudWatch Events 거의 실시간 기능을 사용하여 시스템 이벤트 패턴을 모니터링하고 AWS Lambda 기능을 트리거하여 AWS 리소스의 승인되지 않은 변경 사항을 자동으로 되돌립니다. 또한 Amazon SNS 주제를 대상으로 하여 알림을 활성화하고 사고 대응 시간을 단축합니다.
 
-**E.** CloudTrail을 Amazon SNS와 통합하여 승인되지 않은 API 활동을 자동으로 알립니다. CloudTrail이 모든 계정과 사용 가능한 AWS 서비스에서 사용하도록 설정되어 있는지 확인하십시오. 승인되지 않은 AWS 리소스의 변경 사항을 자동으로 되돌리는 람다 함수의 사용을 평가합니다.
+E. CloudTrail을 Amazon SNS와 통합하여 승인되지 않은 API 활동을 자동으로 알립니다. CloudTrail이 모든 계정과 사용 가능한 AWS 서비스에서 사용하도록 설정되어 있는지 확인하십시오. 승인되지 않은 AWS 리소스의 변경 사항을 자동으로 되돌리는 람다 함수의 사용을 평가합니다.
 
 <details>
 <summary>원문 보기</summary>
 <div markdown="1">
 <br>
-**A.** Use AWS Config rules to periodically audit changes to AWS resources and monitor the compliance of the configuration. Develop AWS Config custom rules using AWS Lambda to establish a test-driven development approach, and further automate the evaluation of configuration changes against the required controls.
+A. Use AWS Config rules to periodically audit changes to AWS resources and monitor the compliance of the configuration. Develop AWS Config custom rules using AWS Lambda to establish a test-driven development approach, and further automate the evaluation of configuration changes against the required controls.
 
-**B.** Use Amazon CloudWatch Logs agent to collect all the AWS SDK logs. Search the log data using a pre-defined set of filter patterns that matches mutating API calls. Send notifications using Amazon CloudWatch alarms when unintended changes are performed. Archive log data by using a batch export to Amazon S3 and then Amazon Glacier for a long-term retention and auditability.
+B. Use Amazon CloudWatch Logs agent to collect all the AWS SDK logs. Search the log data using a pre-defined set of filter patterns that matches mutating API calls. Send notifications using Amazon CloudWatch alarms when unintended changes are performed. Archive log data by using a batch export to Amazon S3 and then Amazon Glacier for a long-term retention and auditability.
 
-**C.** Use AWS CloudTrail events to assess management activities of all AWS accounts. Ensure that CloudTrail is enabled in all accounts and available AWS services. Enable trails, encrypt CloudTrail event log files with an AWS KMS key, and monitor recorded activities with CloudWatch Logs.
+C. Use AWS CloudTrail events to assess management activities of all AWS accounts. Ensure that CloudTrail is enabled in all accounts and available AWS services. Enable trails, encrypt CloudTrail event log files with an AWS KMS key, and monitor recorded activities with CloudWatch Logs.
 
-**D.** Use the Amazon CloudWatch Events near-real-time capabilities to monitor system events patterns, and trigger AWS Lambda functions to automatically revert non-authorized changes in AWS resources. Also, target Amazon SNS topics to enable notifications and improve the response time of incident responses.
+D. Use the Amazon CloudWatch Events near-real-time capabilities to monitor system events patterns, and trigger AWS Lambda functions to automatically revert non-authorized changes in AWS resources. Also, target Amazon SNS topics to enable notifications and improve the response time of incident responses.
 
-**E.** Use CloudTrail integration with Amazon SNS to automatically notify unauthorized API activities. Ensure that CloudTrail is enabled in all accounts and available AWS services. Evaluate the usage of Lambda functions to automatically revert non-authorized changes in AWS resources.
+E. Use CloudTrail integration with Amazon SNS to automatically notify unauthorized API activities. Ensure that CloudTrail is enabled in all accounts and available AWS services. Evaluate the usage of Lambda functions to automatically revert non-authorized changes in AWS resources.
 </div>
 </details>
 
