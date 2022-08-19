@@ -6,7 +6,7 @@ date: '2022-08-19 22:00:00 +0900'
 category: study
 tags: aws examtopics sap-c01
 image:
-  path: /assets/img/study_AWS/2022-08-10-[AWS-SAP]_ExamTopics_xxx~xxx/logo.png
+  path: /assets/img/study_AWS/2022-08-19-[AWS-SAP]_ExamTopics_421~430/logo.png
 ---
 
 SAP Examtopics 421~430번 문제를 풀어보자.<br>
