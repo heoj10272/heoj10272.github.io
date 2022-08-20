@@ -21,7 +21,7 @@ SAP Examtopics 421~430번 문제를 풀어보자.<br>
 <hr/>
 <br>
 
-## Prob. 421 ⭕❌
+## Prob. 421 ❓
 ---
 
 A사는 규제되고 보안에 민감한 작업을 AWS로 마이그레이션할 계획입니다. 보안 팀은 AWS 모범 사례 및 업계에서 공인된 규정 준수 요구 사항을 준수하도록 하기 위한 프레임워크를 구축하고 있습니다. 팀의 경우 AWS Management Console이 리소스 프로비저닝의 주요 방법입니다.
@@ -58,19 +58,28 @@ E. Use CloudTrail integration with Amazon SNS to automatically notify unauthoriz
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, C
 
 해설 : 
 
+제 대답은 "A & C"입니다.<br>
+질문의 핵심은 "평가, 감사 및 모니터링"을 요청한다는 것입니다. 따라서 인스턴스/서비스에 대한 해지가 포함된 답변은 제외됩니다.<br>
+그래서, "D & E": 그들이 조치를 취하고 있기 때문에 제외됩니다.<br>
+B: 말이 되지 않습니다.<br>
+A: 구성 규칙은 규정 준수에 매우 유용한 도구입니다.<br>
+C: Cloud Trail은 감사에도 훌륭한 도구입니다.
 
-1차 시도 :  <br>
+E is incorrect - 클라우드 트레일은 인증되지 않은 사용에 대한 토픽을 sns에 게시할 수 없습니다. AWS에 따르면, "CloudTrail이 Amazon S3 버킷에 새 로그 파일을 게시할 때 알림을 받을 수 있습니다. 아마존 간편 알림 서비스(Amazon SNS)를 이용해 알림을 관리합니다."<br>
+https://docs.aws.amazon.com/awscloudtrail/latest/userguide/cloudtrail-find-log-files.html
+
+1차 시도 : 모름 <br>
 </div>
 </details>
 
 <br>
 
 
-## Prob. 422 ⭕❌
+## Prob. 422 ⭕
 ---
 
 기업은 고정 포트에서 TCP를 통해 액세스할 수 있는 새로운 서비스를 구축하고 있습니다. 솔루션 설계자는 서비스가 고가용성(HA)이며 가용성 영역 전체에서 중복되며 공개적으로 액세스할 수 있는 DNS 이름 my.service.com을 통해 연결할 수 있도록 보장해야 합니다. 다른 회사가 허용 목록에 주소를 추가하려면 서비스는 고정 주소 할당을 사용해야 합니다.
@@ -104,22 +113,31 @@ D. Create an Amazon ECS cluster and a service definition for the application. Cr
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
 해설 : 
 
+C. NLB with one Elastic IP per AZ to handle TCP traffic. Alias record set named my.service.com.<br>
+https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/routing-to-elb-load-balancer.html
 
-1차 시도 :  <br>
+If you create an internet-facing load balancer, you can select an Elastic IP address for each Availability Zone. This provides your load balancer with static IP addresses.<br>
+https://docs.aws.amazon.com/elasticloadbalancing/latest/network/create-network-load-balancer.html
+
+Answer C is the only one with Alias DNS record which is needed to access AWS Resources
+
+1차 시도 : C 맞음<br>
 </div>
 </details>
 
 <br>
 
 
-## Prob. 423 ⭕❌
+## Prob. 423 ❌
 ---
 
 기업은 모든 Amazon Web Services 계정에 대해 중앙 집중식 로깅 인프라를 구축해야 합니다. 아키텍처는 모든 AWS CloudTrail 및 VPC Flow 로그에 대해 거의 실시간에 가까운 데이터 분석을 제공해야 합니다. 조직은 Amazon Elastic Search Service(Amazon ES)를 사용하여 로깅 계정의 로그를 분석할 계획입니다.
+
+솔루션 설계자는 이러한 요구사항을 충족하기 위해 어떤 방법을 사용해야 합니까?
 
 A. 각 AWS 계정의 CloudTrail 및 VPC Flow Logs를 구성하여 로깅 계정의 중앙 집중식 Amazon S3 버킷으로 데이터를 전송합니다. 및 AWS Lambda 함수를 생성하여 로깅 계정의 S3 버킷에서 Amazon ES로 데이터를 로드합니다.
 
@@ -147,19 +165,22 @@ D. Configure CloudTrail and VPC Flow Logs to send data to a log group in Amazon 
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 : 
 
+https://aws.amazon.com/solutions/implementations/centralized-logging/
 
-1차 시도 :  <br>
+CloudWatch subscription filter support sending to Kinesis data streams and Firehose so B looks correct.
+
+1차 시도 : A 틀림<br>
 </div>
 </details>
 
 <br>
 
 
-## Prob. 424 ⭕❌
+## Prob. 424 ⭕
 ---
 
 솔루션 설계자는 기업의 Amazon EC2 인스턴스 및 Amazon EBS(Amazon Elastic Block Store) 볼륨을 평가하여 기업이 리소스를 얼마나 효과적으로 사용하고 있는지 확인해야 합니다. 조직은 수많은 대용량 메모리 Amazon EC2 인스턴스를 사용하여 액티브/패시브 설정에서 데이터베이스 클러스터를 호스팅합니다. 조직은 데이터베이스에 액세스하는 앱에서 이러한 EC2 인스턴스를 사용하는 방식에 대한 패턴을 탐지하지 못했습니다.
@@ -193,12 +214,21 @@ D. Sign up for the AWS Enterprise Support plan. Turn on AWS Trusted Advisor. Wai
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
 해설 : 
 
+C - for sure since its memory instance need to install CW agent and to configure memory metrics - optimizer will do the work and analyze and suggest rightsizing for both Ec2 EBS and EC2 instances - need to pay just for one extra metric per EC2.
 
-1차 시도 :  <br>
+A is incorrect OpsCenter is identifying issue with resources like instance failures etc.. not for cost optimizing
+
+D is not cost effective
+
+B - will not fulfil the requirement - no memory data also enable detailed monitoring for all EC2 instances is expensive
+
+`CloudWatch agent`란 무엇인지 알아보자.
+
+1차 시도 : C 맞음<br>
 </div>
 </details>
 
@@ -239,12 +269,19 @@ D. Request multiple AWS Snowball devices to be delivered to the data center. Loa
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D
 
 해설 : 
 
+A\C: Too slow<br>
+B: Too expensive. Usually for petabyte workloads.<br>
+https://aws.amazon.com/snowball/faqs/
 
-1차 시도 :  <br>
+스노우모바일과 스노우볼 중 어떻게 선택해야 하나요?
+
+단일 위치에서 10PB 이상의 대규모 데이터셋을 마이그레이션하려면 Snowmobile을 사용해야 합니다. 10PB 미만의 데이터셋 또는 여러 위치에 분산된 데이터셋의 경우 Snowball을 사용해야 합니다. 또한 네트워크 백본에서 사용 가능한 대역폭의 양을 평가해야 합니다. 수백 Gb/s의 여유 처리량을 갖춘 고속 백본이 있는 경우, Snowmobile을 사용하여 대규모 데이터셋을 한 번에 마이그레이션할 수 있습니다. 백본에 대역폭이 제한된 경우 여러 개의 스노우볼을 사용하여 데이터를 점진적으로 마이그레이션하는 것을 고려해야 합니다.
+
+1차 시도 : D 맞음<br>
 </div>
 </details>
 
