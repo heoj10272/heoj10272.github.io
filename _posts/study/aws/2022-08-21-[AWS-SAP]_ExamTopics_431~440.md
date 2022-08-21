@@ -1,15 +1,15 @@
 ---
 layout: post
-title: "[AWS-SAP] ExamTopics xxx~xxx"
+title: "[AWS-SAP] ExamTopics 431~440"
 subtitle: AWS
-date: '2022-12-12 23:00:00 +0900'
+date: '2022-08-21 21:50:00 +0900'
 category: study
 tags: aws examtopics sap-c01
 image:
-  path: /assets/img/study_AWS/2022-08-10-[AWS-SAP]_ExamTopics_xxx~xxx/logo.png
+  path: /assets/img/study_AWS/2022-08-21-[AWS-SAP]_ExamTopics_431~440/logo.png
 ---
 
-SAP Examtopics xxx~xxx번 문제를 풀어보자.<br>
+SAP Examtopics 431~440번 문제를 풀어보자.<br>
 1차 x/10<br>
 
 <!--more-->
@@ -19,8 +19,7 @@ SAP Examtopics xxx~xxx번 문제를 풀어보자.<br>
 
 <br>
 
-
-## Prob. ⭕❌
+## Prob. 431 ⭕❌
 ---
 
 <details>
@@ -46,7 +45,7 @@ Answer :
 
 <br>
 
-## Prob. ⭕❌
+## Prob. 432 ⭕❌
 ---
 
 <details>
@@ -73,7 +72,7 @@ Answer :
 <br>
 
 
-## Prob. ⭕❌
+## Prob. 433 ⭕❌
 ---
 
 <details>
@@ -99,7 +98,7 @@ Answer :
 
 <br>
 
-## Prob. ⭕❌
+## Prob. 434 ⭕❌
 ---
 
 <details>
@@ -125,7 +124,7 @@ Answer :
 
 <br>
 
-## Prob. ⭕❌
+## Prob. 435 ⭕❌
 ---
 
 <details>
@@ -151,7 +150,7 @@ Answer :
 
 <br>
 
-## Prob. ⭕❌
+## Prob. 436 ⭕❌
 ---
 
 <details>
@@ -177,7 +176,7 @@ Answer :
 
 <br>
 
-## Prob. ⭕❌
+## Prob. 437 ⭕❌
 ---
 
 <details>
@@ -203,7 +202,7 @@ Answer :
 
 <br>
 
-## Prob. ⭕❌
+## Prob. 438 ⭕❌
 ---
 
 <details>
@@ -229,7 +228,7 @@ Answer :
 
 <br>
 
-## Prob. ⭕❌
+## Prob. 439 ⭕❌
 ---
 
 <details>
@@ -255,7 +254,7 @@ Answer :
 
 <br>
 
-## Prob. ⭕❌
+## Prob. 440 ⭕❌
 ---
 
 <details>
@@ -285,5 +284,5 @@ Answer :
 <br>
 
 * Ref
-  - [ExamTopics](https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-professional/view/40/)
+  - [ExamTopics](https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-professional/view/44/)
 
