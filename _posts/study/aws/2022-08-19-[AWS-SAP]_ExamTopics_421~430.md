@@ -10,7 +10,7 @@ image:
 ---
 
 SAP Examtopics 421~430번 문제를 풀어보자.<br>
-1차 x/10<br>
+1차 4/9<br>
 
 <!--more-->
 
@@ -235,7 +235,7 @@ B - will not fulfil the requirement - no memory data also enable detailed monito
 <br>
 
 
-## Prob. 425 ⭕❌
+## Prob. 425 ⭕
 ---
 
 사내에서 기업은 대용량 미디어 공유 프로그램을 운영합니다. 현재 수백만 개의 비디오 클립을 포함하여 400테라바이트 이상의 데이터를 저장합니다. 조직은 애플리케이션의 안정성을 높이고 비용을 절감하기 위해 이 애플리케이션을 AWS로 이전하고 있습니다.
@@ -288,7 +288,7 @@ https://aws.amazon.com/snowball/faqs/
 <br>
 
 
-## Prob. 426 ⭕❌
+## Prob. 426 ❌
 ---
 
 AWS에서 기업은 접근성이 높은 새로운 웹 애플리케이션을 개발하고 있습니다. 애플리케이션은 AWS 애플리케이션 서버와 사내에 저장된 백엔드 REST API 간에 지속적이고 신뢰할 수 있는 통신이 필요합니다. AWS와 사내 간의 백엔드 연결은 AWS Direct Connect 연결을 사용하여 개인 가상 인터페이스를 통해 처리됩니다. Amazon Route 53은 백엔드 REST API의 IP 주소를 확인하기 위해 애플리케이션의 개인 DNS 레코드를 처리하는 데 사용됩니다.
@@ -297,11 +297,11 @@ AWS에서 기업은 접근성이 높은 새로운 웹 애플리케이션을 개�
 
 A. 백엔드 REST API에 대해 최소 두 개의 백엔드 엔드포인트를 구현하고 Route 53 상태 검사를 사용하여 각 백엔드 엔드포인트의 가용성을 모니터링하고 DNS 레벨 페일오버를 수행합니다.
 
-B. 다른 네트워크 통신사의 두 번째 Direct Connect 연결을 설치하고 첫 번째 Direct Connect 연결과 동일한 가상 개인 게이트웨이에 연결합니다.
+B. 다른 네트워크 통신사의 두 번째 Direct Connect 연결을 설치하고 첫 번째 Direct Connect 연결과 동일한 가상 개인 게이트웨이(Virtual Private Gateway)에 연결합니다.
 
 C. 동일한 네트워크 통신 사업자의 동일한 Direct Connect 연결에 대해 두 번째 교차 연결을 설치하고 두 연결을 모두 동일한 전용 가상 인터페이스의 동일한 LAG(링크 집계 그룹)에 가입합니다.
 
-D. 내부 데이터 센터에서 AWS로 공용 인터넷을 통해 라우팅된 IPSec VPN 연결을 생성하여 Direct Connect 연결과 동일한 가상 개인 게이트웨이에 연결합니다.
+D. 내부 데이터 센터에서 AWS로 공용 인터넷을 통해 라우팅된 IPSec VPN 연결을 생성하여 Direct Connect 연결과 동일한 가상 개인 게이트웨이(Virtual Private Gateway)에 연결합니다.
 
 <details>
 <summary>원문 보기</summary>
@@ -321,19 +321,19 @@ D. Create an IPSec VPN connection routed over the public internet from the on-pr
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D, B를 놓고 50:50인듯
 
 해설 : 
 
 
-1차 시도 :  <br>
+1차 시도 : A 틀림<br>
 </div>
 </details>
 
 <br>
 
 
-## Prob. 427 ⭕❌
+## Prob. 427 ❓
 ---
 
 기업은 Amazon CloudFront 배포를 통해 애플리케이션 로드 밸런서 뒤에서 작동하는 웹 애플리케이션의 정적 및 동적 콘텐츠를 모두 배포하고 있습니다. 동적 콘텐츠의 경우 웹 응용 프로그램은 사용자 권한 부여 및 세션 모니터링이 필요합니다. CloudFront 배포는 HTTP 화이트리스트 헤더 Authorization, Host 및 User-Agent와 세션 쿠키를 오리진으로 전달하는 단일 캐시 동작으로 설정됩니다. 다른 모든 캐시 동작 매개 변수는 그대로 유지됩니다.
@@ -367,18 +367,21 @@ D. Create two cache behaviors for static and dynamic content. Remove the User-Ag
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D
 
 해설 : 
 
+기존 구성은 호스트 헤더 전달과 함께 작동합니다. 즉, CloudFront와 ALB가 모두 동일한 SSL 인증서(SSL 인증서의 동일한 호스트 이름 정의)로 구성되어 있습니다.
+호스트 헤더를 제거하면 CloudFront는 사용자 지정 오리진 호스트(ALB에서 정의된 호스트 이름)를 호스트 헤더(URL의 호스트 부분)에 추가합니다. 이 요청이 ALB에 도달하면 ALB SSL 인증서에 정의된 SSL 호스트 이름이 URL의 호스트 부분과 일치하지 않기 때문에 ALB에서 요청이 실패합니다. 따라서 CloudFront 및 ALB에 배포된 동일한 SSL 인증서가 있는 경우 호스트 헤더가 필요합니다. 이것은 ALB가 CloudFront를 의미하는 자체 호스트 이름 정의와 일치하는 자체 SSL 인증서를 가지고 있고 ALB가 서로 다른 SSL 인증서를 가지고 있는 경우에 작동합니다.
 
-1차 시도 :  <br>
+
+1차 시도 : 모르겠음 <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 428 ⭕❌
+## Prob. 428 ⭕
 ---
 
 한 온라인 소매업체는 사내 데이터 센터의 단일 서버에서 상태 저장 웹 애플리케이션과 MySQL 데이터베이스를 실행합니다. 회사는 추가적인 마케팅 캠페인 및 판촉 활동을 통해 소비자 기반을 확대하고자 합니다. 이 회사는 아키텍처의 안정성을 높이기 위해 준비 과정에서 애플리케이션과 데이터베이스를 AWS로 전환할 계획입니다.
@@ -389,7 +392,7 @@ A. 데이터베이스를 Amazon RDS MySQL Multi-AZDB 인스턴스로 마이그�
 
 B. 데이터베이스를 Amazon Aurora MySQL로 마이그레이션합니다. 애플리케이션 로드 밸런서 뒤에 있는 Amazon EC2 인스턴스의 자동 확장 그룹에 애플리케이션을 배포합니다. 세션을 Amazon ElastiCache for Redis 복제 그룹에 저장합니다.
 
-C. 데이터베이스를 Amazon DocumentDB로 마이그레이션합니다(MongoDB 호환). 네트워크 로드 밸런서 뒤에 있는 Amazon EC2 인스턴스의 자동 확장 그룹에 애플리케이션을 배포합니다. 아마존 키네시스 데이터 파이어호스에 세션을 저장합니다.
+C. 데이터베이스를 Amazon DocumentDB로 마이그레이션합니다(MongoDB 호환). 네트워크 로드 밸런서 뒤에 있는 Amazon EC2 인스턴스의 자동 확장 그룹에 애플리케이션을 배포합니다. Amazon Kinesis Data Firehose에 세션을 저장합니다.
 
 D. 데이터베이스를 Amazon RDS MariaDB Multi-AZDB 인스턴스로 마이그레이션합니다. 애플리케이션 로드 밸런서 뒤에 있는 Amazon EC2 인스턴스의 자동 확장 그룹에 애플리케이션을 배포합니다. Memcached용 Amazon ElastiCache에 세션을 저장합니다.
 
@@ -411,18 +414,28 @@ D. Migrate the database to an Amazon RDS MariaDB Multi-AZ DB instance. Deploy th
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 : 
 
+B is right. The question not mention that need multi-thread, so Redis is better than Memcache. I will choose B over D.<br>
+A) "Store sessions in Amazon Neptune" - wrong<br>
+C) DocumentDB is NoSQL + FireHose for session = wrong<br>
 
-1차 시도 :  <br>
+It's B. use redis for session state.
+
+It's B. There is no clustering in Memcache, only sharding.<br>
+Memcache는 클러스터링을 지원하는걸로 알고 있었는데 ... 다시 알아보자.
+
+Amazon Aurora와 기타 DB가 비교되는 문항이 나왔을때는 Aurora를 고르면 대부분 맞는 것 같다...
+
+1차 시도 : B 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 429 ⭕❌
+## Prob. 429 SKIP
 ---
 
 사용자가 IP 10.10.10.1/32에서 발송되지 않은 요청을 거부하도록 IAM 정책을 구성했습니다. 다른 규정은 모든 요청은 오후 5시에서 7시 사이에 이루어져야 한다는 것입니다.
@@ -455,19 +468,21 @@ D. It will allow access
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
 
 해설 : 
 
+Pro 문제가 아닌듯.
+SKIP
 
-1차 시도 :  <br>
+1차 시도 : A 맞음<br>
 </div>
 </details>
 
 <br>
 
 
-## Prob. 430 ⭕❌
+## Prob. 430 ❌
 ---
 
 비즈니스는 애플리케이션 로드 밸런서 뒤에 있는 자동 확장 그룹의 여러 Amazon EC2 인스턴스에 분산되어 있는 애플리케이션을 운영합니다. 모든 응용 프로그램 액세스 시도는 보안 팀이 검사할 수 있도록 해야 합니다. 클라이언트의 IP 주소, 연결 종류 및 사용자 에이전트가 모두 제공되어야 합니다.
@@ -500,12 +515,22 @@ D. Enable Traffic Mirroring and specify all EC2 instance network interfaces as t
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
 해설 : 
 
+https://docs.aws.amazon.com/elasticloadbalancing/latest/application/load-balancer-access-logs.html
 
-1차 시도 :  <br>
+ALB에 대한 액세스 로그는 ELB의 옵션인 것 같다.<br>
+로드 밸런서에 대한 액세스 로깅을 사용하도록 설정하면 ELB가 로그를 캡쳐하여 압축 파일로 지정한 Amazon S3 버킷에 저장한다.<br>
+해당 옵션은 언제든지 비활성화 할 수 있다.
+
+액세스 로깅은 추가 요금이 부과되지 않는다!<br>
+ELB가 S3에 보내는데에 사용되는 대역폭에 대해서도 요금이 부과되지 않고, 오직 S3 스토리지 요금만 청구된다.
+
+보안 팀의 액세스 로그 감사에 대한 경우 `ALB`-`S3`-`Athena`라고 생각해야겠다.
+
+1차 시도 : A 틀림<br>
 </div>
 </details>
 

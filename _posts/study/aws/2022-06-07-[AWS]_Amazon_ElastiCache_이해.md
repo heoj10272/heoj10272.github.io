@@ -47,6 +47,7 @@ AWS에서 제공하는 **Amazon ElastiCache**를 이해해보자.
     + **Memcached 클러스터**는 **리전의 가용 영역 별로 생성 가능**
     + 클러스터 내에 **노드를 추가할 수록 데이터 저장 공간이 늘어남**
     + **스냅샷**과 **Read Replica**를 **지원하지 않음**
+    + MultiThreaded architecture이다.
 
 * **Redis**
     + **빠른 오픈 소스 인 메모리 데이터 스토어 및 캐시**
@@ -57,6 +58,7 @@ AWS에서 제공하는 **Amazon ElastiCache**를 이해해보자.
     + 캐시 노드의 메모리 용량을 넘어서는 데이터를 저장하기 위해서는 **애플리케이션 레벨에서의 샤딩 구현 필요**
     + **한 리전 안의 여러 가용 영역에 생성 가능**
     + Redis용 ElastiCache는 확장 가능하고 안전한 완전관리형 서비스로서, 웹, 모바일 앱, 게임, 광고 기술 및 IoT와 같은 고성능 사용 사례에 지원하는 데 매우 적합한 서비스
+    + MultiThreaded architecture가 아니다.
 
 
 ## 3. Amazon ElastiCache 기능
