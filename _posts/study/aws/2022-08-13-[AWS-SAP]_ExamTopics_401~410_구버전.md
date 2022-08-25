@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[AWS-SAP] ExamTopics 401~410"
+title: "[AWS-SAP] ExamTopics 401~410 구버전"
 subtitle: AWS
 date: '2022-08-13 04:00:00 +0900'
 category: study
