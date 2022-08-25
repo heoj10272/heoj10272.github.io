@@ -9,7 +9,7 @@ image:
   path: /assets/img/study_AWS/2022-08-10-[AWS-SAP]_1~10/logo.png
 ---
 
-SAP 1~10번 문제를 풀어보자.<br>
+SAP 스터디에서 1~10번 문제를 풀어보자.<br>
 1차 x/10<br>
 
 <!--more-->
@@ -151,7 +151,7 @@ Answer :
 
 <br>
 
-## Prob. ⭕❌
+## Prob. 6 ⭕❌
 ---
 
 <details>
@@ -177,7 +177,7 @@ Answer :
 
 <br>
 
-## Prob. ⭕❌
+## Prob. 7 ⭕❌
 ---
 
 <details>
@@ -203,7 +203,7 @@ Answer :
 
 <br>
 
-## Prob. ⭕❌
+## Prob. 8 ⭕❌
 ---
 
 <details>
@@ -229,7 +229,7 @@ Answer :
 
 <br>
 
-## Prob. ⭕❌
+## Prob. 9 ⭕❌
 ---
 
 <details>
@@ -255,7 +255,7 @@ Answer :
 
 <br>
 
-## Prob. ⭕❌
+## Prob. 0 ⭕❌
 ---
 
 <details>
