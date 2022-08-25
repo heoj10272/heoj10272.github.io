@@ -1,12 +1,12 @@
 ---
 layout: post
-title: "[AWS-SAP] ExamTopics 391~400"
+title: "[AWS-SAP] ExamTopics 391~400 구버전"
 subtitle: AWS
 date: '2022-08-10 23:00:00 +0900'
 category: study
 tags: aws examtopics sap-c01
 image:
-  path: /assets/img/study_AWS/2022-08-10-[AWS-SAP]_ExamTopics_391~400/logo.png
+  path: /assets/img/study_AWS/2022-08-10-[AWS-SAP]_ExamTopics_391~400_구버전/logo.png
 ---
 
 SAP Examtopics 391~400번 문제를 풀어보자.<br>

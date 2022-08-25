@@ -6,7 +6,7 @@ date: '2022-08-13 04:00:00 +0900'
 category: study
 tags: aws examtopics sap-c01
 image:
-  path: /assets/img/study_AWS/2022-08-13-[AWS-SAP]_ExamTopics_411~420/logo.png
+  path: /assets/img/study_AWS/2022-08-13-[AWS-SAP]_ExamTopics_411~420_구버전/logo.png
 ---
 
 SAP Examtopics 411~420번 문제를 풀어보자.<br>
