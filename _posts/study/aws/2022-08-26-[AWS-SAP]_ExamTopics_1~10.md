@@ -581,6 +581,8 @@ C & D are very similar except that the scenario requirements specifically state 
 It can't be D because RDS is opened to all "hosts in your application subnets" where C only opens RDS to specific client machines in a specific security group.<br>
 C is the correct answer.
 
+지속성을 위해서 Beanstalk를 정의할 때는 RDS는 제외하도록 하자.
+
 1차 시도 : B <br>
 </div>
 </details>
