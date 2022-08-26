@@ -80,6 +80,11 @@ Amazon S3는 여러 사용 사례에 맞춰 설계된 다양한 스토리지 클
         - **Flexible Retrieval** : 검색 옵션이 1분부터 12시간까지인 장기 백업 및 아카이브용
         - **Deep Archive** : 일년에 한두 번 액세스하고 12시간 이내에 복원할 수 있는 장기 데이터 아카이브용
 
+* **Reduced Redundancy**
+    + Standard와 마찬가지로 자주 액세스되는 객체를 위한 스토리지 클래스
+    + 중요하지 않은 데이터 보관용
+    + [AWS Docs](https://docs.aws.amazon.com/ko_kr/AmazonS3/latest/userguide/storage-class-intro.html)에서 안내하기를 해당 스토리지는 사용하지 않는 것이 좋으며, Standard가 비용 대비 효과적이라고 함
+
 <hr>
 
 #### ii. 스토리지 클래스별 요금(Amazon S3 pricing)

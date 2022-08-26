@@ -20,7 +20,7 @@ SAP Examtopics 1~10번 문제를 풀어보자.<br>
 <br>
 
 
-## Prob. 1 ⭕❌
+## Prob. 1 ⭕
 ---
 회사 정책에서는 유휴 상태의 중요한 데이터를 암호화해야 합니다. EC2 인스턴스에 연결된 EBS 데이터 볼륨에 데이터를 저장하는 동안 데이터를 보호할 수 있는 옵션을 고려하고 있습니다.
 
@@ -59,28 +59,35 @@ E. Do nothing as EBS volumes are encrypted by default
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, C, D
 
 해설 : 
 
+B : SSL/TLS는 유휴(rest)가 아닌 실행중?(transit)상태의 데이터 암호화에 사용된다.
 
-1차 시도 :  <br>
+E : Amazon EBS volume은 디폴트로 암호화되지 않는다. [관련 링크](https://aws.amazon.com/premiumsupport/knowledge-center/ebs-automatic-encryption/)
+```
+새로운 Amazon EBS 볼륨은 기본적으로 암호화되지 않습니다. 하지만 Amazon Elastic Compute Cloud(Amazon EC2) 콘솔은 지정된 리전에서 생성된 모든 새로운 Amazon EBS 볼륨 및 스냅샷 사본에 대해 기본적으로 암호화를 활성화하는 설정이 있습니다.
+```
+
+1차 시도 : A, C, D 맞음 <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 2 ⭕❌
+## Prob. 2 ❌
 ---
 A customer is deploying an SSL enabled web application to AWS and would like to implement a separation of roles between the EC2 service administrators that are entitled to login to instances as well as making API calls and the security officers who will maintain and have exclusive access to the application's X.509 certificate that contains the private key.
 
 A. 보안 담당자가 소유하고 웹 서버의 EC2 역할만 액세스할 수 있는 S3 버킷에 인증서를 업로드합니다.
 
-B. 클라우드에서 부팅할 때 인증서를 검색하도록 웹 서버를 구성합니다.HSM은 보안 담당자가 관리합니다.
+B. 클라우드에서 부팅할 때 보안 담당자가 관리하는 CloudHSM 으로부터 인증서를 검색하도록 웹 서버를 구성합니다.
 
 C. 인증서에 대한 액세스를 기관 보안 책임자로만 제한하도록 웹 서버에 대한 시스템 권한을 구성합니다.
 
 D. 보안 관리자만 인증서 저장소에 액세스할 수 있도록 권한을 부여하는 IAM 정책을 구성하고 ELB에서 SSL을 종료합니다.
+
 <details>
 <summary>원문 보기</summary>
 <div markdown="1">
@@ -101,19 +108,21 @@ D. Configure IAM policies authorizing access to the certificate store only to th
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D
 
 해설 : 
 
+CloudHSM 은 인증서의 private key를 보관할 수 있지만, 인증서를 보관할수는 없다고 한다.<br>
+또한 X.509는 SSL 웹 인증서로, KMS나 CloudHSM 암호화 키가 아니다.
 
-1차 시도 :  <br>
+1차 시도 : A 틀림<br>
 </div>
 </details>
 
 <br>
 
 
-## Prob. 3 ⭕❌
+## Prob. 3 ⭕
 ---
 귀하는 최근에 도시의 거리 소음과 대기 질을 측정하기 위해 센서를 만드는 신생 회사에 입사했습니다. 이 회사는 3개월 동안 각 센서가 1분마다 1KB의 센서 데이터를 AWS에서 호스팅되는 백엔드에 업로드하는 약 100개의 센서를 시범 구현했습니다.
 파일럿 기간 동안 데이터베이스에서 피크 또는 10 IOPS를 측정했으며, 데이터베이스에 매달 평균 3GB의 센서 데이터를 저장했습니다.
@@ -158,23 +167,35 @@ D. Keep the current architecture but upgrade RDS storage to 3TB and 10K provisio
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 : 
 
+For 100 devices, we need 10 IOPS and 3G per months<br>
+So for 100K devices, we need 10K IOPS and 3T per month (or 3T x 24 = 72T per 2 years).<br>
+B is correct as we need quick IO process, scalable, no storage limit to handle data then store it to RedShift.<br>
+C. RedShift from beginning seem not correct, Redshift is Datawarehouse and can't process quick data, it's used to store data. Furthermore, 96T is fixed and we can't do scalable
 
-1차 시도 :  <br>
+100 디바이스일 때 : 10 IOPS, 3G 데이터 저장 발생<br>
+100,000 디바이스일 때 : 10,000 IOPS, 3T 데이터 저장 발생
+
+B. 빠른 IO, 확장성, 사실상 무한정의 스토리지 용량이 필요하므로 DynamoDB와 Redshift를 활용하는것이 좋아보인다.
+
+C가 안되는 이유는, Redshift는 데이터 보관소이지 데이터를 빠르게 처리할수는 없다. 또한 96T의 고정된 데이터 용량을 사용하므로 확장성이 없다.
+
+1차 시도 : B 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 4 ⭕❌
+## Prob. 4 ❓
 ---
 한 웹 회사에서 배포된 VPC에 침입 탐지 및 방지 시스템을 구현하려고 합니다. 이 플랫폼에는 VPC 내부에서 실행되는 수천 개의 인스턴스로 확장할 수 있는 기능이 있어야 합니다.
+
 이러한 목표를 달성하기 위해 솔루션을 어떻게 설계해야 합니까?
 
-A. 모니터링 소프트웨어와 ELI(Elastic Network Interface)가 비규칙(Promiscuous) 모드 패킷 스니핑으로 설정된 인스턴스를 구성하여 VPC 전체의 트래픽을 확인합니다.
+A. 모니터링 소프트웨어와 ENI(Elastic Network Interface)가 비규칙(Promiscuous) 모드 패킷 스니핑으로 설정된 인스턴스를 구성하여 VPC 전체의 트래픽을 확인합니다.
 
 B. 두 번째 VPC를 생성하고 기본 애플리케이션 VPC에서 확장 가능한 가상화된 IDS/IPS 플랫폼이 있는 두 번째 VPC를 통해 모든 트래픽을 라우팅합니다.
 
@@ -202,18 +223,39 @@ D. Configure each host with an agent that collects all network traffic and sends
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 : 
 
+The key line of the question is - "thousands of instances running in the VPC" .
 
-1차 시도 :  <br>
+Option C does not confirm that the incoming traffic is passed through the IDS/IPS before reaching the host, which is one of the primary feature/requirement of any IDS/IPS. The traffic will need to pass through the IDS so that any vulnerability could be assessed. Moreover in Option C, you can not expect to manage thousands and thousands of Servers through host based routing.
+
+Option A is invalid as promiscuous mode is not supported in AWS.
+
+Option D does not meet the IPS requirement and moreover although it can perform IDS activities but again it is not a scalable solution.
+
+SO, OPTION B is the correct ANSWER.
+
+`IDS/IPS`가 뭘까?<br>
+[링크 참조](https://run-it.tistory.com/47)
+
+IDS(Intrusion Detection System: 침입 탐지 시스템)은 외부에서 내부로 들어오는 패킷이 정상인지 아닌지를 탐지하는 네트워크계의 CCTV 같은 솔루션이다. (여기서 차단 기능이 더해지면 IPS)
+
+그렇기 때문에 IDS/IPS는 일반적으로 내부 네트워크로 들어오는 모든 패킷을 탐지할 수 있는 경로에 설치된다.
+
+개념을 알고 보니 IDS/IPS 전용 문제같다.<br>
+A의 promiscuous 모드는 아예 AWS에서 지원이 안된다고 하니 기억하자.<br>
+C의 경우 호스트에 도달하기 전에 트래픽이 IDS/IPS 단계를 거쳐야하는데, 호스트 기반 'route' 명령은 이를 위반하나보다. 또한 호스트 기반 라우팅은 수천 대의 서버를 관리할 수 없다고 한다.<br>
+D의 경우 네트워크 트래픽을 수집하는게 IDS/IPS의 조건을 위배하는 것 같다. <br>
+
+1차 시도 : 모름 <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 5 ⭕❌
+## Prob. 5 ⭕
 ---
 A사는 Amazon Simple Storage Service(S3)에 데이터를 저장하고 있습니다. 회사의 보안 정책에 따라 데이터는 유휴 상태에서 암호화되어야 합니다.
 
@@ -256,18 +298,20 @@ F. Use SSL to encrypt the data while in transit to Amazon S3.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, B, E
 
 해설 : 
 
+쉬운 문제였다.<br>
+각 문항들이 데이터 암호화를 어떻게 하는지에 대한 메뉴얼 같다...
 
-1차 시도 :  <br>
+1차 시도 : A, B, E 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 6 ⭕❌
+## Prob. 6 ❌
 ---
 당신의 회사는 많은 양의 항공 이미지 데이터를 S3에 업로드했습니다. 과거에는 사내 환경에서 전용 서버 그룹을 사용하여 이 데이터를 처리하고 Rabbit MQ - 오픈 소스 메시징 시스템을 사용하여 서버로 작업 정보를 가져왔습니다. 데이터가 처리되면 테이프로 이동하여 오프사이트로 배송됩니다. 매니저는 현재 설계를 유지하고 AWS 아카이브 스토리지 및 메시징 서비스를 활용하여 비용을 최소화하라고 말했습니다.
 
@@ -275,7 +319,7 @@ Answer :
 
 A. 작업 메시지 전달에 SQS를 사용하여 Cloud Watch 경보를 사용하여 EC2 작업자 인스턴스를 유휴 상태로 종료합니다. 데이터가 처리되면 S3 개체의 스토리지 클래스를 Reduced Redundancy Storage로 변경합니다.
 
-B. SOS에서 스폿 인스턴스를 사용하여 메시지를 처리하는 대기열 깊이에 의해 트리거되는 자동 확장 작업자 설정 데이터가 처리되면 S3 개체의 스토리지 클래스를 Reduced Redundancy Storage로 변경합니다.
+B. SQS에서 스폿 인스턴스를 사용하여 메시지를 처리하는 대기열 깊이에 의해 트리거되는 자동 확장 작업자 설정 데이터가 처리되면 S3 개체의 스토리지 클래스를 Reduced Redundancy Storage로 변경합니다.
 
 C. 스폿 인스턴스를 사용하여 SQS에서 메시지를 처리하는 대기열 깊이에 따라 자동 확장 작업자 설정 데이터가 처리되면 S3 개체의 스토리지 클래스를 Glacier로 변경합니다.
 
@@ -290,7 +334,7 @@ Which is correct?
 
 A. Use SQS for passing job messages use Cloud Watch alarms to terminate EC2 worker instances when they become idle. Once data is processed, change the storage class of the S3 objects to Reduced Redundancy Storage.
 
-B. Setup Auto-Scaled workers triggered by queue depth that use spot instances to process messages in SOS Once data is processed, change the storage class of the S3 objects to Reduced Redundancy Storage.
+B. Setup Auto-Scaled workers triggered by queue depth that use spot instances to process messages in SQS Once data is processed, change the storage class of the S3 objects to Reduced Redundancy Storage.
 
 C. Setup Auto-Scaled workers triggered by queue depth that use spot instances to process messages in SQS Once data is processed, change the storage class of the S3 objects to Glacier.
 
@@ -302,12 +346,15 @@ D. Use SNS to pass job messages use Cloud Watch alarms to terminate spot worker 
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
 해설 : 
 
+애초에 큐의 depth에 따라 트리거 된다는게 이해가 되지 않는다.<br>
+많이 쌓이면 확장한다는 뜻인가?<br>
+Reduced Redundancy Storage도 모르겠다.
 
-1차 시도 :  <br>
+1차 시도 : D 틀림<br>
 </div>
 </details>
 
