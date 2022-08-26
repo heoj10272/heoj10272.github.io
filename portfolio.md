@@ -59,7 +59,11 @@ font-weight:bold">
 
 ## Project
 ---
-시각장애인을 위한 장애물 탐지, 위치 공유 어플리케이션 개발
+시각장애인을 위한 장애물 탐지, 위치 공유 어플리케이션 White Cane 개발 - 진행중
+
+스프링부트와 AWS로 게시판 웹 페이지 개발
+
+여행지 추천 웹 페이지 My Travler 개발 - 진행중
 
 ## Work Experiences
 ---
