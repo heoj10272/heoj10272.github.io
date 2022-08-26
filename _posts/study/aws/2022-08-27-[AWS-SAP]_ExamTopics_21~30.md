@@ -130,9 +130,6 @@ E. RAID 0은 약 4개의 디바이스로만 선형적으로 확장됩니다. RAI
 <summary>원문 보기</summary>
 <div markdown="1">
 <br>
-
-</div>
-</details>
 You have launched an EC2 instance with four (4) 500 GB EBS Provisioned IOPS volumes attached. The EC2 instance is EBS-Optimized and supports 500 Mbps throughput between EC2 and EBS. The four EBS volumes are configured as a single RAID 0 device, and each Provisioned IOPS volume is provisioned with 4,000 IOPS (4,000 16KB reads or writes), for a total of 16,000 random IOPS on the instance. The EC2 instance initially delivers the expected 16,000 IOPS random read and write performance. Sometime later, in order to increase the total random I/O performance of the instance, you add an additional two 500 GB EBS Provisioned IOPS volumes to the RAID. Each volume is provisioned to 4,000 IOPs like the original four, for a total of 24,000 IOPS on the EC2 instance. Monitoring shows that the EC2 instance CPU utilization increased from 50% to 70%, but the total random IOPS measured at the instance level does not increase at all.
 
 What is the problem and a valid solution?
@@ -146,6 +143,9 @@ C. The standard EBS Instance root volume limits the total IOPS rate; change the 
 D. Larger storage volumes support higher Provisioned IOPS rates; increase the provisioned volume storage of each of the 6 EBS volumes to 1TB.
 
 E. RAID 0 only scales linearly to about 4 devices; use RAID 0 with 4 EBS Provisioned IOPS volumes, but increase each Provisioned IOPS EBS volume to 6,000 IOPS.
+</div>
+</details>
+
 <details>
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
