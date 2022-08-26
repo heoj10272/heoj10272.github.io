@@ -10,7 +10,7 @@ image:
 ---
 
 SAP Examtopics 1~10번 문제를 풀어보자.<br>
-1차 x/10<br>
+1차 5/10<br>
 
 <!--more-->
 
@@ -473,7 +473,7 @@ Data mining -> Redshift
 
 <br>
 
-## Prob. 9 ⭕❌
+## Prob. 9 ❓
 ---
 VPC의 인터넷 연결을 설계하고 있습니다. 웹 서버를 인터넷에서 사용할 수 있어야 합니다.
 애플리케이션에 고가용성 아키텍처가 있어야 합니다.
@@ -484,7 +484,7 @@ A. VPC에서 NAT 인스턴스를 구성합니다. NAT 인스턴스를 통해 기
 
 B. CloudFront 배포를 구성하고 웹 서버의 개인 IP 주소를 가리키도록 오리진을 구성합니다. CloudFront 배포판에 Route53 CNAME 레코드를 구성합니다.
 
-C. 모든 웹 서버를 ELB 뒤에 배치합니다. ELB DNS 이름을 가리키도록 Route53 CNMIE를 구성합니다.
+C. 모든 웹 서버를 ELB 뒤에 배치합니다. ELB DNS 이름을 가리키도록 Route53 CNAME를 구성합니다.
 
 D. 모든 웹 서버에 EIP를 할당합니다. 상태 점검 및 DNS 페일오버를 사용하여 모든 EIP를 포함하는 Route53 레코드 세트를 구성합니다.
 
@@ -502,7 +502,7 @@ A. Configure a NAT instance in your VPC. Create a default route via the NAT inst
 
 B. Configure a CloudFront distribution and configure the origin to point to the private IP addresses of your Web servers. Configure a Route53 CNAME record to your CloudFront distribution.
 
-C. Place all your web servers behind ELB. Configure a Route53 CNMIE to point to the ELB DNS name.
+C. Place all your web servers behind ELB. Configure a Route53 CNAME to point to the ELB DNS name.
 
 D. Assign EIPs to all web servers. Configure a Route53 record set with all EIPs, with health checks and DNS failover.
 
@@ -518,23 +518,26 @@ Answer : C, E
 
 해설 : 
 
-A. Configure a NAT instance in your VPC. Create a default route via the NAT instance and associate it with all subnets. Configure a DNS A record that points to the NAT instance public IP address. - DOEST NO TMAKE SENSE. NAT IS FOR OUTGOING NOT INCOMING.
-B. Configure a CloudFront distribution and configure the origin to point to the private IP addresses of your Web servers. Configure a Route53 CNAME record to your CloudFront distribution. ORIGIN CAN NOT BE PRIVATE IP.
-C. Place all your web servers behind ELB. Configure a Route53 CNMIE to point to the ELB DNS name. POSSIBLE ANSWER
-D. Assign EIPs to all web servers. Configure a Route53 record set with all EIPs, with health checks and DNS failover. WHAT? NON SENSE.
+A. Configure a NAT instance in your VPC. Create a default route via the NAT instance and associate it with all subnets. Configure a DNS A record that points to the NAT instance public IP address. - DOEST NO TMAKE SENSE. NAT IS FOR OUTGOING NOT INCOMING.<br>
+B. Configure a CloudFront distribution and configure the origin to point to the private IP addresses of your Web servers. Configure a Route53 CNAME record to your CloudFront distribution. ORIGIN CAN NOT BE PRIVATE IP.<br>
+C. Place all your web servers behind ELB. Configure a Route53 CNAME to point to the ELB DNS name. POSSIBLE ANSWER<br>
+D. Assign EIPs to all web servers. Configure a Route53 record set with all EIPs, with health checks and DNS failover. WHAT? NON SENSE.<br>
 E. Configure ELB with an EIP. Place all your Web servers behind ELB. Configure a Route53 A record that points to the EIP. WILL WORK.
 
-A. NAT은 VPC에서 인터넷을 사용할 수 있도록 하는거지 
+A. NAT은 VPC에서 인터넷을 사용할 수 있도록 하는거지 인터넷에서 VPC를 접속할 수 있도록 해주지는 못한다.<br>
+B. CloudFront의 Origin은 Private IP가 될 수 없다. 또한 Route53의 CNAME이 아닌 ALIAS를 사용해야 한다?<br>
+D. 아예 말이 안되는 듯 하다.
+
+E가 정답인 이유는 ALB는 EIP를 가지지 못하지만, NLB는 가질 수 있다고 한다.
 1차 시도 : D, E <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 0 ⭕❌
+## Prob. 10 ❌
 ---
-귀사의 팀에는 개발, 테스트 및 프로덕션 환경에 배포해야 하는 Tomcat 기반 Java 애플리케이션이 있습니다. 몇 가지 조사를 한 후, 당신은 사용하기로 결정했습니다.
-Elastic Beanstalk는 관리 용이성으로 인해 개발자 툴 및 RDS와 긴밀하게 통합되어 있습니다. 귀사의 QA 팀장은 매일 밤 검증된 프로덕션 데이터 세트를 귀사의 환경으로 롤업해야 한다고 지적합니다. 마찬가지로 조직의 다른 소프트웨어 팀도 VPC의 EC2 인스턴스를 통해 동일한 복원된 데이터에 액세스하려고 합니다.
+귀사의 팀에는 개발, 테스트 및 프로덕션 환경에 배포해야 하는 Tomcat 기반 Java 애플리케이션이 있습니다. 어느 정도 조사한 결과, Elastic Beanstalk는 관리 용이성으로 인해 개발자 툴 및 RDS와 긴밀하게 통합되어 있기 때문에 사용하기로 결정했습니다. 귀사의 QA 팀장은 매일 밤 검증된 프로덕션 데이터 세트를 귀사의 환경으로 롤업해야 한다고 지적합니다. 마찬가지로 조직의 다른 소프트웨어 팀도 VPC의 EC2 인스턴스를 통해 동일한 복원된 데이터에 액세스하려고 합니다.
 
 위의 요구 사항을 충족하는 지속성 및 보안을 위한 최적의 설정은 다음과 같습니다.
 
@@ -549,8 +552,7 @@ D. RDS 인스턴스를 별도로 생성하고 해당 DNS 이름을 환경 변수
 <summary>원문 보기</summary>
 <div markdown="1">
 <br>
-Your team has a tomcat-based Java application you need to deploy into development, test and production environments. After some research, you opt to use
-Elastic Beanstalk due to its tight integration with your developer tools and RDS due to its ease of management. Your QA team lead points out that you need to roll a sanitized set of production data into your environment on a nightly basis. Similarly, other software teams in your org want access to that same restored data via their EC2 instances in your VPC.
+Your team has a tomcat-based Java application you need to deploy into development, test and production environments. After some research, you opt to use Elastic Beanstalk due to its tight integration with your developer tools and RDS due to its ease of management. Your QA team lead points out that you need to roll a sanitized set of production data into your environment on a nightly basis. Similarly, other software teams in your org want access to that same restored data via their EC2 instances in your VPC.
 
 The optimal setup for persistence and security that meets the above requirements would be the following.
 
@@ -568,12 +570,18 @@ D. Create your RDS instance separately and pass its DNS name to your's DB connec
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
 해설 : 
 
+It can't be A because the scenario specifically requires persistence. <br>
+According to [docs](http://docs.aws.amazon.com/elasticbeanstalk/latest/dg/using-features.managing.db.html) "A database instance that is part of your environment is tied to the lifecycle of your environment. If you terminate the environment, the database instance is terminated as well. An integrated database instance also cannot be removed from your environment once added."<br>
+It can't be B because we never have access to the IP address of any RDS instance.<br>
+C & D are very similar except that the scenario requirements specifically state that optimal security should be applied.<br>
+It can't be D because RDS is opened to all "hosts in your application subnets" where C only opens RDS to specific client machines in a specific security group.<br>
+C is the correct answer.
 
-1차 시도 :  <br>
+1차 시도 : B <br>
 </div>
 </details>
 
