@@ -319,9 +319,9 @@ Answer : A, B, E
 
 A. 작업 메시지 전달에 SQS를 사용하여 Cloud Watch 경보를 사용하여 EC2 작업자 인스턴스를 유휴 상태로 종료합니다. 데이터가 처리되면 S3 개체의 스토리지 클래스를 Reduced Redundancy Storage로 변경합니다.
 
-B. SQS에서 스폿 인스턴스를 사용하여 메시지를 처리하는 대기열 깊이에 의해 트리거되는 자동 확장 작업자 설정 데이터가 처리되면 S3 개체의 스토리지 클래스를 Reduced Redundancy Storage로 변경합니다.
+B. 스폿 인스턴스를 사용하여 SQS에서 메시지를 처리하는 대기열 크기에 따라 자동 확장 작업자를 설정합니다. 데이터가 처리되면 S3 개체의 스토리지 클래스를 Reduced Redundancy Storage로 변경합니다.
 
-C. 스폿 인스턴스를 사용하여 SQS에서 메시지를 처리하는 대기열 깊이에 따라 자동 확장 작업자 설정 데이터가 처리되면 S3 개체의 스토리지 클래스를 Glacier로 변경합니다.
+C. 스폿 인스턴스를 사용하여 SQS에서 메시지를 처리하는 대기열 크기에 따라 자동 확장 작업자를 설정합니다. 데이터가 처리되면 S3 개체의 저장 클래스를 Glacier로 변경합니다.
 
 D. SNS를 사용하여 작업 메시지를 전달합니다. Cloud Watch 알람을 사용하여 스폿 작업자 인스턴스가 유휴 상태가 될 때 종료합니다. 데이터가 처리되면 S3 개체의 저장 클래스를 Glacier로 변경합니다.
 <details>
@@ -334,9 +334,9 @@ Which is correct?
 
 A. Use SQS for passing job messages use Cloud Watch alarms to terminate EC2 worker instances when they become idle. Once data is processed, change the storage class of the S3 objects to Reduced Redundancy Storage.
 
-B. Setup Auto-Scaled workers triggered by queue depth that use spot instances to process messages in SQS Once data is processed, change the storage class of the S3 objects to Reduced Redundancy Storage.
+B. Setup Auto-Scaled workers triggered by queue depth that use spot instances to process messages in SQS. Once data is processed, change the storage class of the S3 objects to Reduced Redundancy Storage.
 
-C. Setup Auto-Scaled workers triggered by queue depth that use spot instances to process messages in SQS Once data is processed, change the storage class of the S3 objects to Glacier.
+C. Setup Auto-Scaled workers triggered by queue depth that use spot instances to process messages in SQS. Once data is processed, change the storage class of the S3 objects to Glacier.
 
 D. Use SNS to pass job messages use Cloud Watch alarms to terminate spot worker instances when they become idle. Once data is processed, change the storage class of the S3 object to Glacier.
 </div>
@@ -352,7 +352,13 @@ Answer : C
 
 애초에 큐의 depth에 따라 트리거 된다는게 이해가 되지 않는다.<br>
 많이 쌓이면 확장한다는 뜻인가?<br>
-Reduced Redundancy Storage도 모르겠다.
+Reduced Redundancy Storage도 모르겠다.<br>
+메시징 서비스라는 말에 SNS가 혹했는데, SQS도 메시징 서비스라는 것을 잊지 말자.
+
+[링크](https://heoj10272.github.io/study/AWS-_Amazon_S3_%EC%9D%B4%ED%95%B4.html#i-%EC%8A%A4%ED%86%A0%EB%A6%AC%EC%A7%80-%ED%81%B4%EB%9E%98%EC%8A%A4-%EC%9C%A0%ED%98%95)
+에 Reduced Redundancy 항목을 추가했다.<br>
+중요하지 않은 데이터를 저장하는 스토리지 클래스라는 것만 알면 될 것 같다.<br>
+공식에서 권장하지 않는 클래스인 만큼, 답으로 고를 일은 없을 것이다.
 
 1차 시도 : D 틀림<br>
 </div>
@@ -360,7 +366,7 @@ Reduced Redundancy Storage도 모르겠다.
 
 <br>
 
-## Prob. 7 ⭕❌
+## Prob. 7 ⭕
 ---
 당신은 매우 큰 전자 상거래 사이트의 전반적인 보안 태세를 강화하기 위해 고용되었습니다. VPC에서 잘 설계된 다중 계층 애플리케이션을 실행하고 있으며, S3에서 직접 제공되는 정적 자산으로 웹 및 애플리케이션 계층 앞에서 ELB를 사용합니다. 동적인 데이터에 RDS와 DynamoDB를 함께 사용한 다음 EMR을 통한 추가 처리를 위해 매일 밤 S3에 아카이빙합니다. 그들은 의심스러운 로그 항목을 발견했고 누군가가 무단 액세스를 시도하고 있다고 의심하기 때문에 우려하고 있습니다.
 
@@ -370,7 +376,7 @@ A. DirectConnect 파트너 위치에서 공간을 임대하고 VPC에 대한 1G 
 
 B. 이전에 식별된 적대적 소스 IP를 명시적 INBOUND DENY NACL로 웹 계층 서브넷에 추가합니다.
 
-C. 호스트 기반 WAF를 실행하는 EC2 인스턴스의 자동 확장 그룹 및 새 ELB를 생성하여 WAF 계층을 추가합니다. 그들은 새로운 WAF 계층 ELB로 해결하기 위해 53번 도로를 리디렉션할 것입니다. WAF 계층은 트래픽을 현재 웹 계층에 전달합니다. 웹 계층 Security Group은 WAF 계층 Security Group의 트래픽만 허용하도록 업데이트됩니다.
+C. 호스트 기반 WAF를 실행하는 EC2 인스턴스의 자동 확장 그룹 및 새 ELB를 생성하여 WAF 계층을 추가합니다. 그들은 새로운 WAF 계층 ELB로 해결하기 위해 Route 53을 리디렉션할 것입니다. WAF 계층은 트래픽을 현재 웹 계층에 전달합니다. 웹 계층 Security Group은 WAF 계층 Security Group의 트래픽만 허용하도록 업데이트됩니다.
 
 D. 웹 계층 ELB에서 TLS 1.2를 제외한 모든 항목을 제거하고 고급 프로토콜 필터링을 실행하십시오. 이렇게 하면 ELB 자체가 WAF 기능을 수행할 수 있습니다.
 <details>
@@ -395,22 +401,23 @@ D. Remove all but TLS 1.2 from the web tier ELB and enable Advanced Protocol Fil
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
 해설 : 
 
+보안 문제는 웬만하면 WAF가 들어가는게 맞는 듯 하다.
 
-1차 시도 :  <br>
+1차 시도 : C 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 8 ⭕❌
+## Prob. 8 ⭕
 ---
-귀사는 가족들의 반려동물의 건강한 생활습관을 증진시키기 위해 생체 정보를 수집하는 차세대 반려동물 목걸이를 개발하고 있습니다. 각 칼라는 2초마다 30kb의 JSON 형식의 생체 데이터를 수집 플랫폼으로 밀어넣고, 수집 플랫폼은 웹 포털을 통해 애완동물 주인과 수의사에게 건강 트렌드 정보를 처리하고 분석합니다. 경영진은 다음 요구 사항이 충족되도록 컬렉션 플랫폼을 설계해야 합니다.
-✑ 인바운드 생체 인식 데이터의 실시간 분석 기능을 제공합니다.
-✑ 생체 인식 데이터의 처리가 매우 내구성이 있는지 확인합니다. 신축성 있고 평행합니다.
+귀사는 가족들의 반려동물의 건강한 생활습관을 증진시키기 위해 생체 정보를 수집하는 차세대 반려동물 목걸이를 개발하고 있습니다. 각 목걸이는 2초마다 30kb의 JSON 형식의 생체 데이터를 수집 플랫폼으로 밀어넣고, 수집 플랫폼은 웹 포털을 통해 애완동물 주인과 수의사에게 건강 트렌드 정보를 처리하고 분석합니다. 경영진은 다음 요구 사항이 충족되도록 컬렉션 플랫폼을 설계해야 합니다.<br>
+✑ 인바운드 생체 인식 데이터의 실시간 분석 기능을 제공합니다.<br>
+✑ 생체 인식 데이터의 처리가 매우 내구성이 있는지 확인합니다. 신축성 있고 평행합니다.<br>
 ✑ 분석 처리 결과는 데이터 마이닝을 위해 지속되어야 합니다.
 
 다음 중 수집 플랫폼의 초기 요구 사항을 충족하는 아키텍처는 무엇입니까?
@@ -421,14 +428,14 @@ B. Amazon Kinesis를 사용하여 인바운드 센서 데이터를 수집하고 
 
 C. SQS를 사용하여 인바운드 센서 데이터를 수집하여 Amazon Kinesis를 통해 SQS에서 데이터를 분석하고 결과를 Microsoft SQL Server RDS 인스턴스에 저장합니다.
 
-D. EMR을 사용하여 인바운드 센서 데이터를 수집하고, 아마존 키네시스를 통해 EUR의 데이터를 분석하고, 결과를 DynamoDB에 저장합니다.
+D. EMR을 사용하여 인바운드 센서 데이터를 수집하고, Amazon Kinesis를 통해 EUR의 데이터를 분석하고, 결과를 DynamoDB에 저장합니다.
 <details>
 <summary>원문 보기</summary>
 <div markdown="1">
 <br>
-Your company is in the process of developing a next generation pet collar that collects biometric information to assist families with promoting healthy lifestyles for their pets. Each collar will push 30kb of biometric data in JSON format every 2 seconds to a collection platform that will process and analyze the data providing health trending information back to the pet owners and veterinarians via a web portal. Management has tasked you to architect the collection platform ensuring the following requirements are met.
-✑ Provide the ability for real-time analytics of the inbound biometric data
-✑ Ensure processing of the biometric data is highly durable. Elastic and parallel
+Your company is in the process of developing a next generation pet collar that collects biometric information to assist families with promoting healthy lifestyles for their pets. Each collar will push 30kb of biometric data in JSON format every 2 seconds to a collection platform that will process and analyze the data providing health trending information back to the pet owners and veterinarians via a web portal. Management has tasked you to architect the collection platform ensuring the following requirements are met.<br>
+✑ Provide the ability for real-time analytics of the inbound biometric data<br>
+✑ Ensure processing of the biometric data is highly durable. Elastic and parallel<br>
 ✑ The results of the analytic processing should be persisted for data mining
 
 Which architecture outlined below win meet the initial requirements for the collection platform?
@@ -447,12 +454,20 @@ D. Utilize EMR to collect the inbound sensor data, analyze the data from EUR wit
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 : 
 
+Real-time -> Kinesis<br>
+Elastic and parallel -> Kinesis Shard<br>
+Data mining -> Redshift
 
-1차 시도 :  <br>
+실시간 서비스이므로 Kinesis를 골랐고, B와 D중 망설이다 분석이라는 키워드 때문에 Redshift를 골랐다.<br>
+샤딩으로 수평 확장이 가능한가 보다.<br>
+
+그런데 EMR과 EUR이 무엇일까?
+
+1차 시도 : B 맞음<br>
 </div>
 </details>
 
@@ -499,12 +514,18 @@ E. Configure ELB with an EIP. Place all your Web servers behind ELB. Configure a
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C, E
 
 해설 : 
 
+A. Configure a NAT instance in your VPC. Create a default route via the NAT instance and associate it with all subnets. Configure a DNS A record that points to the NAT instance public IP address. - DOEST NO TMAKE SENSE. NAT IS FOR OUTGOING NOT INCOMING.
+B. Configure a CloudFront distribution and configure the origin to point to the private IP addresses of your Web servers. Configure a Route53 CNAME record to your CloudFront distribution. ORIGIN CAN NOT BE PRIVATE IP.
+C. Place all your web servers behind ELB. Configure a Route53 CNMIE to point to the ELB DNS name. POSSIBLE ANSWER
+D. Assign EIPs to all web servers. Configure a Route53 record set with all EIPs, with health checks and DNS failover. WHAT? NON SENSE.
+E. Configure ELB with an EIP. Place all your Web servers behind ELB. Configure a Route53 A record that points to the EIP. WILL WORK.
 
-1차 시도 :  <br>
+A. NAT은 VPC에서 인터넷을 사용할 수 있도록 하는거지 
+1차 시도 : D, E <br>
 </div>
 </details>
 
