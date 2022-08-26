@@ -512,5 +512,5 @@ Answer :
 <br>
 
 * Ref
-  - [ExamTopics](https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-professional/view/40/)
+  - [ExamTopics](https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-professional/view/2/)
 
