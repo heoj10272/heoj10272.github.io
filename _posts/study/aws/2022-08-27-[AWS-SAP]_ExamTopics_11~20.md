@@ -20,7 +20,7 @@ SAP Examtopics 11~20번 문제를 풀어보자.<br>
 <br>
 
 
-## Prob. 11 ⭕❌
+## Prob. 11 ⭕
 ---
 
 귀사는 사내 멀티 티어 PHP 웹 애플리케이션을 보유하고 있으며, 최근 회사 발표로 인해 웹 트래픽의 대규모 폭발로 인해 다운타임이 발생했습니다. 앞으로 이와 유사한 발표가 유사한 예측 불가능한 폭발을 일으킬 것으로 예상하며, 인프라 성능을 신속하게 개선할 수 있는 방법을 모색하고 있습니다.트래픽의 예기치 않은 증가를 처리합니다.
@@ -59,24 +59,36 @@ D. Migrate to AWS: Use VM Import/Export to quickly convert an on-premises web se
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
 해설 : 
 
+Answer is C
 
-1차 시도 :  <br>
+A: This works if the website is static but we don’t know enough about it to determine if S3 can host it<br>
+B: ELB can not be used with resources outside of AWS<br>
+C: CloudFront works with custom origins, in this case the external PHP web app. CloudFront is a good choice for handling the traffic spike in a short time<br>
+D: The scenario does not say the on-prem app is in a VM, this is not an option<br>
+https://acloud.guru/forums/aws-certified-solutions-architect-professional/discussion/-KF5MzPkMfG_IyE2jkG1/load-balancing-to-balance-traffic-between-on-premises-web-servers-and-those-host
+
+
+ELB에는 온프레미스 환경의 서버가 속할 수 없음을 명심하자.<br>
+하지만 CF는 custom origin으로서 외부 PHP 웹 애플리케이션과 사용될 수 있다.<br>
+CF는 트래픽 스파이크에 좋은 솔루션이다.
+
+1차 시도 : C 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 12 ⭕❌
+## Prob. 12 ❓
 ---
-AWS Direct Connect를 구현하고 있습니다. AWS Direct Connect 링크를 통해 Amazon S3와 같은 AWS 공용 서비스 끝점을 사용하려고 합니다. 다른 인터넷 트래픽이 인터넷 서비스 공급자에 대한 기존 링크를 사용하도록 하려는 경우입니다.
+AWS Direct Connect를 구현하고 있습니다. AWS Direct Connect 링크를 통해 Amazon S3와 같은 AWS 퍼블릭 서비스 엔드포인트를 사용하려고 합니다. 다른 인터넷 트래픽이 인터넷 서비스 공급자에 대한 기존 링크를 사용하도록 하려는 경우입니다.
 
 아마존 S3와 같은 서비스에 액세스하기 위해 AWS Direct connect를 구성하는 올바른 방법은 무엇입니까?
 
-A. AWS Direct Connect 링크에서 공용 인터페이스를 구성합니다. AWS Direct Connect 링크를 통해 Amazon S3 BGP를 사용하여 AWS에 기본 경로를 보급하는 정적 경로를 구성합니다.
+A. AWS Direct Connect 링크에서 공용 인터페이스를 구성합니다. Amazon S3를 가리키는 AWS Direct Connect 링크를 통해 정적 경로를 구성합니다. BGP를 사용하여 AWS에 기본 경로를 보급합니다.
 
 B. AWS Direct Connect 링크에 개인 인터페이스를 만듭니다. Amazon S3를 가리키는 AWS Direct connect 링크를 통해 정적 경로를 구성합니다. VPC에서 네트워크에 대한 특정 경로를 구성합니다.
 
@@ -91,9 +103,9 @@ You are implementing AWS Direct Connect. You intend to use AWS public service en
 
 What is the correct way to configure AWS Direct connect for access to services such as Amazon S3?
 
-A. Configure a public Interface on your AWS Direct Connect link. Configure a static route via your AWS Direct Connect link that points to Amazon S3 Advertise a default route to AWS using BGP.
+A. Configure a public Interface on your AWS Direct Connect link. Configure a static route via your AWS Direct Connect link that points to Amazon S3. Advertise a default route to AWS using BGP.
 
-B. Create a private interface on your AWS Direct Connect link. Configure a static route via your AWS Direct connect link that points to Amazon S3 Configure specific routes to your network in your VPC.
+B. Create a private interface on your AWS Direct Connect link. Configure a static route via your AWS Direct connect link that points to Amazon S3. Configure specific routes to your network in your VPC.
 
 C. Create a public interface on your AWS Direct Connect link. Redistribute BGP routes into your existing routing infrastructure; advertise specific routes for your network to AWS.
 
@@ -107,21 +119,26 @@ D. Create a private interface on your AWS Direct connect link. Redistribute BGP 
 <br>
 Answer : 
 
-해설 : 
+해설 : C
 
+일단 S3와 같은 퍼블릭 서비스는 private이 아닌 public virtual interface로 접근해야 한다.
+private으로는 vpc에 접근할 수 있다.
 
-1차 시도 :  <br>
+또한 BGP는 동적 라우팅을 위한 프로토콜이므로, A에서는의 정적 라우팅은 해당되지 않는다.
+
+BGP(Border Gateway Protocol) : 서로 다른 AS(Autonomous System - 네트워크 집단)를 연결해 주는 경계 게이트웨이 프로토콜.
+
+1차 시도 : 모름 <br>
 </div>
 </details>
 
 <br>
 
 
-## Prob. 13 ⭕❌
+## Prob. 13 ⭕
 ---
 애플리케이션은 데이터 지속성을 위해 2개의 AZ에 걸쳐 구축된 웹/애플리케이션 서버의 자동 확장 그룹 앞에 ELB를 사용하고 있습니다.
-데이터베이스 CPU 사용률이 80%를 넘는 경우가 많으며 데이터베이스의 I/O 작업 중 90%가 읽힙니다. 성능 향상을 위해 최근에 단일 노드를 추가했습니다.
-자주 발생하는 DB 쿼리 결과를 캐시하기 위해 Memcached ElastiCache Cluster입니다. 향후 몇 주 동안 전체 워크로드가 30% 증가할 것으로 예상됩니다.
+데이터베이스 CPU 사용률이 80%를 넘는 경우가 많으며 데이터베이스의 I/O 작업 중 90%가 읽힙니다. 성능 향상을 위해 최근에 자주 발생하는 DB 쿼리 결과를 캐시하기 위한 단일 노드 Memcached ElastiCache Cluster를 추가했습니다. 향후 몇 주 동안 전체 워크로드가 30% 증가할 것으로 예상됩니다.
 
 고가용성 또는 예상되는 추가 로드가 있는 애플리케이션을 유지하기 위해 아키텍처에서 변경해야 할 사항이 있습니까? 그 이유는 무엇입니까?
 
@@ -137,8 +154,7 @@ D. 예, 하나의 캐시 노드에 장애가 발생할 경우 로드를 처리�
 <div markdown="1">
 <br>
 Your application is using an ELB in front of an Auto Scaling group of web/application servers deployed across two AZs and a Multi-AZ RDS Instance for data persistence.
-The database CPU is often above 80% usage and 90% of I/O operations on the database are reads. To improve performance you recently added a single-node
-Memcached ElastiCache Cluster to cache frequent DB query results. In the next weeks the overall workload is expected to grow by 30%.
+The database CPU is often above 80% usage and 90% of I/O operations on the database are reads. To improve performance you recently added a single-node Memcached ElastiCache Cluster to cache frequent DB query results. In the next weeks the overall workload is expected to grow by 30%.
 
 Do you need to change anything in the architecture to maintain the high availability or the application with the anticipated additional load? Why?
 
@@ -156,30 +172,31 @@ D. Yes, you should deploy the Memcached ElastiCache Cluster with two nodes in th
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
 
 해설 : 
 
+고가용성을 위해서 Memcached 클러스터를 서로 다른 AZ에 배포하도록 하자.
 
-1차 시도 :  <br>
+1차 시도 : A 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 14 ⭕❌
+## Prob. 14 ❌
 ---
 ERP 애플리케이션은 단일 영역에서 여러 AZ에 걸쳐 구축됩니다. 장애가 발생할 경우 RTO(복구 시간 목표)는 3시간 미만이어야 하며 RPO(복구 시점 목표)는 15분 미만이어야 합니다. 고객은 약 1.5시간 전에 데이터 손상이 발생했다는 사실을 인지하고 있습니다.
 
 이러한 유형의 장애 발생 시 이러한 RTO 및 RPO를 달성하는 데 사용할 수 있는 DR 전략은 무엇입니까?
 
-A. 매시간 DB 백업을 S3로 가져가고 트랜잭션 로그는 S3에 5분마다 저장됩니다.
+A. Take hourly DB backups to S3, with transaction logs stored in S3 every 5 minutes.
 
-B. 두 가용성 영역 간에 동기식 데이터베이스 마스터-슬레이브 복제를 사용합니다.
+B. Use synchronous database master-slave replication between two availability zones.
 
-C. 매 5분마다 DB 백업을 EC2 인스턴스 저장 볼륨과 트랜잭션 로그가 S3에 저장되어 있습니다.
+C. Take hourly DB backups to EC2 Instance store volumes with transaction logs stored in S3 every 5 minutes.
 
-D. S3에 저장된 트랜잭션 로그와 함께 Glacier에 저장된 15분 DB 백업을 5분마다 수행합니다.
+D. Take 15 minute DB backups stored in Glacier with transaction logs stored in S3 every 5 minutes.
 <details>
 <summary>원문 보기</summary>
 <div markdown="1">
@@ -192,9 +209,9 @@ A. Take hourly DB backups to S3, with transaction logs stored in S3 every 5 minu
 
 B. Use synchronous database master-slave replication between two availability zones.
 
-C. Take hourly DB backups to EC2 Instance store volumes with transaction logs stored In S3 every 5 minutes.
+C. Take hourly DB backups to EC2 Instance store volumes with transaction logs stored in S3 every 5 minutes.
 
-D. Take 15 minute DB backups stored In Glacier with transaction logs stored in S3 every 5 minutes.
+D. Take 15 minute DB backups stored in Glacier with transaction logs stored in S3 every 5 minutes.
 </div>
 </details>
 
@@ -202,18 +219,29 @@ D. Take 15 minute DB backups stored In Glacier with transaction logs stored in S
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
 
 해설 : 
 
+The only answer we can be assured of working is A.
 
-1차 시도 :  <br>
+B doesn't help for data corruption (question doesn't specify physical or logical so have to address both) as logical corruption will be replicated.<br>
+C. We don't put backups on ephemeral storage.<br>
+D. Glacier Standard retrieval is 3-5 hours, and whilst expedited can be used to retrieve within 5 minutes, this is only for archives up to 250MB - the question doesn't give the size of the database, so I think we should not choose this option.
+
+문항 번역이 이상하게 되어서 그냥 원문으로 넣었다.
+
+백업 데이터는 EC2와 같은 수명이 짧은? 서비스에는 보관하지 않는다고 한다.
+
+D가 답이라는 말이 있는데, 이는 잘 모르겠다.
+
+1차 시도 : B 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 15 ⭕❌
+## Prob. 15 ❌
 ---
 Amazon VPC에서 애플리케이션 서버의 네트워크 인프라를 설계하고 있습니다. 사용자는 온프레미스 네트워크뿐만 아니라 인터넷에서도 모든 애플리케이션 인스턴스에 액세스할 수 있습니다. 사내 네트워크는 AWS Direct Connect 링크를 통해 VPC에 연결됩니다.
 
@@ -248,18 +276,26 @@ D. Configure two routing tables: on that has a default router via the Internet g
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
-해설 : 
+해설 :
 
+Rolled out
+A propagating default route would cause conflict.
+C there cannot be 2 default routes
+D as the instances has to be in public subnet and should have a single routing table associated with them
 
-1차 시도 :  <br>
+so B is right answer
+
+해설을 봐도 모르겠다...
+
+1차 시도 : D 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 16 ⭕❌
+## Prob. 16 ⭕ SKIP
 ---
 다음을 사용하여 S3 버킷 및 개체에 대한 액세스를 제어할 수 있습니다.
 
@@ -291,18 +327,19 @@ D. All of the above
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D
 
 해설 : 
 
+IAM, ACL, Bucket policies + Block Public Access
 
-1차 시도 :  <br>
+1차 시도 : D 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 17 ⭕❌
+## Prob. 17 ❌ SKIP
 ---
 AWS가 제공하는 AWS IT 인프라는 다음과 같은 IT 보안 표준을 준수합니다.
 
@@ -342,16 +379,18 @@ Answer :
 
 해설 : 
 
+문제가 있는 문제인 것 같다.
+패스하자.
 
-1차 시도 :  <br>
+1차 시도 : D <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 18 ⭕❌
+## Prob. 18 ❌ SKIP
 ---
-자동 스케일링 요청은 요청과 사용자의 개인 키에서 계산된 ______ 서명으로 서명됩니다.
+오토 스케일링 요청은 요청과 사용자의 프라이빗 키에서 계산된 ______ 서명으로 서명됩니다.
 
 A. SSL입니다.
 
@@ -381,18 +420,18 @@ D. X.509
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
 해설 : 
 
 
-1차 시도 :  <br>
+1차 시도 : A 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 19 ⭕❌
+## Prob. 19 ❌ SKIP
 ---
 다음 정책을 IAM 그룹에 연결할 수 있습니다. 그러면 해당 그룹의 IAM 사용자가 콘솔을 사용하여 사용자 이름과 일치하는 AWS S3의 "홈 디렉토리"에 액세스할 수 있습니다.
 
@@ -455,18 +494,22 @@ B. False
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 : 
 
+Answer B:
 
-1차 시도 :  <br>
+explanation:<br>
+https://aws.amazon.com/blogs/security/writing-iam-policies-grant-access-to-user-specific-folders-in-an-amazon-s3-bucket/
+
+1차 시도 : A <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 20 ⭕❌
+## Prob. 20 ⭕
 ---
 AWS에게 탄력성은 어떤 의미인가요?
 
@@ -497,12 +540,12 @@ D. The ability to recover from business continuity events with minimal friction.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 : 
 
 
-1차 시도 :  <br>
+1차 시도 : B 맞음<br>
 </div>
 </details>
 
