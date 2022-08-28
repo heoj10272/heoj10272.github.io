@@ -32,7 +32,7 @@ AWS에서 기존의 온프레미스 환경의 데이터센터를 운영하고 �
 
 아래는 Storage Gateway의 간단한 사용 구조도이다.
 
-![archi](/assets/img/study_AWS/2022-06-15-AWS_Storage_Gateway_이해/archi.png)
+![archi](/assets/img/study_AWS/2022-06-15-[AWS]_Storage_Gateway_이해/archi.png)
 
 이처럼 이미 운영중인 데이터센터에 Appliance를 설치하고 Storage Gateway를 통해 S3에 백업을 하고, S3에 저장된 데이터로 분석하는 등의 기능을 할 수 있다.
 

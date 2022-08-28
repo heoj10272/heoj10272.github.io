@@ -10,7 +10,7 @@ image:
 ---
 
 SAP Examtopics 11~20번 문제를 풀어보자.<br>
-1차 x/10<br>
+1차 2/5<br>
 
 <!--more-->
 
@@ -509,7 +509,7 @@ https://aws.amazon.com/blogs/security/writing-iam-policies-grant-access-to-user-
 
 <br>
 
-## Prob. 20 ⭕
+## Prob. 20 ⭕ SKIP
 ---
 AWS에게 탄력성은 어떤 의미인가요?
 

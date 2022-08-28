@@ -10,7 +10,7 @@ image:
 ---
 
 SAP Examtopics 21~30번 문제를 풀어보자.<br>
-1차 x/10<br>
+1차 3/8<br>
 
 <!--more-->
 
@@ -20,7 +20,7 @@ SAP Examtopics 21~30번 문제를 풀어보자.<br>
 <br>
 
 
-## Prob. 21 ⭕❌
+## Prob. 21 ❌ SKIP
 ---
 
 다음은 AWS 스토리지 서비스입니까? (두 개를 선택하십시오.)
@@ -53,18 +53,20 @@ D. AWS Import/Export
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C, D
 
 해설 : 
 
+문제를 잘못 읽었다.
+스토리지 서비스는 C와 D이다.
 
-1차 시도 :  <br>
+1차 시도 : A, B <br>
 </div>
 </details>
 
 <br>
-
-## Prob. 22 ⭕❌
+ 
+## Prob. 22 ⭕ SKIP
 ---
 
 AWS는 전통적인 IT 컴퓨팅 환경의 다른 벤더와 어떻게 쉽게 구별됩니까?
@@ -97,19 +99,20 @@ D. Flexible. Cost-effective. Dynamic. Secure. Experienced.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 : 
 
+뭐 이런 문제가 다 있나 싶다 ...
 
-1차 시도 :  <br>
+1차 시도 : B 맞음<br>
 </div>
 </details>
 
 <br>
 
 
-## Prob. 23 ⭕❌
+## Prob. 23 ⭕
 ---
 
 500GB EBS Provisioned IOPS 볼륨 4개가 연결된 EC2 인스턴스를 시작했습니다. EC2 인스턴스는 EBS 최적화이며 EC2와 EBS 사이의 500Mbps 처리량을 지원합니다. 4개의 EBS 볼륨이 단일 RAID 0 장치로 구성되며, 각 프로비저닝된 IOPS 볼륨은 4,000 IOPS(4,000 16KB 읽기 또는 쓰기)로 프로비저닝되어 인스턴스에서 총 16,000개의 랜덤 IOPS를 제공합니다. EC2 인스턴스는 처음에 예상된 16,000 IOPS 랜덤 읽기 및 쓰기 성능을 제공합니다. 잠시 후 인스턴스의 총 랜덤 I/O 성능을 높이기 위해 500GB EBS Provisioned IOPS 볼륨 2개를 RAID에 추가합니다. 각 볼륨은 원래 4개의 IOP와 같이 4,000개의 IOPS로 프로비저닝되어 EC2 인스턴스에서 총 24,000개의 IOPS가 제공됩니다. 모니터링 결과 EC2 인스턴스 CPU 활용률은 50%에서 70%로 증가했지만 인스턴스 수준에서 측정된 총 랜덤 IOPS는 전혀 증가하지 않습니다.
@@ -150,18 +153,19 @@ E. RAID 0 only scales linearly to about 4 devices; use RAID 0 with 4 EBS Provisi
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
 
 해설 : 
 
+I think the key here is 16,000 IOPS was working fine, then when adding more disks (IOPS) it didnt go any higher. As noted at the [link](https://aws.amazon.com/ebs/volume-types/) GP2 and GP3 max out at 16000 IOPS per volume. To go beyond this (64000 IOPS)we need to use IO1/IO2/IO2 Block Express, which should be used with EBS optimised instances [link2](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/ebs-optimized.html). Therefore the instance is our bottleneck, and should be changed (Answer A).
 
-1차 시도 :  <br>
+1차 시도 : A 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 24 ⭕❌
+## Prob. 24 ❌
 ---
 
 귀사는 전송 중 및 유휴 상태에서 암호화해야 하는 수천 개의 100GB 파일에 걸쳐 수백만 개의 중요한 트랜잭션을 저장하고 있습니다. 분석가는 동시에 최대 5TB의 공간을 사용할 수 있는 파일의 하위 집합에 의존하여 비즈니스 의사 결정을 내리는 데 사용할 수 있는 시뮬레이션을 생성합니다.
@@ -204,18 +208,25 @@ E. Store the full data set in encrypted Amazon Elastic Block Store (EBS) volumes
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
 
 해설 : 
 
+EMR을 사용한 HDFS는 긴 기간 사용하기에는 적절하지 않다.<br>
+S3가 EMR에 비해 비용효율적이다.
 
-1차 시도 :  <br>
+B가 안되는 이유는 데이터 크기가 5TB이기 때문이라는데 ... 잘 모르겠다.
+
+encryption at rest - with S3 server side encryption.<br>
+encryption in transit - between S3 & EC2 encrypted with HTTPS; between EC2 and instance store also encrypted.
+
+1차 시도 : D 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 25 ⭕❌
+## Prob. 25 ⭕
 ---
 
 고객은 로그 스트림(액세스 로그, 애플리케이션 로그, 보안 로그 등)을 단일 시스템에 통합할 의사가 있습니다. 통합되면 고객은 이러한 로그를 휴리스틱을 기반으로 실시간으로 분석하고자 합니다. 때때로 고객은 지난 12시간 동안 추출한 데이터 샘플로 돌아가야 하는 휴리스틱을 검증해야 합니다.
@@ -252,25 +263,29 @@ D. Setup an Auto Scaling group of EC2 syslogd servers, store the logs on S3, use
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 : 
 
+C is for API calls,
 
-1차 시도 :  <br>
+ec2 doesn't make any sense<br>
+most effective is Kinesis B
+
+1차 시도 : B 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 26 ⭕❌
+## Prob. 26 ❌
 ---
 
 한 신문사는 자체 애플리케이션을 통해 대중이 자신의 백 카탈로그를 검색하고 자바 언어로 작성된 웹 사이트를 통해 개별 신문 페이지를 검색할 수 있도록 합니다. 그들은 오래된 신문을 JPEG(약 17TB)로 스캔했고 OCR(광학 문자 인식)을 사용하여 상용 검색 제품을 채웠습니다. 호스팅 플랫폼과 소프트웨어는 이제 수명이 다했으며 조직은 아카이브를 AWS로 마이그레이션하여 비용 효율적인 아키텍처를 구축하면서도 가용성과 내구성을 유지하도록 설계하기를 원합니다.
 
 어떤 것이 가장 적절한가요?
 
-A. 중복성이 감소된 S3를 사용하여 검색된 파일을 저장하고 제공하고, EC2 인스턴스에 상용 검색 애플리케이션을 설치하고, 자동 확장 및 Elastic Load Balancer로 구성합니다.
+A. reduced redundancy S3를 사용하여 검색된 파일을 저장하고 제공하고, EC2 인스턴스에 상용 검색 애플리케이션을 설치하고, 자동 확장 및 Elastic Load Balancer로 구성합니다.
 
 B. CloudFormation을 사용하여 환경을 모델링합니다. Apache 웹 서버와 오픈 소스 검색 응용 프로그램을 실행하는 EC2 인스턴스를 사용하여 여러 표준 EBS 볼륨을 스트라이핑하여 JPEG와 검색 색인을 저장합니다.
 
@@ -303,18 +318,25 @@ E. Use a CloudFront download distribution to serve the JPEGs to the end users an
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
 해설 : 
 
+Answer is C<br>
+A. Use S3 with RRS: RRS is not high availability<br>
+B. An EC2 instance and stripe multiple standard EBS volumes together: Not HA too<br>
+D. Use a single-AZ RDS MySQL : Not HA also RDS is not using for store image<br>
+E. Use a CloudFront: Missing CloudFront origin. Also using an EC2 will not HA
 
-1차 시도 :  <br>
+As S3 to serve the static content. Cloud search is managed service to setup, manage and scale a search solution. Combination of 2 AWS service suffice the purpose.
+
+1차 시도 : E 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 27 ⭕❌
+## Prob. 27 ❌
 ---
 
 A사는 글로벌 확장성과 성능을 위해 Amazon CloudFront를 활용하는 복잡한 웹 애플리케이션을 보유하고 있습니다. 시간이 지남에 따라 사용자는 웹 응용 프로그램의 속도가 느려지고 있다고 보고합니다.
@@ -352,18 +374,19 @@ D. Update the CloudFront distribution to specify case-insensitive query string p
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
 
 해설 : 
 
+A. Before CloudFront serves content from the cache it will trigger any Lambda function associated with the Viewer Request, in which we can normalize parameters.
 
-1차 시도 :  <br>
+1차 시도 : C 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 28 ⭕❌
+## Prob. 28 ❌
 ---
 
 개발(Dev) 및 테스트 환경을 AWS로 마이그레이션하려고 합니다. 각 환경을 호스팅하기 위해 별도의 AWS 계정을 사용하기로 결정했습니다.
@@ -402,18 +425,19 @@ D. Link the accounts using Consolidated Billing. This will give IAM users in the
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
 해설 : 
 
+Cross-account-roles가 뭘까...?
 
-1차 시도 :  <br>
+1차 시도 : A 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 29 ⭕❌
+## Prob. 29 ⭕
 ---
 
 x86이 아닌 하드웨어에 종속되어 있기 때문에 애플리케이션을 온프레미스에서 실행하고 있으며 데이터 백업에 AWS를 사용하려고 합니다. 백업 애플리케이션은 POSIX 호환 블록 기반 스토리지에만 쓸 수 있습니다. 140TB의 데이터를 가지고 있으며 파일 서버에 단일 폴더로 마운트하려고 합니다. 사용자는 백업이 수행되는 동안 이 데이터의 일부에 액세스할 수 있어야 합니다.
@@ -450,18 +474,21 @@ D. Use Storage Gateway and configure it to use Gateway Stored volumes.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
 
 해설 : 
 
+[Storage Gateway](https://heoj10272.github.io/study/AWS-_Storage_Gateway_%EC%9D%B4%ED%95%B4.html#ii-volume-gatewayiscsi)를 참고하자.
 
-1차 시도 :  <br>
+일부 액세스 할 수 있어야 하는 데이터는 로컬에 남겨두고 백업하면 되므로 Cached Volume이 적절할 것이다.
+
+1차 시도 : A 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 30 ⭕❌
+## Prob. 30 ❌
 ---
 
 인기 있는 제품에 대한 웹 트래픽을 제공하기 위해 재무 담당 최고 책임자와 IT 책임자가 10개의 m1.large heavy utilization Reserved Instances(RIs)를 구입했으며, 두 개의 가용성 영역에 고르게 분산됩니다. Route 53은 트래픽을 ELB(Elastic Load Balancer)로 전달하는 데 사용됩니다. 몇 달이 지나면 제품의 인기가 더욱 높아지므로 추가 용량이 필요합니다. 결과적으로, 귀사는 2개의 C3.2xlarge medium utilization RIs를 구입합니다. 당신은 두 개의 c3.2xlarge instances를 ELB에 등록하고 m1.large instances의 capacity가 100%이고 c3.2xlarge instances에 사용되지 않은 상당한 용량이 있음을 빠르게 알아냈습니다.
@@ -498,12 +525,18 @@ D. Use a separate ELB for each instance type and distribute load to ELBs with Ro
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D
 
 해설 : 
 
+A, B if you have already purchase Reversed Instance (RIs) so if you shutdown either of them, you still lose the cost.
 
-1차 시도 :  <br>
+C. It does not work well, as Route53 can't route to EC2 unless it has EIP because its IP will change when rebooted. You will need EIPs for all EC2s. So it is impossible solution.
+
+D make sense, the traffic for each instance was loaded-balance however the improper type between C2 and M1 cause the CPU on M1 meanwhile no load on C2. You need another ELB, one for C2 group and one for M1 group; then route the traffic 80% to C1 and 20% to C1 for example.
+
+
+1차 시도 : B 틀림<br>
 </div>
 </details>
 
