@@ -134,8 +134,7 @@ ORA-01843: 지정한 월이 부적합합니다.
 | < | 작음 |
 | ≤ | 작거나 같음 |
 | <> | 같지 않음 |
-| BETWEEN
-…AND… | 두 값의 사이(두 값 포함) |
+| BETWEEN …AND… | 두 값의 사이(두 값 포함) |
 | IN(set) | set에 해당하는 값과 같은 결과들만 출력 |
 | LIKE | 패턴에 맞는 값 출력 |
 | IS NULL | null 값인 값만 출력 |
@@ -302,6 +301,7 @@ SELECT  employee_id, last_name, job_id, salary
 | --- | --- | --- | --- | --- |
 | 1 | 201 | Hartstein | MK_MAN | 13000 |
 | 2 | 149 | Zlotkey | SA_MAN | 10500 |
+
 1. 급여가 10000 이상
 2. job_id에 ‘MAN’이 포함
 
@@ -323,6 +323,7 @@ SELECT  employee_id, last_name, job_id, salary
 | 5 | 102 | De Haan | AD_VIP | 17000 |
 | 6 | 124 | Mourgos | ST_MAN | 5800 |
 | 7 | 149 | Zlotkey | SA_MAN | 10500 |
+
 1. 급여가 10000 이상
 2. job_id에 ‘MAN’이 포함
 
