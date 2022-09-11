@@ -278,7 +278,7 @@ SELECT  last_name, manager_id
 
 |  | LAST_NAME | MANAGER_ID |
 | --- | --- | --- |
-| 1 | KING | (null) |
+| 1 | King | (null) |
 
 ### 논리 연산자
 
