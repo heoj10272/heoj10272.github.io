@@ -254,7 +254,7 @@ SELECT  employee_id, last_name, salary, manager_id
         
         위 처럼 `AND`를 통해 `LIKE`를 두 번 사용하여 구현할 수 있다.
         
-        |  | LAST_NAME||’’||FIRST_NAME |
+        |  | LAST_NAME \|\|’’\|\|FIRST_NAME |
         | --- | --- |
         | 1 | Baer Hermann |
         | 2 | Bates Elizabeth |
