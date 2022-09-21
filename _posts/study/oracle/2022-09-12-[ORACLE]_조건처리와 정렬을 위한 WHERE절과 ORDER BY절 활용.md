@@ -1,12 +1,12 @@
 ---
 layout: post
-title: 조건처리와 정렬을 위한 WHERE절과 ORDER BY절 활용
+title: "[ORACLE] 조건처리와 정렬을 위한 WHERE절과 ORDER BY절 활용"
 subtitle: Oracle
 date: '2022-09-12 03:50:00 +0900'
 category: study
 tags: oracle
 image:
-  path: /assets/img/study_Oracle/RDBMS_이해/logo.png
+  path: /assets/img/study_Oracle/2022-09-12-[ORACLE]_조건처리와 정렬을 위한 WHERE절과 ORDER BY절 활용/logo.png
 ---
 
 WHERE절과 ORDER BY절에 대해서 알아보자.
