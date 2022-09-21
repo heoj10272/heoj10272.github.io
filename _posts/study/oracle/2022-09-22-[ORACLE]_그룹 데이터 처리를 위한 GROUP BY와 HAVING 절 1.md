@@ -18,11 +18,7 @@ image:
 
 <hr/>
 
-# Group data 처리
-
----
-
-## 집계 함수
+# 집계 함수
 
 ---
 
@@ -41,7 +37,7 @@ image:
 
 집계 함수는 여러개의 데이터로 하나의 결과 데이터를 만들어준다.
 
-### 숫자 처리 함수 AVG(), SUM()
+## 숫자 처리 함수 AVG(), SUM()
 
 ---
 
@@ -57,7 +53,7 @@ SELECT  AVG(salary), MAX(salary), MIN(salary), SUM(salary)
 | --- | --- | --- | --- | --- |
 | 1 | 8150 | 11000 | 6000 | 32600 |
 
-### 숫자, 문자, 날짜 처리 함수 MAX(), MIN()
+## 숫자, 문자, 날짜 처리 함수 MAX(), MIN()
 
 ---
 
@@ -89,7 +85,7 @@ SELECT  MIN(last_name), MAX(last_name)
 | --- | --- | --- |
 | 1 | Abel | Zlotkey |
 
-### 테이블의 모든 행 수 COUNT(*)
+## 테이블의 모든 행 수 COUNT(*)
 
 ---
 
@@ -111,7 +107,7 @@ SELECT  COUNT(*)
 
 정확하게 말하면 각 행의 칼럼 값에 `NULL` 이 포함되든 말든 상관없이, 행으로 출력되면 집계에 포함된다.
 
-### null이 아닌 값을 가진 행 수 COUNT(expr)
+## null이 아닌 값을 가진 행 수 COUNT(expr)
 
 ---
 
@@ -129,7 +125,7 @@ SELECT  COUNT(commission_pct)
 
 즉 `COUNT(expr)` 은 결과 행에서 `NULL` 값을 제외한 행 수를 출력한다.
 
-### expr의 null과 중복 값이 아닌 행 수 COUNT(DISTINCT expr)
+## expr의 null과 중복 값이 아닌 행 수 COUNT(DISTINCT expr)
 
 ---
 
@@ -146,7 +142,7 @@ SELECT  COUNT(DISTINCT department_id)
 
 이렇게 중복이 제외된 결과 행 수를 출력하게 되는데, 위에서 봤듯이 칼럼을 지정하였기 때문에 `NULL` 값은 제외된다.
 
-### 그룹 함수는 칼럼에 있는 null 값 무시
+## 그룹 함수는 칼럼에 있는 null 값 무시
 
 ---
 
@@ -163,7 +159,7 @@ SELECT  AVG(commission_pct)
 
 즉 “commission_pct” 칼럼에서 `NULL` 값을 제외한 행이 4개 있을 경우, 이 4개의 값에 대해서만 평균을 계산한다.
 
-### NVL을 이용하여 강제로 그룹 함수에 null을 사용가능 값으로
+## NVL을 이용하여 강제로 그룹 함수에 null을 사용가능 값으로
 
 ---
 
@@ -178,7 +174,7 @@ SELECT  AVG(NVL(commission_pct, 0))
 
 만약 전체 사원 대상으로 평균값을 내고 싶을 경우, `NULL` 값을 `NVL` 을 사용하여 0으로 치환 함으로서 집계에 포함시킬 수 있다.
 
-### QUIZ 1
+## QUIZ 1
 
 ---
 
@@ -225,7 +221,7 @@ SELECT  AVG(NVL(commission_pct, 0))
     따라서 98년도에 입사한 사원은 1로 출력될 것이고, 이를 `COUNT` 를 통해 집계하면 된다.
     
 
-### QUIZ 2
+## QUIZ 2
 
 ---
 
@@ -258,11 +254,11 @@ SELECT  AVG(NVL(commission_pct, 0))
     여기에서 `PIVOT` 을 통해 “HDATE” 값이 '1994', '1998', '1999' 인 값만 `SUM` 으로 “salary”를 집계한다.
     
 
-## Group data 처리
+# Group data 처리
 
 ---
 
-### GROUP 개념
+## GROUP 개념
 
 ---
 
@@ -315,7 +311,7 @@ ORDER BY  department_id;
 
 `GROUP BY` 에서 그룹화 되는 방식은 이전의 “다중 칼럼 order by” 에서의 방식과 비슷하다.
 
-### 잘못된 GROUP 함수 사용 예
+## 잘못된 GROUP 함수 사용 예
 
 ---
 

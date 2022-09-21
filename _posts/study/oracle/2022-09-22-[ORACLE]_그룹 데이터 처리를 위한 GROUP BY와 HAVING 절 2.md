@@ -18,15 +18,11 @@ image:
 
 <hr/>
 
-# Group data 처리
+# 집계 처리
 
 ---
 
-## 집계 처리
-
----
-
-### Group data 결과 제한(Having)
+## Group data 결과 제한(Having)
 
 ---
 
@@ -50,7 +46,7 @@ GROUP BY  department_id
 
 하지만 `HAVING` 절에서 최고 급여가 10000을 넘는 값만을 출력하도록 했으므로 위와 같이 출력된다.
 
-### QUIZ 1
+## QUIZ 1
 
 ---
 
@@ -80,11 +76,11 @@ ORDER BY  SUM(salary) DESC -- 급여에 대한 내림차순 정렬
 GROUP BY  department_id;
 ```
 
-## 고급(상위) 집계 처리
+# 고급(상위) 집계 처리
 
 ---
 
-### GROUP BY에 ROLLUP 및 CUBE 연산자 사용
+## GROUP BY에 ROLLUP 및 CUBE 연산자 사용
 
 ---
 
@@ -92,7 +88,7 @@ GROUP BY  department_id;
 - ROLLUP 그룹화는 일반 그룹화 행과 소계 값을 포함한 결과 집합을 생성
 - CUBE 그룹화는 ROLLUP에 따른 행과 교차 분석 행이 포함된 결과 집합을 생성
 
-### GROUP BY에 ROLLUP 사용
+## GROUP BY에 ROLLUP 사용
 
 ---
 
@@ -131,7 +127,7 @@ GROUP BY  ROLLUP(department_id, job_id);
 2. 2행, 4행은 ‘department_id’로만 합계된 그룹
 3. 5행은 총계이다.
 
-### GROUP BY에 CUBE 사용
+## GROUP BY에 CUBE 사용
 
 ---
 
@@ -168,7 +164,7 @@ GROUP BY  CUBE(department_id, job_id);
 
 `ROLLUP` 과 다른 점은 2번이 추가되었다는 점이다.
 
-### GROUPING 함수
+## GROUPING 함수
 
 ---
 
