@@ -21,7 +21,7 @@ image:
 <hr/>
 <br>
 
-## Prob. 1 ⭕❌
+## Prob. 1 ⭕
 ---
 
 Examine the description of the PROMOTIONS table:
@@ -45,18 +45,22 @@ E. SELECT promo_cost, promo_category FROM promotions ORDER BY 1;
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, C
 
-해설 : 
+해설 :
 
+`promo_category`별로 `promo_cost`를 출력하는데, 중복을 제외하고 출력해야하는 문제이다.<br>
+B : 중복 제거를 위해서 사용하는 `DISTINCT`는 한 번만 적으면 된다.<br>
+D : `DISTINCT`는 `promo_category`앞에 적는게 적절해보인다.<br>
+E : 중복 제거가 되지 않는다. <br>
 
-1차 시도 :  <br>
+1차 시도 : A, C 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 2 ⭕❌
+## Prob. 2 ⭕
 ---
 
 Examine the description of the PRODUCTS table:
@@ -81,18 +85,25 @@ F. SELECT product_id, unit_price, unit_price + surcharge FROM products;
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B, C, F
 
 해설 : 
 
+B : `unit_price`는 `NUMBER` 데이터타입이므로, 숫자 연산이 가능하다.<br>
+C : `DATE` 타입 끼리의 뺄셈 연산시 결과는 일 수가 나오며, 숫자 연산이 가능하다.<br>
+F : `unit_price`는 `NUMBER`형, `surcharge`는 `VARCHAR2`형으로 두 칼럼의 데이터 타입이 다르지만, `surcharge` 칼럼의 이름을 보았을 때 데이터가 숫자임이 예상되고, 이 때 묵시적 형변환에 의해 연산이 가능하다.<br>
 
-1차 시도 :  <br>
+A, D : "Discount" 가 무엇을 의미하는지 모르겠다...<br>
+E : `DATE` 타입의 곱셈 연산은 불가능하다.
+
+
+1차 시도 : B, C, F 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 3 ⭕❌
+## Prob. 3 ❌
 ---
 
 What is true about non-equijoin statement performance? (Choose two.)
@@ -112,12 +123,19 @@ E. The join syntax used makes no difference to performance.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D는 확실, C와 E 중 하나 // E가 답인듯
 
 해설 : 
 
+57번 문제와 동일한 문제인 모양이다.<br>
+링크[https://www.examtopics.com/discussions/oracle/view/24426-exam-1z0-082-topic-1-question-57-discussion/] 참고<br>
+D : alias를 사용하면 성능을 향상시킬 수 있다.<br>
+E : 성능적으로 별 영향이 없나보다.
 
-1차 시도 :  <br>
+A, B : 확실하진 않으나 항상 좋거나 나쁘진 않을 것 같다 ...<br>
+C : Discussion에 따르면 성능적으로 별 차이가 없다고 한다.
+
+1차 시도 : C, D 틀림<br>
 </div>
 </details>
 
