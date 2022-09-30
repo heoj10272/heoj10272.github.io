@@ -210,7 +210,7 @@ D : `PUBLIC SYNONYM`을 `CREATE`나 `DROP`할 때는 각각의 시스템 권한�
 
 <br>
 
-## Prob. 6 ⭕❌
+## Prob. 6 ⭕
 ---
 
 Which two are true? (Choose two.)
@@ -232,12 +232,16 @@ F. FLOOR returns the largest integer less than or equal to a specified number.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, F
 
 해설 : 
 
+B : `CONCAT`은 A의 설명이 알맞다.<br>
+C : `FLOOR`은 F의 설명이 알맞다.<br>
+D : `INSTR`은 대상 문자열에서 인자로 들어온 글자를 찾고 그 위치를 출력하며, 포지션 1부터 시작한다.<br>
+E : `INSTR`은 하나의 글자만이 아니라 문자열도 찾을 수 있다.<br>
 
-1차 시도 :  <br>
+1차 시도 : A, F 맞음<br>
 </div>
 </details>
 
