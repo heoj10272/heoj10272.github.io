@@ -30,7 +30,7 @@ Examine the description of the PROMOTIONS table:
 You want to display the unique promotion costs in each promotion category.
 Which two queries can be used? (Choose two.)
 
-A. SELECT DISTINCT promo_category || ' has ' || promo_cost AS COSTS FROM promotions ORDER BY 1;
+A. SELECT DISTINCT promo_category \|\| ' has ' \|\| promo_cost AS COSTS FROM promotions ORDER BY 1;
 
 B. SELECT DISTINCT promo_cost || ' in ' || DISTINCT promo_category FROM promotions ORDER BY 1;
 
@@ -40,6 +40,7 @@ D. SELECT promo_category DISTINCT promo_cost, FROM promotions ORDER BY 2;
 
 E. SELECT promo_cost, promo_category FROM promotions ORDER BY 1;
 
+---
 <details>
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
@@ -75,6 +76,7 @@ E. SELECT product_id, expiry_date * 2 FROM products;
 
 F. SELECT product_id, unit_price, unit_price + surcharge FROM products;
 
+---
 <details>
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
@@ -105,6 +107,7 @@ D. Table aliases can improve performance.
 
 E. The join syntax used makes no difference to performance.
 
+---
 <details>
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
@@ -137,6 +140,7 @@ E. LAST_DAY returns the date of the last day of the month for the date argument 
 
 F. LAST_DAY returns the date of the last day of the previous month only.
 
+---
 <details>
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
@@ -167,6 +171,7 @@ D. Any user can drop a PUBLIC synonym.
 
 E. A synonym created by one user can refer to an object belonging to another user.
 
+---
 <details>
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
@@ -199,6 +204,7 @@ E. INSTR finds the offset within a string of a single character only.
 
 F. FLOOR returns the largest integer less than or equal to a specified number.
 
+---
 <details>
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
@@ -232,6 +238,7 @@ D. The foreign key constraint will be disabled.
 
 E. The foreign key constraint will be enabled and IMMEDIATE.
 
+---
 <details>
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
@@ -265,6 +272,7 @@ D. The subquery is executed for every updated row in the ORDERS table.
 
 E. The UPDATE statement executes successfully even if the subquery selects multiple rows.
 
+---
 <details>
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
@@ -295,6 +303,7 @@ D. The result of a TRUNCATE can be undone by issuing a ROLLBACK.
 
 E. The result of a DELETE can be undone by issuing a ROLLBACK.
 
+---
 <details>
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
@@ -325,6 +334,7 @@ C. WHERE MONTHS_BETWEEN(SYSDATE, start_date) <= 25
 
 D. WHERE ADD_MONTHS(start_date, 25) <= SYSDATE
 
+---
 <details>
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
