@@ -132,7 +132,7 @@ Answer : D는 확실, C와 E 중 하나 // E가 답인듯
 D : alias를 사용하면 성능을 향상시킬 수 있다.<br>
 E : 성능적으로 별 영향이 없나보다.
 
-A, B : 확실하진 않으나 항상 좋거나 나쁘진 않을 것 같다 ...<br>
+A, B : 내부적으로 `BETWEEN`은 `<=, >=`으로 변환되는 모양이다.<br>
 C : Discussion에 따르면 성능적으로 별 차이가 없다고 한다.
 
 1차 시도 : C, D 틀림<br>
@@ -141,7 +141,7 @@ C : Discussion에 따르면 성능적으로 별 차이가 없다고 한다.
 
 <br>
 
-## Prob. 4 ⭕❌
+## Prob. 4 ⭕
 ---
 
 Which two are true? (Choose two.)
@@ -163,18 +163,21 @@ F. LAST_DAY returns the date of the last day of the previous month only.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, E
 
 해설 : 
 
+B : 숫자형 데이터 뿐만 아니라 숫자로 변환 가능한 데이터도 입력 가능하다.<br>
+C : `CEIL`은 인자보다 크거나 같은 정수 중 제일 작은 수를 출력하므로 틀렸다. 본 설명은 `FLOOR`에 해당하는 것으로 보인다.<br>
+D : `LAST_DAY` 에 대한 올바른 설명은 E이다.
 
-1차 시도 :  <br>
+1차 시도 : A, E 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 5 ⭕❌
+## Prob. 5 ⭕ 유념
 ---
 
 Which three statements are true about Oracle synonyms? (Choose three.)
@@ -194,12 +197,14 @@ E. A synonym created by one user can refer to an object belonging to another use
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B, C, E
 
 해설 : 
 
+A : 잘 모르겠는데 가능한 모양이다. <br>
+D : `PUBLIC SYNONYM`을 `CREATE`나 `DROP`할 때는 각각의 시스템 권한이 필요하다.
 
-1차 시도 :  <br>
+1차 시도 : B, C, E 맞았는데 다시보기<br>
 </div>
 </details>
 
