@@ -32,7 +32,7 @@ Which two queries can be used? (Choose two.)
 
 A. SELECT DISTINCT promo_category \|\| ' has ' \|\| promo_cost AS COSTS FROM promotions ORDER BY 1;
 
-B. SELECT DISTINCT promo_cost || ' in ' || DISTINCT promo_category FROM promotions ORDER BY 1;
+B. SELECT DISTINCT promo_cost \|\| ' in ' \|\| DISTINCT promo_category FROM promotions ORDER BY 1;
 
 C. SELECT DISTINCT promo_category, promo_cost FROM promotions ORDER BY 1;
 
@@ -70,7 +70,7 @@ B. SELECT product_id, (unit_price * 0.15 / (4.75 + 552.25)) FROM products;
 
 C. SELECT product_id, (expiry_date - delivery_date) * 2 FROM products;
 
-D. SELECT product_id, unit_price || 5 "Discount", unit_price + surcharge - discount FROM products;
+D. SELECT product_id, unit_price \|\| 5 "Discount", unit_price + surcharge - discount FROM products;
 
 E. SELECT product_id, expiry_date * 2 FROM products;
 
