@@ -275,7 +275,7 @@ Answer :
 해설 : 
 
 
-1차 시도 :  <br>
+1차 시도 : A,  <br>
 </div>
 </details>
 
