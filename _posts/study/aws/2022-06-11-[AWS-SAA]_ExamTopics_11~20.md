@@ -67,7 +67,7 @@ C is my answer: Only gp3, io1, or io2 Volumes have configurable IOPS.<br>
 
 새로운 워크로드를 구현하기 전에 솔루션 설계자는 회사의 현재 IAM 규칙을 검토하고 업데이트해야 합니다. 솔루션 설계자가 작성한 정책은 다음과 같습니다:
 
-![prob_12](/assets/img/study_AWS/2022-06-11-SAA_ExamTopics_11~20/prob_12.png)
+![prob_12](/assets/img/study_AWS/2022-06-11-[AWS-SAA]_ExamTopics_11~20/prob_12.png)
 
 그 정책의 순효과는 무엇입니까?
 
