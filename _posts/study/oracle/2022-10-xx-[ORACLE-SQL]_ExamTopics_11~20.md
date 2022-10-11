@@ -21,7 +21,7 @@ image:
 <hr/>
 <br>
 
-## Prob. 11 ⭕❌
+## Prob. 11 ❌
 ---
 
 Which three are true about scalar subquery expressions? (Choose three.)
@@ -43,13 +43,22 @@ F. They cannot be used in GROUP BY clauses.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, E, F
 
 해설 :
 
+scalar subquery란 하나의 값, 즉 하나의 행에서 하나의 칼럼 값을 반환하는 표현식이다.
+
+만약 서브쿼리가 0개의 행을 반환할 경우, scalar subquery 표현식의 값은 `NULL`이 된다.<br>
+추가로 1개 초과의 행을 반환할 경우, 오라클에서 에러를 출력한다.
+
+칼럼의 default values로는 올 수 없다.<br>
+`GROUP BY` 절에는 올 수 없다.
 
 
-1차 시도 : <br>
+[참고 링크](https://docs.oracle.com/database/121/SQLRF/expressions014.htm#SQLRF52093)
+
+1차 시도 : A, D, E 틀림<br>
 </div>
 </details>
 
@@ -80,13 +89,14 @@ F. Store the query in a script and pass the substitution value to the script whe
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, F
 
 해설 :
 
+A and F<br>
 
 
-1차 시도 : <br>
+1차 시도 : B, D<br>
 </div>
 </details>
 
