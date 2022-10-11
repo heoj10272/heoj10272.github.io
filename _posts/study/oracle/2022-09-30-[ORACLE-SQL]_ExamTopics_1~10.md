@@ -247,7 +247,7 @@ E : `INSTR`은 하나의 글자만이 아니라 문자열도 찾을 수 있다.<
 
 <br>
 
-## Prob. 7 ⭕❌
+## Prob. 7 ❌
 ---
 
 Examine these SQL statements which execute successfully:
@@ -270,21 +270,25 @@ E. The foreign key constraint will be enabled and IMMEDIATE.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, D
 
 해설 : 
 
+3번째 쿼리에서 `CASCADE`로 PK를 `DISABLE` 하면 그에 종속된 FK도 함께 비활성화된다.<br>
+4번째 쿼리에서 `ENABLE`로 PK를 재활성화 하더라도 FK는 그대로 비활성화 상태로 유지된다.<br>
 
-1차 시도 : A,  <br>
+명시하지 않을 경우, 기본으로 제약조건은 `NOT DEFERRABLE IMMEDIATE` 이라고 한다. 
+
+1차 시도 : A, E 틀림 <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 8 ⭕❌
+## Prob. 8 ⭕
 ---
 
-Examine this SQL statement:
+Examine this SQL statement:<br>
 ![prob8](/assets/img/study_Oracle/2022-09-30-[ORACLE-SQL]_ExamTopics_1~10/prob8.png)
 
 Which two are true? (Choose two.)
@@ -304,18 +308,23 @@ E. The UPDATE statement executes successfully even if the subquery selects multi
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D, E
 
 해설 : 
 
+A. 틀렸다. 양 테이블에 매칭되는 행만 업데이트된다.<br>
+B. 틀렸다. 서브쿼리는 메인쿼리 안에 포함된 종속적인 관계이기 떄문에 논리적인 실행순서는 항상 메인쿼리에서 읽혀진 데이터에 대해 서브쿼리에서 해당 조건이 만족하는지를 확인하는 방식으로 수행된다. 즉 메인쿼리 -> 서브쿼리 순서.<br>
+C. 틀렸다. 서브쿼리가 메인쿼리 칼럼을 참조하고 있으므로 이는 correlated subquery(연관 서브쿼리)이다.<br>
+D. 맞다.<br>
+E. 맞다.<br>
 
-1차 시도 :  <br>
+1차 시도 : D, E 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 9 ⭕❌
+## Prob. 9 ⭕
 ---
 
 Which two statements are true about TRUNCATE and DELETE? (Choose two.)
@@ -335,18 +344,25 @@ E. The result of a DELETE can be undone by issuing a ROLLBACK.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, E
 
 해설 : 
 
+`DELETE` 는 `WHERE` 절로 조건을 지정하여 행을 삭제할 수 있지만, `TRUNCATE` 는 해당 테이블의 행들을 모두 삭제하는 키워드이므로 불가능하다.
 
-1차 시도 :  <br>
+`DELETE` 는 `ROLLBACK` 으로 복구가 가능하지만, `TRUNCATE` 는 자동 커밋이 되는 명령어이기 때문에 복구가 불가능하다.
+
+추가로, `DELETE` 는 `WHERE` 절을 사용하지 않고 전체 행을 삭제하려 할 때도 내부적으로 한 줄 한 줄을 삭제하기 때문에 처리속도가 느리며, 데이터가 담겨있던 Storage가 Release 되지 않는 반면 `TRUNCATE` 는 테이블의 데이터를 한 번에 제거함과 동시에 테이블이 최초 생성되었을 당시의 Storage만 남기고 나머지는 모두 Release된다.
+
+[참고 링크](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=idjoopal&logNo=221559099309)
+
+1차 시도 : A, E 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 10 ⭕❌
+## Prob. 10 ❌
 ---
 
 The STORES table has a column START_DATE of data type DATE, containing the date the row was inserted.<br>
@@ -366,12 +382,14 @@ D. WHERE ADD_MONTHS(start_date, 25) <= SYSDATE
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
 해설 : 
 
+`MONTHS_BETWEEN(date1, date2)`은 인수로 들어가는 날짜 date1, date2의 날짜 차이 일수를 출력한다.<br>
+이때 date1이 date2보다 클 경우 양수가 출력되고 date2가 date1보다 클 경우 음수가 출력된다.
 
-1차 시도 :  <br>
+1차 시도 : B 틀림<br>
 </div>
 </details>
 
