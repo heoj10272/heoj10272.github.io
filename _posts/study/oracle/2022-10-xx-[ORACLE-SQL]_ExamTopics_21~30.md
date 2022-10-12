@@ -21,7 +21,7 @@ image:
 <hr/>
 <br>
 
-## Prob. 21 ⭕❌
+## Prob. 21 ❌
 ---
 
 Which two are true about unused columns? (Choose two.)
@@ -43,13 +43,20 @@ F. A foreign key column cannot be set to unused.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B, C
 
 해설 :
 
+A : 틀렸음. `UNUSED` 된 칼럼의 데이터는 값을 반환하지 않는다.<br>
+B : 맞음. `UNUSED` 는 `DROP` 된 것이 아니기 때문에 값은 유지된다.<br>
+C : 맞음. `UNUSED` 칼럼을 신규 칼럼으로 추가할 수 있다.<br>
+D : 틀렸음. `UNUSED` 된 칼럼은 `DESCRIBE` 로 볼 수 없으며, `DATA DICTIONARY` 에서 확인할 수 있다.<br>
+E : 틀린듯? `PK` 도 `UNUSED` 될 수 있나보다.<br>
+F : 틀린듯? `FK` 도 `UNUSED` 될 수 있나보다.<br>
 
+[구루비 링크](http://www.gurubee.net/article/48959)
 
-1차 시도 : <br>
+1차 시도 : B, E 틀림<br>
 </div>
 </details>
 

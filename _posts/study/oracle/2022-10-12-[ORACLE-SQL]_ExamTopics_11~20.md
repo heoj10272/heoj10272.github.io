@@ -267,7 +267,7 @@ E : 맞음. 시노님은 시노님을 가질 수 있다.<br>
 
 <br>
 
-## Prob. 17 ⭕❌
+## Prob. 17 ⭕
 ---
 
 Which is true about the ROUND, TRUNC and MOD functions?
@@ -285,19 +285,19 @@ D. ROUND(MOD(25,3),-1) and TRUNC(MOD(25,3),-1) are both valid but give different
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
 해설 :
 
+둘 다 0을 출력한다.
 
-
-1차 시도 : <br>
+1차 시도 : C 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 18 ⭕❌
+## Prob. 18 ⭕
 ---
 
 Which two are true about transactions in the Oracle Database? (Choose two.)
@@ -317,19 +317,23 @@ E. An uncommitted transaction is automatically committed when the user exits SQL
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D, E
 
 해설 :
 
+A : 틀렸음. 항상 새로운 트랜재션을 생성하지는 않는다.<br>
+B : 틀렸음. DDL문은 항상 커밋을 한다고 알고 있다.<br>
+C : 틀렸음. 커밋되지 않은 업데이트는 다른 세션에서 볼 수 없다.<br>
+D : 맞음.<br>
+E : 맞음.<br>
 
-
-1차 시도 : <br>
+1차 시도 : D, E<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 19 ⭕❌
+## Prob. 19 ⭕
 ---
 
 Examine the description of the MEMBERS table:<br>
@@ -357,19 +361,19 @@ F. ORDER BY last_name DESC, city ASC
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B, E
 
 해설 :
 
+`%AN%` 는 `LIKE` 절을 통해 사용할 수 있다.
 
-
-1차 시도 : <br>
+1차 시도 : B, E 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 20 ⭕❌
+## Prob. 20 ❓❌
 ---
 
 Examine this partial command:<br>
@@ -392,13 +396,16 @@ E. the ACCESS PARAMETERS clause
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B, E
 
 해설 :
 
+external data properties를 포함해야한다.<br>
+이 때 properties는 `DEFAULT DIRECTORY`, `LOCATION` 으로 구성된다.
 
+[ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/9437-exam-1z0-071-topic-1-question-297-discussion/)
 
-1차 시도 : <br>
+1차 시도 : B, 모름<br>
 </div>
 </details>
 
