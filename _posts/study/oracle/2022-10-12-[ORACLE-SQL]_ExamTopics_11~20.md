@@ -2,11 +2,11 @@
 layout: post
 title: "[ORACLE-SQL] ExamTopics 11~20"
 subtitle: ORACLE
-date: '2022-xx-xx 14:00:00 +0900'
+date: '2022-10-12 14:00:00 +0900'
 category: study
 tags: oracle examtopics 1z0-071
 image:
-  path: /assets/img/study_Oracle/2022-xx-xx-[ORACLE]_ExamTopics_11~20/logo.png
+  path: /assets/img/study_Oracle/2022-10-12-[ORACLE]_ExamTopics_11~20/logo.png
 ---
 
 1z0-071 Examtopics 11~20번 문제를 풀어보자.<br>
@@ -64,7 +64,7 @@ scalar subquery란 하나의 값, 즉 하나의 행에서 하나의 칼럼 값�
 
 <br>
 
-## Prob. 12 ⭕❌
+## Prob. 12 ❌
 ---
 
 Examine this query:
@@ -94,15 +94,18 @@ Answer : A, F
 해설 :
 
 A and F<br>
+A : `DEFINE` 을 사용해서 치환변수에 들어갈 값을 미리 지정할 수 있다.<br>
+F : 정확히는 모르겠지만 스크립트에 쿼리를 저장하여 할 수 있다고 한다...<br>
+[F 참고 링크 1 - Passing Parameters through the START Command](https://docs.oracle.com/cd/F49540_01/DOC/server.815/a66736/ch33.htm)<br>
+[F 참고 링크 2 - 구루비](http://wiki.gurubee.net/pages/viewpage.action?pageId=20021302)
 
-
-1차 시도 : B, D<br>
+1차 시도 : B, D 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 13 ⭕❌
+## Prob. 13 ❌
 ---
 
 You need to allow user ANDREW to:
@@ -127,19 +130,21 @@ F. GRANT UPDATE (title, address) ON customers TO andrew WITH ADMIN OPTION;
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
 해설 :
 
+C가 맞는 표현이다.
 
+[Examtopics](https://www.examtopics.com/discussions/oracle/view/22162-exam-1z0-071-topic-2-question-69-discussion/)
 
-1차 시도 : <br>
+1차 시도 : E 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 14 ⭕❌
+## Prob. 14 ❌
 ---
 
 You own table DEPARTMENTS, referenced by views, indexes, and synonyms.
@@ -164,19 +169,26 @@ F. It will delete all rows from the DEPARTMENTS table, but retain the empty tabl
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, B, E
 
 해설 :
 
+A : 맞음. `PURGE` 를 사용했기 떄문에 테이블이 `recyclebin`에 가지 않고 바로 삭제됨.<br>
+B : 맞음. `DROP` 시 `INDEX`, `TRIGGER` 가 함께 삭제된다.<br>
+C : 틀렸음. `DROP` 을 해도 `VIEW`, `SYNONYM`, `STORED PROECEDURE`, `FUNCTION`, `PACKAGE` 는 비활성화 되지만 삭제되지는 않는다. 테이블을 RECREATE 할 경우, 재활성화된다.<br>
+D : 틀렸음. C의 설명과 동일.<br>
+E : 맞음. `PURGE` 를 사용했기 때문에 롤백될수도 없고, 복구될수도 없다.<br>
+F : 틀렸음. 행이 삭제될 뿐만 아니라 테이블이 모두 삭제된다.<br>
 
+[Oracle Docs 링크](https://docs.oracle.com/database/121/SQLRF/statements_9003.htm#SQLRF01806)
 
-1차 시도 : <br>
+1차 시도 : B, C, D 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 15 ⭕❌
+## Prob. 15 ⭕
 ---
 
 Which three statements are true about Structured Query Language (SQL)? (Choose three.)
@@ -198,19 +210,26 @@ F. It is used to define encapsulation and polymorphism for a relational table.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B, C, E
 
 해설 :
 
+A. 틀렸음. hierarchical은 relational과는 다른 개념이다. hierarchical 구조는 일대일 관계로 일대다, 다대다 관계는 지원하지 않는 반면, relational 구조는 모두 지원한다.<br>
+B. 맞음. SQL은 관계형 데이터베이스를 위한 언어이다.<br>
+C. 맞음. 잘 모르겠는데 맞는 말인가보다.<br>
+D. 틀렸음. SQL은 관계형 데이터베이스를 위한 언어이다.<br>
+E. 맞음. SQL은 ACID를 특징으로 가진다.<br>
+F. 틀렸음. 그냥 틀린듯...<br>
 
+[ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/8463-exam-1z0-071-topic-1-question-290-discussion/)
 
-1차 시도 : <br>
+1차 시도 : B, C, E 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 16 ⭕❌
+## Prob. 16 ❌
 ---
 
 Which two statements are true about Oracle synonyms? (Choose two.)
@@ -230,13 +249,19 @@ E. A synonym can have a synonym.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B, E
 
 해설 :
 
+A : 틀렸음. `CREATE PUBLIC SYNONYM` 권한이 있어야 한다.<br>
+B : 맞음. 시노님은 object number를 가진다. `USER_OBJECTS` 테이블에서 `OBJECT_ID`를 가진다.<br>
+C : 틀렸음. 프라이빗 시노님은 해당 스키마에서만 unique하다.<br>
+D : 틀렸음. 스키마 오브젝트는 패키지에 있을 수 없다. -> PL/SQL 패키지에 있는 오브젝트에 생성할 수는 있으나, 활성화되지 않는다고 한다.<br>
+E : 맞음. 시노님은 시노님을 가질 수 있다.<br>
 
+[ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/8431-exam-1z0-071-topic-1-question-270-discussion/)
 
-1차 시도 : <br>
+1차 시도 : A, D 틀림<br>
 </div>
 </details>
 
