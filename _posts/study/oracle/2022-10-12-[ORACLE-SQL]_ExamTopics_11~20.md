@@ -67,8 +67,8 @@ scalar subquery란 하나의 값, 즉 하나의 행에서 하나의 칼럼 값�
 ## Prob. 12 ❌
 ---
 
-Examine this query:
-![prob12](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_11~20/prob12.png)
+Examine this query:<br>
+![prob12](/assets/img/study_Oracle/2022-10-12-[ORACLE-SQL]_ExamTopics_11~20/prob12.png)
 
 Which two methods should you use to prevent prompting for a hire date value when this query is executed? (Choose two.)
 
@@ -332,12 +332,12 @@ Answer :
 ## Prob. 19 ⭕❌
 ---
 
-Examine the description of the MEMBERS table:
-![prob19](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_11~20/prob19.png)
+Examine the description of the MEMBERS table:<br>
+![prob19](/assets/img/study_Oracle/2022-10-12-[ORACLE-SQL]_ExamTopics_11~20/prob19.png)
 
-Examine the partial query:
-SELECT city, last_name AS lname FROM members ...;
-You want to display all cities that contain the string AN. The cities must be returned in ascending order, with the last names further sorted in descending order.
+Examine the partial query:<br>
+SELECT city, last_name AS lname FROM members ...;<br>
+You want to display all cities that contain the string AN. The cities must be returned in ascending order, with the last names further sorted in descending order.<br>
 Which two clauses must you add to the query? (Choose two.)
 
 A. ORDER BY 1, 2
@@ -372,8 +372,8 @@ Answer :
 ## Prob. 20 ⭕❌
 ---
 
-Examine this partial command:
-![prob20](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_11~20/prob20.png)
+Examine this partial command:<br>
+![prob20](/assets/img/study_Oracle/2022-10-12-[ORACLE-SQL]_ExamTopics_11~20/prob20.png)
 
 Which two clauses are required for this command to execute successfully? (Choose two.)
 

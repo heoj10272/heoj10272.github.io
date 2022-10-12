@@ -67,7 +67,7 @@ B does not fulfill 'Minimum' Infrastrucure changes, it also does not talk about 
 
 솔루션 설계자가 설정한 IAM 정책은 다음과 같습니다.
 
-  ![prob_62](/assets/img/study_AWS/2022-06-12-SAA_ExamTopics_61~70/prob_62.png)
+  ![prob_62](/assets/img/study_AWS/2022-06-12-[AWS-SAA]_ExamTopics_61~70/prob_62.png)
 
 정책에서 허용할 액션은 무엇입니까?
 

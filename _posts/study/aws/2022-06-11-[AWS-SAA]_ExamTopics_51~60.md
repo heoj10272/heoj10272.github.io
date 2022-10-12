@@ -165,7 +165,7 @@ Also can user fargate with micro services without any issue.
 
 The following policy was developed by an Amazon EC2 administrator and assigned to an IAM group including numerous users:
 
-![prob_54](/assets/img/study_AWS/2022-06-11-SAA_ExamTopics_51~60/prob_54.png)
+![prob_54](/assets/img/study_AWS/2022-06-11-[AWS-SAA]_ExamTopics_51~60/prob_54.png)
 
 What impact does this policy have?
 

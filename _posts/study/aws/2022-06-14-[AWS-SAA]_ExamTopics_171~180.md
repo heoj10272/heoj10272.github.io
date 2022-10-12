@@ -341,7 +341,7 @@ Windows = FSx
 
 IAM 그룹은 다음 IAM 정책과 연결됩니다. 이것이 그 단체의 유일한 방침입니다.
 
-![prob_179](/assets/img/study_AWS/2022-06-14-SAA_ExamTopics_171~180/prob_179.png)
+![prob_179](/assets/img/study_AWS/2022-06-14-[AWS-SAA]_ExamTopics_171~180/prob_179.png)
 
 그룹 구성원에 대한 정책의 유효한 IAM 권한은 무엇입니까?
 

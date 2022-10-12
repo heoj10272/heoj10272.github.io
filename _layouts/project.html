@@ -21,44 +21,6 @@ layout: base
   {% unless nsd %}vocab="http://schema.org/" typeof="CreativeWork" resource="#project"{% endunless %}
   >
   <header>
-    <canvas id="canvas" width="300" height="300"></canvas>
-
-    <script type="importmap">
-    {
-      "imports": {
-        "three": "https://unpkg.com/three@0.141.0/build/three.module.js",
-        "GLTFLoader" : "https://unpkg.com/three@0.141.0/examples/jsm/loaders/GLTFLoaders.js"
-    }
-    </script>
-
-    <script type="module">
-        import {GLTFLoader} from 'GLTFLoader';
-        import * as THREE from 'three';
-        let scene = new THREE.Scene();
-        let renderer = new THREE.WebGLRenderer({
-            canvas : document.querySelector('#canvas'),
-            antialias : true
-        });
-        renderer.outputEncoding = THREE.sRGBEncoding;
-
-        let camera = new THREE.PerspectiveCamera(30, 1);
-        camera.position.set(0,0,5);
-
-        scene.background = new THREE.Color('white');
-        let light = new THREE.DirectionalLight(0xffff00, 10);
-        scene.add(light);
-
-        let loader = new GLTFLoader();
-        loader.load('/assets/img/shiba/scene.gltf', function(gltf){
-            scene.add(gltf.scene);
-            renderer.render(scene, camera);
-            function animate(){
-                requestAnimationFrame(animate)
-                renderer.render(scene, camera);
-            }
-            animate();
-        });
-    </script>
     <h1 class="page-title" property="name">{{ project.title }}</h1>
 
     <p class="post-date heading">
