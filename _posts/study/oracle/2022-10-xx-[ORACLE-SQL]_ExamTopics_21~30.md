@@ -62,7 +62,7 @@ F : 틀린듯? `FK` 도 `UNUSED` 될 수 있나보다.<br>
 
 <br>
 
-## Prob. 22 ⭕❌
+## Prob. 22 ⭕
 ---
 
 Which two are true about the precedence of operators and conditions? (Choose two.)
@@ -82,19 +82,20 @@ E. Operators are evaluated before conditions.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C, E
 
 해설 :
 
+연산자 우선순위는 다음과 같다.<br>
+`산술연산자` > `NOT` > `AND` > `OR`
 
-
-1차 시도 : <br>
+1차 시도 : C, E<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 23 ⭕❌
+## Prob. 23 ⭕
 ---
 
 In your session, the NLS_DATE_FORMAT is DD-MM-YYYY.
@@ -121,13 +122,16 @@ E. SELECT TO_CHAR(TO_DATE('29-10-2019') + INTERVAL '2' MONTH + INTERVAL '6' DAY 
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
 해설 :
 
+`INTERVAL` 을 사용하면 날짜 계산을 편하게 할 수 있다고 한다.<br>
+[참고 링크](https://gent.tistory.com/64)
 
+그냥 계산해보니까 C가 답이다...
 
-1차 시도 : <br>
+1차 시도 : C<br>
 </div>
 </details>
 
@@ -161,13 +165,13 @@ D.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
 해설 :
 
 
 
-1차 시도 : <br>
+1차 시도 : C<br>
 </div>
 </details>
 
