@@ -2,11 +2,11 @@
 layout: post
 title: "[ORACLE-SQL] ExamTopics 31~40"
 subtitle: ORACLE
-date: '2022-xx-xx 14:00:00 +0900'
+date: '2022-10-18 01:00:00 +0900'
 category: study
 tags: oracle examtopics 1z0-071
 image:
-  path: /assets/img/study_Oracle/2022-xx-xx-[ORACLE-SQL]_ExamTopics_31~40/logo.png
+  path: /assets/img/study_Oracle/2022-10-18-[ORACLE-SQL]_ExamTopics_31~40/logo.png
 ---
 
 1z0-071 Examtopics 31~40번 문제를 풀어보자.<br>
@@ -21,7 +21,7 @@ image:
 <hr/>
 <br>
 
-## Prob. 31 ⭕❌
+## Prob. 31 ❌
 ---
 
 Which three statements are true about GLOBAL TEMPORARY TABLES? (Choose three.)
@@ -43,19 +43,36 @@ F. A GLOBAL TEMPORARY TABLE'S definition is available to multiple sessions.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C, D, F
 
 해설 :
 
+`GLOBAL TEMPORARY TABLE`, 즉 `전역 임시 테이블`은 `SESSION` 또는 `TX` 레벨의 임시 데이터를 저장하는 용도로 사용된다.<br>
+오라클의 실행 계획을 저장하기 위한 `Plan` 테이블이 전역 임시 테이블의 대표적인 사례이다.
 
+`ON COMMIT DELETE ROWS` : `TX` 단위 데이터 유지, `COMMIT` 시 데이터 소실.<br>
+`ON COMMIT PRESERVE ROWS` : `SESSION` 단위 데이터 유지, `COMMIT` 해도 데이터 유지, 다른 세션에서 조회 불가.
 
-1차 시도 : <br>
+즉, 테이블 정의는 모든 세션에서 권한 보유시 조회 가능하나 내부 데이터는 세션별로 독립적이기 때문에 다른 세션에서 접근이 불가능하다.
+
+임시 테이블에도 `INDEX`, `VIEW`, `TRIGGER` 생성, `PK` 설정 가능하다.
+
+A : 틀렸음. 첫 `DML` 이 시작될 때 할당되는 듯 하다.
+B : 틀렸음. 다른 세션에서는 접근이 불가능함.
+C : 맞음. `TRUNCATE` 를 사용하면 테이블의 모든 행을 삭제한다.
+D : 맞음. 어떤 옵션이든 `SESSION` 이 종료되면 함께 종료된다.
+E : 틀렸음. `ON COMMIT PRESERVE ROWS` 로 설정하면, `DELETE` 를 해도 `ROLLBACK` 가능하다.
+F : 맞음. 세션별로 정의가 가능하다. 권한은 있어야하는듯 하다.
+
+[ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/8895-exam-1z0-071-topic-1-question-298-discussion/)
+
+1차 시도 : B, D, E 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 32 ⭕❌
+## Prob. 32 ⭕
 ---
 
 Which two statements are true about the SET VERIFY ON command? (Choose two.)
@@ -75,19 +92,22 @@ E. It can be used in SQL Developer and SQL*Plus.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D, E (+B)
 
 해설 :
 
+`DEFINE` 한 값, `&&` 도 나오고, `SQL Developer` 와 `SQL*Plus` 에서도 사용 가능하다는데 ..<br>
+B도 답이라는데 일단 맞다고 해야겠다.
 
+[ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/20161-exam-1z0-071-topic-2-question-28-discussion/)
 
-1차 시도 : <br>
+1차 시도 : D, E<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 33 ⭕❌
+## Prob. 33 ❓
 ---
 
 Examine this list of requirements for a sequence:
@@ -115,19 +135,22 @@ F. CREATE SEQUENCE emp_seq START WITH 1 CACHE;
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D, E
 
 해설 :
 
+3번 문항에 의해 중복된 값은 허용되지 않으므로, `CYCLE` 옵션은 배제되어야 할 것 같다.<br>
+5번 문항은 값에 차이가 날 경우를 줄이라는 뜻 같은데, 이 경우 캐시를 사용하지 않는 `NOCACHE`를 사용하면 될 것 같다.<br>
 
+[시퀀스 갭에 대한 블로그 설명 링크](https://doughman.tistory.com/m/11)
 
-1차 시도 : <br>
+1차 시도 : 모름<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 34 ⭕❌
+## Prob. 34 ⭕
 ---
 
 Which three queries execute successfully? (Choose three.)
@@ -149,19 +172,20 @@ F. SELECT 1 / SYSDATE - DATE '2019-01-01' FROM DUAL;
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B, D, E
 
 해설 :
 
+날짜와 날짜, 날짜와 숫자(일 수로 계산됨)은 허용되므로, B, D, E가 답인 것 같다.<br>
+E는 아마 일 수가 출력될 것 같다.
 
-
-1차 시도 : <br>
+1차 시도 : B, D, E 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 35 ⭕❌
+## Prob. 35 ⭕
 ---
 
 Which two are true about granting object privileges on tables, views, and sequences? (Choose two.)
@@ -185,9 +209,13 @@ Answer :
 
 해설 :
 
+![oracle_privs](/assets/img/study_Oracle/2022-10-18-[ORACLE-SQL]_ExamTopics_31~40/oracle_privs.png)
 
+위 표를 참조하자.
 
-1차 시도 : <br>
+[표 출처 링크](https://techgoeasy.com/create-user-system-privileges-object-privileges/)
+
+1차 시도 : C, D 맞음<br>
 </div>
 </details>
 
@@ -196,8 +224,8 @@ Answer :
 ## Prob. 36 ⭕❌
 ---
 
-Examine the description of the BOOKS table:
-![prob36](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_21~30/prob36.png)
+Examine the description of the BOOKS table:<br>
+![prob36](/assets/img/study_Oracle/2022-10-18-[ORACLE-SQL]_ExamTopics_31~40/prob36.png)
 
 The table has 100 rows.
 Examine this sequence of statements issued in a new session:
@@ -271,10 +299,10 @@ Answer :
 ---
 
 Examine the data in the EMP table:
-![prob38](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_21~30/prob39.png)
+![prob38](/assets/img/study_Oracle/2022-10-18-[ORACLE-SQL]_ExamTopics_31~40/prob39.png)
 
 You execute this query:
-![prob38-1](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_21~30/prob38-1.png)
+![prob38-1](/assets/img/study_Oracle/2022-10-18-[ORACLE-SQL]_ExamTopics_31~40/prob38-1.png)
 
 Why does an error occur?
 
