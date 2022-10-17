@@ -10,7 +10,7 @@ image:
 ---
 
 1z0-071 Examtopics 11~20번 문제를 풀어보자.<br>
-1차 x/x<br>
+1차 4/10<br>
 
 <!--more-->
 
