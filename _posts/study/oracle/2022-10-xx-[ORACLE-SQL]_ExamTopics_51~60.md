@@ -6,7 +6,7 @@ date: '2022-xx-xx 14:00:00 +0900'
 category: study
 tags: oracle examtopics 1z0-071
 image:
-  path: /assets/img/study_Oracle/2022-xx-xx-[ORACLE]_ExamTopics_51~60/logo.png
+  path: /assets/img/study_Oracle/2022-xx-xx-[ORACLE-SQL]_ExamTopics_51~60/logo.png
 ---
 
 1z0-071 Examtopics 51~60번 문제를 풀어보자.<br>

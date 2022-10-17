@@ -5,7 +5,7 @@ title: Algorithm
 slug: algorithm
 category: study
 sidebar: true
-order: 3
+order: 5
 description: >
    Algorithm study / Problem solutions
 ---

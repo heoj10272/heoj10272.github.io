@@ -1,7 +1,7 @@
 ---
 layout: tag-list
 type: tag
-title: WEB
+title: Web
 slug: web
 category: study
 sidebar: true

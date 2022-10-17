@@ -1,11 +1,11 @@
 ---
 layout: tag-list
 type: tag
-title: Cryptography
-slug: cryptography
+title: Linux
+slug: linux
 category: study
 sidebar: true
-order: 6
+order: 1
 description: >
-   Cryptography study
+   Linux study
 ---
