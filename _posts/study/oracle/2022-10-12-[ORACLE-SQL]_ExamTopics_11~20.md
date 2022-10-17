@@ -373,7 +373,7 @@ Answer : B, E
 
 <br>
 
-## Prob. 20 ❓❌
+## Prob. 20 ❓
 ---
 
 Examine this partial command:<br>
