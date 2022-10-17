@@ -2,11 +2,11 @@
 layout: post
 title: "[ORACLE-SQL] ExamTopics 21~30"
 subtitle: ORACLE
-date: '2022-xx-xx 14:00:00 +0900'
+date: '2022-10-17 14:00:00 +0900'
 category: study
 tags: oracle examtopics 1z0-071
 image:
-  path: /assets/img/study_Oracle/2022-xx-xx-[ORACLE]_ExamTopics_21~30/logo.png
+  path: /assets/img/study_Oracle/2022-10-17-[ORACLE]_ExamTopics_21~30/logo.png
 ---
 
 1z0-071 Examtopics 21~30번 문제를 풀어보자.<br>
@@ -141,24 +141,24 @@ Answer : C
 ---
 
 Examine the data in the INVOICES table:
-![prob24](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_21~30/prob24.png)
+![prob24](/assets/img/study_Oracle/2022-10-17-[ORACLE-SQL]_ExamTopics_21~30/prob24.png)
 
-Examine the data in the CURRENCIES table:
-![prob24-1](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_21~30/prob24-1.png)
+Examine the data in the CURRENCIES table:<br>
+![prob24-1](/assets/img/study_Oracle/2022-10-17-[ORACLE-SQL]_ExamTopics_21~30/prob24-1.png)
 
 Which query returns the currencies in CURRENCIES that are not present in INVOICES?
 
 A.
-![prob24-a](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_21~30/prob24-a.png)
+![prob24-a](/assets/img/study_Oracle/2022-10-17-[ORACLE-SQL]_ExamTopics_21~30/prob24-a.png)
 
 B.
-![prob24-b](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_21~30/prob24-b.png)
+![prob24-b](/assets/img/study_Oracle/2022-10-17-[ORACLE-SQL]_ExamTopics_21~30/prob24-b.png)
 
 C.
-![prob24-c](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_21~30/prob24-c.png)
+![prob24-c](/assets/img/study_Oracle/2022-10-17-[ORACLE-SQL]_ExamTopics_21~30/prob24-c.png)
 
 D.
-![prob24-d](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_21~30/prob24-d.png)
+![prob24-d](/assets/img/study_Oracle/2022-10-17-[ORACLE-SQL]_ExamTopics_21~30/prob24-d.png)
 
 ---
 <details>
@@ -258,7 +258,7 @@ F : 맞음.<br>
 
 <br>
 
-## Prob. 27 ⭕❌
+## Prob. 27 ❌
 ---
 
 Which two statements are true about *_TABLES views? (Choose two.)
