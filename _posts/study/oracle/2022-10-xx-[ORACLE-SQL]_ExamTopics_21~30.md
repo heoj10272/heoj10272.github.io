@@ -169,7 +169,8 @@ Answer : C
 
 해설 :
 
-
+그냥 C 같다.
+B는 `MINUS`를 하더라도 Currency가 출력될 수 있다.
 
 1차 시도 : C<br>
 </div>
@@ -177,7 +178,7 @@ Answer : C
 
 <br>
 
-## Prob. 25 ⭕❌
+## Prob. 25 ❌
 ---
 
 The SALES table has columns PROD_ID and QUANTITY_SOLD of data type NUMBER.
@@ -198,19 +199,25 @@ E. SELECT COUNT(prod_id) FROM sales WHERE quantity_sold > 55000 GROUP BY prod_id
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B, E
 
 해설 :
 
+A : `COUNT(*)`은 `GROUP BY` 절이 아니라 `HAVING` 절에 들어가야 하며, `GROUP BY` 절의 문법도 틀렸다.<br>
+B : 맞음<br>
+C : `WHERE` 절은 `GROUP BY` 앞에 위치해야 한다.<br>
+D : `COUNT(*)`은 `HAVING` 절의 조건으로 들어가야 한다.<br>
+E : 맞음<br>
 
+[ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/11349-exam-1z0-071-topic-1-question-242-discussion/)
 
-1차 시도 : <br>
+1차 시도 : B, C 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 26 ⭕❌
+## Prob. 26 ⭕
 ---
 
 Which three statements are true about single-row functions? (Choose three.)
@@ -232,13 +239,20 @@ F. The data type returned can be different from the data type of the argument.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B, D, F
 
 해설 :
 
+A : 틀렸음. 단일 행 함수는 테이블당이 아니라 로우당 하나의 결과를 출력한다.<br>
+B : 맞음. 반면에 서브쿼리는 255 level까지 `nest` 될 수 있음에 주의.<br>
+C : 틀렸음. <br>
+D : 맞음.<br>
+E : 틀렸음. `WHERE` 절 뿐만 아니라 `SELECT`, `HAVING` 절 등 다양한 절에 올 수 있음.<br>
+F : 맞음.<br>
 
+[ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/20182-exam-1z0-071-topic-2-question-46-discussion/)
 
-1차 시도 : <br>
+1차 시도 : B, D, F 맞음<br>
 </div>
 </details>
 
@@ -266,19 +280,20 @@ F. You must have ANY TABLE system privileges, or be granted object privileges on
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, D
 
 해설 :
 
+A : 맞음.<br>
+D : 맞음. `DBA_TABLES` 를 참조하기 위해서 `ANY TABLE` 시스템 권한이 필요한것이다.<br>
 
-
-1차 시도 : <br>
+1차 시도 : A, B 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 28 ⭕❌
+## Prob. 28 ❌
 ---
 
 Which two statements are true about conditional INSERT ALL? (Choose two.)
@@ -298,19 +313,28 @@ E. The total number of rows inserted is always equal to the number of rows retur
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B, C
 
 해설 :
 
+A : 여러 테이블에도 삽입할 수 있나보다. 아래 구문 문법 참조.<br>
+B : 맞음. <br>
+C : 맞음. 각각의 `WHEN` 조건은 서브쿼리의 각 행에 사용된다.<br>
+D : 틀렸음. 다음 `INSERT` 구문 문법 참조.<br>
+```sql
+INSERT [ ALL | FIRST ] WHEN condition1 THEN INTO table_1 (column_list ) VALUES (value_list) WHEN condition2 THEN  INTO table_2(column_list ) VALUES (value_list) ELSE INTO table_3(column_list ) VALUES (value_list) Subquery
+```
+E : `WHEN` 절의 조건에 따라 다를 듯 하다.<br>
 
+[ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/8439-exam-1z0-071-topic-1-question-278-discussion/)
 
-1차 시도 : <br>
+1차 시도 : A, C 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 29 ⭕❌
+## Prob. 29 ❌
 ---
 
 Which two statements are true about the COUNT function? (Choose two.)
@@ -330,19 +354,21 @@ E. A SELECT statement using the COUNT function with a DISTINCT keyword cannot ha
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, C
 
 해설 :
 
+아스타리스크(`*`)를 `COUNT`에 사용하면, `NULL`을 포함한 값을 세고, 확실한 표현식을 넣으면, `NULL` 값을 제외한 값을 센다.
 
+[ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/12707-exam-1z0-071-topic-1-question-258-discussion/)
 
-1차 시도 : <br>
+1차 시도 : A, D 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 30 ⭕❌
+## Prob. 30 ⭕
 ---
 
 The EMPLOYEES table contains columns EMP_ID of data type NUMBER and HIRE_DATE of data type DATE.
@@ -363,13 +389,15 @@ D. SELECT emp_id, NEXT_DAY(ADD_MONTHS(hire_date, 6), 'MONDAY') FROM employees;
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D
 
 해설 :
 
+`ADD_MONTHS` 와 `NEXT_DAY` 의 구문 문법을 확인해보자.
 
+[내 블로그 링크](https://heoj10272.github.io/study/ORACLE-_SQL_함수_활용_1.html)
 
-1차 시도 : <br>
+1차 시도 : D 맞음<br>
 </div>
 </details>
 
