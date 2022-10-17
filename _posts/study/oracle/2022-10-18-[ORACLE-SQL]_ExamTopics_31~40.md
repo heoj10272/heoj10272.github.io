@@ -227,13 +227,13 @@ Answer : C, D
 Examine the description of the BOOKS table:<br>
 ![prob36](/assets/img/study_Oracle/2022-10-18-[ORACLE-SQL]_ExamTopics_31~40/prob36.png)
 
-The table has 100 rows.
-Examine this sequence of statements issued in a new session:
-INSERT INTO books VALUES ('ADV112', 'Adventures of Tom Sawyer', NULL, NULL);
-SAVEPOINT a;
-DELETE FROM books;
-ROLLBACK TO SAVEPOINT a;
-ROLLBACK;
+The table has 100 rows.<br>
+Examine this sequence of statements issued in a new session:<br>
+INSERT INTO books VALUES ('ADV112', 'Adventures of Tom Sawyer', NULL, NULL);<br>
+SAVEPOINT a;<br>
+DELETE FROM books;<br>
+ROLLBACK TO SAVEPOINT a;<br>
+ROLLBACK;<br>
 Which two statements are true? (Choose two.)
 
 A. The second ROLLBACK command replays the delete.
@@ -298,10 +298,10 @@ Answer :
 ## Prob. 38 ⭕❌
 ---
 
-Examine the data in the EMP table:
+Examine the data in the EMP table:<br>
 ![prob38](/assets/img/study_Oracle/2022-10-18-[ORACLE-SQL]_ExamTopics_31~40/prob39.png)
 
-You execute this query:
+You execute this query:<br>
 ![prob38-1](/assets/img/study_Oracle/2022-10-18-[ORACLE-SQL]_ExamTopics_31~40/prob38-1.png)
 
 Why does an error occur?
@@ -366,7 +366,7 @@ Answer :
 ## Prob. 40 ⭕❌
 ---
 
-No user-defined locks are used in your database.
+No user-defined locks are used in your database.<br>
 Which three are true about Transaction Control Language (TCL)? (Choose three.)
 
 A. ROLLBACK without the TO SAVEPOINT clause undoes all the transaction's changes, releases its locks, and erases all its savepoints.
