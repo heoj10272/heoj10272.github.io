@@ -67,7 +67,7 @@ F : 틀린듯? `FK` 도 `UNUSED` 될 수 있나보다.<br>
 
 Which two are true about the precedence of operators and conditions? (Choose two.)
 
-A. || has a higher order of precedence than + (addition).
+A. \|\| has a higher order of precedence than + (addition).
 
 B. + (addition) has a higher order of precedence than * (multiplication).
 
@@ -102,9 +102,10 @@ In your session, the NLS_DATE_FORMAT is DD-MM-YYYY.
 There are 86400 seconds in a day.
 Examine this result:
 
-DATE -
------------
+DATE -<br>
+ㅡㅡㅡㅡㅡㅡ<br>
 02-JAN-2020
+
 Which statement returns this?
 
 A. SELECT TO_CHAR(TO_DATE('29-10-2019') + INTERVAL '2' MONTH + INTERVAL '4' DAY - INTERVAL '120' SECOND, 'DD-MON-YYYY') AS "date" FROM DUAL;
@@ -137,10 +138,10 @@ Answer : C
 
 <br>
 
-## Prob. 24 ⭕❌
+## Prob. 24 ⭕
 ---
 
-Examine the data in the INVOICES table:
+Examine the data in the INVOICES table:<br>
 ![prob24](/assets/img/study_Oracle/2022-10-17-[ORACLE-SQL]_ExamTopics_21~30/prob24.png)
 
 Examine the data in the CURRENCIES table:<br>
@@ -172,7 +173,7 @@ Answer : C
 그냥 C 같다.
 B는 `MINUS`를 하더라도 Currency가 출력될 수 있다.
 
-1차 시도 : C<br>
+1차 시도 : C 맞음<br>
 </div>
 </details>
 
@@ -371,9 +372,9 @@ Answer : A, C
 ## Prob. 30 ⭕
 ---
 
-The EMPLOYEES table contains columns EMP_ID of data type NUMBER and HIRE_DATE of data type DATE.
-You want to display the date of the first Monday after the completion of six months since hiring.
-The NLS_TERRITORY parameter is set to AMERICA in the session and, therefore, Sunday is the first day of the week.
+The EMPLOYEES table contains columns EMP_ID of data type NUMBER and HIRE_DATE of data type DATE.<br>
+You want to display the date of the first Monday after the completion of six months since hiring.<br>
+The NLS_TERRITORY parameter is set to AMERICA in the session and, therefore, Sunday is the first day of the week.<br>
 Which query can be used?
 
 A. SELECT emp_id, ADD_MONTHS(hire_date, 6), NEXT_DAY('MONDAY') FROM employees;
