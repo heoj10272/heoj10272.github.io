@@ -205,7 +205,7 @@ E. REFERENCES can be granted only on tables.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C, D
 
 해설 :
 
