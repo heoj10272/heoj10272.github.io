@@ -10,7 +10,7 @@ image:
 ---
 
 1z0-071 Examtopics 31~40번 문제를 풀어보자.<br>
-1차 x/x<br>
+1차 7/10<br>
 
 <!--more-->
 
@@ -221,7 +221,7 @@ Answer : C, D
 
 <br>
 
-## Prob. 36 ⭕❌
+## Prob. 36 ⭕
 ---
 
 Examine the description of the BOOKS table:<br>
@@ -251,19 +251,19 @@ E. The second ROLLBACK command does nothing.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C, D
 
 해설 :
 
+그냥 C, D
 
-
-1차 시도 : <br>
+1차 시도 : C, D 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 37 ⭕❌
+## Prob. 37 ⭕
 ---
 
 Which two statements are true about an Oracle database? (Choose two.)
@@ -283,23 +283,25 @@ E. A NUMBER column without data has a zero value.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C, D
 
 해설 :
 
+E : `NUMBER` 칼럼에 데이터가 들어있지 않은 경우, 0이 아닌 `NULL` 값이 위치한다.
 
+[ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/21762-exam-1z0-071-topic-2-question-64-discussion/)
 
-1차 시도 : <br>
+1차 시도 : C, D 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 38 ⭕❌
+## Prob. 38 ⭕
 ---
 
 Examine the data in the EMP table:<br>
-![prob38](/assets/img/study_Oracle/2022-10-18-[ORACLE-SQL]_ExamTopics_31~40/prob39.png)
+![prob38](/assets/img/study_Oracle/2022-10-18-[ORACLE-SQL]_ExamTopics_31~40/prob38.png)
 
 You execute this query:<br>
 ![prob38-1](/assets/img/study_Oracle/2022-10-18-[ORACLE-SQL]_ExamTopics_31~40/prob38-1.png)
@@ -319,19 +321,19 @@ D. An alias name must not be used in a GROUP BY clause.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D
 
 해설 :
 
+`GROUP BY` 절에는 앨리어스를 사용할 수 없다.
 
-
-1차 시도 : <br>
+1차 시도 : D 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 39 ⭕❌
+## Prob. 39 ❌
 ---
 
 Which two actions can you perform with object privileges? (Choose two.)
@@ -351,19 +353,27 @@ E. Execute a procedure or function in another schema.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B, E
 
 해설 :
 
+A : 틀림. `ROLE` 을 생성하는건 `System Priv` 가 필요하다.<br>
+B : 맞음. `REFERENCE` 권한으로 가능.<br>
+C : 틀림. `DELETE ANY TABLE` 이라는 시스템 권한으로 가능.<br>
+D : 틀림? 아마도 시스템 권한인듯.
+E : 맞음.
 
+[Oracle Docs - CREATE ROLE](https://docs.oracle.com/database/121/SQLRF/statements_6014.htm#SQLRF01311)
 
-1차 시도 : <br>
+[Oracle Docs - Privilegs](https://docs.oracle.com/database/121/TTSQL/privileges.htm#TTSQL338)
+
+1차 시도 : A, D 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 40 ⭕❌
+## Prob. 40 ⭕
 ---
 
 No user-defined locks are used in your database.<br>
@@ -386,13 +396,20 @@ F. COMMIT erases all the transaction's savepoints and releases its locks.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, E, F
 
 해설 :
 
+트랜잭션이 끝나는 경우는 다음과 같다 :
+1. `COMMIT` 을 사용한 경우.
+2. `SAVEPOINT` 절을 사용하지 않은 `ROLLBACK` 을 사용했을 경우.
+3. `DDL` 을 사용했을 경우.
+4. 연결을 종료했을 경우.
+5. 비정상적으로 프로세스가 종료되었을 경우. 이 경우 트랜잭션은 롤백된다.
 
+[ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/20437-exam-1z0-071-topic-2-question-58-discussion/)
 
-1차 시도 : <br>
+1차 시도 : A, E, F 맞음<br>
 </div>
 </details>
 
