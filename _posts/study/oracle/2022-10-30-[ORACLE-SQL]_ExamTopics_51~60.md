@@ -2,11 +2,11 @@
 layout: post
 title: "[ORACLE-SQL] ExamTopics 51~60"
 subtitle: ORACLE
-date: '2022-xx-xx 14:00:00 +0900'
+date: '2022-10-30 3:00:00 +0900'
 category: study
 tags: oracle examtopics 1z0-071
 image:
-  path: /assets/img/study_Oracle/2022-xx-xx-[ORACLE-SQL]_ExamTopics_51~60/logo.png
+  path: /assets/img/study_Oracle/2022-10-30-[ORACLE-SQL]_ExamTopics_51~60/logo.png
 ---
 
 1z0-071 Examtopics 51~60번 문제를 풀어보자.<br>
@@ -25,27 +25,27 @@ image:
 ---
 
 Examine the description of the EMPLOYEES table:
-![prob51](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob51.png)
+![prob51](/assets/img/study_Oracle/2022-10-30-[ORACLE-SQL]_ExamTopics_51~60/prob51.png)
 
 Which two queries will result in an error? (Choose two.)
 
 A.
-![prob51-a](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob51-a.png)
+![prob51-a](/assets/img/study_Oracle/2022-10-30-[ORACLE-SQL]_ExamTopics_51~60/prob51-a.png)
 
 B.
-![prob51-b](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob51-b.png)
+![prob51-b](/assets/img/study_Oracle/2022-10-30-[ORACLE-SQL]_ExamTopics_51~60/prob51-b.png)
 
 C.
-![prob51-c](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob51-c.png)
+![prob51-c](/assets/img/study_Oracle/2022-10-30-[ORACLE-SQL]_ExamTopics_51~60/prob51-c.png)
 
 D.
-![prob51-d](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob51-d.png)
+![prob51-d](/assets/img/study_Oracle/2022-10-30-[ORACLE-SQL]_ExamTopics_51~60/prob51-d.png)
 
 E.
-![prob51-e](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob51-e.png)
+![prob51-e](/assets/img/study_Oracle/2022-10-30-[ORACLE-SQL]_ExamTopics_51~60/prob51-e.png)
 
 F.
-![prob51-f](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob51-f.png)
+![prob51-f](/assets/img/study_Oracle/2022-10-30-[ORACLE-SQL]_ExamTopics_51~60/prob51-f.png)
 
 ---
 <details>
@@ -182,19 +182,19 @@ BOOK_SEQ is an existing sequence in your schema.
 Which two CREATE TABLE commands are valid? (Choose two.)
 
 A.
-![prob55-a](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob55-a.png)
+![prob55-a](/assets/img/study_Oracle/2022-10-30-[ORACLE-SQL]_ExamTopics_51~60/prob55-a.png)
 
 B.
-![prob55-b](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob55-b.png)
+![prob55-b](/assets/img/study_Oracle/2022-10-30-[ORACLE-SQL]_ExamTopics_51~60/prob55-b.png)
 
 C.
-![prob55-c](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob55-c.png)
+![prob55-c](/assets/img/study_Oracle/2022-10-30-[ORACLE-SQL]_ExamTopics_51~60/prob55-c.png)
 
 D.
-![prob55-d](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob55-d.png)
+![prob55-d](/assets/img/study_Oracle/2022-10-30-[ORACLE-SQL]_ExamTopics_51~60/prob55-d.png)
 
 E.
-![prob55-e](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob55-e.png)
+![prob55-e](/assets/img/study_Oracle/2022-10-30-[ORACLE-SQL]_ExamTopics_51~60/prob55-e.png)
 
 ---
 <details>
