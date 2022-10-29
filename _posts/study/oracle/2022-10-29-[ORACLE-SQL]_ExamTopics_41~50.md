@@ -406,12 +406,14 @@ Answer : B, F
 
 해설 :
 
-A : 틀림. `NULL` 이 들어간다.
-B : 맞음. 하지만 값이 들어있지 않는 `NULL` 이 대상이기 때문에, 결과도 `NULL`이 나올 것이다.
-C : 틀림. `PK` 거나 `UNIQUE` 칼럼이 아니기 때문에, 중복된 값을 가질 수 있음.
-D : 틀림. `DATE` 형의 데이터타입에 산술 연산을 하면, 날짜에 반영됨.
-E : 틀림. `DEFAULT` 로 정해둔게 없기 때문에, `NULL` 이 들어감.
-F : 맞음. 좀 애매하지만, 보통 ID 칼럼을 `PK` 로 쓰기 때문에 맞을듯.
+A : 틀림. `NULL` 이 들어간다.<br>
+B : 맞음. 하지만 값이 들어있지 않는 `NULL` 이 대상이기 때문에, 결과도 `NULL`이 나올 것이다.<br>
+C : 틀림. `PK` 거나 `UNIQUE` 칼럼이 아니기 때문에, 중복된 값을 가질 수 있음.<br>
+D : 틀림. `DATE` 형의 데이터타입에 산술 연산을 하면, 날짜에 반영됨.<br>
+E : 틀림. `DEFAULT` 로 정해둔게 없기 때문에, `NULL` 이 들어감.<br>
+F : 맞음. 좀 애매하지만, 보통 ID 칼럼을 `PK` 로 쓰기 때문에 맞을듯.<br>
+
+[ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/8221-exam-1z0-071-topic-1-question-229-discussion/)
 
 1차 시도 : E, F 틀림<br>
 </div>

@@ -21,7 +21,7 @@ image:
 <hr/>
 <br>
 
-## Prob. 51 ⭕❌
+## Prob. 51 ❌
 ---
 
 Examine the description of the EMPLOYEES table:
@@ -52,19 +52,20 @@ F.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C, E
 
 해설 :
 
+`WHERE` 절에서는 `Alias` 사용이 불가능하다.
+`ORDER BY` 절에서는 `Alias` 도 허용되고, 표현식을 사용해도 된다.
 
-
-1차 시도 : <br>
+1차 시도 : C, D 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 52 ⭕❌
+## Prob. 52 ❌
 ---
 
 You create a table named 123.
@@ -83,19 +84,20 @@ D. SELECT * FROM '123';
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 :
 
+19c에서는 쌍따옴표로 테이블명 감싸기 불가능.<br>
+12c에서는 가능
 
-
-1차 시도 : <br>
+1차 시도 : A 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 53 ⭕❌
+## Prob. 53 ❌
 ---
 
 Which two statements are true regarding indexes? (Choose two.)
@@ -115,28 +117,35 @@ E. A table belonging to one user cannot have an index that belongs to a differen
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B, D
 
 해설 :
 
+A : 틀림. 인덱스와 테이블은 별개이다. 따라서 `UPDATE` 를 하더라도 인덱스에는 영향이 없다.<br>
+B : 맞음. A의 설명 참고.<br>
+C : 틀림. 인덱스는 바꿀 수 없으며, 삭제 후 재생성 하는 방법 밖에 없다.<br>
+D : 맞음. 테이블을 삭제하면 그에 따른 인덱스도 함께 삭제된다.<br>
+E : 맞음. 가능하다. 권한은 있어야 하는듯.<br>
 
+[ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/24117-exam-1z0-082-topic-1-question-77-discussion/)
 
-1차 시도 : <br>
+1차 시도 : A, D 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 54 ⭕❌
+## Prob. 54 ❓
 ---
 
-Which two are true about queries using set operators (UNION, UNION ALL, INTERSECT and MINUS)? (Choose two.)
+Which two are true about queries using set operators (UNION, UNION ALL, INTERSECT and MINUS)? (Choose three.)
 
 A. The name of each column in the first SELECT list must match the name of the corresponding column in each subsequent SELECT list.
 
 B. None of the set operators can be used when selecting CLOB columns.
 
 C. There must be an equal number of columns in each SELECT list.
+
 D. Each SELECT statement in the query can have an ORDER BY clause.
 
 E. The FOR UPDATE clause cannot be specified.
@@ -146,19 +155,27 @@ E. The FOR UPDATE clause cannot be specified.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B, C, E
 
 해설 :
 
+답이 세 개다. 수정완료.<br>
 
+A : 틀림. 칼럼의 이름은 달라도 되며, 데이터 타입과 갯수만 일치하면 된다.<br>
+B : 맞음. Oracle Docs에 따르면, `BLOB`, `CLOB`, `BFILE`, `VARRAY` 데이터 타입과 `NESTED TABLE` 은 사용할 수 없다.<br>
+C : 맞음. 갯수와 데이터 타입은 일치해야 한다.<br>
+D : 틀림. `ORDER BY` 절은 각 서브쿼리에 사용될 수 없다. <br>
+E : 맞음. Oracle Docs에 따르면, `FOR UPDATE` 절은 사용할 수 없다.<br>
 
-1차 시도 : <br>
+[Oracle Docs](https://docs.oracle.com/database/121/SQLRF/queries004.htm#SQLRF52341)
+
+1차 시도 : B, C 모름<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 55 ⭕❌
+## Prob. 55 ❓
 ---
 
 BOOK_SEQ is an existing sequence in your schema.
@@ -184,19 +201,59 @@ E.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, D
 
 해설 :
 
+livesql에서 돌려본 바로는 다음과 같다.
+```sql
+--A.    
+create table bookings (
+    bk_id       NUMBER(4)   DEFAULT book_seq.nextval primary key,
+    start_date  DATE        DEFAULT SYSDATE,
+    end_date    DATE        DEFAULT SYSDATE NOT NULL);
+-- table created.
 
+--B.
+create table bookings (
+    bk_id       NUMBER(4),
+    start_date  DATE    DEFAULT SYSDATE,
+    end_date    DATE    DEFAULT (end_date >= start_date));
+-- ORA-00907: missing right parenthesis
 
-1차 시도 : <br>
+--C.
+create table bookings (
+    bk_id       NUMBER(4)   NOT NULL DEFAULT book_seq.CURRVAL,
+    start_date  DATE        NOT NULL,
+    end_date    DATE        DEFAULT SYSDATE);
+-- ORA-00907: missing right parenthesis
+
+--D.
+create table bookings (
+    bk_id       NUMBER(4)   NOT NULL PRIMARY KEY,
+    start_date  DATE        NOT NULL,
+    end_date    DATE        DEFAULT SYSDATE);
+DROP TABLE BOOKINGS;
+-- table created.
+
+--E.
+create table bookings (
+    bk_id       NUMBER(4)   DEFAULT book_seq.CURRVAL,
+    start_date  DATE        DEFAULT SYSDATE,
+    end_date    DATE        DEFAULT start_date);
+-- ORA-00904: "START_DATE": invalid identifier 
+```
+
+'missing right parenthesis' 는 우괄호가 없을 때 나오는 오류라는데, 제대로 줬음에도 불구하고 나와서 이유는 잘 모르겠다...<br>
+하지만 B, E의 경우는 `start_date` 라는 값이 아예 없기 때문에 실행이 불가능한 것으로 보이고, C의 경우는 `CURRVAL` 을 사용하기 위해서는 해당 세션에서 `NEXTVAL` 의 실행이 선행되어야 하기 때문에 불가능한 것으로 보인다.
+
+1차 시도 : 모름<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 56 ⭕❌
+## Prob. 56 ❌
 ---
 
 Which three statements are true about multiple row subqueries? (Choose three.)
@@ -216,13 +273,19 @@ E. They cannot contain a subquery.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B, C, D
 
 해설 :
 
+A : 틀림. 다중 행 서브쿼리는 하나 이상의 값을 반환한다.<br>
+B : 맞음. `HAVING` 절을 포함할 수 있다. `WHERE` 절이랑 같이 둘 다 포함할 수 있나보다.<br>
+C : 맞음. `GROUP BY` 절을 포함할 수 있다.<br>
+D : 맞음. 다중 열을 반환할 수 있다.<br>
+E : 틀림. 서브쿼리는 서브쿼리를 포함할 수 없나보다.<br>
 
+[ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/9457-exam-1z0-071-topic-1-question-254-discussion/)
 
-1차 시도 : <br>
+1차 시도 : A, B, D 틀림<br>
 </div>
 </details>
 
