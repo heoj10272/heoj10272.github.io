@@ -2,7 +2,7 @@
 layout: post
 title: "[ORACLE-SQL] ExamTopics 51~60"
 subtitle: ORACLE
-date: '2022-10-30 3:00:00 +0900'
+date: '2022-10-30 1:00:00 +0900'
 category: study
 tags: oracle examtopics 1z0-071
 image:
