@@ -21,7 +21,7 @@ image:
 <hr/>
 <br>
 
-## Prob. 61 ⭕❌
+## Prob. 61 ❌
 ---
 
 Which three statements are true about inner and outer joins? (Choose three.)
@@ -43,33 +43,38 @@ F. An inner join returns matched rows.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, B, F
 
 해설 :
 
+A : 맞음.<br>
+B : 맞음. <br>
+C : 틀렸음. Oracle 문법 말고도 사용할 수 있다.<br>
+D : 틀렸음. 여러개의 테이블도 가능하다.<br>
+E : 틀렸음. 매치되는 행도 출력한다.<br>
+F : 맞음.<br>
 
-
-1차 시도 : <br>
+1차 시도 : A, D, F 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 62 ⭕❌
+## Prob. 62 ❌
 ---
 
 Which statement will execute successfully?
 
-A.
+A.<br>
 ![prob62-a](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob62-a.png)
 
-B.
+B.<br>
 ![prob62-b](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob62-b.png)
 
-C.
+C.<br>
 ![prob62-c](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob62-c.png)
 
-D.
+D.<br>
 ![prob62-d](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob62-d.png)
 
 ---
@@ -77,19 +82,20 @@ D.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
 
 해설 :
 
+`ORDER BY` 뒤에 오는 숫자는 칼럼을 뜻한다.<br>
+알고는 있었는데 칼럼명이 숫자일 때 그걸 그대로 쓸 때에도 오류가 나는줄은 몰랐다 ...<br>
 
-
-1차 시도 : <br>
+1차 시도 : C 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 63 ⭕❌
+## Prob. 63 ⭕
 ---
 
 Examine the description of the EMPLOYEES table:
@@ -117,13 +123,17 @@ E.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B, E
 
 해설 :
 
+A : 틀렸음. `WHERE` 절에는 그룹 함수가 올 수 없다.<br>
+B : 맞음.<br>
+C : 틀렸음. `WHERE` 절은 단일 행 서브쿼리를 요구하지만, 해당 서브쿼리는 다중 행 서브쿼리이다.<br>
+D : 틀렸음. C를 개선하여 다중 행 서브쿼리로 만들었지만, 이번에는 문제 의도와 맞지 않음. 자신의 부서의 평균 급여 뿐만 아니라 다른 부서의 평균 급여보다 높으면 전부 출력됨.<br>
+E : 맞음.<br>
 
-
-1차 시도 : <br>
+1차 시도 : B, E 맞음<br>
 </div>
 </details>
 

@@ -10,7 +10,7 @@ image:
 ---
 
 1z0-071 Examtopics 51~60번 문제를 풀어보자.<br>
-1차 x/x<br>
+1차 2/10<br>
 
 <!--more-->
 
@@ -291,7 +291,7 @@ E : 틀림. 서브쿼리는 서브쿼리를 포함할 수 없나보다.<br>
 
 <br>
 
-## Prob. 57 ⭕❌
+## Prob. 57 ⭕
 ---
 
 Which three actions can you perform on an existing table containing data? (Choose three.)
@@ -313,19 +313,26 @@ F. Add a new NOT NULL column with a DEFAULT value.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, E, F
 
 해설 :
 
+A. 맞음.<br>
+B. 틀렸음. 실습 때 경험했던걸 떠올려보자. 테이블의 칼럼 순서를 바꾸는것은 불가능하다.<br>
+C. 틀렸음. 솔직히 무슨 말인지 모르겠다.<br>
+D. 틀렸음. 데이터타입을 바꿀 칼럼은 비어있어야 한다.<br>
+E. 맞음.<br>
+F. 맞음.<br>
 
+[ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/20227-exam-1z0-071-topic-2-question-25-discussion/)
 
-1차 시도 : <br>
+1차 시도 : A, E, F 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 58 ⭕❌
+## Prob. 58 ❌
 ---
 
 Which two statements are true about selecting related rows from two tables based on an Entity Relationship Diagram (ERD)? (Choose two.)
@@ -345,19 +352,25 @@ E. An inner join relates rows within the same table.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B, D
 
 해설 :
 
+A : 틀렸음. 가능하다.<br>
+B : 맞음.<br>
+C : 틀렸음. 그냥 두 테이블만 있으면 되는거 아닌가?<br>
+D : 맞음. <br>
+E : 틀렸음. `INNER JOIN` 이 아닌 `SELF JOIN` 에 대한 설명.<br>
 
+[ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/20271-exam-1z0-071-topic-2-question-32-discussion/)
 
-1차 시도 : <br>
+1차 시도 : B, E 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 59 ⭕❌
+## Prob. 59 ⭕
 ---
 
 Which three statements about roles are true? (Choose three.)
@@ -385,15 +398,23 @@ Answer :
 
 해설 :
 
+A : 틀렸음. `GRANT` 를 통해 부여된다.<br>
+B : 맞음.<br>
+C : 틀렸음. 연관된 권한의 집합이 아닐 수 있고, `USER` 만이 아닌 `ROLL` 에도 부여될 수 있다.<br>
+D : 맞음.<br>
+E : 틀렸음. `GRANT` 를 사용한다.<br>
+F : 틀렸음. `GRANT` 를 사용한다.<br>
+G : 맞음.<br>
 
+[ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/25763-exam-1z0-071-topic-2-question-63-discussion/)
 
-1차 시도 : <br>
+1차 시도 : B, D, G 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 60 ⭕❌
+## Prob. 60 ❌
 ---
 
 The INVOICE table has a QTY_SOLD column of data type NUMBER and an INVOICE_DATE column of data type DATE.
@@ -415,13 +436,19 @@ E. CONCAT (qty_sold, invoice_date) : requires explicit conversion
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, B
 
 해설 :
 
+A : 맞음. `dd-month-yyyy`는 묵시적 형변환으로 인정된다.<br>
+B : 맞음.<br>
+C : 틀렸음. 명시적 형변환이 요구된다.<br>
+D : 틀렸음. 암시적 형변환으로 인정된다.<br>
+E : 틀렸음. 암시적 형변환으로 인정된다.<br>
 
+[ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/21058-exam-1z0-071-topic-2-question-39-discussion/)
 
-1차 시도 : <br>
+1차 시도 : B, E 틀림<br>
 </div>
 </details>
 
