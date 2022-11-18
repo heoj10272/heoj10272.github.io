@@ -2,11 +2,11 @@
 layout: post
 title: "[ORACLE-SQL] ExamTopics 61~70"
 subtitle: ORACLE
-date: '2022-xx-xx 14:00:00 +0900'
+date: '2022-11-17 14:00:00 +0900'
 category: study
 tags: oracle examtopics 1z0-071
 image:
-  path: /assets/img/study_Oracle/2022-xx-xx-[ORACLE-SQL]_ExamTopics_61~70/logo.png
+  path: /assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_61~70/logo.png
 ---
 
 1z0-071 Examtopics 61~70번 문제를 풀어보자.<br>
@@ -66,16 +66,16 @@ F : 맞음.<br>
 Which statement will execute successfully?
 
 A.<br>
-![prob62-a](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob62-a.png)
+![prob62-a](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob62-a.png)
 
 B.<br>
-![prob62-b](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob62-b.png)
+![prob62-b](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob62-b.png)
 
 C.<br>
-![prob62-c](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob62-c.png)
+![prob62-c](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob62-c.png)
 
 D.<br>
-![prob62-d](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob62-d.png)
+![prob62-d](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob62-d.png)
 
 ---
 <details>
@@ -99,24 +99,24 @@ Answer : A
 ---
 
 Examine the description of the EMPLOYEES table:
-![prob63](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob63.png)
+![prob63](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob63.png)
 
 Which two queries return all rows for employees whose salary is greater than the average salary in their department? (Choose two.)
 
 A.
-![prob63-a](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob63-a.png)
+![prob63-a](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob63-a.png)
 
 B.
-![prob63-b](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob63-b.png)
+![prob63-b](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob63-b.png)
 
 C.
-![prob63-c](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob63-c.png)
+![prob63-c](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob63-c.png)
 
 D.
-![prob63-d](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob63-d.png)
+![prob63-d](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob63-d.png)
 
 E.
-![prob63-e](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob63-e.png)
+![prob63-e](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob63-e.png)
 
 ---
 <details>
@@ -163,7 +163,7 @@ G. The SQL:1999 compliant ANSI join syntax supports natural joins.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : for test
 
 해설 :
 
@@ -214,7 +214,7 @@ Answer :
 ---
 
 Examine this statement:
-![prob66](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob66.png)
+![prob66](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob66.png)
 
 What is returned upon execution?
 A. an error
@@ -243,7 +243,7 @@ Answer :
 ---
 
 Examine this statement:
-![prob67](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob67.png)
+![prob67](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob67.png)
 
 What is returned upon execution?
 A. an error
@@ -274,19 +274,19 @@ Answer :
 Which two statements execute successfully? (Choose two.)
 
 A.
-![prob68-a](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob68-a.png)
+![prob68-a](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob68-a.png)
 
 B.
-![prob68-b](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob68-b.png)
+![prob68-b](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob68-b.png)
 
 C.
-![prob68-c](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob68-c.png)
+![prob68-c](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob68-c.png)
 
 D.
-![prob68-d](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob68-d.png)
+![prob68-d](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob68-d.png)
 
 E.
-![prob68-e](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_51~60/prob68-e.png)
+![prob68-e](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob68-e.png)
 
 ---
 <details>
