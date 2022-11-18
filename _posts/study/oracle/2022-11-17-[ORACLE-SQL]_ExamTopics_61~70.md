@@ -66,16 +66,16 @@ F : 맞음.<br>
 Which statement will execute successfully?
 
 A.<br>
-![prob62-a](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob62-a.png)
+![prob62-a](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_61~70/prob62-a.png)
 
 B.<br>
-![prob62-b](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob62-b.png)
+![prob62-b](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_61~70/prob62-b.png)
 
 C.<br>
-![prob62-c](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob62-c.png)
+![prob62-c](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_61~70/prob62-c.png)
 
 D.<br>
-![prob62-d](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob62-d.png)
+![prob62-d](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_61~70/prob62-d.png)
 
 ---
 <details>
@@ -98,25 +98,25 @@ Answer : A
 ## Prob. 63 ⭕
 ---
 
-Examine the description of the EMPLOYEES table:
-![prob63](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob63.png)
+Examine the description of the EMPLOYEES table:<br>
+![prob63](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_61~70/prob63.png)
 
 Which two queries return all rows for employees whose salary is greater than the average salary in their department? (Choose two.)
 
-A.
-![prob63-a](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob63-a.png)
+A.<br>
+![prob63-a](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_61~70/prob63-a.png)
 
-B.
-![prob63-b](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob63-b.png)
+B.<br>
+![prob63-b](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_61~70/prob63-b.png)
 
-C.
-![prob63-c](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob63-c.png)
+C.<br>
+![prob63-c](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_61~70/prob63-c.png)
 
-D.
-![prob63-d](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob63-d.png)
+D.<br>
+![prob63-d](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_61~70/prob63-d.png)
 
-E.
-![prob63-e](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob63-e.png)
+E.<br>
+![prob63-e](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_61~70/prob63-e.png)
 
 ---
 <details>
@@ -213,8 +213,8 @@ Answer :
 ## Prob. 66 ⭕❌
 ---
 
-Examine this statement:
-![prob66](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob66.png)
+Examine this statement:<br>
+![prob66](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_61~70/prob66.png)
 
 What is returned upon execution?
 A. an error
@@ -242,8 +242,8 @@ Answer :
 ## Prob. 67 ⭕❌
 ---
 
-Examine this statement:
-![prob67](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob67.png)
+Examine this statement:<br>
+![prob67](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_61~70/prob67.png)
 
 What is returned upon execution?
 A. an error
@@ -273,20 +273,20 @@ Answer :
 
 Which two statements execute successfully? (Choose two.)
 
-A.
-![prob68-a](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob68-a.png)
+A.<br>
+![prob68-a](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_61~70/prob68-a.png)
 
-B.
-![prob68-b](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob68-b.png)
+B.<br>
+![prob68-b](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_61~70/prob68-b.png)
 
-C.
-![prob68-c](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob68-c.png)
+C.<br>
+![prob68-c](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_61~70/prob68-c.png)
 
-D.
-![prob68-d](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob68-d.png)
+D.<br>
+![prob68-d](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_61~70/prob68-d.png)
 
-E.
-![prob68-e](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_51~60/prob68-e.png)
+E.<br>
+![prob68-e](/assets/img/study_Oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_61~70/prob68-e.png)
 
 ---
 <details>
