@@ -10,7 +10,7 @@ image:
 ---
 
 1z0-071 Examtopics 61~70번 문제를 풀어보자.<br>
-1차 x/x<br>
+1차 3/10<br>
 
 <!--more-->
 
@@ -163,11 +163,8 @@ G. The SQL:1999 compliant ANSI join syntax supports natural joins.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-<<<<<<< Updated upstream:_posts/study/oracle/2022-11-17-[ORACLE-SQL]_ExamTopics_61~70.md
-Answer : for test
-=======
+
 Answer : A, C, E, G
->>>>>>> Stashed changes:_posts/study/oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_61~70.md
 
 해설 :
 
@@ -405,7 +402,7 @@ SHUTDOWN [NORMAL|IMMEDIATE|TRANSACTIONAL|ABORT]
 
 <br>
 
-## Prob. 70 ⭕❌
+## Prob. 70 ⭕
 ---
 
 Which two are true about using constraints? (Choose two.)
@@ -427,13 +424,18 @@ F. A table can have only one PRIMARY KEY but may have multiple FOREIGN KEY const
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D, F
 
 해설 :
 
+A : 틀렸음. `NOT NULL` 은 칼럼 레벨에서 적용 가능함.<br>
+B : 틀렸음. `PK` 는 하나를 가질 수 있지만, `FK` 갯수 제한이 없음.<br>
+C : 틀렸음. 칼럼 명은 달라도 되고 값만 일치하면 됨.<br>
+D : 맞음.<br>
+E : 틀렸음. `PK` 는 하나만 허용됨.<br>
+F : 맞음.<br>
 
-
-1차 시도 : <br>
+1차 시도 : D, F 맞음<br>
 </div>
 </details>
 
