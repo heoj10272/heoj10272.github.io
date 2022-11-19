@@ -2,11 +2,11 @@
 layout: post
 title: "[ORACLE-SQL] ExamTopics 71~80"
 subtitle: ORACLE
-date: '2022-xx-xx 14:00:00 +0900'
+date: '2022-11-19 16:20:00 +0900'
 category: study
 tags: oracle examtopics 1z0-071
 image:
-  path: /assets/img/study_Oracle/2022-xx-xx-[ORACLE-SQL]_ExamTopics_71~80/logo.png
+  path: /assets/img/study_Oracle/2022-11-19-[ORACLE-SQL]_ExamTopics_71~80/logo.png
 ---
 
 1z0-071 Examtopics 71~80번 문제를 풀어보자.<br>
@@ -24,8 +24,8 @@ image:
 ## Prob. 71 ⭕❌
 ---
 
-Examine this statement:
-![prob71](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_71~80/prob71.png)
+Examine this statement:<br>
+![prob71](/assets/img/study_Oracle/2022-11-19-[ORACLE-SQL]_ExamTopics_71~80/prob71.png)
 
 On which two columns of the table will an index be created automatically? (Choose two.)
 
@@ -61,11 +61,11 @@ Answer :
 ## Prob. 72 ⭕❌
 ---
 
-Examine this partial query:
-![prob72](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_71~80/prob72.png)
+Examine this partial query:<br>
+![prob72](/assets/img/study_Oracle/2022-11-19-[ORACLE-SQL]_ExamTopics_71~80/prob72.png)
 
-Examine this output:
-![prob72-1](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_71~80/prob72-1.png)
+Examine this output:<br>
+![prob72-1](/assets/img/study_Oracle/2022-11-19-[ORACLE-SQL]_ExamTopics_71~80/prob72-1.png)
 
 Which GROUP BY clause must be added so the query returns the results shown?
 
@@ -97,8 +97,8 @@ Answer :
 ## Prob. 73 ⭕❌
 ---
 
-Examine the description of the EMPLOYEES table:
-![prob73](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_71~80/prob73.png)
+Examine the description of the EMPLOYEES table:<br>
+![prob73](/assets/img/study_Oracle/2022-11-19-[ORACLE-SQL]_ExamTopics_71~80/prob73.png)
 
 Which statement will execute successfully, returning distinct employees with non-null first names?
 
@@ -130,28 +130,28 @@ Answer :
 ## Prob. 74 ⭕❌
 ---
 
-Examine the description of the BRICKS table:
-![prob74](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_71~80/prob74.png)
+Examine the description of the BRICKS table:<br>
+![prob74](/assets/img/study_Oracle/2022-11-19-[ORACLE-SQL]_ExamTopics_71~80/prob74.png)
 
-Examine the description of the BRICKS_STAGE table:
-![prob74-1](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_71~80/prob74-1.png)
+Examine the description of the BRICKS_STAGE table:<br>
+![prob74-1](/assets/img/study_Oracle/2022-11-19-[ORACLE-SQL]_ExamTopics_71~80/prob74-1.png)
 
 Which two queries execute successfully? (Choose two.)
 
-A.
-![prob74-a](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_71~80/prob74-a.png)
+A.<br>
+![prob74-a](/assets/img/study_Oracle/2022-11-19-[ORACLE-SQL]_ExamTopics_71~80/prob74-a.png)
 
-B.
-![prob74-b](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_71~80/prob74-b.png)
+B.<br>
+![prob74-b](/assets/img/study_Oracle/2022-11-19-[ORACLE-SQL]_ExamTopics_71~80/prob74-b.png)
 
-C.
-![prob74-c](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_71~80/prob74-c.png)
+C.<br>
+![prob74-c](/assets/img/study_Oracle/2022-11-19-[ORACLE-SQL]_ExamTopics_71~80/prob74-c.png)
 
-D.
-![prob74-d](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_71~80/prob74-d.png)
+D.<br>
+![prob74-d](/assets/img/study_Oracle/2022-11-19-[ORACLE-SQL]_ExamTopics_71~80/prob74-d.png)
 
-E.
-![prob74-e](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_71~80/prob74-e.png)
+E.<br>
+![prob74-e](/assets/img/study_Oracle/2022-11-19-[ORACLE-SQL]_ExamTopics_71~80/prob74-e.png)
 
 ---
 <details>
@@ -174,10 +174,10 @@ Answer :
 ---
 
 Table EMPLOYEES contains columns including EMPLOYEE_ID, JOB_ID and SALARY.
-Only the EMPLOYEE_ID column is indexed.
-Rows exist for employees 100 and 200.
-Examine this statement:
-![prob75](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_71~80/prob75.png)
+Only the EMPLOYEE_ID column is indexed.<br>
+Rows exist for employees 100 and 200.<br>
+Examine this statement:<br>
+![prob75](/assets/img/study_Oracle/2022-11-19-[ORACLE-SQL]_ExamTopics_71~80/prob75.png)
 
 Which two statements are true? (Choose two.)
 
@@ -213,15 +213,15 @@ Answer :
 ## Prob. 76 ⭕❌
 ---
 
-Examine these two queries and their output:
-SELECT deptno, dname FROM dept;
-![prob76](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_71~80/prob76.png)
+Examine these two queries and their output:<br>
+SELECT deptno, dname FROM dept;<br>
+![prob76](/assets/img/study_Oracle/2022-11-19-[ORACLE-SQL]_ExamTopics_71~80/prob76.png)
 
-SELECT emame, job, deptno FROM emp ORDER BY deptno;
-![prob76-1](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_71~80/prob76-1.png)
+SELECT emame, job, deptno FROM emp ORDER BY deptno;<br>
+![prob76-1](/assets/img/study_Oracle/2022-11-19-[ORACLE-SQL]_ExamTopics_71~80/prob76-1.png)
 
-Now examine this query:
-![prob76-2](/assets/img/study_Oracle/2022-10-xx-[ORACLE-SQL]_ExamTopics_71~80/prob76-2.png)
+Now examine this query:<br>
+![prob76-2](/assets/img/study_Oracle/2022-11-19-[ORACLE-SQL]_ExamTopics_71~80/prob76-2.png)
 
 How many rows will be displayed?
 
