@@ -22,7 +22,7 @@ $font-family-heading: {{ vars.font_heading | default:site.font_heading | default
 $code-font-family:    {{ vars.font_code    | default:site.font_code    | default:ui_font_code   }};
 $theme-color:         {{ vars.theme_color  | default:site.theme_color  | default:'rgb(8,46,57)' }};
 
-$root-font-size:        {{ vars.root_font_size        | default:18 }}px; // default : 15
+$root-font-size:        {{ vars.root_font_size        | default:23 }}px; // default : 15
 $root-font-size-medium: {{ vars.root_font_size_medium | default:19 }}px; // default : 16
 $root-font-size-large:  {{ vars.root_font_size_large  | default:20 }}px; // default : 17
 $root-font-size-print:  {{ vars.root_font_size_print  | default:8  }}pt; // default : 8
