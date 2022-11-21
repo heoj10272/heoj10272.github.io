@@ -1,0 +1,240 @@
+---
+layout: post
+title: "[Ansible] Ansible 실습 환경 설정"
+subtitle: AWS
+date: '2022-11-21 20:00:00 +0900'
+category: study
+tags: ansible
+image:
+  path: /assets/img/study_Ansible/2022-11-21-[Ansible]_Ansible_실습_환경_설정/logo.png
+---
+
+`Ansible` 실습 환경을 설정해보자.<br>
+`Vagrant`, `VirtualBox` 등을 설치한다.
+
+
+<!--more-->
+
+* this unordered seed list will be replaced by the toc
+{:toc}
+
+<br>
+
+
+# 1. Chocolatey 설치 -> Vagrant 설치
+---
+
+`Chocolatey` 는 패키지 관리자이다.<br>
+명령어 `choco` 로 쉽게 패키지를 설치하고 관리가 가능하다.<br>
+
+`Chocolatey` 다운로드 페이지 : [링크](https://chocolatey.org/install)
+
+위 링크에 들어가서 다운받아도 되고, `Powershell` 또는 `Terminal` 을 관리자 권한으로 실행한 뒤 아래 명령어를 실행하자.
+
+```bash
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+```
+
+![1](/assets/img/study_Ansible/2022-11-21-[Ansible]_Ansible_실습_환경_설정/1.png)
+
+나는 이미 설치했기 때문에 경고가 출력된다.<br>
+설치가 완료되었으면, 다음의 명령어로 설치를 확인해보자.<br>
+
+```bash
+choco --version
+```
+
+![2](/assets/img/study_Ansible/2022-11-21-[Ansible]_Ansible_실습_환경_설정/2.png)
+
+이렇게 나오면 설치 완료다.
+
+다음으로 아래 명령어를 실행해서 `Vagrant` 를 설치하자.<br>
+`Vagrant` 를 사용하면 어디서든 동일한 패키지를 설치하여 동일한 환경을 구성할 수 있다.
+
+```bash
+choco install vagrant
+```
+
+![3](/assets/img/study_Ansible/2022-11-21-[Ansible]_Ansible_실습_환경_설정/3.png)
+
+마찬가지로 나는 이미 설치되어 있다.<br>
+만약 `vagrant` 명령어가 실행되지 않는다면, 쉘을 재시작하면 된다.<br>
+
+설치가 되었으면 확인해보자.
+
+```bash
+vagrant --version
+```
+
+![5](/assets/img/study_Ansible/2022-11-21-[Ansible]_Ansible_실습_환경_설정/5.png)
+
+설치가 확인되었으면 이제 `VirtualBox` 설치로 넘어가자.
+
+# 2. VirtualBox 설치
+---
+
+`VMware` 는 사용 소프트웨어지만, `VirtualBox` 는 오픈소스이다.<br>
+때문에 회사에서는 `VMware` 를 구매하지 않으면 사용할 수 없다.<br>
+`VMware` 도 좋지만, `VirtualBox` 의 사용에도 익숙해져보자.
+
+원본 다운로드 링크 : [링크](https://www.virtualbox.org/wiki/Downloads)
+
+아래 명령어로 `VirtualBox` 를 설치하자.<br>
+마찬가지로 `choco` 명령어를 사용한다.
+
+```bash
+choco install virtualbox virtualbox-guest-additions-guest.install
+```
+
+![4](/assets/img/study_Ansible/2022-11-21-[Ansible]_Ansible_실습_환경_설정/4.png)
+
+마찬가지 이하 생략.
+
+이제 설치된 `VirtualBox` 를 실행해보자.
+그냥 윈도우에서 실행하면 된다.
+
+![6](/assets/img/study_Ansible/2022-11-21-[Ansible]_Ansible_실습_환경_설정/6.png)
+
+잘 실행이 되었다면, 처음에는 VM 없이 빈 화면이 나온다.<br>
+이제 네트워크가 제대로 설정이 되어있는지 확인해야한다.<br>
+`도구` - `네트워크` 버튼을 클릭하자.
+
+![7](/assets/img/study_Ansible/2022-11-21-[Ansible]_Ansible_실습_환경_설정/7.png)
+
+네트워크 IP가 `192.168.56.x` 로 설정되어 있는지 확인하자.<br>
+안되어있다면 `만들기` 로 만들면 된다.<br>
+이제 `Vagrantfile` 을 생성해보자.
+
+# 3. Vagrantfile 파일 작성
+---
+
+`PowerShell` 또는 `Terminal` 로 이동하자.<br>
+참고로 내가 사용하는건 `Windows Terminal` 이다.<br>
+
+이제 `vagrant`, `iac` 폴더를 생성해야한다.<br>
+아래 명령어를 차례로 실행하자.<br>
+
+```
+cd C:\Windows\System32
+mkdir vagrant
+cd vagrant
+mkdir iac
+cd iac
+```
+
+여기서 `Vagrantfile` 파일을 생성하면 된다.<br>
+명령어로 생성해도 되지만, 나는 그냥 윈도우 상에서 이동해서 텍스트 파일을 생성한 다음 `.txt` 확장자를 지웠다.
+
+해당 파일 내용은 다음과 같이 입력하자.
+
+```Python
+# -*- mode: ruby -*-
+# vi: set ft=ruby :
+
+Vagrant.configure("2") do |config|
+
+  $vm_provider = "virtualbox"
+  $box_image = "ubuntu/focal64"
+
+  $vm_name_prefix = "iac"
+
+  $number_of_control_planes = 1
+  $number_of_nodes = 1
+
+  $vm_subnet = "192.168.56"
+
+  $vm_control_plane_cpus = 2
+  $vm_control_plane_memory = 2048
+  $vm_node_cpus = 2
+  $vm_node_memory = 2048
+
+  # Controllers
+  (1..$number_of_control_planes).each do |i|
+    config.vm.define "#{$vm_name_prefix}-control#{i}" do |node|
+      node.vm.box = $box_image
+      node.vm.provider $vm_provider do |vm|
+        vm.name = "#{$vm_name_prefix}-control#{i}"
+        vm.cpus = $vm_control_plane_cpus
+        vm.memory = $vm_control_plane_memory
+      end
+      node.vm.hostname = "#{$vm_name_prefix}-control#{i}"
+      node.vm.network "private_network", ip: "#{$vm_subnet}.1#{i}", nic_type: "virtio"
+    end
+  end
+
+  # Nodes
+  (1..$number_of_nodes).each do |i|
+    config.vm.define "#{$vm_name_prefix}-node#{i}" do |node|
+      node.vm.box = $box_image
+      node.vm.provider $vm_provider do |vm|
+        vm.name = "#{$vm_name_prefix}-node#{i}"
+        vm.cpus = $vm_node_cpus
+        vm.memory = $vm_node_memory
+      end
+      node.vm.hostname = "#{$vm_name_prefix}-node#{i}"
+      node.vm.network "private_network", ip: "#{$vm_subnet}.2#{i}", nic_type: "virtio"
+    end
+  end
+
+  # Disable Synced Folder
+  config.vm.synced_folder ".", "/vagrant", disabled: true
+
+  # Enable SSH Password Authentication
+  config.vm.provision "shell", inline: <<-SHELL
+    sed -i 's/archive.ubuntu.com/mirror.kakao.com/g' /etc/apt/sources.list
+    sed -i 's/security.ubuntu.com/mirror.kakao.com/g' /etc/apt/sources.list
+    sed -i 's/PasswordAuthentication no/PasswordAuthentication yes/g' /etc/ssh/sshd_config
+    systemctl restart ssh
+  SHELL
+end
+```
+
+# 4. VM 배포
+---
+
+이제 가상 머신을 배포해보자.
+
+아래 명령어를 실행하면 된다.
+
+```
+vagrant up
+```
+
+최초 실행시에는 굉장히 많은 시간이 소요된다.<br>
+
+또한 `PowerShell` 에서는 명령어 실행중에 화면을 클릭하게 되면 선택 모드로 전환되며 진행이 멈추게 되므로, 클릭했다면 우클릭이나 엔터를 쳐서 빠져나올 수 있다.
+
+![8](/assets/img/study_Ansible/2022-11-21-[Ansible]_Ansible_실습_환경_설정/8.png)
+
+화면 클릭시 위 화면 처럼 프로그램 명이 `선택 관리자:Windows PowerShell` 로 바뀐다.
+
+잘 실행이 되었다면 VM의 상태를 확인해보자.
+
+```
+vagrant status
+```
+
+![9](/assets/img/study_Ansible/2022-11-21-[Ansible]_Ansible_실습_환경_설정/9.png)
+
+위 사진처럼 `iac-control1`, `iac-node1` 이 모두 `running` 상태면 성공이다.
+
+# 5. VM 접속
+---
+
+이제 VM에 접속해보자.
+
+```
+vagrant ssh iac-control1
+```
+
+위 명령어는 `iac-control1` 에 `ssh` 로 접속한다.<br>
+`ssh` 외에 `vagrant` 명령어 몇 개를 알아보자.<br>
+
+```
+vagrant up [VM 이름] -- vm 실행
+vagrant halt [VM 이름] -- vm 종료
+vagrant destroy [VM 이름] -- vm 삭제
+```
+
+`destroy` 로 삭제한 VM은 `up`으로 다시 만들 수 있다.<br>
+대괄호는 옵션으로, 따로 VM을 지정하지 않으면 모든 VM이 대상이 된다.
