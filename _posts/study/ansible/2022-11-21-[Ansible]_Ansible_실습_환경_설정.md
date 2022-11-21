@@ -12,9 +12,6 @@ image:
 `Ansible` 실습 환경을 설정해보자.<br>
 `Vagrant`, `VirtualBox` 등을 설치한다.
 
-div {
-				border-radius:3px;
-		 }
 <!--more-->
 
 * this unordered seed list will be replaced by the toc
@@ -34,7 +31,9 @@ div {
 위 링크에 들어가서 다운받아도 되고, `Powershell` 또는 `Terminal` 을 관리자 권한으로 실행한 뒤 아래 명령어를 실행하자.
 
 ```bash
-Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
+Set-ExecutionPolicy Bypass -Scope Process -Force; 
+[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; 
+iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1'))
 ```
 
 ![1](/assets/img/study_Ansible/2022-11-21-[Ansible]_Ansible_실습_환경_설정/1.png)
@@ -216,9 +215,9 @@ vagrant up
 vagrant status
 ```
 
-<div markdown="1">
 ![9](/assets/img/study_Ansible/2022-11-21-[Ansible]_Ansible_실습_환경_설정/9.png)
-</div>
+
+![9](/assets/img/study_Ansible/2022-11-21-[Ansible]_Ansible_실습_환경_설정/9.png){:style="radius_border=3px"}
 
 위 사진처럼 `iac-control1`, `iac-node1` 이 모두 `running` 상태면 성공이다.
 
