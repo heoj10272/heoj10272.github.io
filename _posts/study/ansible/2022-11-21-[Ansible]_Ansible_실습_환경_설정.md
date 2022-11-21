@@ -12,7 +12,9 @@ image:
 `Ansible` 실습 환경을 설정해보자.<br>
 `Vagrant`, `VirtualBox` 등을 설치한다.
 
-
+div {
+				border-radius:3px;
+		 }
 <!--more-->
 
 * this unordered seed list will be replaced by the toc
@@ -214,7 +216,9 @@ vagrant up
 vagrant status
 ```
 
+<div markdown="1">
 ![9](/assets/img/study_Ansible/2022-11-21-[Ansible]_Ansible_실습_환경_설정/9.png)
+</div>
 
 위 사진처럼 `iac-control1`, `iac-node1` 이 모두 `running` 상태면 성공이다.
 
