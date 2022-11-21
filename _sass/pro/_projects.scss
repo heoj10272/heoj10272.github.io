@@ -66,8 +66,7 @@ main:not(.layout-resume) {
     overflow: hidden;
     box-shadow: .125rem .125rem 1rem rgba(0, 0, 0, 0.2);
     contain: content;
-    //border-radius: $border-radius;
-    border-radius: 200px;
+    border-radius: $border-radius+$border-radius+$border-radius;
 
     page-break-inside: avoid;
 
