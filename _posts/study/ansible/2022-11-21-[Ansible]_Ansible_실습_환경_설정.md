@@ -217,8 +217,6 @@ vagrant status
 
 ![9](/assets/img/study_Ansible/2022-11-21-[Ansible]_Ansible_실습_환경_설정/9.png)
 
-![9](/assets/img/study_Ansible/2022-11-21-[Ansible]_Ansible_실습_환경_설정/9.png){:style="radius_border=3px"}
-
 위 사진처럼 `iac-control1`, `iac-node1` 이 모두 `running` 상태면 성공이다.
 
 # 5. VM 접속
