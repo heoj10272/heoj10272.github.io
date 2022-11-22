@@ -2,7 +2,7 @@
 layout: page
 title: Cookies Policy
 permalink: /cookies-policy/
----
+--- 
 
 ## TL;DR
 

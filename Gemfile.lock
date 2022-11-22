@@ -23,7 +23,7 @@ GEM
       http_parser.rb (~> 0)
     ethon (0.15.0)
       ffi (>= 1.15.0)
-    eventmachine (1.2.7)
+    eventmachine (1.2.7) 
     execjs (2.8.1)
     faraday (1.10.0)
       faraday-em_http (~> 1.0)
