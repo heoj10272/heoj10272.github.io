@@ -41,7 +41,7 @@ iex ((New-Object System.Net.WebClient).DownloadString('https://community.chocola
 나는 이미 설치했기 때문에 경고가 출력된다.<br>
 설치가 완료되었으면, 다음의 명령어로 설치를 확인해보자.<br>
 
-```bash
+```shell
 choco --version
 ```
 
@@ -52,7 +52,7 @@ choco --version
 다음으로 아래 명령어를 실행해서 `Vagrant` 를 설치하자.<br>
 `Vagrant` 를 사용하면 어디서든 동일한 패키지를 설치하여 동일한 환경을 구성할 수 있다.
 
-```bash
+```shell
 choco install vagrant
 ```
 
@@ -63,7 +63,7 @@ choco install vagrant
 
 설치가 되었으면 확인해보자.
 
-```bash
+```shell
 vagrant --version
 ```
 
@@ -83,7 +83,7 @@ vagrant --version
 아래 명령어로 `VirtualBox` 를 설치하자.<br>
 마찬가지로 `choco` 명령어를 사용한다.
 
-```bash
+```shell
 choco install virtualbox virtualbox-guest-additions-guest.install
 ```
 
@@ -115,7 +115,7 @@ choco install virtualbox virtualbox-guest-additions-guest.install
 이제 `vagrant`, `iac` 폴더를 생성해야한다.<br>
 아래 명령어를 차례로 실행하자.<br>
 
-```
+```shell
 cd C:\Windows\System32
 mkdir vagrant
 cd vagrant
@@ -198,7 +198,7 @@ end
 
 아래 명령어를 실행하면 된다.
 
-```
+```shell
 vagrant up
 ```
 
@@ -212,7 +212,7 @@ vagrant up
 
 잘 실행이 되었다면 VM의 상태를 확인해보자.
 
-```
+```shell
 vagrant status
 ```
 
@@ -225,14 +225,14 @@ vagrant status
 
 이제 VM에 접속해보자.
 
-```
+```shell
 vagrant ssh iac-control1
 ```
 
 위 명령어는 `iac-control1` 에 `ssh` 로 접속한다.<br>
 `ssh` 외에 `vagrant` 명령어 몇 개를 알아보자.<br>
 
-```
+```shell
 vagrant up [VM 이름] -- vm 실행
 vagrant halt [VM 이름] -- vm 종료
 vagrant destroy [VM 이름] -- vm 삭제
