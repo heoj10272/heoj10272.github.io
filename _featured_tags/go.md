@@ -1,11 +1,11 @@
 ---
 layout: tag-list
 type: tag
-title: Ansible
-slug: ansible
+title: Go
+slug: go
 category: study
 sidebar: true
 order: 6
 description: >
-   Ansible study
+   Go study
 ---
