@@ -6,7 +6,7 @@ date: '2022-11-22 16:30:00 +0900'
 category: study
 tags: ansible
 image:
-  path: /assets/img/study_Ansible/2022-11-21-[Ansible]_IaC_도구_및_특징_비교/logo.png
+  path: /assets/img/study_Ansible/2022-11-21-[Ansible]_Ansible_개요/logo.png
 ---
 
 `Ansible` 의 개요에 대해서 알아보자.<br>

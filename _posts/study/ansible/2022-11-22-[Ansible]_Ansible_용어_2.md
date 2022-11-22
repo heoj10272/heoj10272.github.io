@@ -99,7 +99,7 @@ ansible -m copy -a "src=my.cnf.tmpl dest=/etc/my.cnf"
 서로 다른 노드, 서로 다른 시스템(웹서버, DB서버) 등에 대한 서로 다른 `작업`을 포함하여 구성할 수 있다.<br>
 예시를 보자.<br>
 
-![1](/assets/img/study_Ansible/2022-11-22-[Ansible]_Ansible_개요/1.png)
+![1](/assets/img/study_Ansible/2022-11-22-[Ansible]_Ansible_용어_2/1.png)
 플레이북 및 플레이 예시
 {:.figcaption}
 

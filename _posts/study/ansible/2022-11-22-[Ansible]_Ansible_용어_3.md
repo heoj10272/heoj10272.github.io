@@ -30,7 +30,7 @@ Ansible 아키텍쳐
 이 `호스트`는 `Physical` 이든, `Virtual` 이든, `Cloud Instance` 가 되었든 간에 `SSH` 연결만 가능하면 된다.<br>
 `SSH` 말고도 다른 연결도 당연히 많지만, `Ansible` 이 추구하는 연결 방식은 `SSH` 이다.<br>
 
-[Ansible 개요](_posts\study\ansible\2022-11-22-[Ansible]_Ansible_개요.md) 글에서도 기술되어 있듯, `호스트` 는 `SSH` 연결을 통해 `Python` 으로 된 코드를 받아서 실행해야 하므로, `Python` 을 설치하고 실행할 수 있는 시스템이어야 한다.
+[Ansible 개요](https://heoj10272.github.io/study/Ansible-_Ansible_%EA%B0%9C%EC%9A%94.html#2-ansible-%EC%95%84%ED%82%A4%ED%85%8D%EC%B3%90) 글에서도 기술되어 있듯, `호스트` 는 `SSH` 연결을 통해 `Python` 으로 된 코드를 받아서 실행해야 하므로, `Python` 을 설치하고 실행할 수 있는 시스템이어야 한다.
 
 # 10. 네트워크(Network)
 ---
