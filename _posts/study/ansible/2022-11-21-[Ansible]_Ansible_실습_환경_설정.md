@@ -128,7 +128,8 @@ cd iac
 
 해당 파일 내용은 다음과 같이 입력하자.
 
-```Python
+```Py
+# file: "Vagrantfile"
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
 
