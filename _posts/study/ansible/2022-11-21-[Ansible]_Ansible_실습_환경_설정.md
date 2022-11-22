@@ -116,7 +116,7 @@ choco install virtualbox virtualbox-guest-additions-guest.install
 아래 명령어를 차례로 실행하자.<br>
 
 ```shell
-cd C:\Windows\System32
+cd C:/Windows/System32
 mkdir vagrant
 cd vagrant
 mkdir iac

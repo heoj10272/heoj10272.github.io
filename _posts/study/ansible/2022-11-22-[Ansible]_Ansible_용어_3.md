@@ -1,0 +1,74 @@
+---
+layout: post
+title: "[Ansible] Ansible 용어 3"
+subtitle: AWS
+date: '2022-11-22 18:20:00 +0900'
+category: study
+tags: ansible
+image:
+  path: /assets/img/study_Ansible/2022-11-22-[Ansible]_Ansible_용어_3/logo.png
+---
+
+`Ansible` 의 용어에 대해서 알아보자.<br>
+`호스트(Host)` , `네트워크(Network)` ,  `역할(Role)` , `컬렉션(Collection)` , `Ansible 주요 명령`
+
+<!--more-->
+
+* this unordered seed list will be replaced by the toc
+{:toc}
+
+<br>
+
+![1](/assets/img/study_Ansible/2022-11-22-[Ansible]_Ansible_개요/1.png)
+Ansible 아키텍쳐
+{:.figcaption}
+
+# 9. 호스트(Host)
+---
+
+`관리 노드` 에서의 호스트는 시스템이다.<br>
+이 `호스트`는 `Physical` 이든, `Virtual` 이든, `Cloud Instance` 가 되었든 간에 `SSH` 연결만 가능하면 된다.<br>
+`SSH` 말고도 다른 연결도 당연히 많지만, `Ansible` 이 추구하는 연결 방식은 `SSH` 이다.<br>
+
+[Ansible 개요](_posts\study\ansible\2022-11-22-[Ansible]_Ansible_개요.md) 글에서도 기술되어 있듯, `호스트` 는 `SSH` 연결을 통해 `Python` 으로 된 코드를 받아서 실행해야 하므로, `Python` 을 설치하고 실행할 수 있는 시스템이어야 한다.
+
+# 10. 네트워크(Network)
+---
+
+`네트워크`는 네트워크 장비(`라우터`, `스위치` 등)를 말하는 것으로, `호스트`와 마찬가지로 뭐든 상관 없지만 `SSH` 연결만 되면 된다.
+
+모든 네트워크 장비는 `유닉스`, `리눅스` 기반으로 작동하고 있기 때문에, 대부분 연결 가능하다.
+
+윈도우 기반 네트워크 장비는 존재하지 않는다.
+
+# 11. 역할(Role), 컬렉션(Collection)
+---
+
+`역할` :
+* 재사용 가능한 `Ansible` 컨텐츠
+* 표준화된 디렉토리 및 파일 구조를 가짐
+* `작업`, `핸들러`, `변수`, `템플릿` 등 파일의 묶음
+* `플레이북` 에서 `역할` 을 참조해 사용
+
+표준화 되어있기 때문에 다른 사람과 공유하기 쉽고, 사용하기 용이하다.
+
+재사용성이 중요함.
+
+약간 패키지라고 생각할 수 있다.
+
+`컬렉션` :
+
+- `역할` , `모듈` , `플러그인` 을 포함한 `Ansible` 컨텐츠
+
+약간 `역할` + `서드파티` 들을 포함한 것이라고 생각하면 된다.
+
+# 12. Ansible 주요 명령
+---
+
+* `ansible`
+* `ansible-playbook`
+* `ansible-config`
+* `ansible-doc`
+* `ansible-inventory`
+* `ansible-vault`
+* `ansible-galaxy`

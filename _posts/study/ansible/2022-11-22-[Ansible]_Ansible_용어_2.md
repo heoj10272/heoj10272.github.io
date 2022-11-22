@@ -1,0 +1,121 @@
+---
+layout: post
+title: "[Ansible] Ansible 용어 2"
+subtitle: AWS
+date: '2022-11-22 18:00:00 +0900'
+category: study
+tags: ansible
+image:
+  path: /assets/img/study_Ansible/2022-11-22-[Ansible]_Ansible_용어_2/logo.png
+---
+
+`Ansible` 의 용어에 대해서 알아보자.<br>
+`모듈(Module)` , `작업(Task)` , `Ad-hoc 명령` , `플레이북(Playbook)`, `플레이(Play)` .
+
+<!--more-->
+
+* this unordered seed list will be replaced by the toc
+{:toc}
+
+<br>
+
+![1](/assets/img/study_Ansible/2022-11-22-[Ansible]_Ansible_개요/1.png)
+Ansible 아키텍쳐
+{:.figcaption}
+
+# 5. 모듈(Module)
+---
+
+`Ansible` 의 작업을 실행하는 `Python` 코드 조각으로 `Ansible` 의 핵심이라고 할 수 있다.
+
+총 7~8천개 정도가 존재한다.
+
+`모듈` 의 목록은 아래 명령어로 조회할 수 있다.
+
+```Shell
+ansible-doc -t module -l
+```
+
+https://docs.ansible.com/ansible/latest/collections/index_module.html
+
+위 링크에서도 확인 가능하다.<br>
+우리가 필요한 대부분의 기능이 이미 모듈로 구현되어 있다.
+
+`Ansible` 은 `구성 관리 도구` 이지만 프로비저닝 기능도 가지고 있다.<br>
+이 프로비저닝 기능이 `모듈` 에 포함되어 있는 것이다.<br>
+`Windows` 에 대한 모듈도 존재한다.<br>
+`Windows` 는 `Unix` 게열이 아니기 때문에 `제어 노드` 는 될 수 없지만, `관리 노드` 는 될 수 있기 때문에 `관리 노드` 용으로 `모듈` 이 존재한다.
+
+# 6. 작업(Task)
+---
+
+`Ansible` 의 작업 실행 단위이다.
+
+`모듈` 을 실행하면 하나의 `작업` 이 실행되며,<br>
+`Ad-hoc 명령(ansible)` 을 통해 하나의 `모듈` 을 정의해 하나의 `작업` 을 실행한다.
+
+`Playbook`을 통해 여러 `모듈` 을 정의해 여러 `작업` 을 한번에 실행하는 것이 가능하다.
+
+즉 하나의 `모듈` 은 하나의 `Task` 로 이어지므로, 하나의 `모듈` 은 하나의 `작업` 만 실행할 수 있다.
+
+약간 `쓰레드` 와도 비슷한 개념이다.
+
+`Playbook` 은 절차형이기 때문에 순서에 따라 여러 `모듈` 을 정의해서 여러 개의 `작업`을 실행하는 것이다.
+
+# 7. Ad-hoc 명령
+---
+
+`ansible` 명령으로 단일 모듈을 이용해 단일 작업을 실행할 수 있다.<br>
+예시를 보자.<br>
+
+```shell
+ansible -m apt -a "name=apache2 state=present"
+```
+```shell
+ansible -m service -a "name=apache2 state=started enabled=true"
+```
+```shell
+ansible -m copy -a "src=my.cnf.tmpl dest=/etc/my.cnf"
+```
+
+모든 `모듈`은 `ansible` 로 시작하며, 뒤로 오는것은 분류, 그 다음이 모듈 이름이다.<br>
+세번째 파라미터인 `모듈` 이름만 써도 되고, 풀 네임으로 써도 된다.<br>
+`-a` 뒤에는 `argument`가 온다.
+
+`모듈` 하나만 지정할 수 있음에 주의하자.
+
+# 8. 플레이북(Playbook), 플레이(Play)
+---
+
+`플레이북` :
+* 하나 이상의 플레이를 가지고 있는 `YAML` 파일
+* `ansible-playbook` 명령으로 실행됨
+
+`플레이` : 
+* 하나 이상의 순서가 있는 모듈이 지정된 작업 목록
+
+즉 `플레이북`에는 여러개의 `플레이`가 속할 수 있다.
+
+서로 다른 노드, 서로 다른 시스템(웹서버, DB서버) 등에 대한 서로 다른 `작업`을 포함하여 구성할 수 있다.<br>
+예시를 보자.<br>
+
+![1](/assets/img/study_Ansible/2022-11-22-[Ansible]_Ansible_개요/1.png)
+플레이북 및 플레이 예시
+{:.figcaption}
+
+위 `YAML` 파일을 `플레이북` 이라고 한다.<br>
+`hosts` 는 `플레이` ,<br>
+`apt` , `service` 는 `모듈` 이다.<br>
+하나의 `모듈` 은 하나의 `작업(Task)` 이므로, `hosts` 플레이는 여러 개의 `모듈` 이자 `작업` 을 포함한다.
+
+`플레이`에서는 순서가 있다는 것이 중요하다.
+
+`플레이북` - 파일
+
+`플레이` - 하나 이상의 `모듈`이 존재
+
+개념을 확실히 알고 가자.
+
+또한 어원으로는 `Ansible` 의 개발자인 마이클 드한이 야구 광인데, 야구 시작할 때 플레이라고 외치는게 어원이라고 한다.
+
+다음 글로 이어진다.

@@ -1,0 +1,89 @@
+---
+layout: post
+title: "[Ansible] Ansible 용어 1"
+subtitle: AWS
+date: '2022-11-22 17:30:00 +0900'
+category: study
+tags: ansible
+image:
+  path: /assets/img/study_Ansible/2022-11-22-[Ansible]_Ansible_용어_1/logo.png
+---
+
+`Ansible` 의 용어에 대해서 알아보자.<br>
+`제어 노드(Control Node)`, `관리 노드(Management Node)`, `인벤토리(Inventory)` , `플러그인(Plugin)`.
+
+<!--more-->
+
+* this unordered seed list will be replaced by the toc
+{:toc}
+
+<br>
+
+![1](/assets/img/study_Ansible/2022-11-22-[Ansible]_Ansible_개요/1.png)
+Ansible 아키텍쳐
+{:.figcaption}
+
+# 1. 제어 노드(Control Node)
+---
+
+`Ansible` 도구가 설치되어 `Ansible` 도구를 실행하는 시스템이다.<br>
+실행하는 방법은 두 가지가 있다.<br>
+
+* `ansible` - `Adhoc` 명령어
+* `ansible-playbook` - `Playbook` 명령어
+
+`Python` 이 설치된 `Unix` 계열의 모든 시스템이 제어 노드가 될 수 있다.<br>
+`Windows` 에 `Native` 로 설치할 수는 없으나, `WSL` 에 설치 가능하다.<br>
+하지만 `WSL` 은 네이티브 리눅스가 아니고 흉내만 낸 것이기 때문에, 리눅스의 모든 기능을 담고 있지는 않다.<br>
+참고로 알아두자.<br>
+여러 개의 제어 노드가 있을 수 있지만, 노드간 조정되지는 않는다.
+
+# 2. 관리 노드(Managed Node)
+---
+
+`제어 노드`에 의해 `Ansible`로 관리되는 노드를 `관리 노드`라고 한다.
+
+`관리 노드`에는 반드시 `Python`이 설치되어 있어야하며, 다음이 `관리 노드` 가 될 수 있다.
+
+* 서버
+* 네트워크 어플라이언스
+
+기본적으로 `OpenSSH` 를 이용해 관리되며, 윈도우의 경우 `PowerShell` 의 `WinRM`에 의해 관리된다.
+
+컨테이너 또한 윈도우에는 설치될 수 없는 리눅스 기술이다.<br>
+윈도우에 설령 설치한다고 해도 VM으로 리눅스를 띄운 뒤에 설치가 가능하다.
+
+# 3. 인벤토리(Inventory)
+---
+
+`관리 노드` = `타겟` 의 목록이다.<br>
+
+`관리 노드` 에 접속하기 위한 IP 정보 및 각 노드별 특정 정보를 지정할 수 있다.<br>
+또한 여러 `관리 노드`를 그룹으로 지정할 수도 있다.<br>
+이 `관리 노드`의 목록을 구성하는 방법이 두 가지가 있으며 다음과 같다.<br>
+
+* `정적(Static) 인벤토리`
+* `동적(Dynamic) 인벤토리`
+
+`정적 인벤토리` 는 텍스트 파일 형태로 사용자가 직접 파일을 작성하는 것이고,<br>
+`동적 인벤토리` 는 다른 소스로부터 동적으로 데이터를 받아와 파일이 작성되는 것이다.<br>
+주로 `CMDB(Configuration Management DataBase, 자산 목록)`, `클라우드` 로부터 받아온다. 
+
+기본 정적 인벤토리 파일은 `/etc/ansible/hosts` 이다.<br>
+리눅스의 `/etc/hosts` 와 비슷하다고 볼 수 있다.
+
+# 4. 플러그인(Plugin)
+---
+
+`Ansible` 의 핵심 기능을 확장하는 `Python` 코드 조각이다.
+주요 `플러그인` 은 다음과 같다.
+
+* `Become`
+* `Callback`
+* `Connection`
+* `Inventory`
+* `Strategy`
+* `Vars`
+
+다음 글로 이어진다.
+
