@@ -5,7 +5,7 @@ title: Ansible
 slug: ansible
 category: study
 sidebar: true
-order: 6
+order: 657883
 description: >
    Ansible study
 ---

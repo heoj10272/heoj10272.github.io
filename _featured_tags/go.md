@@ -5,7 +5,7 @@ title: Go
 slug: go
 category: study
 sidebar: true
-order: 6
+order: 717900
 description: >
    Go study
 ---
