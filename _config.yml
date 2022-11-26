@@ -3,7 +3,7 @@
 
 # Uncomment and set the URL of your site (with protocol, e.g. `https://`)
 # NOTE: You don't need to provide this property when hosting on GitHub Pages or Netlify.
-# url:                   https://lazyren.github.io
+# url:                   https://heoj10272.github.io
 
 # Uncomment and set the "base URL" of your site.
 # When your site is in a subdirectory, set to `/<name of directory>`,
@@ -194,7 +194,7 @@ google_analytics:      G-LK9TDV2KQB
 # Set which comment system to use
 comments:
   # 'disqus' / 'giscus' / 'utterances' are available
-  provider:            disqus
+  provider:            utterances
 
 # Setting a disqus shortname will enable the comment section on
 # pages with `comments: true` in the front matter.
@@ -203,17 +203,17 @@ comments:
 # You must install utterances github app before use.(https://github.com/apps/utterances)
 # Make sure all variables are set properly. Check below link for detail.
 # https://utteranc.es/
-# utterances:
-#   repo:                "LazyRen/LazyRen.github.io"
-#   issue-term:          "pathname"
-#   label:               "Comments"
-#   theme:               "photon-dark"
+utterances:
+  repo:                "heoj10272/blog-comments-repo"
+  issue-term:          "pathname"
+  label:               "Comments"
+  theme:               "photon-dark"
 
 # You must install giscus github app before use.(https://github.com/apps/giscus)
 # Make sure all variables are set properly. Check below link for detail.
 # https://giscus.vercel.app/
 # giscus:
-#   repo:                "LazyRen/LazyRen.github.io"
+#   repo:                "heoj10272/heoj10272.github.io"
 #   repo-id:             "MDEwOlJlcG9zaXRvcnkyNzU4Mjk1NTc="
 #   category:            "Comments"
 #   category-id:         "DIC_kwDOEHDTNc4B-MIg"
