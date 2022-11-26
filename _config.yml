@@ -194,7 +194,7 @@ google_analytics:      G-LK9TDV2KQB
 # Set which comment system to use
 comments:
   # 'disqus' / 'giscus' / 'utterances' are available
-  provider:            utterances
+  provider:            giscus
 
 # Setting a disqus shortname will enable the comment section on
 # pages with `comments: true` in the front matter.
@@ -203,26 +203,26 @@ comments:
 # You must install utterances github app before use.(https://github.com/apps/utterances)
 # Make sure all variables are set properly. Check below link for detail.
 # https://utteranc.es/
-utterances:
-  repo:                "heoj10272/blog-comments-repo"
-  issue-term:          "pathname"
-  label:               "Comments"
-  theme:               "photon-dark"
+#utterances:
+#  repo:                "heoj10272/blog-comments-repo"
+#  issue-term:          "pathname"
+#  label:               "Comments"
+#  theme:               "photon-dark"
 
 # You must install giscus github app before use.(https://github.com/apps/giscus)
 # Make sure all variables are set properly. Check below link for detail.
 # https://giscus.vercel.app/
-# giscus:
-#   repo:                "heoj10272/heoj10272.github.io"
-#   repo-id:             "MDEwOlJlcG9zaXRvcnkyNzU4Mjk1NTc="
-#   category:            "Comments"
-#   category-id:         "DIC_kwDOEHDTNc4B-MIg"
-#   mapping:             "pathname"
-#   reaction-enabled:    "1"
-#   data-emit-metadata:  "0"
-#   theme:               "dark_dimmed"
-#   data-lang:           "en"
-#   crossorigin:         "anonymous"
+giscus:
+  repo:                "heoj10272/heoj10272.github.io"
+  repo-id:             "496564901"
+  category:            "Comments"
+  category-id:         "DIC_kwDOEHDTNc4B-MIg"
+  mapping:             "pathname"
+  reaction-enabled:    "1"
+  data-emit-metadata:  "0"
+  theme:               "dark_dimmed"
+  data-lang:           "en"
+  crossorigin:         "anonymous"
 
 # Setting a tinyletter username will enable the newsletter subscription box.
 # PRO version only!
@@ -300,7 +300,7 @@ hydejack:
 
   # When using Google Analytics, set to `true` to display a cookie notice banner.
   # When enabled, no user-related data will be stored until the user gives consent.
-  cookies_banner:      false
+  cookies_banner:      true
 
   # Set to `true` if you would like to add a "Powered by Hydejack" link in the footer.
   # Note that this setting has no effect when using the free version.
