@@ -21,7 +21,7 @@ image:
 <hr/>
 <br>
 
-## Prob. 71 ⭕❌
+## Prob. 71 ⭕
 ---
 
 Examine this statement:<br>
@@ -46,19 +46,20 @@ F. SERIAL_NO
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, F
 
 해설 :
 
+`INDEX` 는 기본적으로 하나의 칼럼 당 하나의 인덱스를 생성할 수 있다.<br>
+또한 `PK`, `UNIQUE` 가 지정된 칼럼일 경우, 자동으로 인덱스가 생성된다.<br>
 
-
-1차 시도 : <br>
+1차 시도 : A, F 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 72 ⭕❌
+## Prob. 72 ❌
 ---
 
 Examine this partial query:<br>
@@ -82,13 +83,14 @@ D. GROUP BY ch.channel_type, t.month, co.country_code;
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
 
 해설 :
 
+`ROLLUP` 함수를 사용하여 칼럼을 감싸면, 인자가 된 칼럼의 각 소계, 합계가 나오게 된다.<br>
+그리고 `ROLLUP` 으로 감싸지지 않은 남은 칼럼은 합계가 나오지 않으므로, 해당 문제의 결과를 출력하는 답은 A이다.
 
-
-1차 시도 : <br>
+1차 시도 : D 틀림<br>
 </div>
 </details>
 
