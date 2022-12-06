@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "[Ansible] 인벤토리, 구성 파일, keygen 설정 정리"
-subtitle: AWS
+subtitle: Ansible
 date: '2022-12-03 2:00:00 +0900'
 category: study
 tags: ansible
