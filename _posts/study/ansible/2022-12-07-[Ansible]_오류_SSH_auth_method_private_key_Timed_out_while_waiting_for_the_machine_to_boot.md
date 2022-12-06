@@ -2,7 +2,7 @@
 layout: post
 title: "[Ansible] 오류 SSH auth method: private key Timed out while waiting for the machine to boot"
 subtitle: Ansible
-date: '2022-12-09 1:30:00 +0900'
+date: '2022-12-07 1:30:00 +0900'
 category: study
 tags: ansible ansible-error
 image:
