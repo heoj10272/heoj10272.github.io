@@ -223,7 +223,7 @@ E : 맞음<br>
 
 <br>
 
-## Prob. 26 ⭕
+## Prob. 26 ⭕❌
 ---
 
 Which three statements are true about single-row functions? (Choose three.)
@@ -259,12 +259,13 @@ F : 맞음.<br>
 [ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/20182-exam-1z0-071-topic-2-question-46-discussion/)
 
 1차 시도 : B, D, F 맞음<br>
+2차 시도 : A, B, D 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 27 ❌
+## Prob. 27 ❌❌
 ---
 
 Which two statements are true about *_TABLES views? (Choose two.)
@@ -291,15 +292,20 @@ Answer : A, D
 해설 :
 
 A : 맞음.<br>
-D : 맞음. `DBA_TABLES` 를 참조하기 위해서 `ANY TABLE` 시스템 권한이 필요한것이다.<br>
+D : 맞음. `DBA_TABLES` 를 참조하기 위해서 `ANY TABLE` 시스템 권한이 필요한 것이다.<br>
+
+`ALL_TABLES` 는 현재 사용자가 접근 가능한 모든 테이블을 보여준다.<br>
+`USER_TABLES` 는 현재 사용자가 소유한 모든 테이블을 보여준다. 이 때 `ALL_TABLES` 에서는 나오는 `ÒWNER` 칼럼이 나오지 않는다.<br>
+`DBA_TABLES` 는 데이터베이스에 존재하는 모든 테이블을 보여준다. 구조가 `ALL_TABLES` 의 칼럼들과 동일하다.<br>
 
 1차 시도 : A, B 틀림<br>
+2차 시도 : A, F 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 28 ❌
+## Prob. 28 ❌⭕
 ---
 
 Which two statements are true about conditional INSERT ALL? (Choose two.)
@@ -323,24 +329,28 @@ Answer : B, C
 
 해설 :
 
-A : 여러 테이블에도 삽입할 수 있나보다. 아래 구문 문법 참조.<br>
+A : 틀렸음. 여러 테이블에도 삽입할 수 있나보다. 아래 구문 문법 참조.<br>
 B : 맞음. <br>
 C : 맞음. 각각의 `WHEN` 조건은 서브쿼리의 각 행에 사용된다.<br>
 D : 틀렸음. 다음 `INSERT` 구문 문법 참조.<br>
 ```sql
-INSERT [ ALL | FIRST ] WHEN condition1 THEN INTO table_1 (column_list ) VALUES (value_list) WHEN condition2 THEN  INTO table_2(column_list ) VALUES (value_list) ELSE INTO table_3(column_list ) VALUES (value_list) Subquery
+INSERT [ ALL | FIRST ] 
+WHEN condition1 THEN INTO table_1(column_list) VALUES (value_list) 
+WHEN condition2 THEN INTO table_2(column_list) VALUES (value_list) 
+ELSE INTO table_3(column_list ) VALUES (value_list) Subquery
 ```
 E : `WHEN` 절의 조건에 따라 다를 듯 하다.<br>
 
 [ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/8439-exam-1z0-071-topic-1-question-278-discussion/)
 
 1차 시도 : A, C 틀림<br>
+1차 시도 : B, C 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 29 ❌
+## Prob. 29 ❌⭕
 ---
 
 Which two statements are true about the COUNT function? (Choose two.)
@@ -369,12 +379,13 @@ Answer : A, C
 [ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/12707-exam-1z0-071-topic-1-question-258-discussion/)
 
 1차 시도 : A, D 틀림<br>
+1차 시도 : A, C 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 30 ⭕
+## Prob. 30 ⭕❌
 ---
 
 The EMPLOYEES table contains columns EMP_ID of data type NUMBER and HIRE_DATE of data type DATE.<br>
@@ -404,6 +415,7 @@ Answer : D
 [내 블로그 링크](https://heoj10272.github.io/study/ORACLE-_SQL_함수_활용_1.html)
 
 1차 시도 : D 맞음<br>
+2차 시도 : B 틀림<br>
 </div>
 </details>
 
