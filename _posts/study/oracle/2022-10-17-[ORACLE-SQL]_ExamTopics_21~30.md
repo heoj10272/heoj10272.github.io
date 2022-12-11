@@ -21,7 +21,7 @@ image:
 <hr/>
 <br>
 
-## Prob. 21 ❌
+## Prob. 21 ❌❌
 ---
 
 Which two are true about unused columns? (Choose two.)
@@ -57,12 +57,13 @@ F : 틀린듯? `FK` 도 `UNUSED` 될 수 있나보다.<br>
 [구루비 링크](http://www.gurubee.net/article/48959)
 
 1차 시도 : B, E 틀림<br>
+2차 시도 : B, C 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 22 ⭕
+## Prob. 22 ⭕⭕
 ---
 
 Which two are true about the precedence of operators and conditions? (Choose two.)
@@ -90,12 +91,13 @@ Answer : C, E
 `산술연산자` > `NOT` > `AND` > `OR`
 
 1차 시도 : C, E<br>
+2차 시도 : C, E<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 23 ⭕
+## Prob. 23 ⭕⭕
 ---
 
 In your session, the NLS_DATE_FORMAT is DD-MM-YYYY.
@@ -133,12 +135,13 @@ Answer : C
 그냥 계산해보니까 C가 답이다...
 
 1차 시도 : C<br>
+2차 시도 : C<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 24 ⭕
+## Prob. 24 ⭕⭕
 ---
 
 Examine the data in the INVOICES table:<br>
@@ -174,24 +177,25 @@ Answer : C
 B는 `MINUS`를 하더라도 Currency가 출력될 수 있다.
 
 1차 시도 : C 맞음<br>
+2차 시도 : C 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 25 ❌
+## Prob. 25 ❌⭕
 ---
 
 The SALES table has columns PROD_ID and QUANTITY_SOLD of data type NUMBER.
 Which two queries execute successfully? (Choose two.)
 
-A. SELECT prod_id FROM sales WHERE quantity_sold > 55000 AND COUNT(*) > 10 GROUP BY COUNT(*) > 10;
+A. SELECT prod_id FROM sales WHERE quantity_sold > 55000 AND COUNT(\*) > 10 GROUP BY COUNT(\*) > 10;
 
-B. SELECT prod_id FROM sales WHERE quantity_sold > 55000 GROUP BY prod_id HAVING COUNT(*) > 10;
+B. SELECT prod_id FROM sales WHERE quantity_sold > 55000 GROUP BY prod_id HAVING COUNT(\*) > 10;
 
 C. SELECT COUNT(prod_id) FROM sales GROUP BY prod_id WHERE quantity_sold > 55000;
 
-D. SELECT prod_id FROM sales WHERE quantity_sold > 55000 AND COUNT(*) > 10 GROUP BY prod_id HAVING COUNT(*) > 10;
+D. SELECT prod_id FROM sales WHERE quantity_sold > 55000 AND COUNT(\*) > 10 GROUP BY prod_id HAVING COUNT(\*) > 10;
 
 E. SELECT COUNT(prod_id) FROM sales WHERE quantity_sold > 55000 GROUP BY prod_id;
 
@@ -213,6 +217,7 @@ E : 맞음<br>
 [ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/11349-exam-1z0-071-topic-1-question-242-discussion/)
 
 1차 시도 : B, C 틀림<br>
+1차 시도 : B, E 맞음<br>
 </div>
 </details>
 
@@ -340,7 +345,7 @@ E : `WHEN` 절의 조건에 따라 다를 듯 하다.<br>
 
 Which two statements are true about the COUNT function? (Choose two.)
 
-A. COUNT(*) returns the number of rows in a table including duplicate rows and rows containing NULLs in any column.
+A. COUNT(/*) returns the number of rows in a table including duplicate rows and rows containing NULLs in any column.
 
 B. It can only be used for NUMBER data types.
 
