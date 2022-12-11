@@ -21,7 +21,7 @@ image:
 <hr/>
 <br>
 
-## Prob. 11 ❌
+## Prob. 11 ❌⭕
 ---
 
 Which three are true about scalar subquery expressions? (Choose three.)
@@ -59,12 +59,13 @@ scalar subquery란 하나의 값, 즉 하나의 행에서 하나의 칼럼 값�
 [참고 링크](https://docs.oracle.com/database/121/SQLRF/expressions014.htm#SQLRF52093)
 
 1차 시도 : A, D, E 틀림<br>
+2차 시도 : A, E, F 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 12 ❌
+## Prob. 12 ❌❌
 ---
 
 Examine this query:<br>
@@ -100,17 +101,19 @@ F : 정확히는 모르겠지만 스크립트에 쿼리를 저장하여 할 수 
 [F 참고 링크 2 - 구루비](http://wiki.gurubee.net/pages/viewpage.action?pageId=20021302)
 
 1차 시도 : B, D 틀림<br>
+2차 시도 : B, F 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 13 ❌
+## Prob. 13 ❌⭕
 ---
 
 You need to allow user ANDREW to:
 1. Modify the TITLE and ADDRESS columns of your CUSTOMERS table.
 2. GRANT that permission to other users.
+
 Which statement will do this?
 
 A. GRANT UPDATE ON customers.title, customers.address TO andrew;
@@ -139,17 +142,20 @@ C가 맞는 표현이다.
 [Examtopics](https://www.examtopics.com/discussions/oracle/view/22162-exam-1z0-071-topic-2-question-69-discussion/)
 
 1차 시도 : E 틀림<br>
+2차 시도 : C 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 14 ❌
+## Prob. 14 ❌❌
 ---
 
 You own table DEPARTMENTS, referenced by views, indexes, and synonyms.
 Examine this command which executes successfully:
+
 DROP TABLE departments PURGE;
+
 Which three statements are true? (Choose three.)
 
 A. It will remove the DEPARTMENTS table from the database.
@@ -183,12 +189,13 @@ F : 틀렸음. 행이 삭제될 뿐만 아니라 테이블이 모두 삭제된�
 [Oracle Docs 링크](https://docs.oracle.com/database/121/SQLRF/statements_9003.htm#SQLRF01806)
 
 1차 시도 : B, C, D 틀림<br>
+2차 시도 : A, C, D 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 15 ⭕
+## Prob. 15 ⭕❌
 ---
 
 Which three statements are true about Structured Query Language (SQL)? (Choose three.)
@@ -224,12 +231,13 @@ F. 틀렸음. 그냥 틀린듯...<br>
 [ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/8463-exam-1z0-071-topic-1-question-290-discussion/)
 
 1차 시도 : B, C, E 맞음<br>
+2차 시도 : B, E, F 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 16 ❌
+## Prob. 16 ❌⭕
 ---
 
 Which two statements are true about Oracle synonyms? (Choose two.)
@@ -262,12 +270,13 @@ E : 맞음. 시노님은 시노님을 가질 수 있다.<br>
 [ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/8431-exam-1z0-071-topic-1-question-270-discussion/)
 
 1차 시도 : A, D 틀림<br>
+1차 시도 : B, E 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 17 ⭕
+## Prob. 17 ⭕⭕
 ---
 
 Which is true about the ROUND, TRUNC and MOD functions?
@@ -292,12 +301,13 @@ Answer : C
 둘 다 0을 출력한다.
 
 1차 시도 : C 맞음<br>
+2차 시도 : C 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 18 ⭕
+## Prob. 18 ⭕⭕
 ---
 
 Which two are true about transactions in the Oracle Database? (Choose two.)
@@ -328,12 +338,13 @@ D : 맞음.<br>
 E : 맞음.<br>
 
 1차 시도 : D, E<br>
+2차 시도 : D, E<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 19 ⭕
+## Prob. 19 ⭕⭕
 ---
 
 Examine the description of the MEMBERS table:<br>
@@ -368,12 +379,13 @@ Answer : B, E
 `%AN%` 는 `LIKE` 절을 통해 사용할 수 있다.
 
 1차 시도 : B, E 맞음<br>
+2차 시도 : B, E 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 20 ❓
+## Prob. 20 ❓❓
 ---
 
 Examine this partial command:<br>
@@ -406,6 +418,7 @@ external data properties를 포함해야한다.<br>
 [ExamTopics 링크](https://www.examtopics.com/discussions/oracle/view/9437-exam-1z0-071-topic-1-question-297-discussion/)
 
 1차 시도 : B, 모름<br>
+2차 시도 : 모름<br>
 </div>
 </details>
 

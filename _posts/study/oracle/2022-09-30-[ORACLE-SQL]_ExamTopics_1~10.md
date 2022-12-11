@@ -21,7 +21,7 @@ image:
 <hr/>
 <br>
 
-## Prob. 1 ⭕
+## Prob. 1 ⭕⭕
 ---
 
 Examine the description of the PROMOTIONS table:
@@ -55,12 +55,13 @@ D : `DISTINCT`는 `promo_category`앞에 적는게 적절해보인다.<br>
 E : 중복 제거가 되지 않는다. <br>
 
 1차 시도 : A, C 맞음<br>
+2차 시도 : A, C 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 2 ⭕
+## Prob. 2 ⭕⭕
 ---
 
 Examine the description of the PRODUCTS table:
@@ -98,12 +99,13 @@ E : `DATE` 타입의 곱셈 연산은 불가능하다.
 
 
 1차 시도 : B, C, F 맞음<br>
+2차 시도 : B, C, F 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 3 ❌
+## Prob. 3 ❌⭕
 ---
 
 What is true about non-equijoin statement performance? (Choose two.)
@@ -136,12 +138,13 @@ A, B : 내부적으로 `BETWEEN`은 `<=, >=`으로 변환되는 모양이다.<br
 C : Discussion에 따르면 성능적으로 별 차이가 없다고 한다.
 
 1차 시도 : C, D 틀림<br>
+2차 시도 : D, E 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 4 ⭕
+## Prob. 4 ⭕⭕
 ---
 
 Which two are true? (Choose two.)
@@ -172,12 +175,13 @@ C : `CEIL`은 인자보다 크거나 같은 정수 중 제일 작은 수를 출�
 D : `LAST_DAY` 에 대한 올바른 설명은 E이다.
 
 1차 시도 : A, E 맞음<br>
+2차 시도 : A, E 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 5 ⭕ 유념
+## Prob. 5 ⭕⭕ 유념
 ---
 
 Which three statements are true about Oracle synonyms? (Choose three.)
@@ -205,12 +209,14 @@ A : 잘 모르겠는데 가능한 모양이다. <br>
 D : `PUBLIC SYNONYM`을 `CREATE`나 `DROP`할 때는 각각의 시스템 권한이 필요하다.
 
 1차 시도 : B, C, E 맞았는데 다시보기<br>
+2차 시도 : B, C, E 맞았는데 다시보기<br>
+
 </div>
 </details>
 
 <br>
 
-## Prob. 6 ⭕
+## Prob. 6 ⭕❌
 ---
 
 Which two are true? (Choose two.)
@@ -242,12 +248,13 @@ D : `INSTR`은 대상 문자열에서 인자로 들어온 글자를 찾고 그 �
 E : `INSTR`은 하나의 글자만이 아니라 문자열도 찾을 수 있다.<br>
 
 1차 시도 : A, F 맞음<br>
+2차 시도 : B, F 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 7 ❌
+## Prob. 7 ❌❌
 ---
 
 Examine these SQL statements which execute successfully:
@@ -280,12 +287,13 @@ Answer : A, D
 명시하지 않을 경우, 기본으로 제약조건은 `NOT DEFERRABLE IMMEDIATE` 이라고 한다. 
 
 1차 시도 : A, E 틀림 <br>
+2차 시도 : A, B 틀림 <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 8 ⭕
+## Prob. 8 ⭕❌
 ---
 
 Examine this SQL statement:<br>
@@ -319,12 +327,13 @@ D. 맞다.<br>
 E. 맞다.<br>
 
 1차 시도 : D, E 맞음<br>
+2차 시도 : B, D 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 9 ⭕
+## Prob. 9 ⭕⭕
 ---
 
 Which two statements are true about TRUNCATE and DELETE? (Choose two.)
@@ -357,12 +366,13 @@ Answer : A, E
 [참고 링크](https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=idjoopal&logNo=221559099309)
 
 1차 시도 : A, E 맞음<br>
+2차 시도 : A, E 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 10 ❌
+## Prob. 10 ❌❌
 ---
 
 The STORES table has a column START_DATE of data type DATE, containing the date the row was inserted.<br>
@@ -390,6 +400,8 @@ Answer : C
 이때 date1이 date2보다 클 경우 양수가 출력되고 date2가 date1보다 클 경우 음수가 출력된다.
 
 1차 시도 : B 틀림<br>
+2차 시도 : B 틀림<br>
+
 </div>
 </details>
 
