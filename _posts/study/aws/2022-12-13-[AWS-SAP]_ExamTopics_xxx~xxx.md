@@ -2,7 +2,7 @@
 layout: post
 title: "[AWS-SAP] ExamTopics xxx~xxx"
 subtitle: AWS
-date: '2022-12-12 23:00:00 +0900'
+date: '2023-12-12 23:00:00 +0900'
 category: study
 tags: aws examtopics sap-c01
 image:
