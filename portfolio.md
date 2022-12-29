@@ -40,8 +40,8 @@ font-weight:bold">
 > 2022.07.04 ~ 07.15 : 2022 삼성 SDS 하계 대학생 알고리즘 특강<br>
 > 2022.07.18 ~ 08.26 : 2022 삼성전자 DX 부문 하계 대학생 S/W 알고리즘 역량 강화 특강<br>
 > 2022.08.13 ~ : AWSKRUG AWS Solutions Architect - Professional Study<br>
-> 2022.10.11 ~ : goorm 쿠버네티스 전문가 양성과정
-> 2022.11.26 ~ : Go 스터디 - GoLang 바위에 계란 던지기
+> 2022.10.11 ~ : goorm 쿠버네티스 전문가 양성과정<br>
+> [2022.11.26 ~ : Go 스터디 - GoLang 바위에 계란 던지기](https://www.notion.so/Go-Lang-ea38f63d9bf14856ac20b30983ece4c8)
 
 ## Research Interest
 ---
