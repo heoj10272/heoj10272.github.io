@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Ansible] 오류 Permission denied @ rb_sysopen - C:/Windows/System32/vagrant/iac/.vagrant/machines/iac-control1/virtualbox/action_set_name (Errno::EACCES)"
+title: "[Ansible] 오류 Permission denied @ rb_sysopen (Errno::EACCES)"
 subtitle: Ansible
 date: '2022-12-07 1:30:00 +0900'
 category: study

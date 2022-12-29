@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "[Ansible] 오류 SSH auth method: private key Timed out while waiting for the machine to boot"
+title: "[Ansible] 오류 SSH auth method: private key Timed out"
 subtitle: Ansible
 date: '2022-12-07 1:30:00 +0900'
 category: study
