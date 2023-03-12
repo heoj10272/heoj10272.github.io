@@ -30,9 +30,16 @@ image:
 표시한 부분의 `ZIP` 파일을 다운받으면 된다.<br>
 좀 오래 걸린다.<br>
 
-설치가 다 되었으면, 압축을 풀어주자.
+# 2. 경로 설정
 
-# 2. Oracle 설치
+Oracle을 설치할 기본 경로를 설정해야 한다.
+
+`C:\app\oracle\product\19.3.0\dbhome_1`
+
+위와 같은 경로를 만들고, 이 안에 `WINDOWS.X64_193000_db_home.zip` 압축파일을 풀어주자.<br>
+나는 저장공간 이슈로 C드라이브가 아닌 D드라이브에 설치했다.
+
+# 3. Oracle 설치
 ---
 
 ![2](/assets/img/study_Oracle/2023-03-08-[ORACLE]_Oracle_19c_설치/2.png)
@@ -70,7 +77,7 @@ image:
 
 ![9](/assets/img/study_Oracle/2023-03-08-[ORACLE]_Oracle_19c_설치/9.png)
 
-요약을 확인하고, `[설치(I)]` 를 클릭
+요약을 확인하고, [설치(I)] 를 클릭
 
 ![10](/assets/img/study_Oracle/2023-03-08-[ORACLE]_Oracle_19c_설치/10.png)
 
