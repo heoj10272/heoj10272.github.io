@@ -21,7 +21,7 @@ image:
 Oracle 19c를 설치할 때 `setup` 파일을 관리자 권한으로 실행하지 않았다가 한 번 ...<br>
 경로를 잘못 설정해서 다시 한 번 삭제를 하게 되었다.<br>
 
-`deinstall.xml` 파일이 있기는 하지만, 나의 경우는 잘 실행되지 않아 수동으로 삭제하는 방법을 기록하기로 했다.
+`deinstall.bat` 파일이 있기는 하지만, 나의 경우는 잘 실행되지 않아 수동으로 삭제하는 방법을 기록하기로 했다.
 
 # 1. Oracle 관련 서비스 중지
 ---
@@ -56,6 +56,7 @@ Oracle 19c를 설치할 때 `setup` 파일을 관리자 권한으로 실행하�
 2. `HKEY_LOCAL_MACHINE\SYSTEM\ControlSet001\Services`
 3. `HKEY_LOCAL_MACHINE\SYSTEM\ControlSet002\Services`
 4. `HKEY_CLASSES_ROOT`
+
 나는 한 번 지웠어서 그런지 보이지 않는다...
 
 # 3. 재부팅
