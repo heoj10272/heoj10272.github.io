@@ -54,7 +54,7 @@ D는 인프라 계정이 조직의 다른 계정과 특정 서브넷을 공유�
 
 <br>
 
-## Prob. 12 ⭕❌
+## Prob. 12 ❌
 ---
 
 A company wants to use a third-party software-as-a-service (SaaS) application. The third-party SaaS application is consumed through several API calls. The third-party SaaS application also runs on AWS inside a VPC.
@@ -65,7 +65,7 @@ A. Create an AWS PrivateLink interface VPC endpoint. Connect this endpoint to th
 
 B. Create an AWS Site-to-Site VPN connection between the third-party SaaS application and the company VPC. Configure network ACLs to limit access across the VPN tunnels.
 
-C. Create a VPC peering connection between the third-party SaaS application and the company VPUpdate route tables by adding the needed routes for the peering connection.
+C. Create a VPC peering connection between the third-party SaaS application and the company VPC. Update route tables by adding the needed routes for the peering connection.
 
 D. Create an AWS PrivateLink endpoint service. Ask the third-party SaaS provider to create an interface VPC endpoint for this endpoint service. Grant permissions for the endpoint service to the specific account of the third-party SaaS provider.
 
@@ -75,17 +75,17 @@ D. Create an AWS PrivateLink endpoint service. Ask the third-party SaaS provider
 <br>
 Answer : 
 
-해설 : 
+해설 : A
 
+이 솔루션은 트래픽이 인터넷을 통과하지 않고 회사의 VPC와 타사 SaaS 애플리케이션 VPC 간에 안전하고 개인적인 연결을 만드는 AWS PrivateLink를 사용합니다. 보안 그룹을 사용하고 엔드포인트 서비스에 대한 액세스를 제한하는 것은 최소 권한의 원칙을 준수합니다
 
-
-1차 시도 :  <br>
+1차 시도 : C <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 13 ⭕❌
+## Prob. 13 ❓
 ---
 
 A company needs to implement a patching process for its servers. The on-premises servers and Amazon EC2 instances use a variety of tools to perform patching. Management requires a single report showing the patch status of all the servers and instances.
@@ -103,19 +103,19 @@ D. Use AWS OpsWorks to manage patches on the on-premises servers and EC2 instanc
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
 
 해설 : 
 
+A가 맞습니다. AWS 시스템 매니저는 사내 서버와 EC2 인스턴스 모두에서 패치를 관리하고 패치 준수 보고서를 생성할 수 있습니다. AWS OpsWorks 및 Amazon Inspector는 패치 관리를 위해 특별히 설계되지 않았으므로 이 사용 사례에 가장 적합한 선택은 아닙니다. Amazon EventBridge 규칙 및 AWS X-Ray를 사용하여 패치 준수 보고서를 생성하는 것은 패치 관리 보고용으로 설계되지 않았기 때문에 실용적인 솔루션이 아닙니다.
 
-
-1차 시도 :  <br>
+1차 시도 : ? <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 14 ⭕❌
+## Prob. 14 ❓
 ---
 
 A company is running an application on several Amazon EC2 instances in an Auto Scaling group behind an Application Load Balancer. The load on the application varies throughout the day, and EC2 instances are scaled in and out on a regular basis. Log files from the EC2 instances are copied to a central Amazon S3 bucket every 15 minutes. The security team discovers that log files are missing from some of the terminated EC2 instances.
@@ -133,19 +133,34 @@ D. Create an AWS Systems Manager document with a script to copy log files to Ama
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 : 
 
+이 접근 방식은 자동 스케일링 수명 주기 후크를 사용하여 인스턴스가 종료되기 전에 로그 파일을 S3에 복사하는 스크립트를 실행하여 종료된 인스턴스에서 모든 로그 파일이 복사되도록 합니다.
 
+즉 이 문제에서 중점으로 물어보는건, 종료되는 EC2로부터 어떻게 로그 파일을 복사하느냐는 것이다.
 
-1차 시도 :  <br>
+[Run code before terminating an EC2 Auto Scaling instance](https://aws.amazon.com/ko/blogs/infrastructure-and-automation/run-code-before-terminating-an-ec2-auto-scaling-instance/) 해당 링크를 참고하자.
+
+즉 순서는 이렇다.
+
+1. S3에 로그 파일을 복사해줄 `System Manager` 문서를 만든다.
+2. `Auto Scailing lifecycle hook`을 만든다.
+    * [lifecycle hook](https://docs.aws.amazon.com/autoscaling/ec2/userguide/lifecycle-hooks.html)은 Auto Scaling group에 속하는 인스턴스들의 라이프사이클(terminate, scale out 등) 상태 변화에 이벤트들에 대한 액션을 취할 수 있도록 해준다. 해당 액션이 완료될 때 까지의 시간(기본 1시간)도 제공한 후, 완료되면 예정된 단계로 넘어가게 된다.
+    * 해당 액션은 `CloudWatch` , `EventBridge` 등으로 감지할 수 있다.
+3. 해당 라이프사이클 훅을 감지할 `EventBridge` 규칙을 설정한다.
+4. EventBridge가 감지하면 이를 받아줄 `Lambda function` 을 만들고, `System Manager` 문서를 실행하도록 한다.
+
+이렇게 하면, 라이프사이클 훅에 따라 인스턴스는 종료되기 직전에 멈추게 되고, 그 동안 람다 함수 - 시스템 매니저를 통해 로그 파일을 S3로 복사, 완료되면 `CONTINUE` 신호를 통해 인스턴스를 종료하는 과정을 거치게 된다.
+
+1차 시도 : D <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 15 ⭕❌
+## Prob. 15 ❌
 ---
 
 A company is using multiple AWS accounts. The DNS records are stored in a private hosted zone for Amazon Route 53 in Account A. The company’s applications and databases are running in Account B.
@@ -167,13 +182,28 @@ E. Associate a new VPC in Account B with a hosted zone in Account A. Delete the 
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C, E
 
 해설 : 
 
+[Associating an Amazon VPC and a private hosted zone that you created with different AWS accounts](https://docs.aws.amazon.com/Route53/latest/DeveloperGuide/hosted-zone-private-associate-vpcs-different-accounts.html)
+
+현재 A 계정의 프라이빗 호스팅 존에 Route 53이 있고,<br>
+B 계정의 새 VPC에 2티어 어플리케이션을 만들었다.<br>
+DB의 CNAME이 A계정의 Route 53에 만들어졌으나, 배포에 실패한 상황이다.
+
+당연히 Route53과 새 VPC가 연결이 되어있지 않으니 발생한 일이기 때문에, 연결을 해줘야 하므로
+
+1. 호스팅 존을 가진 계정(A)에서 VPC의 접근을 승인한다.
+2. VPC를 가진 계정(B)에서 A의 호스팅 존에 접근한다.
+3. A에 있는 B에 대한 접근 승인을 삭제한다.
+    * 삭제해도 이미 연결된 상태에는 아무런 영향이 없다.
+    * 삭제해야 미래에 VPC가 호스팅 존에 재접근 하는 것을 방지할 수 있다.
+    * 만약 재접근이 필요하다면, 1번과 2번을 다시 수행한다.
 
 
-1차 시도 :  <br>
+
+1차 시도 : B, C <br>
 </div>
 </details>
 
