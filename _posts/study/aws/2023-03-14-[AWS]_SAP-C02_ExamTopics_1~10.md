@@ -10,7 +10,7 @@ image:
 ---
 
 SAP-C02 기출 1~10번 문제를 풀어보자.<br>
-1차 x/10<br>
+1차 5/10<br>
 
 <!--more-->
 
@@ -294,12 +294,12 @@ A, D 중 답에 대한 의견이 분분하나, CloudFront의 주된 기능으로
 
 <br>
 
-## Prob. 6 ⭕❌
+## Prob. 6 ❌
 ---
 소매업체는 비즈니스 파트너인 다른 회사에 일련의 데이터 파일을 제공해야 합니다. 이 파일들은 소매 회사에 속한 A 계정의 Amazon S3 버킷에 저장됩니다. 비즈니스 파트너 회사는 IAM 사용자 중 한 명인 User_DataProcessor가 자신의 AWS 계정(계정 B)에서 파일에 액세스하기를 원합니다.<br>
 User_DataProcessor가 S3 버킷에 성공적으로 액세스할 수 있도록 하기 위해 기업이 취해야 할 단계의 조합은 무엇입니까? (두 가지를 선택하십시오.)
 
-A. 계정 A에서 S3 버킷에 대한 COR(교차 오리진 리소스 공유) 기능을 설정합니다.
+A. 계정 A에서 S3 버킷에 대한 CORS(교차 오리진 리소스 공유) 기능을 설정합니다.
 
 B. 계정 A에서 S3 버킷 정책을 다음과 같이 설정하십시오:<br>
 ![1](/assets/img/study_AWS/2023-03-14-[AWS]_SAP-C02_ExamTopics_1~10/1.png)
@@ -339,29 +339,33 @@ E. In Account B, set the permissions of User_DataProcessor to the following:<br>
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C, D
 
 해설 : 
 
+열어주는 쪽에서 `principal`로 다른 계정이 접근 가능하도록 열어줘야 하고<br>
+접근하는 쪽에서 접근할 `resource`, `action`, `effect` 를 설정해야 한다.
 
-1차 시도 :  <br>
+참고로, `CORS` 는 다른 도메인으로부터 웹 브라우저가 리소스에 접근하려 할 때 설정하는 것이다.
+
+1차 시도 : C, E <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 7 ⭕❌
+## Prob. 7 ❌
 ---
 A사는 Amazon EC2 인스턴스에서 전통적인 웹 애플리케이션을 실행하고 있습니다. 회사는 응용 프로그램을 컨테이너에서 실행되는 마이크로 서비스로 리팩터링해야 합니다. 애플리케이션의 별도 버전은 프로덕션 환경과 테스트 환경의 두 가지로 구분됩니다. 응용 프로그램의 로드는 가변적이지만 최소 로드와 최대 로드가 알려져 있습니다. 솔루션 설계자는 운영 복잡성을 최소화하는 서버리스 아키텍처로 업데이트된 애플리케이션을 설계해야 합니다.<br>
 이러한 요구사항을 가장 경제적으로 충족하는 솔루션은 무엇입니까?
 
-A. 용기 영상을 기능으로 AWS Lambda에 업로드합니다. 예상 피크 부하를 처리하기 위해 관련 람다 함수에 대한 동시성 한계를 구성합니다. Amazon API Gateway 내에서 두 개의 개별 Lambda 통합을 구성합니다. 하나는 프로덕션용이고 다른 하나는 테스트용입니다.
+A. 컨테이너 이미지를 AWS Lambda as functions에 업로드합니다. 예상 피크 부하를 처리하기 위해 관련 람다 함수에 대한 동시성 한계를 구성합니다. Amazon API Gateway 내에서 두 개의 개별 Lambda 통합을 구성합니다. 하나는 프로덕션용이고 다른 하나는 테스트용입니다.
 
 B. 컨테이너 이미지를 Amazon Elastic Container Registry(Amazon ECR)에 업로드합니다. Fargate 시작 유형을 사용하여 두 개의 자동 확장 Amazon ECS(Elastic Container Service) 클러스터를 구성하여 예상 로드를 처리합니다. ECR 이미지에서 작업을 배포합니다. 트래픽을 ECS 클러스터로 유도하도록 두 개의 개별 애플리케이션 로드 밸런서를 구성합니다.
 
 C. 컨테이너 이미지를 Amazon Elastic Container Registry(Amazon ECR)에 업로드합니다. Fargate 시작 유형을 사용하여 두 개의 자동 확장 Amazon EKS(Elastic Kubernetes Service) 클러스터를 구성하여 예상 로드를 처리합니다. ECR 이미지에서 작업을 배포합니다. 트래픽을 EKS 클러스터로 전달하도록 두 개의 개별 애플리케이션 로드 밸런서를 구성합니다.
 
-D. 용기 이미지를 AWS Elastic Beanstalk에 업로드합니다. Elastic Beanstalk에서 프로덕션 및 테스트를 위한 별도의 환경 및 배포를 생성합니다. 트래픽을 Elastic Beanstalk 배포로 유도하도록 두 개의 개별 애플리케이션 로드 밸런서를 구성합니다.
+D. 컨테이너 이미지를 AWS Elastic Beanstalk에 업로드합니다. Elastic Beanstalk에서 프로덕션 및 테스트를 위한 별도의 환경 및 배포를 생성합니다. 트래픽을 Elastic Beanstalk 배포로 유도하도록 두 개의 개별 애플리케이션 로드 밸런서를 구성합니다.
 <details>
 <summary>원문 보기</summary>
 <div markdown="1">
@@ -383,18 +387,21 @@ D. Upload the container images to AWS Elastic Beanstalk. In Elastic Beanstalk, c
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 : 
 
+A와 B 왔다갔다 하는듯.
 
-1차 시도 :  <br>
+이 옵션은 ECS 클러스터에 대한 Fargate 시작 유형을 활용하여 서버리스 아키텍처를 사용해야 하는 요구 사항을 충족합니다. 이 유형을 사용하면 예상 부하에 따라 컨테이너를 자동으로 확장할 수 있습니다. 또한 각 환경에 대해 별도의 ECS 클러스터 및 애플리케이션 로드 밸런싱 장치를 구성하여 운영 및 테스트를 위한 별도의 배포를 허용합니다. 또한 이 옵션은 컨테이너 오케스트레이션 및 확장에 ECS 및 Fargate를 활용하여 운영 복잡성을 최소화합니다.
+
+1차 시도 : C <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 8 ⭕❌
+## Prob. 8 ⭕
 ---
 A사는 ALB(Application Load Balancer) 뒤에 있는 일련의 Amazon EC2 인스턴스에서 실행되는 다중 계층 웹 애플리케이션을 보유하고 있습니다. 인스턴스가 자동 스케일링 그룹에 있습니다. ALB 및 자동 스케일링 그룹은 백업 AWS 영역에서 복제됩니다. 자동 스케일링 그룹의 최소값과 최대값은 0으로 설정됩니다. Amazon RDS Multi-AZ DB 인스턴스는 애플리케이션의 데이터를 저장합니다. DB 인스턴스에 백업 영역에 읽기 복제본이 있습니다. 애플리케이션은 Amazon Route 53 레코드를 사용하여 최종 사용자에게 끝점을 제공합니다.<br>
 이 회사는 애플리케이션에서 백업 영역으로 자동으로 페일오버할 수 있는 기능을 제공하여 RTO를 15분 이내로 줄여야 합니다. 이 회사는 액티브-액티브 전략을 위한 충분한 예산을 가지고 있지 않습니다.<br>
@@ -429,18 +436,21 @@ D. Configure an endpoint in AWS Global Accelerator with the two ALBs as equal we
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
 해설 : 
 
+B는 RTO를 15분 이내로 줄이고 액티브-액티브 전략을 위한 큰 예산이 없다는 회사의 요구 사항을 충족하기 때문에 맞습니다.
 
-1차 시도 :  <br>
+이 솔루션에서는 백업 영역에 AWS 람다 기능을 생성하여 읽기 복제본을 승격하고 자동 스케일링 그룹 값을 수정합니다. Route 53은 웹 애플리케이션을 모니터링하고 상태 점검 상태가 비정상일 때 Amazon SNS 알림을 람다 기능으로 전송하는 상태 점검으로 구성됩니다. 또한 Route 53 레코드는 상태 점검 실패 시 백업 영역의 ALB로 트래픽을 라우팅하는 페일오버 정책으로 업데이트됩니다. 이렇게 하면 기본 영역이 중단되면 페일오버 정책이 트리거되고 트래픽이 백업 영역으로 이동되므로 복구 시간이 빠릅니다.
+
+1차 시도 : B <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 9 ⭕❌
+## Prob. 9 ⭕
 ---
 한 회사에서 중요한 애플리케이션을 단일 Amazon EC2 인스턴스에 호스팅하고 있습니다. 애플리케이션은 메모리 내 데이터스토어에 Amazon ElastiCache for Redis 단일 노드 클러스터를 사용합니다. 애플리케이션은 관계형 데이터베이스에 Amazon RDS for Maria DB 인스턴스를 사용합니다. 애플리케이션이 작동하려면 인프라의 각 부분이 정상이고 활성 상태여야 합니다.<br>
 솔루션 설계자는 최소한의 다운타임으로 인프라가 장애로부터 자동으로 복구될 수 있도록 애플리케이션 아키텍처를 개선해야 합니다.<br>
@@ -483,18 +493,23 @@ F. Create a replication group for the ElastiCache for Redis cluster. Enable Mult
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, D, F
 
 해설 : 
 
+A. ELB(Elastic Load Balancer)를 사용하여 여러 EC2 인스턴스에 트래픽을 분산하면 인스턴스 중 하나를 사용할 수 없게 되는 경우에도 애플리케이션을 사용할 수 있습니다. 인스턴스를 최소 용량이 두 개인 자동 스케일링 그룹의 일부로 구성하면 트래픽을 처리할 정상적인 인스턴스가 항상 하나 이상 있는지 확인할 수 있습니다.
 
-1차 시도 :  <br>
+D. DB 인스턴스를 수정하여 두 개의 가용성 영역에 걸쳐 확장되는 Multi-AZ 배포를 작성하면 장애가 발생한 경우에도 데이터베이스를 사용할 수 있습니다. 장애가 발생하면 트래픽이 자동으로 보조 가용성 영역으로 이동하여 다운타임이 줄어듭니다.
+
+F. Redis용 ElastiCache 클러스터에 대한 복제 그룹을 만들고 Multi-AZ를 활성화하면 장애가 발생한 경우에도 메모리 내 데이터 저장소를 사용할 수 있습니다. 이렇게 하면 트래픽이 자동으로 보조 가용성 영역으로 이동하여 다운타임을 줄일 수 있습니다.
+
+1차 시도 : A, D, F <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 10 ⭕❌
+## Prob. 10 ❌
 ---
 한 소매 회사가 AWS에서 전자 상거래 애플리케이션을 운영하고 있습니다. 애플리케이션은 ALB(Application Load Balancer) 뒤에 있는 Amazon EC2 인스턴스에서 실행됩니다. 이 회사에서는 Amazon RDS DB 인스턴스를 데이터베이스 백엔드로 사용합니다. Amazon CloudFront는 ALB를 가리키는 하나의 오리진으로 구성됩니다. 정적 콘텐츠가 캐시됩니다. 아마존 53번 도로는 모든 공공 구역을 유치하는 데 사용됩니다.<br>
 응용 프로그램을 업데이트한 후 ALB가 502 상태 코드(불량 게이트웨이) 오류를 반환하는 경우가 있습니다. 근본 원인은 ALB로 반환되는 잘못된 형식의 HTTP 헤더입니다. 솔루션 설계자가 오류가 발생한 직후 웹 페이지를 다시 로드하면 웹 페이지가 성공적으로 반환됩니다.
@@ -535,12 +550,13 @@ E. Add a custom error response by configuring a CloudFront custom error page. Mo
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, E
 
 해설 : 
 
+옵션 A를 사용하면 S3 버킷에서 호스팅할 수 있는 사용자 정의 오류 페이지를 생성할 수 있습니다. 옵션 E는 오류 페이지를 호스팅하는 S3 버킷을 가리킬 수 있는 CloudFront의 사용자 지정 오류 응답을 구성하는 방법을 제공합니다. 따라서 방문자는 애플리케이션 인프라를 수정하지 않고도 사용자 지정 오류 페이지를 볼 수 있습니다.
 
-1차 시도 :  <br>
+1차 시도 : B, E <br>
 </div>
 </details>
 
