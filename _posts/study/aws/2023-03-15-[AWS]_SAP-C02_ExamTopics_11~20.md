@@ -228,13 +228,14 @@ D. Set up an Amazon CloudFront distribution for all site contents, and point the
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
+
+1차 시도 : C<br>
 
 해설 : 
 
+CloudFront로 배포하면 사용자의 근처에 있는 엣지 로케이션에 캐시하여 버퍼링과 타임아웃을 줄일 수 있다.
 
-
-1차 시도 :  <br>
 </div>
 </details>
 
