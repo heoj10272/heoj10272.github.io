@@ -10,7 +10,7 @@ image:
 ---
 
 SAP-C02 기출 11~20번 문제를 풀어보자.<br>
-1차 x/10<br>
+1차 3/10<br>
 
 <!--more-->
 
@@ -209,7 +209,7 @@ DB의 CNAME이 A계정의 Route 53에 만들어졌으나, 배포에 실패한 �
 
 <br>
 
-## Prob. 16 ⭕❌
+## Prob. 16 ⭕
 ---
 
 A company used Amazon EC2 instances to deploy a web fleet to host a blog site. The EC2 instances are behind an Application Load Balancer (ALB) and are configured in an Auto Scaling group. The web application stores all blog content on an Amazon EFS volume.
@@ -241,7 +241,7 @@ CloudFront로 배포하면 사용자의 근처에 있는 엣지 로케이션에 
 
 <br>
 
-## Prob. 17 ⭕❌
+## Prob. 17 ❌
 ---
 
 A company with global offices has a single 1 Gbps AWS Direct Connect connection to a single AWS Region. The company’s on-premises network uses the connection to communicate with the company’s resources in the AWS Cloud. The connection has a single private virtual interface that connects to a single VPC.
@@ -260,19 +260,22 @@ D. Provision a transit gateway. Delete the existing private virtual interface fr
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
+
+1차 시도 : C <br>
 
 해설 : 
 
+`Direct Connect Gateway` 를 사용하는것이 올바른 정답이라고 한다.
 
+D의 `Transit Gateway` 의 경우, 리전별 서비스이기 때문에 하나의 TGW로는 다른 리전간의 접속이 불가능하다. 다른 리전간의 접속이 필요한 경우 다른 리전에 있는 TGW를 통해서 접속해야 하므로 옳지 않다.
 
-1차 시도 :  <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 18 ⭕❌
+## Prob. 18 ⭕
 ---
 
 A company has a web application that allows users to upload short videos. The videos are stored on Amazon EBS volumes and analyzed by custom recognition software for categorization.
@@ -291,19 +294,21 @@ D. Use AWS Elastic Beanstalk to launch EC2 instances in an Auto Scaling group fo
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
+
+1차 시도 : C <br>
 
 해설 : 
 
+문제에 AWS의 관리형 서비스를 이용하라는 문구가 있으므로, S3, SQS, Lambda, Rekognition를 활용하는것이 좋아보인다.<br>
+또한 Amazon Rekognition API 로 비디오 컨텐츠 또한 카테고라이징 할 수 있다.
 
-
-1차 시도 :  <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 19 ⭕❌
+## Prob. 19 ⭕
 ---
 
 A company has a serverless application comprised of Amazon CloudFront, Amazon API Gateway, and AWS Lambda functions. The current deployment process of the application code is to create a new version number of the Lambda function and run an AWS CLI script to update. If the new function version has errors, another CLI script reverts by deploying the previous working version of the function. The company would like to decrease the time to deploy new versions of the application logic provided by the Lambda functions, and also reduce the time to detect and revert when errors are identified.
@@ -321,19 +326,21 @@ D. Create and deploy an AWS CloudFormation stack that consists of a new API Gate
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
+
+1차 시도 : B <br>
 
 해설 : 
 
+AWS SAM(Serverless Application Model)은 서버리스 애플리케이션을 구축, 테스트 및 배포하는 데 도움이 되는 프레임워크입니다. 클라우드 포메이션을 사용하므로 클라우드 포메이션 템플릿을 생성, 업데이트 및 배포하는 프로세스를 단순화할 수 있습니다. CodeDeploy는 사내 인스턴스 및 람다 함수를 포함하여 모든 인스턴스에 대한 코드 배포를 자동화하는 서비스입니다. AWS SAM을 사용하면 내장된 CodeDeploy를 사용하여 새 버전의 Lambda 함수를 배포하고, 트래픽을 점차 새 버전으로 이동하며, 사전 트래픽 및 사후 트래픽 테스트 기능을 사용하여 코드를 확인할 수 있습니다. 또한 CloudWatch 경보를 정의하여 문제가 발생할 경우 롤백을 트리거할 수 있습니다. 이를 통해 배포 프로세스를 보다 빠르고 효율적으로 수행할 수 있을 뿐만 아니라 오류가 식별될 때 보다 안정적인 롤백 프로세스를 수행할 수 있습니다. 이렇게 하면 배포 속도를 높이고 오류가 식별될 때 검색하고 복구하는 시간을 줄일 수 있습니다.
 
 
-1차 시도 :  <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 20 ⭕❌
+## Prob. 20 ❌
 ---
 
 A company is planning to store a large number of archived documents and make the documents available to employees through the corporate intranet. Employees will access the system by connecting through a client VPN service that is attached to a VPC. The data must not be accessible to the public.
@@ -352,13 +359,17 @@ D. Create an Amazon S3 bucket. Configure the S3 bucket to use the S3 Glacier Dee
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
+
+1차 시도 : D <br>
 
 해설 : 
 
+A와 D를 고민을 많이 했지만, 답은 A가 맞는 것 같다.
 
+일단 AWS에서 Glacier를 아무리 조회 빈도가 낮다지만 조회를 위한 서비스에 권장하지는 않을 것 같고,<br>
+Glacier의 경우 web hosting이 불가하다는 글이 있다.
 
-1차 시도 :  <br>
 </div>
 </details>
 
