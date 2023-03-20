@@ -190,7 +190,7 @@ D has no long term commitment (e.g. saving plans) and has 75% on demand instance
 
 <br>
 
-## Prob. 26 ⭕❌
+## Prob. 26 ⭕
 ---
 
 A security engineer determined that an existing application retrieves credentials to an Amazon RDS for MySQL database from an encrypted file in Amazon S3. For the next version of the application, the security engineer wants to implement the following application design changes to improve security:
@@ -212,54 +212,98 @@ D. Generate the database password as a SecureString parameter type using AWS Sys
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
 
-1차 시도 :  <br>
+1차 시도 : A <br>
 
 해설 : 
 
+Secrets manager는 암호 순환만 지원할 수 있으며 parameter store는 지원하지 않습니다. parameter store는 이름이 나타내는 대로 다른 곳에서 참조하거나 참조하는 위치일 뿐입니다. B,D가 제거됩니다.이벤트 브리지 규칙이 알려진 90일 트리거를 캡처할 필요가 없기 때문에 C가 잘못되었습니다. Secrets manager에서 비밀을 구성할 때는 순환 예약을 이미 사용할 수 있습니다. 그러면 옵션 A가 올바른 상태로 유지됩니다.
 
 </div>
 </details>
 
 <br>
 
-## Prob. 27 ⭕❌
+## Prob. 27 ❌
 ---
 
-A company has many AWS accounts and uses AWS Organizations to manage all of them. A solutions 
+A company is storing data in several Amazon DynamoDB tables. A solutions architect must use a serverless architecture to make the data accessible publicly through a simple API over HTTPS. The solution must scale automatically in response to demand.
+Which solutions meet these requirements? (Choose two.)
+
+A. Create an Amazon API Gateway REST API. Configure this API with direct integrations to DynamoDB by using API Gateway’s AWS integration type.
+
+B. Create an Amazon API Gateway HTTP API. Configure this API with direct integrations to Dynamo DB by using API Gateway’s AWS integration type.
+
+C. Create an Amazon API Gateway HTTP API. Configure this API with integrations to AWS Lambda functions that return data from the DynamoDB tables.
+
+D. Create an accelerator in AWS Global Accelerator. Configure this accelerator with AWS Lambda@Edge function integrations that return data from the DynamoDB tables.
+
+E. Create a Network Load Balancer. Configure listener rules to forward requests to the appropriate AWS Lambda functions.
 
 <details>
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, C
 
-1차 시도 :  <br>
+1차 시도 : C, E <br>
 
 해설 : 
 
+Option B: HTTP APIs do not currently support integrations with DynamoDB, and therefore this solution would not work. 
+
+Option D: AWS Global Accelerator and AWS Lambda@Edge, which both involve infrastructure management. 
+
+Option E: NLB does not meet the requirement of being serverless
+
+Api gateway REST APis support direct integration with DynamoDb T
+
+he same can be achieved with HTTP APIs using a lambda between the two
 
 </div>
 </details>
 
 <br>
 
-## Prob. 28 ⭕❌
+## Prob. 28 ❌
 ---
 
-A company has many AWS accounts and uses AWS Organizations to manage all of them. A solutions 
+A company has registered 10 new domain names. The company uses the domains for online marketing. The company needs a solution that will redirect online visitors to a specific URL for each domain. All domains and target URLs are defined in a JSON document. All DNS records are managed by Amazon Route 53.
+A solutions architect must implement a redirect service that accepts HTTP and HTTPS requests.
+Which combination of steps should the solutions architect take to meet these requirements with the LEAST amount of operational effort? (Choose three.)
+
+A. Create a dynamic webpage that runs on an Amazon EC2 instance. Configure the webpage to use the JSON document in combination with the event message to look up and respond with a redirect URL.
+
+B. Create an Application Load Balancer that includes HTTP and HTTPS listeners.
+
+C. Create an AWS Lambda function that uses the JSON document in combination with the event message to look up and respond with a redirect URL.
+
+D. Use an Amazon API Gateway API with a custom domain to publish an AWS Lambda function.
+
+E. Create an Amazon CloudFront distribution. Deploy a Lambda@Edge function.
+
+F. Create an SSL certificate by using AWS Certificate Manager (ACM). Include the domains as Subject Alternative Names.
 
 <details>
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C, E, F
 
-1차 시도 :  <br>
+1차 시도 : C, D, E <br>
 
 해설 : 
 
+C: 솔루션 설계자는 AWS 람다 기능을 생성하여 JSON 문서를 사용하여 각 도메인의 대상 URL을 검색하고 적절한 리디렉션 URL로 응답할 수 있습니다. 이러한 방식으로, 솔루션은 리디렉션을 처리하기 위해 웹 서버에 의존할 필요가 없으므로 운영 작업이 줄어듭니다.
+
+E: 솔루션 설계자는 Amazon CloudFront 배포판을 생성하여 각 도메인에 대한 대상 URL을 검색하고 적절한 리디렉션 URL로 응답할 수 있는 Lambda@Edge 기능을 배포할 수 있습니다. 이러한 방식으로 CloudFront는 리디렉션을 처리할 수 있으므로 운영 노력을 줄일 수 있습니다. 
+
+F: ACM을 사용하여 SSL 인증서를 만들고 도메인을 주체 대체 이름으로 포함함으로써 솔루션 설계자는 리디렉션 서비스가 회사에서 필요로 하는 HTTP 및 HTTPS 요청을 모두 처리할 수 있도록 보장할 수 있습니다.
+
+A와 B는 리디렉션을 처리하기 위해 웹 서버를 구성하고 유지 관리해야 하기 때문에 올바른 답이 아닙니다. 
+
+D는 API Gateway API를 생성해야 하기 때문에 올바른 대답이 아니며, 이는 운영 노력을 증가시킵니다.
 
 </div>
 </details>
@@ -269,7 +313,18 @@ Answer :
 ## Prob. 29 ⭕❌
 ---
 
-A company has many AWS accounts and uses AWS Organizations to manage all of them. A solutions 
+A company that has multiple AWS accounts is using AWS Organizations. The company’s AWS accounts host VPCs, Amazon EC2 instances, and containers.
+The company’s compliance team has deployed a security tool in each VPC where the company has deployments. The security tools run on EC2 instances and send information to the AWS account that is dedicated for the compliance team. The company has tagged all the compliance-related resources with a key of “costCenter” and a value or “compliance”.
+The company wants to identify the cost of the security tools that are running on the EC2 instances so that the company can charge the compliance team’s AWS account. The cost calculation must be as accurate as possible.
+What should a solutions architect do to meet these requirements?
+
+A. In the management account of the organization, activate the costCenter user-defined tag. Configure monthly AWS Cost and Usage Reports to save to an Amazon S3 bucket in the management account. Use the tag breakdown in the report to obtain the total cost for the costCenter tagged resources.
+
+B. In the member accounts of the organization, activate the costCenter user-defined tag. Configure monthly AWS Cost and Usage Reports to save to an Amazon S3 bucket in the management account. Schedule a monthly AWS Lambda function to retrieve the reports and calculate the total cost for the costCenter tagged resources.
+
+C. In the member accounts of the organization activate the costCenter user-defined tag. From the management account, schedule a monthly AWS Cost and Usage Report. Use the tag breakdown in the report to calculate the total cost for the costCenter tagged resources.
+
+D. Create a custom report in the organization view in AWS Trusted Advisor. Configure the report to generate a monthly billing summary for the costCenter tagged resources in the compliance team’s AWS account.
 
 <details>
 <summary>정답 및 해설 보기</summary>
