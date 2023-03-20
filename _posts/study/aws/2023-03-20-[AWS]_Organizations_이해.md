@@ -30,6 +30,8 @@ AWS **Organizations**를 이해해보자.
 # 2. 구성 요소
 ---
 
+![1](/assets/img/study_AWS/2023-03-20-[AWS]_Organizations_이해/1.png)
+
 ## I. Organization(조직)
 ---
 
