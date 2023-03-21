@@ -10,7 +10,7 @@ image:
 ---
 
 SAP-C02 기출 21~30번 문제를 풀어보자.<br>
-1차 x/10<br>
+1차 6/10<br>
 
 <!--more-->
 
@@ -310,7 +310,7 @@ D는 API Gateway API를 생성해야 하기 때문에 올바른 대답이 아니
 
 <br>
 
-## Prob. 29 ⭕❌
+## Prob. 29 ⭕
 ---
 
 A company that has multiple AWS accounts is using AWS Organizations. The company’s AWS accounts host VPCs, Amazon EC2 instances, and containers.
@@ -330,11 +330,14 @@ D. Create a custom report in the organization view in AWS Trusted Advisor. Confi
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
-1차 시도 :  <br>
+1차 시도 : C <br>
 
 해설 : 
+
+지불을 위한 커스텀 태그는 관리 계정에 의해서만 활성화할 수 있다는 말이 있다.<br>
+사실 이게 아니더라도 C처럼 일일히 모든 계정에 태그를 적용하는 것 보다는 관리 계정에 적용하여 한 번에 모든 멤버 계정이 영향을 받도록 하는것이 나아 보인다.
 
 
 </div>
@@ -342,21 +345,34 @@ Answer :
 
 <br>
 
-## Prob. 30 ⭕❌
+## Prob. 30 ⭕
 ---
 
-A company has many AWS accounts and uses AWS Organizations to manage all of them. A solutions 
+A company has 50 AWS accounts that are members of an organization in AWS Organizations. Each account contains multiple VPCs. The company wants to use AWS Transit Gateway to establish connectivity between the VPCs in each member account. Each time a new member account is created, the company wants to automate the process of creating a new VPC and a transit gateway attachment.
+Which combination of steps will meet these requirements? (Choose two.)
+
+A. From the management account, share the transit gateway with member accounts by using AWS Resource Access Manager.
+
+B. From the management account, share the transit gateway with member accounts by using an AWS Organizations SCP.
+
+C. Launch an AWS CloudFormation stack set from the management account that automatically creates a new VPC and a VPC transit gateway attachment in a member account. Associate the attachment with the transit gateway in the management account by using the transit gateway ID.
+
+D. Launch an AWS CloudFormation stack set from the management account that automatically creates a new VPC and a peering transit gateway attachment in a member account. Share the attachment with the transit gateway in the management account by using a transit gateway service-linked role.
+
+E. From the management account, share the transit gateway with member accounts by using AWS Service Catalog.
 
 <details>
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, C
 
-1차 시도 :  <br>
+1차 시도 : A, C <br>
 
 해설 : 
 
+A : Resource Access Manager를 사용하여 관리 계정에서 transit gateway를 member accounts가 공유할 수 있도록 구현한다.<br>
+C : transit gateway ID를 통해 관리 계정에서 transit gateway를 연결하는것이 맞아 보인다.
 
 </div>
 </details>
@@ -370,5 +386,5 @@ Answer :
 <br>
 
 * Ref
-  - [ExamTopics](https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-professional-sap-c02/view/3/)
+  - [ExamTopics](https://www.examtopics.com/exams/amazon/aws-certified-solutions-architect-professional-sap-c02/view/6/)
 
