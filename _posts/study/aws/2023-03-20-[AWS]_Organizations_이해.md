@@ -2,7 +2,7 @@
 layout: post
 title: "[AWS] Organizations 이해"
 subtitle: AWS
-date: '2023-03-30 21:30:00 +0900'
+date: '2023-03-20 21:30:00 +0900'
 category: study
 tags: aws aws-base
 image:
