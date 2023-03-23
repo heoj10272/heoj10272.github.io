@@ -188,7 +188,7 @@ B와 D 둘 다 유효하나, 윈도우 파일 시스템에는 아무래도 `FSx`
 
 <br>
 
-## Prob. 36 ⭕️❌
+## Prob. 36 ❌
 ---
 
 A company is using an on-premises Active Directory service for user authentication. The company wants to use the same authentication service to sign in to the 
@@ -197,9 +197,9 @@ A company is using an on-premises Active Directory service for user authenticati
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
-1차 시도 : <br>
+1차 시도 : B<br>
 
 해설 : 
 
@@ -210,7 +210,7 @@ Answer :
 
 <br>
 
-## Prob. 37 ⭕️❌
+## Prob. 37 ❌
 ---
 
 A company is using an on-premises Active Directory service for user authentication. The company wants to use the same authentication service to sign in to the 
@@ -219,9 +219,9 @@ A company is using an on-premises Active Directory service for user authenticati
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
-1차 시도 : <br>
+1차 시도 : C<br>
 
 해설 : 
 
@@ -232,7 +232,7 @@ Answer :
 
 <br>
 
-## Prob. 38 ⭕️❌
+## Prob. 38 ⭕️
 ---
 
 A company is using an on-premises Active Directory service for user authentication. The company wants to use the same authentication service to sign in to the 
@@ -241,9 +241,9 @@ A company is using an on-premises Active Directory service for user authenticati
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
-1차 시도 : <br>
+1차 시도 : C<br>
 
 해설 : 
 
@@ -254,7 +254,7 @@ Answer :
 
 <br>
 
-## Prob. 39 ⭕️❌
+## Prob. 39 ❌
 ---
 
 A company is using an on-premises Active Directory service for user authentication. The company wants to use the same authentication service to sign in to the 
@@ -263,9 +263,9 @@ A company is using an on-premises Active Directory service for user authenticati
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A, D, E
 
-1차 시도 : <br>
+1차 시도 : B, C, F<br>
 
 해설 : 
 
