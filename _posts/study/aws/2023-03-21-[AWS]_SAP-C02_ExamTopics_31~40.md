@@ -276,7 +276,7 @@ Answer : A, D, E
 
 <br>
 
-## Prob. 40 ⭕️❌
+## Prob. 40 ❌
 ---
 
 A company is using an on-premises Active Directory service for user authentication. The company wants to use the same authentication service to sign in to the 
@@ -285,9 +285,9 @@ A company is using an on-premises Active Directory service for user authenticati
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
-1차 시도 : <br>
+1차 시도 : D<br>
 
 해설 : 
 
