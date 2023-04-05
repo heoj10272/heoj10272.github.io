@@ -207,7 +207,7 @@ D. Deploy the AWS Application Discovery Agent to each on-premises server. Config
 <br>
 Answer : 
 
-1차 시도 : <br>
+1차 시도 : D<br>
 
 해설 : 
 
@@ -241,7 +241,7 @@ D. Deploy an internet gateway. Associate an Elastic IP address with the internet
 <br>
 Answer : 
 
-1차 시도 : <br>
+1차 시도 : D<br>
 
 해설 : 
 
@@ -252,7 +252,7 @@ Answer :
 
 <br>
 
-## Prob. 48 ⭕️❌
+## Prob. 48 ❌
 ---
 
 A solutions architect has developed a web application that uses an Amazon API Gateway Regional endpoint and an AWS Lambda function. The consumers of the web application are all close to the AWS Region where the application will be deployed. The Lambda function only queries an Amazon Aurora MySQL database. The solutions architect has configured the database to have three read replicas.
@@ -275,9 +275,9 @@ E. Change the API Gateway endpoint to an edge-optimized endpoint.
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : C
+Answer : B, D
 
-1차 시도 : C<br>
+1차 시도 : 모름<br>
 
 해설 : 
 
@@ -288,7 +288,7 @@ Answer : C
 
 <br>
 
-## Prob. 49 ⭕️❌
+## Prob. 49 ❌
 ---
 
 A company is planning to host a web application on AWS and wants to load balance the traffic across a group of Amazon EC2 instances. One of the security requirements is to enable end-to-end encryption in transit between the client and the web server.
@@ -307,20 +307,24 @@ D. Place the EC2 instances behind a Network Load Balancer (NLB). Provision a thi
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
-1차 시도 : <br>
+1차 시도 : A<br>
 
 해설 : 
 
-테스트
+[https://repost.aws/knowledge-center/acm-ssl-certificate-ec2-elb](https://repost.aws/knowledge-center/acm-ssl-certificate-ec2-elb)
 
+EC2에는 public certificates를 설치할 수 없다고 한다.<br>
+따라서, 써드파티 certificate를 EC2에 설치한다. 그리고 써드파티 certificate를 AWS Certificate Manager를 통해 import 함으로써 로드밸런서와 연결시킨다.
+
+D가 답이라는 의견도 많지만... 일단 C로 한다.
 </div>
 </details>
 
 <br>
 
-## Prob. 50 ⭕️❌
+## Prob. 50 ⭕️
 ---
 
 A company wants to migrate its data analytics environment from on premises to AWS. The environment consists of two simple Node.js applications. One of the applications collects sensor data and loads it into a MySQL database. The other application aggregates the data into reports. When the aggregation jobs run, some of the load jobs fail to run correctly.
@@ -341,12 +345,14 @@ D. Set up an Amazon Aurora MySQL database. Create an Aurora Replica for the Auro
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
-1차 시도 : <br>
+1차 시도 : C<br>
 
 해설 : 
 
+마이그레이션을 위해서 AWS Database Migration Service를 이용한다.<br>
+그리고 Aggregation은 읽는 작업이므로 Aurora Replica를 생성하여 읽기 작업을 시킨다.
 
 
 </div>
