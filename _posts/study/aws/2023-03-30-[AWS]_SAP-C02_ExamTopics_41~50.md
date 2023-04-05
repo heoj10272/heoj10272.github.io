@@ -20,7 +20,7 @@ SAP-C02 기출 31~40번 문제를 풀어보자.<br>
 <br>
 
 
-## Prob. 41 ⭕️❌
+## Prob. 41 ⭕️
 ---
 
 A company recently deployed an application on AWS. The application uses Amazon DynamoDB. The company measured the application load and configured the RCUs and WCUs on the DynamoDB table to match the expected peak load. The peak load occurs once a week for a 4-hour period and is double the average load. The application load is close to the average load for the rest of the week. The access pattern includes many more writes to the table than reads of the table.
@@ -41,13 +41,14 @@ D. Configure DynamoDB Accelerator (DAX) in front of the table. Configure on-dema
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
 
-1차 시도 : D <br>
+1차 시도 : A <br>
 
 해설 : 
 
-SCP
+일단 읽기보다 쓰기가 더 많기 때문에, 캐싱을 사용하는 DAX는 답이 될 수 없다.<br>
+예측할 수 없는 워크로드에 쓰이는 on demand 보다는 예상 주기와 상승폭이 일정하므로 A, reserved를 고르는 것이 적절하다.
 
 </div>
 </details>
