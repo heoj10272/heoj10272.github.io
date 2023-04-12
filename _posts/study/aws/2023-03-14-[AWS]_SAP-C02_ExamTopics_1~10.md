@@ -20,7 +20,7 @@ SAP-C02 기출 1~10번 문제를 풀어보자.<br>
 <br>
 
 
-## Prob. 1 ⭕
+## Prob. 1 ⭕⭕
 ---
 
 기업은 하이브리드 DNS 솔루션을 설계해야 합니다. 이 솔루션은 VPC에 저장된 리소스에 대해 cloud.example.com 도메인에 대해 Amazon Route 53 프라이빗 호스팅 영역을 사용합니다.<br>
@@ -76,12 +76,13 @@ C : 모든 VPC가 프라이빗 호스트 영역에 연결되어야 하므로 틀
 D : 모든 VPC가 프라이빗 호스트 영역에 연결되어야 하므로 틀렸다.
 
 1차 시도 : A <br>
+2차 시도 : A <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 2 ❌
+## Prob. 2 ❌⭕
 ---
 A사는 REST 기반 API를 통해 여러 고객에게 날씨 데이터를 제공하고 있습니다. 이 API는 Amazon API Gateway에서 호스팅하며 각 API 작업에 대해 서로 다른 AWS 람다 기능과 통합됩니다. 이 회사는 DNS에 Amazon Route 53을 사용하고 weather.example.com의 리소스 레코드를 만들었습니다. 이 회사는 API에 대한 데이터를 Amazon DynamoDB 테이블에 저장합니다. 이 회사는 API가 다른 AWS 리전으로 페일오버할 수 있는 솔루션이 필요합니다.<br>
 이러한 요구사항을 충족하는 솔루션은 무엇입니까?
@@ -124,13 +125,14 @@ The company should also convert the DynamoDB tables to global tables to enable c
 Then, the company should change the Route 53 DNS record to a failover record and enable target health monitoring to automatically route traffic to the new region in the event of a failure or outage in the primary region.
 
 1차 시도 : B <br>
+2차 시도 : C <br>
 </div>
 </details>
 
 <br>
 
 
-## Prob. 3 ❓
+## Prob. 3 ❓⭕
 ---
 A사는 운영이라는 단일 OU와 함께 AWS 조직을 사용하여 여러 계정을 관리합니다. 모든 계정은 운영 OU의 구성원입니다. 관리자는 조직 루트에서 거부 목록 SCP를 사용하여 제한된 서비스에 대한 액세스를 관리합니다.<br>
 그 회사는 최근에 새로운 사업부를 인수했고 새로운 사업부의 기존 AWS 계정을 조직에 초대했습니다. 새 사업부의 관리자는 회사 정책에 맞게 기존 AWS Config 규칙을 업데이트할 수 없다는 것을 알게 되었습니다.<br>
@@ -191,12 +193,13 @@ D의 경우, B와 비슷하지만 루트 SCP가 Production OU로 넘어가기 �
 
 
 1차 시도 : 모름 <br>
+2차 시도 : D <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 4 ⭕
+## Prob. 4 ⭕⭕
 ---
 A사는 사내 데이터 센터에서 2계층 웹 기반 애플리케이션을 실행하고 있습니다. 응용 프로그램 계층은 상태 저장 응용 프로그램을 실행하는 단일 서버로 구성됩니다. 애플리케이션이 Postgre에 연결됩니다별도의 서버에서 실행 중인 SQL 데이터베이스입니다. 애플리케이션의 사용자 기반이 크게 증가할 것으로 예상되어 회사는 애플리케이션과 데이터베이스를 AWS로 마이그레이션하고 있습니다. 솔루션은 Amazon Aurora Postgre를 사용합니다SQL, Amazon EC2 자동 스케일링 및 Elastic Load Balancing이 있습니다.<br>
 애플리케이션 및 데이터베이스 계층을 확장할 수 있는 일관된 사용자 환경을 제공하는 솔루션은 무엇입니까?
@@ -242,6 +245,7 @@ Answer : C
 라운드 로빈은 EC2 인스턴스에 요청을 순서대로 할당하는 방식이고, Least Outstanding은 라운드 로빈의 개선판 느낌으로 부하가 가장 적은 인스턴스에 요청을 할당한다.
 
 1차 시도 : C <br>
+2차 시도 : C <br>
 </div>
 </details>
 
