@@ -8,7 +8,8 @@ author1:
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
   about:             |
-    서경대학교 재학중.
+    서경대학교 졸업.
+    SK엠앤서비스 재직중.
 
   # This photo will be used in the about section
   picture:

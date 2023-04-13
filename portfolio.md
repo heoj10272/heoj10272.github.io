@@ -65,6 +65,7 @@ font-weight:bold">
 
 ## Project
 ---
+
 [시각장애인을 위한 장애물 탐지, 위치 공유 어플리케이션 White Cane 개발](https://heoj10272.github.io/project/흰지팡이-프로젝트.html)
 
 스프링부트와 AWS로 게시판 웹 페이지 개발
@@ -75,14 +76,19 @@ font-weight:bold">
 
 ## Work Experiences
 ---
-> **종이와 연필 - LG 유플러스**
+> 2018.06 ~ 08 : **종이와 연필 인턴 - LG 유플러스**
 
-> **종이와 연필 - LX Pantos**
+> 2022.03 ~ 05 : **종이와 연필 인턴 - LX Pantos**
 
-## Skills and Certification
+> 2023.01.02 ~ : **SK엠앤서비스 재직**
+
+## Certification
 ---
 - AWS Certified Solutions Architect - Associate<br>
 <div data-iframe-width="300" data-iframe-height="240" data-share-badge-id="1e6da221-09db-4388-8d5b-8411f4a8c515" data-share-badge-host="https://www.credly.com"></div><script type="text/javascript" async src="//cdn.credly.com/assets/utilities/embed.js"></script>
 
 
+## Award
+---
 
+> 2022.12.05 : 제 8회 SKU 프로그래밍 대회 장려상
