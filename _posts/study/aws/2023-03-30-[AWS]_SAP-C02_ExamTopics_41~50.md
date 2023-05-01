@@ -12,6 +12,7 @@ image:
 SAP-C02 기출 41~50번 문제를 풀어보자.<br>
 1차 4/10<br>
 2차 8/10<br>
+3차 9/10<br>
 
 <!--more-->
 
@@ -21,7 +22,7 @@ SAP-C02 기출 41~50번 문제를 풀어보자.<br>
 <br>
 
 
-## Prob. 41 ⭕️⭕️
+## Prob. 41 ⭕️⭕️⭕️
 ---
 
 A company recently deployed an application on AWS. The application uses Amazon DynamoDB. The company measured the application load and configured the RCUs and WCUs on the DynamoDB table to match the expected peak load. The peak load occurs once a week for a 4-hour period and is double the average load. The application load is close to the average load for the rest of the week. The access pattern includes many more writes to the table than reads of the table.
@@ -46,6 +47,7 @@ Answer : A
 
 1차 시도 : A <br>
 2차 시도 : A <br>
+3차 시도 : A <br>
 
 해설 : 
 
@@ -57,7 +59,7 @@ Answer : A
 
 <br>
 
-## Prob. 42 ❌⭕️
+## Prob. 42 ❌⭕️⭕️
 ---
 
 A solutions architect needs to advise a company on how to migrate its on-premises data processing application to the AWS Cloud. Currently, users upload input files through a web portal. The web server then stores the uploaded files on NAS and messages the processing server over a message queue. Each media file can take up to 1 hour to process. The company has determined that the number of media files awaiting processing is significantly higher during business hours, with the number of files rapidly declining after business hours.
@@ -76,12 +78,13 @@ D. Create a queue using Amazon SQS. Configure the existing web server to publish
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D
 
 1차 시도 : A <br>
 2차 시도 : D <br>
+3차 시도 : D <br>
 
-해설 : D
+해설 : 
 
 A가 안되는 이유 : 람다는 기본적으로 15분동안의 유지시간을 가지기 때문에, 파일을 업로드하는 시간이 최대 1시간이라고 하였으므로 틀렸다.
 
@@ -90,7 +93,7 @@ A가 안되는 이유 : 람다는 기본적으로 15분동안의 유지시간을
 
 <br>
 
-## Prob. 43 ⭕️⭕️
+## Prob. 43 ⭕️⭕️⭕️
 ---
 
 A company is using Amazon OpenSearch Service to analyze data. The company loads data into an OpenSearch Service cluster with 10 data nodes from an Amazon S3 bucket that uses S3 Standard storage. The data resides in the cluster for 1 month for read-only analysis. After 1 month, the company deletes the index that contains the data from the cluster. For compliance purposes, the company must retain a copy of all input data.
@@ -114,6 +117,7 @@ Answer : B
 
 1차 시도 : B<br>
 2차 시도 : B<br>
+3차 시도 : B<br>
 
 해설 : 
 
@@ -126,7 +130,7 @@ OpenSearch Service가 데이터를 수집할 때 인덱스를 UltraWarm으로 �
 
 <br>
 
-## Prob. 44 ❌❌
+## Prob. 44 ❌❌❌
 ---
 
 A company has 10 accounts that are part of an organization in AWS Organizations. AWS Config is configured in each account. All accounts belong to either the Prod OU or the NonProd OU.
@@ -153,17 +157,20 @@ Answer : A
 
 1차 시도 : D<br>
 2차 시도 : D<br>
+3차 시도 : B<br>
 
 해설 : 
 
 D라고 생각했는데, AuthorizeSecurityGroupIngress 에는 ip 주소의 인바운드/아웃바운드를 제어하는 옵션이 없다고 한다.
+
+3차 - B라고 생각했는데, 안되는 이유는 모르겠다 ... A는 아무리 봐도 억지같은데 ...
 
 </div>
 </details>
 
 <br>
 
-## Prob. 45 ❌⭕️
+## Prob. 45 ❌⭕️⭕️
 ---
 
 A company hosts a Git repository in an on-premises data center. The company uses webhooks to invoke functionality that runs in the AWS Cloud. The company hosts the webhook logic on a set of Amazon EC2 instances in an Auto Scaling group that the company set as a target for an Application Load Balancer (ALB). The Git server calls the ALB for the configured webhooks. The company wants to move the solution to a serverless architecture.
@@ -185,7 +192,8 @@ D. Containerize the webhook logic. Create an Amazon Elastic Container Service (A
 Answer : B
 
 1차 시도 : A<br>
-1차 시도 : B<br>
+2차 시도 : B<br>
+3차 시도 : B<br>
 
 해설 : 
 
@@ -196,7 +204,7 @@ Answer : B
 
 <br>
 
-## Prob. 46 ⭕️❌
+## Prob. 46 ⭕️❌⭕️
 ---
 
 A company is planning to migrate 1,000 on-premises servers to AWS. The servers run on several VMware clusters in the company’s data center. As part of the migration plan, the company wants to gather server metrics such as CPU details, RAM usage, operating system information, and running processes. The company then wants to query and analyze the data.
@@ -219,6 +227,7 @@ Answer : D
 
 1차 시도 : D<br>
 2차 시도 : C<br>
+3차 시도 : D<br>
 
 해설 : 
 
@@ -233,7 +242,7 @@ A. Agentless는 프로세스를 수집할 수 없다고 한다. CPU/RAM, disk IO
 
 <br>
 
-## Prob. 47 ❌⭕️
+## Prob. 47 ❌⭕️⭕️
 ---
 
 A company is building a serverless application that runs on an AWS Lambda function that is attached to a VPC. The company needs to integrate the application with a new service from an external provider. The external provider supports only requests that come from public IPv4 addresses that are in an allow list.
@@ -258,6 +267,7 @@ Answer : A
 
 1차 시도 : D<br>
 2차 시도 : A<br>
+3차 시도 : A<br>
 
 해설 : 
 
@@ -272,7 +282,7 @@ Answer : A
 
 <br>
 
-## Prob. 48 ❌⭕️
+## Prob. 48 ❌⭕️⭕️
 ---
 
 A solutions architect has developed a web application that uses an Amazon API Gateway Regional endpoint and an AWS Lambda function. The consumers of the web application are all close to the AWS Region where the application will be deployed. The Lambda function only queries an Amazon Aurora MySQL database. The solutions architect has configured the database to have three read replicas.
@@ -299,6 +309,7 @@ Answer : B, D
 
 1차 시도 : 모름<br>
 2차 시도 : B, D<br>
+3차 시도 : B, D<br>
 
 해설 : 
 
@@ -311,7 +322,7 @@ RDX proxy & connecting outside the handler method is up to 5 times faster than c
 
 <br>
 
-## Prob. 49 ❌⭕️
+## Prob. 49 ❌⭕️⭕️
 ---
 
 A company is planning to host a web application on AWS and wants to load balance the traffic across a group of Amazon EC2 instances. One of the security requirements is to enable end-to-end encryption in transit between the client and the web server.
@@ -334,6 +345,7 @@ Answer : C
 
 1차 시도 : A<br>
 2차 시도 : C<br>
+3차 시도 : C<br>
 
 해설 : 
 
@@ -348,7 +360,7 @@ D가 답이라는 의견도 많지만... 일단 C로 한다.
 
 <br>
 
-## Prob. 50 ⭕️⭕️
+## Prob. 50 ⭕️⭕️⭕️
 ---
 
 A company wants to migrate its data analytics environment from on premises to AWS. The environment consists of two simple Node.js applications. One of the applications collects sensor data and loads it into a MySQL database. The other application aggregates the data into reports. When the aggregation jobs run, some of the load jobs fail to run correctly.
@@ -372,7 +384,8 @@ D. Set up an Amazon Aurora MySQL database. Create an Aurora Replica for the Auro
 Answer : C
 
 1차 시도 : C<br>
-1차 시도 : C<br>
+2차 시도 : C<br>
+3차 시도 : C<br>
 
 해설 : 
 
