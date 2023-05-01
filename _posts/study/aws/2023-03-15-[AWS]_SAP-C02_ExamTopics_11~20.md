@@ -11,6 +11,8 @@ image:
 
 SAP-C02 기출 11~20번 문제를 풀어보자.<br>
 1차 3/10<br>
+2차 4/10<br>
+
 
 <!--more-->
 
@@ -20,7 +22,7 @@ SAP-C02 기출 11~20번 문제를 풀어보자.<br>
 <br>
 
 
-## Prob. 11 ❌
+## Prob. 11 ❌❌
 ---
 
 A company has many AWS accounts and uses AWS Organizations to manage all of them. A solutions architect must implement a solution that the company can use to share a common network across multiple accounts.
@@ -49,12 +51,13 @@ B는 조직이 계정 간에 리소스를 공유할 수 있도록 지원하기 �
 D는 인프라 계정이 조직의 다른 계정과 특정 서브넷을 공유할 수 있게 해주기 때문에 다른 계정이 자체 네트워크를 관리하지 않고도 해당 서브넷 내에 리소스를 생성할 수 있습니다.
 
 1차 시도 : A, D <br>
+2차 시도 : B, E <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 12 ❌
+## Prob. 12 ❌⭕
 ---
 
 A company wants to use a third-party software-as-a-service (SaaS) application. The third-party SaaS application is consumed through several API calls. The third-party SaaS application also runs on AWS inside a VPC.
@@ -73,19 +76,20 @@ D. Create an AWS PrivateLink endpoint service. Ask the third-party SaaS provider
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : A
 
-해설 : A
+해설 : 
 
 이 솔루션은 트래픽이 인터넷을 통과하지 않고 회사의 VPC와 타사 SaaS 애플리케이션 VPC 간에 안전하고 개인적인 연결을 만드는 AWS PrivateLink를 사용합니다. 보안 그룹을 사용하고 엔드포인트 서비스에 대한 액세스를 제한하는 것은 최소 권한의 원칙을 준수합니다
 
 1차 시도 : C <br>
+2차 시도 : A <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 13 ❓
+## Prob. 13 ❓❌
 ---
 
 A company needs to implement a patching process for its servers. The on-premises servers and Amazon EC2 instances use a variety of tools to perform patching. Management requires a single report showing the patch status of all the servers and instances.
@@ -110,12 +114,13 @@ Answer : A
 A가 맞습니다. AWS 시스템 매니저는 사내 서버와 EC2 인스턴스 모두에서 패치를 관리하고 패치 준수 보고서를 생성할 수 있습니다. AWS OpsWorks 및 Amazon Inspector는 패치 관리를 위해 특별히 설계되지 않았으므로 이 사용 사례에 가장 적합한 선택은 아닙니다. Amazon EventBridge 규칙 및 AWS X-Ray를 사용하여 패치 준수 보고서를 생성하는 것은 패치 관리 보고용으로 설계되지 않았기 때문에 실용적인 솔루션이 아닙니다.
 
 1차 시도 : ? <br>
+2차 시도 : D <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 14 ❓
+## Prob. 14 ❓❌
 ---
 
 A company is running an application on several Amazon EC2 instances in an Auto Scaling group behind an Application Load Balancer. The load on the application varies throughout the day, and EC2 instances are scaled in and out on a regular basis. Log files from the EC2 instances are copied to a central Amazon S3 bucket every 15 minutes. The security team discovers that log files are missing from some of the terminated EC2 instances.
@@ -155,12 +160,13 @@ Answer : B
 이렇게 하면, 라이프사이클 훅에 따라 인스턴스는 종료되기 직전에 멈추게 되고, 그 동안 람다 함수 - 시스템 매니저를 통해 로그 파일을 S3로 복사, 완료되면 `CONTINUE` 신호를 통해 인스턴스를 종료하는 과정을 거치게 된다.
 
 1차 시도 : D <br>
+2차 시도 : A <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 15 ❌
+## Prob. 15 ❌⭕
 ---
 
 A company is using multiple AWS accounts. The DNS records are stored in a private hosted zone for Amazon Route 53 in Account A. The company’s applications and databases are running in Account B.
@@ -204,12 +210,14 @@ DB의 CNAME이 A계정의 Route 53에 만들어졌으나, 배포에 실패한 �
 
 
 1차 시도 : B, C <br>
+2차 시도 : C, E <br>
+
 </div>
 </details>
 
 <br>
 
-## Prob. 16 ⭕
+## Prob. 16 ⭕❌
 ---
 
 A company used Amazon EC2 instances to deploy a web fleet to host a blog site. The EC2 instances are behind an Application Load Balancer (ALB) and are configured in an Auto Scaling group. The web application stores all blog content on an Amazon EFS volume.
@@ -230,18 +238,19 @@ D. Set up an Amazon CloudFront distribution for all site contents, and point the
 <br>
 Answer : C
 
-1차 시도 : C<br>
-
 해설 : 
 
 CloudFront로 배포하면 사용자의 근처에 있는 엣지 로케이션에 캐시하여 버퍼링과 타임아웃을 줄일 수 있다.
+
+1차 시도 : C<br>
+2차 시도 : D<br>
 
 </div>
 </details>
 
 <br>
 
-## Prob. 17 ❌
+## Prob. 17 ❌❌
 ---
 
 A company with global offices has a single 1 Gbps AWS Direct Connect connection to a single AWS Region. The company’s on-premises network uses the connection to communicate with the company’s resources in the AWS Cloud. The connection has a single private virtual interface that connects to a single VPC.
@@ -263,6 +272,7 @@ D. Provision a transit gateway. Delete the existing private virtual interface fr
 Answer : A
 
 1차 시도 : C <br>
+2차 시도 : D <br>
 
 해설 : 
 
@@ -275,7 +285,7 @@ D의 `Transit Gateway` 의 경우, 리전별 서비스이기 때문에 하나의
 
 <br>
 
-## Prob. 18 ⭕
+## Prob. 18 ⭕⭕
 ---
 
 A company has a web application that allows users to upload short videos. The videos are stored on Amazon EBS volumes and analyzed by custom recognition software for categorization.
@@ -297,6 +307,7 @@ D. Use AWS Elastic Beanstalk to launch EC2 instances in an Auto Scaling group fo
 Answer : C
 
 1차 시도 : C <br>
+2차 시도 : C <br>
 
 해설 : 
 
@@ -308,7 +319,7 @@ Answer : C
 
 <br>
 
-## Prob. 19 ⭕
+## Prob. 19 ⭕❌
 ---
 
 A company has a serverless application comprised of Amazon CloudFront, Amazon API Gateway, and AWS Lambda functions. The current deployment process of the application code is to create a new version number of the Lambda function and run an AWS CLI script to update. If the new function version has errors, another CLI script reverts by deploying the previous working version of the function. The company would like to decrease the time to deploy new versions of the application logic provided by the Lambda functions, and also reduce the time to detect and revert when errors are identified.
@@ -329,6 +340,7 @@ D. Create and deploy an AWS CloudFormation stack that consists of a new API Gate
 Answer : B
 
 1차 시도 : B <br>
+2차 시도 : D <br>
 
 해설 : 
 
@@ -340,7 +352,7 @@ AWS SAM(Serverless Application Model)은 서버리스 애플리케이션을 구�
 
 <br>
 
-## Prob. 20 ❌
+## Prob. 20 ❌⭕
 ---
 
 A company is planning to store a large number of archived documents and make the documents available to employees through the corporate intranet. Employees will access the system by connecting through a client VPN service that is attached to a VPC. The data must not be accessible to the public.
@@ -362,6 +374,7 @@ D. Create an Amazon S3 bucket. Configure the S3 bucket to use the S3 Glacier Dee
 Answer : A
 
 1차 시도 : D <br>
+2차 시도 : A <br>
 
 해설 : 
 
