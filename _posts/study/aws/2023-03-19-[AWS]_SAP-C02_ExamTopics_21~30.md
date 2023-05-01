@@ -10,7 +10,8 @@ image:
 ---
 
 SAP-C02 기출 21~30번 문제를 풀어보자.<br>
-1차 6/10<br>
+1차 5/10<br>
+2차 4/10<br>
 
 <!--more-->
 
@@ -20,7 +21,7 @@ SAP-C02 기출 21~30번 문제를 풀어보자.<br>
 <br>
 
 
-## Prob. 21 ❓
+## Prob. 21 ❓❌
 ---
 
 A company is using an on-premises Active Directory service for user authentication. The company wants to use the same authentication service to sign in to the company’s AWS accounts, which are using AWS Organizations. AWS Site-to-Site VPN connectivity already exists between the on-premises environment and all the company’s AWS accounts.
@@ -42,6 +43,7 @@ D. In one of the company’s AWS accounts, configure AWS Identity and Access Man
 Answer : A
 
 1차 시도 : B <br>
+2차 시도 : B <br>
 
 해설 : 
 
@@ -52,7 +54,7 @@ AWS SSO(Single Sign-On)는 여러 AWS 계정 및 비즈니스 애플리케이션
 
 <br>
 
-## Prob. 22 ❌
+## Prob. 22 ❌❌
 ---
 
 A software company has deployed an application that consumes a REST API by using Amazon API Gateway, AWS Lambda functions, and an Amazon DynamoDB table. The application is showing an increase in the number of errors during PUT requests. Most of the PUT calls come from a small number of clients that are authenticated with specific API keys.
@@ -74,6 +76,7 @@ D. Implement reserved concurrency at the Lambda function level to provide the re
 Answer : B
 
 1차 시도 : A <br>
+2차 시도 : A <br>
 
 해설 : 
 
@@ -86,7 +89,7 @@ API 쓰로틀링은 API에 대한 요청 속도를 제어하는 데 사용할 �
 
 <br>
 
-## Prob. 23 ⭕
+## Prob. 23 ⭕❌
 ---
 
 A company is running a data-intensive application on AWS. The application runs on a cluster of hundreds of Amazon EC2 instances. A shared file system also runs on several EC2 instances that store 200 TB of data. The application reads and modifies the data on the shared file system and generates a report. The job runs once monthly, reads a subset of the files from the shared file system, and takes about 72 hours to complete. The compute instances scale in an Auto Scaling group, but the instances that host the shared file system run continuously. The compute and storage instances are all in the same AWS Region.
@@ -108,6 +111,7 @@ D. Migrate the data from the existing shared file system to an Amazon S3 bucket.
 Answer : A
 
 1차 시도 : A <br>
+2차 시도 : C <br>
 
 해설 : 
 
@@ -124,7 +128,7 @@ D: storage gateway is used for on premises data access, I don't know is you can 
 
 <br>
 
-## Prob. 24 ⭕
+## Prob. 24 ⭕⭕
 ---
 
 A company is developing a new service that will be accessed using TCP on a static port. A solutions architect must ensure that the service is highly available, has redundancy across Availability Zones, and is accessible using the DNS name my.service.com, which is publicly accessible. The service must use fixed address assignments so other companies can add the addresses to their allow lists.
@@ -145,6 +149,7 @@ D. Create an Amazon ECS cluster and a service definition for the application. Cr
 Answer : C
 
 1차 시도 : C <br>
+2차 시도 : C <br>
 
 해설 : 
 
@@ -155,7 +160,7 @@ Non http port like TCP should hint to NLB immediately.(ALB does not fit here) Sh
 
 <br>
 
-## Prob. 25 ⭕
+## Prob. 25 ⭕⭕
 ---
 
 A company uses an on-premises data analytics platform. The system is highly available in a fully redundant configuration across 12 servers in the company’s data center.
@@ -178,6 +183,7 @@ D. Split the 12 instances across three Availability Zones in the chosen AWS Regi
 Answer : D
 
 1차 시도 : D <br>
+2차 시도 : D <br>
 
 해설 : 
 
@@ -190,7 +196,7 @@ D has no long term commitment (e.g. saving plans) and has 75% on demand instance
 
 <br>
 
-## Prob. 26 ⭕
+## Prob. 26 ⭕⭕
 ---
 
 A security engineer determined that an existing application retrieves credentials to an Amazon RDS for MySQL database from an encrypted file in Amazon S3. For the next version of the application, the security engineer wants to implement the following application design changes to improve security:
@@ -215,6 +221,7 @@ D. Generate the database password as a SecureString parameter type using AWS Sys
 Answer : A
 
 1차 시도 : A <br>
+2차 시도 : A <br>
 
 해설 : 
 
@@ -225,7 +232,7 @@ Secrets manager는 암호 순환만 지원할 수 있으며 parameter store는 �
 
 <br>
 
-## Prob. 27 ❌
+## Prob. 27 ❌❌
 ---
 
 A company is storing data in several Amazon DynamoDB tables. A solutions architect must use a serverless architecture to make the data accessible publicly through a simple API over HTTPS. The solution must scale automatically in response to demand.
@@ -248,6 +255,7 @@ E. Create a Network Load Balancer. Configure listener rules to forward requests 
 Answer : A, C
 
 1차 시도 : C, E <br>
+2차 시도 : C, E <br>
 
 해설 : 
 
@@ -257,16 +265,16 @@ Option D: AWS Global Accelerator and AWS Lambda@Edge, which both involve infrast
 
 Option E: NLB does not meet the requirement of being serverless
 
-Api gateway REST APis support direct integration with DynamoDb T
+Api gateway REST APis support direct integration with DynamoDb
 
-he same can be achieved with HTTP APIs using a lambda between the two
+The same can be achieved with HTTP APIs using a lambda between the two
 
 </div>
 </details>
 
 <br>
 
-## Prob. 28 ❌
+## Prob. 28 ❌❌
 ---
 
 A company has registered 10 new domain names. The company uses the domains for online marketing. The company needs a solution that will redirect online visitors to a specific URL for each domain. All domains and target URLs are defined in a JSON document. All DNS records are managed by Amazon Route 53.
@@ -292,6 +300,7 @@ F. Create an SSL certificate by using AWS Certificate Manager (ACM). Include the
 Answer : C, E, F
 
 1차 시도 : C, D, E <br>
+2차 시도 : B, D, E <br>
 
 해설 : 
 
@@ -310,7 +319,7 @@ D는 API Gateway API를 생성해야 하기 때문에 올바른 대답이 아니
 
 <br>
 
-## Prob. 29 ⭕
+## Prob. 29 ❌❌
 ---
 
 A company that has multiple AWS accounts is using AWS Organizations. The company’s AWS accounts host VPCs, Amazon EC2 instances, and containers.
@@ -330,14 +339,18 @@ D. Create a custom report in the organization view in AWS Trusted Advisor. Confi
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : C
+Answer : A
 
 1차 시도 : C <br>
+2차 시도 : C <br>
 
 해설 : 
 
 지불을 위한 커스텀 태그는 관리 계정에 의해서만 활성화할 수 있다는 말이 있다.<br>
-사실 이게 아니더라도 C처럼 일일히 모든 계정에 태그를 적용하는 것 보다는 관리 계정에 적용하여 한 번에 모든 멤버 계정이 영향을 받도록 하는것이 나아 보인다.
+-> [https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/custom-tags.html](https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/custom-tags.html) 해당 링크 참고.
+지불을 위한 태그는 Management Account 또는 Organization의 Member로 속하지 않은 Single Account만 접근할 수 있다.
+
+~~사실 이게 아니더라도~~ C처럼 일일히 모든 계정에 태그를 적용하는 것 보다는 관리 계정에 적용하여 한 번에 모든 멤버 계정이 영향을 받도록 하는것이 나아 보인다.
 
 
 </div>
@@ -345,7 +358,7 @@ Answer : C
 
 <br>
 
-## Prob. 30 ⭕
+## Prob. 30 ⭕⭕
 ---
 
 A company has 50 AWS accounts that are members of an organization in AWS Organizations. Each account contains multiple VPCs. The company wants to use AWS Transit Gateway to establish connectivity between the VPCs in each member account. Each time a new member account is created, the company wants to automate the process of creating a new VPC and a transit gateway attachment.
@@ -368,6 +381,7 @@ E. From the management account, share the transit gateway with member accounts b
 Answer : A, C
 
 1차 시도 : A, C <br>
+2차 시도 : A, C <br>
 
 해설 : 
 
