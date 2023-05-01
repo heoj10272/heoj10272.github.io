@@ -11,6 +11,7 @@ image:
 
 SAP-C02 기출 31~40번 문제를 풀어보자.<br>
 1차 4/10<br>
+2차 9/10<br>
 
 <!--more-->
 
@@ -20,7 +21,7 @@ SAP-C02 기출 31~40번 문제를 풀어보자.<br>
 <br>
 
 
-## Prob. 31 ❌
+## Prob. 31 ❌⭕️
 ---
 
 An enterprise company wants to allow its developers to purchase third-party software through AWS Marketplace. The company uses an AWS Organizations account structure with full features enabled, and has a shared services account in each organizational unit (OU) that will be used by procurement managers. The procurement team’s policy indicates that developers should be able to obtain third-party software from an approved list only and use Private Marketplace in AWS Marketplace to achieve this requirement. The procurement team wants administration of Private Marketplace to be restricted to a role named procurement-manager-role, which could be assumed by procurement managers. Other IAM users, groups, roles, and account administrators in the company should be denied Private Marketplace administrative access.<br>
@@ -38,9 +39,10 @@ D. Create an IAM role named procurement-manager-role in all AWS accounts that wi
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : D
+Answer : C
 
-1차 시도 : C <br>
+1차 시도 : D <br>
+2차 시도 : C <br>
 
 해설 : 
 
@@ -52,7 +54,7 @@ SCP는 필터링 역할만 한다고 착각했다.<br>
 
 <br>
 
-## Prob. 32 ⭕️
+## Prob. 32 ⭕️⭕️
 ---
 
 A company is in the process of implementing AWS Organizations to constrain its developers to use only Amazon EC2, Amazon S3, and Amazon DynamoDB. The developers account resides in a dedicated organizational unit (OU). The solutions architect has implemented the following SCP on the developers account:
@@ -77,6 +79,7 @@ D. Add an explicit deny statement using a wildcard to the end of the SCP.
 Answer : B
 
 1차 시도 : B <br>
+2차 시도 : B <br>
 
 해설 : 
 
@@ -87,7 +90,7 @@ Answer : B
 
 <br>
 
-## Prob. 33 ❌
+## Prob. 33 ❌❌
 ---
 
 A company is hosting a monolithic REST-based API for a mobile app on five Amazon EC2 instances in public subnets of a VPC. Mobile clients connect to the API by using a domain name that is hosted on Amazon Route 53. The company has created a Route 53 multivalue answer routing policy with the IP addresses of all the EC2 instances. Recently, the app has been overwhelmed by large and sudden increases to traffic. The app has not been able to keep up with the traffic.
@@ -105,9 +108,10 @@ D. Create an Application Load Balancer (ALB) in front of the API. Move the EC2 i
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : C
+Answer : A
 
 1차 시도 : D<br>
+2차 시도 : C<br>
 
 해설 : 
 
@@ -117,14 +121,14 @@ D의 경우, EC2 인스턴스가 public 서브넷에 존재하기 때문에 이�
 
 B의 경우, EKS를 활용하는것은 부담스럽다.
 
-A는 아키텍쳐를 갈앙벗는 것이지만, serverless 서비스인 람다 함수와 API Gateway를 활용하는 것이므로 운영적인 측면에서 최소한의 overhead를 가질것이다.
+A는 아키텍쳐를 갈아엎는 것이지만, serverless 서비스인 람다 함수와 API Gateway를 활용하는 것이므로 운영적인 측면에서 최소한의 overhead를 가질것이다.
 
 </div>
 </details>
 
 <br>
 
-## Prob. 34 ⭕️
+## Prob. 34 ⭕️⭕️
 ---
 
 A company has created an OU in AWS Organizations for each of its engineering teams. Each OU owns multiple AWS accounts. The organization has hundreds of AWS accounts.
@@ -146,6 +150,7 @@ D. Create an AWS Cost and Usage Report (CUR) by using AWS Systems Manager. Allow
 Answer : B
 
 1차 시도 : B<br>
+2차 시도 : B<br>
 
 해설 : 
 
@@ -156,7 +161,7 @@ B가 정답이야. 해결책은 AWS 조직 관리 계정에서 AWS 비용 및 �
 
 <br>
 
-## Prob. 35 ⭕️
+## Prob. 35 ⭕️⭕️
 ---
 
 A company is storing data on premises on a Windows file server. The company produces 5 GB of new data daily.
@@ -178,6 +183,7 @@ D. Use AWS DataSync to schedule a daily task to replicate data between the on-pr
 Answer : B
 
 1차 시도 : B<br>
+2차 시도 : B<br>
 
 해설 : 
 
@@ -188,7 +194,7 @@ B와 D 둘 다 유효하나, 윈도우 파일 시스템에는 아무래도 `FSx`
 
 <br>
 
-## Prob. 36 ❌
+## Prob. 36 ❌⭕️
 ---
 
 A company’s solutions architect is reviewing a web application that runs on AWS. The application references static assets in an Amazon S3 bucket in the us-east-1 Region. The company needs resiliency across multiple AWS Regions. The company already has created an S3 bucket in a second Region.
@@ -209,6 +215,7 @@ D. Configure replication on the S3 bucket in us-east-1 to replicate objects to t
 Answer : C
 
 1차 시도 : B<br>
+2차 시도 : C<br>
 
 해설 : 
 
@@ -227,7 +234,7 @@ CloudFront 배포를 만들 때 여러개의 오리진을 배포 구성에 추�
 
 <br>
 
-## Prob. 37 ❌
+## Prob. 37 ❌⭕️
 ---
 
 A company is hosting a three-tier web application in an on-premises environment. Due to a recent surge in traffic that resulted in downtime and a significant financial impact, company management has ordered that the application be moved to AWS. The application is written in .NET and has a dependency on a MySQL database. A solutions architect must design a scalable and highly available solution to meet the demand of 200,000 daily users.
@@ -249,6 +256,7 @@ D. Use AWS CloudFormation to launch a stack containing an Application Load Balan
 Answer : B
 
 1차 시도 : C<br>
+2차 시도 : B<br>
 
 해설 : 
 
@@ -260,12 +268,18 @@ Amazon Route 53 별칭 레코드를 사용하여 회사 도메인에서 ALB로 �
 Multi-AZ Amazon Aurora MySQL DB 클러스터를 사용하면 데이터베이스 계층에 대한 높은 가용성을 제공하며 Retain 삭제 정책은 DB 인스턴스가 삭제되더라도 데이터가 유지되도록합니다. <br>
 또한 별칭 레코드와 함께 Route 53을 사용하면 트래픽이 올바른 위치로 라우팅됩니다.
 
+Not A: we will not use NLB for web app
+
+Not C: Beanstalk is region service. It CANNOT "automatically scaling web server environment that spans two separate Regions"
+
+Not D: spot instances cant meet 'highly available'
+
 </div>
 </details>
 
 <br>
 
-## Prob. 38 ⭕️
+## Prob. 38 ⭕️⭕️
 ---
 
 A company is using AWS Organizations to manage multiple AWS accounts. For security purposes, the company requires the creation of an Amazon Simple Notification Service (Amazon SNS) topic that enables integration with a third-party alerting system in all the Organizations member accounts.
@@ -287,6 +301,7 @@ D. Create stacks in the Organizations management account. Use service-managed pe
 Answer : C
 
 1차 시도 : C<br>
+2차 시도 : C<br>
 
 해설 : 
 
@@ -300,10 +315,26 @@ Answer : C
 
 <br>
 
-## Prob. 39 ❌
+## Prob. 39 ❌⭕️
 ---
 
-A company is using an on-premises Active Directory service for user authentication. The company wants to use the same authentication service to sign in to the 
+A company wants to migrate its workloads from on premises to AWS. The workloads run on Linux and Windows. The company has a large on-premises infrastructure that consists of physical machines and VMs that host numerous applications.
+
+The company must capture details about the system configuration, system performance, running processes, and network connections of its on-premises workloads. The company also must divide the on-premises applications into groups for AWS migrations. The company needs recommendations for Amazon EC2 instance types so that the company can run its workloads on AWS in the most cost-effective manner.
+
+Which combination of steps should a solutions architect take to meet these requirements? (Choose three.)
+
+A. Assess the existing applications by installing AWS Application Discovery Agent on the physical machines and VMs.
+
+B. Assess the existing applications by installing AWS Systems Manager Agent on the physical machines and VMs.
+
+C. Group servers into applications for migration by using AWS Systems Manager Application Manager.
+
+D. Group servers into applications for migration by using AWS Migration Hub.
+
+E. Generate recommended instance types and associated costs by using AWS Migration Hub.
+
+F. Import data about server sizes into AWS Trusted Advisor. Follow the recommendations for cost optimization.
 
 <details>
 <summary>정답 및 해설 보기</summary>
@@ -312,6 +343,7 @@ A company is using an on-premises Active Directory service for user authenticati
 Answer : A, D, E
 
 1차 시도 : B, C, F<br>
+1차 시도 : A, D, E<br>
 
 해설 : 
 
@@ -336,7 +368,7 @@ My answer - A,D,E
 
 <br>
 
-## Prob. 40 ❌
+## Prob. 40 ❌⭕️
 ---
 
 A company is hosting an image-processing service on AWS in a VPC. The VPC extends across two Availability Zones. Each Availability Zone contains one public subnet and one private subnet.
@@ -362,6 +394,7 @@ D. Attach an Amazon Elastic File System (Amazon EFS) volume to the EC2 instances
 Answer : C
 
 1차 시도 : D<br>
+1차 시도 : C<br>
 
 해설 : 
 
