@@ -20,7 +20,7 @@ SAP-C02 기출 51~60번 문제를 풀어보자.<br>
 <br>
 
 
-## Prob. 51 
+## Prob. 51 ❌
 ---
 
 A health insurance company stores personally identifiable information (PII) in an Amazon S3 bucket. The company uses server-side encryption with S3 managed encryption keys (SSE-S3) to encrypt the objects. According to a new requirement, all current and future objects in the S3 bucket must be encrypted by keys that the company’s security team manages. The S3 bucket does not have versioning enabled.
@@ -39,20 +39,20 @@ D. In the S3 bucket properties, change the default encryption to AES-256 with a 
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
-1차 시도 :  <br>
+1차 시도 : D <br>
 
 해설 : 
 
-일단 
+내 생각엔 분명 D 인 것 같은데 ... B라고 한다.
 
 </div>
 </details>
 
 <br>
 
-## Prob. 52 
+## Prob. 52 ❌
 ---
 
 A co
@@ -61,20 +61,24 @@ A co
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
-1차 시도 :  <br>
+1차 시도 : A <br>
 
 해설 : 
 
-일단 
+일단 A인 R53 페일오버 솔루션보단 B가 더 HA인 솔루션이라고 한다.
+
+C에서 ALB는 지역 서비스이기 때문에, ALB도 추가되어야 한다고 한다.
+
+
 
 </div>
 </details>
 
 <br>
 
-## Prob. 53 
+## Prob. 53 ❌
 ---
 
 A co
@@ -83,20 +87,20 @@ A co
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : C
 
-1차 시도 :  <br>
+1차 시도 : A <br>
 
 해설 : 
 
-일단 
+prefix list와 RAM을 이용하는것이 정답
 
 </div>
 </details>
 
 <br>
 
-## Prob. 54 
+## Prob. 54 ⭕️
 ---
 
 A co
@@ -105,13 +109,15 @@ A co
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : B
 
-1차 시도 :  <br>
+1차 시도 : B <br>
 
 해설 : 
 
-일단 
+AWS Compute Optimizer와 Lambda을 사용한다.
+
+그리고 Recommendation을 위해서는 람다를 사용해야한다.
 
 </div>
 </details>
@@ -129,7 +135,7 @@ A co
 <br>
 Answer : 
 
-1차 시도 :  <br>
+1차 시도 : A <br>
 
 해설 : 
 
