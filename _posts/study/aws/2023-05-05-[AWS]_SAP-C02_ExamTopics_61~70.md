@@ -179,22 +179,45 @@ Optional controls are OU specific.
 
 <br>
 
-## Prob. 65
+## Prob. 65 ❌
 ---
 
-A health insurance company stores 
+A startup company hosts a fleet of Amazon EC2 instances in private subnets using the latest Amazon Linux 2 AMI. The company’s engineers rely heavily on SSH access to the instances for troubleshooting.
+
+The company’s existing architecture includes the following:
+
+• A VPC with private and public subnets, and a NAT gateway.
+• Site-to-Site VPN for connectivity with the on-premises environment.
+• EC2 security groups with direct SSH access from the on-premises environment.
+
+The company needs to increase security controls around SSH access and provide auditing of commands run by the engineers.
+
+Which strategy should a solutions architect use?
+
+A. Install and configure EC2 Instance Connect on the fleet of EC2 instances. Remove all security group rules attached to EC2 instances that allow inbound TCP on port 22. Advise the engineers to remotely access the instances by using the EC2 Instance Connect CLI.
+
+B. Update the EC2 security groups to only allow inbound TCP on port 22 to the IP addresses of the engineer’s devices. Install the Amazon CloudWatch agent on all EC2 instances and send operating system audit logs to CloudWatch Logs.
+
+C. Update the EC2 security groups to only allow inbound TCP on port 22 to the IP addresses of the engineer’s devices. Enable AWS Config for EC2 security group resource changes. Enable AWS Firewall Manager and apply a security group policy that automatically remediates changes to rules.
+
+D. Create an IAM role with the AmazonSSMManagedInstanceCore managed policy attached. Attach the IAM role to all the EC2 instances. Remove all security group rules attached to the EC2 instances that allow inbound TCP on port 22. Have the engineers install the AWS Systems Manager Session Manager plugin for their devices and remotely access the instances by using the start-session API call from Systems Manager. 
 
 <details>
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : 
+Answer : D
 
-1차 시도 : <br>
+1차 시도 : C<br>
 
 해설 : 
 
-내 생각엔 
+A is wrong because Instance connect does not provided auditing<br>
+B is wrong because it mentions OS audit logs. we need to audit SSH trafic<br>
+C is wrong because we want to audit not remediate as asked in question. config service is to record using predefined rules and remediate as well
+
+D is correct because,<br>
+By attaching the AmazonSSMManagedInstanceCore policy to an IAM role, EC2 instances can be controlled and monitored through the Systems Manager service, enabling capabilities such as remote instance management, patching, and compliance reporting. 
 
 </div>
 </details>
