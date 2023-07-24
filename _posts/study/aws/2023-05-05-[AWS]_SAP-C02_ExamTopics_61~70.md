@@ -227,7 +227,28 @@ By attaching the AmazonSSMManagedInstanceCore policy to an IAM role, EC2 instanc
 ## Prob. 66
 ---
 
-A health insurance company stores 
+A company that usese AWS Organizations allows developers to experiment on AWS. AS part of the landing zone that the company has deployed, develipers use their company email adderss to request an account. The company
+wants to ensure that developers are not launching costly services or running services unnecessarily. The company must give devlopers a fied monthly budget to limit their AWS costs.
+
+A company that users AWS Organizations allows developers to experimnet on AWS. AS part of the landing zone that the company has deployed, develipers use their company email adderess to request an acocount./ The comapny wants to ensure that developers are not launcing costly services or runnign services unnecessarily. The company must give devlopers a fixed montlhhy budget to limit their AWS costs.
+
+A company that uses AWS Organizations allows developers to experiment on AWSW. As part of the landing zone that the company ahs deployed, developers use their company email adderess to request an account. The company wants to ensure that devlopers are not laun ching costly services or running services unnecesarily.
+
+A company that uses AWS Organizations allows developers to experiment on AWS. As part of the landing zone that the company has deployed, developers use their company email address to request an account. The company wants to ensure that developers are not launching costly services or running services unnecessarily. The company must give developers a fixed monthly budget to limit their AWS costs.
+
+Which combination of steps will meet these requirements? (Choose three.)
+
+A. Create an SCP to set a fixed monthly account usage limit. Apply the SCP to the developer accounts.
+
+B. Use AWS Budgets to create a fixed monthly budget for each developer’s account as part of the account creation process.
+
+C. Create an SCP to deny access to costly services and components. Apply the SCP to the developer accounts.
+
+D. Create an IAM policy to deny access to costly services and components. Apply the IAM policy to the developer accounts.
+
+E. Create an AWS Budgets alert action to terminate services when the budgeted amount is reached. Configure the action to terminate all services.
+
+F. Create an AWS Budgets alert action to send an Amazon Simple Notification Service (Amazon SNS) notification when the budgeted amount is reached. Invoke an AWS Lambda function to terminate all services.
 
 <details>
 <summary>정답 및 해설 보기</summary>
