@@ -21,7 +21,7 @@ image:
 <hr/>
 <br>
 
-## Prob. 1 ⭕⭕
+## Prob. 1 ⭕⭕⭕
 ---
 
 Examine the description of the PROMOTIONS table:
@@ -56,12 +56,13 @@ E : 중복 제거가 되지 않는다. <br>
 
 1차 시도 : A, C 맞음<br>
 2차 시도 : A, C 맞음<br>
+3차 시도 : A, C 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 2 ⭕⭕
+## Prob. 2 ⭕⭕⭕
 ---
 
 Examine the description of the PRODUCTS table:
@@ -100,12 +101,13 @@ E : `DATE` 타입의 곱셈 연산은 불가능하다.
 
 1차 시도 : B, C, F 맞음<br>
 2차 시도 : B, C, F 맞음<br>
+3차 시도 : B, C, F 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 3 ❌⭕
+## Prob. 3 ❌⭕❌
 ---
 
 What is true about non-equijoin statement performance? (Choose two.)
@@ -130,7 +132,7 @@ Answer : D는 확실, C와 E 중 하나 // E가 답인듯
 해설 : 
 
 57번 문제와 동일한 문제인 모양이다.<br>
-링크[https://www.examtopics.com/discussions/oracle/view/24426-exam-1z0-082-topic-1-question-57-discussion/] 참고<br>
+[링크](https://www.examtopics.com/discussions/oracle/view/24426-exam-1z0-082-topic-1-question-57-discussion/) 참고<br>
 D : alias를 사용하면 성능을 향상시킬 수 있다.<br>
 E : 성능적으로 별 영향이 없나보다.
 
@@ -139,12 +141,13 @@ C : Discussion에 따르면 성능적으로 별 차이가 없다고 한다.
 
 1차 시도 : C, D 틀림<br>
 2차 시도 : D, E 맞음<br>
+3차 시도 : C, D 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 4 ⭕⭕
+## Prob. 4 ⭕⭕⭕
 ---
 
 Which two are true? (Choose two.)
@@ -176,12 +179,13 @@ D : `LAST_DAY` 에 대한 올바른 설명은 E이다.
 
 1차 시도 : A, E 맞음<br>
 2차 시도 : A, E 맞음<br>
+3차 시도 : A, E 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 5 ⭕⭕ 유념
+## Prob. 5 ⭕⭕⭕ 유념
 ---
 
 Which three statements are true about Oracle synonyms? (Choose three.)
@@ -210,13 +214,14 @@ D : `PUBLIC SYNONYM`을 `CREATE`나 `DROP`할 때는 각각의 시스템 권한�
 
 1차 시도 : B, C, E 맞았는데 다시보기<br>
 2차 시도 : B, C, E 맞았는데 다시보기<br>
+3차 시도 : B, C, E 맞음<br>
 
 </div>
 </details>
 
 <br>
 
-## Prob. 6 ⭕❌
+## Prob. 6 ⭕❌⭕
 ---
 
 Which two are true? (Choose two.)
@@ -249,12 +254,13 @@ E : `INSTR`은 하나의 글자만이 아니라 문자열도 찾을 수 있다.<
 
 1차 시도 : A, F 맞음<br>
 2차 시도 : B, F 틀림<br>
+3차 시도 : A, F 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 7 ❌❌
+## Prob. 7 ❌❌❌
 ---
 
 Examine these SQL statements which execute successfully:
@@ -288,12 +294,13 @@ Answer : A, D
 
 1차 시도 : A, E 틀림 <br>
 2차 시도 : A, B 틀림 <br>
+3차 시도 : A, B 틀림 <br>
 </div>
 </details>
 
 <br>
 
-## Prob. 8 ⭕❌
+## Prob. 8 ⭕❌❌
 ---
 
 Examine this SQL statement:<br>
@@ -316,24 +323,38 @@ E. The UPDATE statement executes successfully even if the subquery selects multi
 <summary>정답 및 해설 보기</summary>
 <div markdown="1">
 <br>
-Answer : D, E
+Answer : <del>D, E</del> -> A, D
 
 해설 : 
 
-A. 틀렸다. 양 테이블에 매칭되는 행만 업데이트된다.<br>
+A. <del>틀렸다. 양 테이블에 매칭되는 행만 업데이트된다.</del><br>
+(수정) 맞다. ORDERS 테이블에는 있고 CUSTOMER 테이블에는 없는 테이블이 있어 완전히 매칭되지 않더라도, 매칭되지 않는 데이터는 ORDERS 테이블에 `NULL` 로 업데이트 되기 때문이다.(SQL Live에서 확인)
+
 B. 틀렸다. 서브쿼리는 메인쿼리 안에 포함된 종속적인 관계이기 떄문에 논리적인 실행순서는 항상 메인쿼리에서 읽혀진 데이터에 대해 서브쿼리에서 해당 조건이 만족하는지를 확인하는 방식으로 수행된다. 즉 메인쿼리 -> 서브쿼리 순서.<br>
+(추가) 
+1. UPDATE 첫 줄을 먼저 읽고 
+2. 1에서 읽은 행의 값으로 서브쿼리에 넣어서 실행하고
+3. 2의 결과 값으로 메인쿼리의 WHERE 절로 비교 -> 참이면 데이터 추출, 아니면 다음 레코드를 읽음
+4. 다음 레코드가 없을때까지 1~3 반복 수행
+
 C. 틀렸다. 서브쿼리가 메인쿼리 칼럼을 참조하고 있으므로 이는 correlated subquery(연관 서브쿼리)이다.<br>
-D. 맞다.<br>
-E. 맞다.<br>
+D. 맞다. 메인쿼리의 ROW 수만큼 서브쿼리가 실행된다.<br>
+E. <del>맞다.</del><br>
+(수정) 틀렸다. (SQL Live에서 확인 결과 아래 오류 출력)
+```
+ORA-01427: single-row subquery returns more than one row
+```
+<br>
 
 1차 시도 : D, E 맞음<br>
 2차 시도 : B, D 틀림<br>
+3차 시도 : B, D 틀림<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 9 ⭕⭕
+## Prob. 9 ⭕⭕⭕
 ---
 
 Which two statements are true about TRUNCATE and DELETE? (Choose two.)
@@ -367,12 +388,13 @@ Answer : A, E
 
 1차 시도 : A, E 맞음<br>
 2차 시도 : A, E 맞음<br>
+3차 시도 : A, E 맞음<br>
 </div>
 </details>
 
 <br>
 
-## Prob. 10 ❌❌
+## Prob. 10 ❌❌❌
 ---
 
 The STORES table has a column START_DATE of data type DATE, containing the date the row was inserted.<br>
@@ -401,6 +423,7 @@ Answer : C
 
 1차 시도 : B 틀림<br>
 2차 시도 : B 틀림<br>
+2차 시도 : D 틀림<br>
 
 </div>
 </details>
