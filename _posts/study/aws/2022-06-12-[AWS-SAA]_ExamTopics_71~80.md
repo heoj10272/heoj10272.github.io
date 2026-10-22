@@ -2,7 +2,7 @@
 layout: post
 title: "[AWS-SAA] Examtopics 71~80"
 subtitle: AWS
-date: '2023-12-12 20:30:01 +0900'
+date: '2099-12-30 20:30:01 +0900'
 category: study
 tags: aws examtopics saa-c02
 image:

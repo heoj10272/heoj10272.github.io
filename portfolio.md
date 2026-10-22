@@ -26,7 +26,7 @@ font-weight:bold">
 ---
 > 1998.12.15 출생
 
-> 연락처: heoj10272@skuniv.ac.kr
+> 연락처: me@hjy.today
 
 > Github : <a href="https://github.com/heoj10272">https://github.com/heoj10272</a>
 
