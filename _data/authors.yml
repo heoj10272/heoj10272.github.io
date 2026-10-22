@@ -3,7 +3,7 @@
 # Change `author1` to your shortname.
 author1:
   name:              JaeYoung Heo
-  email:             heoj10272@gmail.com
+  email:             me@hjy.today
 
   # Used at the bottom of each page and at the top of the `about` layout
   # Markdown enabled, can use multiple paragraphs (enabled by `|`)
@@ -26,7 +26,7 @@ author1:
     #linkedin:        daein-lee-3b6ba9139
     github:          heoj10272
     #stackoverflow:   4294737
-    email:           heoj10272@gmail.com
+    email:           me@hjy.today
     # rss:             https://heoj10272.github.io/feed.xml
     # facebook:        <username>
     # google:          <number>
